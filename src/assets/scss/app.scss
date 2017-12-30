@@ -70,6 +70,7 @@
 	display: grid;
 	grid-template-rows: 50px auto 40px;
 	background: var(--light-gray);
+	overflow: auto;
 }
 
 .header {
@@ -84,13 +85,13 @@
 }
 
 .content {
-	// max-width: 1600px;
 	margin: 3em;
 	display: grid;
 	grid-gap: 20px;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr 3fr;
-	justify-self: center;
+	// align-items: start;
+	// justify-self: center;
 	div {
 		padding: 1em;
 		background-color: white;
@@ -112,9 +113,6 @@
 }
 
 .block {
-	// position: relative;
-	// background: red;
-	// background-image: url(../img/add-folder.png) no-repeat top right;
 }
 .last {
 	background: #f00;
@@ -130,14 +128,24 @@
 .list {
 	list-style: none;
 	margin: 0;
-	padding: 0 0 0 30px;
+	padding: 0 0 0 25px;
 	font-size: .8em;
 }
 .choose {
 	display: block;
+	padding: 3px 5px;
 	&:hover {
-		background: var(--sel);
-		// border: 1px solid #ccc;
+		background-color: var(--sel);
+		background-image: url('../img/edit-group.png');
+		background-repeat: no-repeat;
+		background-position: 97% 50%;
+	}
+}
+.choos {
+	display: block;
+	padding: 3px 5px;
+	&:hover {
+		background-color: var(--sel);
 	}
 }
 .block .accordion-item, .block .accordion-content {
@@ -160,12 +168,19 @@
 		background-color: var(--sel);
 	}
 }
+// .accordion-item < .accordion-title[aria-selected="true"] {
+// 		background-color: var(--sel);
+// 		background-image: url('../img/edit-group1.png');
+// 		background-repeat: no-repeat;
+// 		background-position: 97% 50%;
+
+// }
+
 :last-child:not(.is-active) > .accordion-title {
     border-bottom: none;
-    // border-radius: 0 0 0 0;
 }
 :last-child > .accordion-content:last-child {
     border-bottom: none;
-    // border-bottom: 1px solid #e6e6e6;
 }
 .pointer { cursor: pointer }
+.mr-10 { margin-right: 10px; }
