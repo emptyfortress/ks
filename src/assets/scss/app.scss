@@ -1,4 +1,4 @@
-@charset 'utf-8';
+@charset 'utf-8';// {{{
 
 @import 'settings';
 @import 'foundation';
@@ -8,7 +8,7 @@
 // @include foundation-grid;
 // @include foundation-flex-grid;
 //
-@include foundation-xy-grid-classes;
+// @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -44,43 +44,74 @@
 @include foundation-tooltip;
 @include foundation-top-bar;
 @include foundation-visibility-classes;
-// @include foundation-float-classes;
-@include foundation-flex-classes;
+@include foundation-float-classes;
+// @include foundation-flex-classes;
 
 // @include foundation-prototype-classes;
 
 @include motion-ui-transitions;
-@include motion-ui-animations;
+@include motion-ui-animations;// }}}
 
-.cont {
-	height: 100vh;
-	display: grid;
-	grid-template-columns: repeat(12, 1fr);
-	grid-template-rows: 60px auto 60px;
-	grid-gap: 3px;
-	div {
-		background: #ccc;
-		font-size: 2em;
-		text-align: center;
-	}
+//////////////
+//  colors  //
+//////////////
+:root {
+	--main-bg: #eee;
+	--light-gray: #dedede;
+	--dark: #666;
+	--dv-blue:#0D335E;
+	--dv-green:#91C94C;
+	--dv-yellow:#FEC038;
 }
 
-.head {
+.main {
+	height: 100vh;
+	display: grid;
+	// grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: 50px auto 40px;
+	// background: var(--main-bg);
+	background: var(--light-gray);
+}
+
+.header {
 	grid-column: 1/-1;
+	background: var(--dv-blue);
+}
+.title {
+	text-align: center;
+	color: white;
+	line-height: 50px;
+	img { margin-right: .5em; }
+}
+
+.content {
+	display: grid;
+	margin: 3em;
+	grid-gap: 20px;
+	grid-template-columns: 1fr 1fr;
+	div {
+		// grid-column: 2/4;
+		height: 400px;
+		background: white;
+	}
 }
 
 .men {
 	grid-column: -2/-1;
 	grid-row: 2/-2;
-
 }
 
-.cont div.content {
-	background: #666;
-	grid-column: 1/-2;
-}
 
-.foot {
+.footer {
+	padding-left: 2em;
+	border-top: 1px solid #ccc;
 	grid-column: 1/-1;
-	// grid-column: 3/-1;
+	font-size: .8em;
+	color: var(--dark);
+	.un {
+	color: var(--dark);
+	text-decoration: underline;
+	margin: 0 20px;
+	}
 }
+
