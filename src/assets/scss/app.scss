@@ -62,6 +62,7 @@
 	--dv-blue:#0D335E;
 	--dv-green:#91C94C;
 	--dv-yellow:#FEC038;
+	--sel: #CBECFF;
 }
 
 .main {
@@ -93,6 +94,7 @@
 	grid-template-rows: 3fr 1fr;
 	justify-self: center;
 	div {
+		padding: 1em;
 		background: white;
 		min-width: 400px;
 	}
@@ -118,8 +120,17 @@
 	grid-column: 1/-1;
 }
 .main-icon {
-	margin: 20px auto;
+	margin-right: 10px;
+	width: 30px;
+	vertical-align: baseline;
+}
+.list {
+	list-style: none;
+	margin: 0;
+}
+.choose {
 	display: block;
-	width: 50px;
-	opacity: .5;
+	&:hover {
+		background: var(--sel);
+	}
 }
