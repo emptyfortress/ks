@@ -1,7 +1,6 @@
-function fuck() {
-	console.log("fuck");
-}
-function testtt() {
-// import editor from 'lib/editor';
-	console.log("test");
+module.exports = {
+	name: "john dow",
+	myFunc: function() {
+		console.log('fooooooo');
+	}
 }
