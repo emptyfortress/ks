@@ -115,7 +115,7 @@
 
 .block {
 	&.edit {
-		border: 4px solid var(--dv-yellow);
+		border: 3px solid var(--dv-yellow);
 	}
 }
 
@@ -171,12 +171,14 @@
 	}
 	&:hover,&:focus {
 		background-color: var(--sel);
+		curor: pointer;
 	}
 	span{ 
 		margin-top: 5px;
 		flex-grow: 1;
 	}
 }
+
 :last-child:not(.is-active) > .accordion-title {
     border-bottom: none;
 }
@@ -201,10 +203,10 @@
 	float: right;
 	opacity: .3;
 	cursor: pointer;
-	transition: all .2s;
+	transition: transform .2s;
 	&:hover {
-		opacity: .5;
-		transform: rotate(90deg);
+		opacity: 1;
+		// transform: rotate(90deg);
 	}
-	&.edit { opacity: 1; transform: scale(1.4) }
+	&.edit { opacity: 1; transform: scale(1.4) rotate(90deg)}
 }

@@ -17,28 +17,29 @@
 		<div id="marshBlock" class="block">
 			<h4><image src="{{root}}assets/img/path.png" class="main-icon" />
 				Маршруты
-				<image src="{{root}}assets/img/gear.png" id="marshGear" class="ico" onclick="closeMarsh()"/>
-				<image src="{{root}}assets/img/plus.png" class="ico mr-10" />
+				<image src="{{root}}assets/img/gear.png" id="marshGear" class="ico" onclick="editMarshrut()"/>
+				<image id="addMarsh" src="{{root}}assets/img/plus.png" class="ico mr-10"  />
+				<image id="addFold" src="{{root}}assets/img/add-folder.png" class="float-right mr-10 hide"  />
 			</h4>
 			<ul id="marsh" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" ><span>Коммерческие маршруты</span><image src="assets/img/edit-group1.png" class="edit hide1" /></a>
+				<li id="fold1" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title"><span>Коммерческие маршруты</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fold1"/></a>
 					<ul id="marsh1" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Базовый маршрут</a></li>
 						<li><a href="#" class="choose">Простое согласование</a></li>
 						<li><a href="#" class="choose">Договоры до 100 тыс.</a></li>
 					</ul>
 				</li>
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" ><span>Согласования с юристами</span><image src="assets/img/edit-group1.png" class="edit hide1" /></a>
+				<li id="fold2" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>Согласования с юристами</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fold2"/></a>
 					<ul id="marsh2" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Базовый маршрут</a></li>
 						<li><a href="#" class="choose">Простое согласование</a></li>
 						<li><a href="#" class="choose">Договоры до 100 тыс.</a></li>
 					</ul>
 				</li>
-				<li  class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" ><span>С акционерами</span><image src="assets/img/edit-group1.png" class="edit hide1" /></a>
+				<li id="fold3" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>С акционерами</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fold3"/></a>
 					<ul id="marsh3" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Базовый маршрут</a></li>
 						<li><a href="#" class="choose">Простое согласование</a></li>
@@ -47,56 +48,57 @@
 				</li>
 			</ul>
 		</div>
-		<div class="block">
+		<div id="etapBlock" class="block">
 			<h4><image src="{{root}}assets/img/etap.png" class="main-icon" />
 				Этапы
-				<image src="{{root}}assets/img/gear.png" class="float-right pointer" />
-				<image src="{{root}}assets/img/plus.png" class="float-right pointer mr-10" />
+				<image src="{{root}}assets/img/gear.png" id="etapGear" class="ico" onclick="editEtap()"/>
+				<image id="addEt" src="{{root}}assets/img/plus.png" class="ico mr-10"  />
+				<image id="addFol" src="{{root}}assets/img/add-folder.png" class="float-right mr-10 hide"  />
 			</h4>
 			<ul id="etap" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title">Базовые этапы</a>
-					<ul class="list accordion-content" data-tab-content>
+				<li id="fol1" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title"><span>Базовые этапы</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol1"/></a>
+					<ul id="etap1" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Название этапа 1</a></li>
 						<li><a href="#" class="choose">Название этапа 2</a></li>
 						<li><a href="#" class="choose">Название этапа 3</a></li>
 					</ul>
 				</li>
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" >Этапы делопроизводства</a>
-					<ul class="list accordion-content" data-tab-content>
+				<li id="fol2" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>Этапы делопроизводства</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol2"/></a>
+					<ul id="etap2" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Название этапа 1</a></li>
 						<li><a href="#" class="choose">Название этапа 2</a></li>
 						<li><a href="#" class="choose">Название этапа 3</a></li>
 					</ul>
 				</li>
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" >Различная консолидация</a>
-					<ul class="list accordion-content" data-tab-content>
+				<li id="fol3" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>Различная консолидация</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol3"/></a>
+					<ul id="etap3" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Название этапа 1</a></li>
 						<li><a href="#" class="choose">Название этапа 2</a></li>
 						<li><a href="#" class="choose">Название этапа 3</a></li>
 					</ul>
 				</li>
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" >Смешанные этапы</a>
-					<ul class="list accordion-content" data-tab-content>
+				<li id="fol4" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>Смешанные этапы</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol4"/></a>
+					<ul id="etap4" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Название этапа 1</a></li>
 						<li><a href="#" class="choose">Название этапа 2</a></li>
 						<li><a href="#" class="choose">Название этапа 3</a></li>
 					</ul>
 				</li>
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" >Этапы с подписанием</a>
-					<ul class="list accordion-content" data-tab-content>
+				<li id="fol5" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>Этапы с подписанием</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol5"/></a>
+					<ul id="etap5" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Название этапа 1</a></li>
 						<li><a href="#" class="choose">Название этапа 2</a></li>
 						<li><a href="#" class="choose">Название этапа 3</a></li>
 					</ul>
 				</li>
-				<li class="accordion-item" data-accordion-item>
-					<a href="" class="accordion-title" >Этапы с визированием</a>
-					<ul class="list accordion-content" data-tab-content>
+				<li id="fol6" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+					<a href="" class="accordion-title" ><span>Этапы с визированием</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol5"/></a>
+					<ul id="etap6" class="list accordion-content" data-tab-content>
 						<li><a href="#" class="choose">Название этапа 1</a></li>
 						<li><a href="#" class="choose">Название этапа 2</a></li>
 						<li><a href="#" class="choose">Название этапа 3</a></li>
