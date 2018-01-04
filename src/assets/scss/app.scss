@@ -171,7 +171,7 @@
 	}
 	&:hover,&:focus {
 		background-color: var(--sel);
-		curor: pointer;
+		cursor: pointer;
 	}
 	span{ 
 		margin-top: 5px;
@@ -221,6 +221,16 @@
 	grid-template-rows: 50px auto 30px;
 	background: var(--light-gray);
 	overflow: auto;
+}
+.header1 {
+	grid-column: 1/-1;
+	background: var(--dv-blue);
+	display: flex;
+	padding: 0 1rem;
+	align-items: center;
+	.title {
+		flex-grow: 1;
+	}
 }
 .footer1 {
 	// background: white;
