@@ -139,3 +139,19 @@ if ($dragbar) {
   });
 }//}}}
 
+
+// ========================================
+// floating labels
+// ========================================
+
+$(".mat-input").focus(function(){
+  $(this).parent().addClass("is-acti is-completed");
+});
+
+$(".mat-input").focusout(function(){
+  if($(this).val() === "")
+    $(this).parent().removeClass("is-completed");
+  $(this).parent().removeClass("is-acti");
+})
+
+
