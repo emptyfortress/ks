@@ -364,3 +364,9 @@
 	left: 1rem;
 	font-size: .8rem;
 }
+.e-list {
+	margin-top: .5rem;
+	margin-left: 1rem;
+	.accordion-content { border: none; background-color: transparent; }
+	.accordion { border: none; background-color: transparent; }
+}
