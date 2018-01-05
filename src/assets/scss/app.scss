@@ -240,20 +240,15 @@
 	}
 }
 .footer1 {
-	// background: white;
+	display: flex;
+	justify-content: space-between;
 	background: #444;
 	font-size: .8rem;
 	font-size: .7rem;
 	padding: 0 1rem;
 	color: #fff;
 	line-height: 30px;
-	span { 
-		font-size: 1.5rem; 
-		vertical-align: middle;
-		margin-left: 10px;
-	}
 	.un {
-	// color: var(--dark);
 	text-decoration: underline;
 	margin: 0 20px;
 	}
@@ -340,7 +335,30 @@
     width: 100%;
   }
 }
-.position-left .close-button {
+//////////////////
+//  off-canvas  //
+//////////////////
+#offCanvasLeft .close-button {
 	top: 0.5rem;
 	left: 1rem;
+}
+.m-list {
+	h4 {
+	margin-top: .5rem;
+	margin-left: 3rem;
+	}
+	button {
+		margin-left: 3rem;
+	}
+	#marsh {
+		margin-left: 1rem;
+	}
+	.accordion-content { border: none; background-color: transparent; }
+	.accordion { border: none; background-color: transparent; }
+}
+.back {
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+	font-size: .8rem;
 }
