@@ -54,12 +54,12 @@ function editEtap() {
 		editEt = false;
 	}
 }
-function openT() {
-	$('.abs').toggleClass('test')
+function openM() {
+	$('.abs').toggleClass('expanded')
 }
 
 // ========================================
-// resize panels
+// resize panels{{{
 // ========================================
 const $paneContainer = $("#paneContainer");
 const $dragbar = $("#paneContainer #dragbar");
@@ -109,5 +109,5 @@ if ($dragbar) {
       }
     });
   });
-}
+}//}}}
 

@@ -13,8 +13,14 @@
 	<body>
 		<div class="off-canvas-wrapper">
 			<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-				<p>lasjkdlasjg</p>
-				<!-- Your menu or Off-canvas content goes here -->
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="off-canvas position-right" data-transition="overlap" id="offCanvasRight" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
 			<div class="off-canvas-content" data-off-canvas-content>
 
@@ -25,8 +31,6 @@
 		</div>
 
 		<script src="{{root}}assets/js/app.js"></script>
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/core.js"></script> -->
-		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/i18n/jquery-ui-i18n.js"></script> -->
     <script src="{{root}}assets/vis/editor.js"></script>
 	</body>
 </html>
