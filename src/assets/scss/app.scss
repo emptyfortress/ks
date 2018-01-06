@@ -295,7 +295,8 @@ $accent-green: #3ADB76;
 .white {
 	height: calc(100% - 135px);
 	background: white;
-	overflow: auto;
+	// overflow: auto;
+	overflow: hidden;
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
 	&.left {
 		margin: 85px .5rem 0 1rem;
@@ -310,7 +311,7 @@ $accent-green: #3ADB76;
 
 #viewer {
 	overflow-x: hidden;
-	overflow-y: auto;
+	// overflow-y: auto;
 	// white-space: pre-wrap;
 	// word-wrap: break-word;
 	float: right;
@@ -513,64 +514,50 @@ $accent-green: #3ADB76;
 //  material tabs  //
 /////////////////////
 .md-tabs {
-  background-color: $primary-blue;
-
+  // background-color: var(--light-gray);
+  background-color: #eee;
+	height: 100%;
   > {
-    .mobile-nav-bar {
-      background-color: $primary-blue;
-      margin-bottom: 15px;
-
-      .title-bar-text {
-        font-size: 26px;
-      }
-
-      a {
-        color: $white;
-      }
-    }
-
+		.tabs-content {
+			border: none;
+			overflow: auto;
+			height: 100%;
+		}
     .tabs {
       margin: 0;
       border: 0;
-      background: $primary-blue;
+      background: transparent;
       list-style-type: none;
       display: table;
       width: 100%;
 
       > .tabs-title {
         display: table-cell;
-        width: 25%;
+        width: 50%;
         text-align: center;
         display: inline-block;
 
         &.is-active {
           > a {
-            color: $accent-green;
+            color: var(--dv-blue);
             background-color: transparent;
             outline: none;
           }
 
           &:nth-of-type(1) ~ .slide {
-            left: calc((100% / 4) * 0);
+            left: calc((100% / 2) * 0);
           }
 
           &:nth-of-type(2) ~ .slide {
-            left: calc((100% / 4) * 1);
-          }
-
-          &:nth-of-type(3) ~ .slide {
-            left: calc((100% / 4) * 2);
-          }
-
-          &:nth-of-type(4) ~ .slide {
-            left: calc((100% / 4) * 3);
+            left: calc((100% / 2) * 1);
           }
         }
 
         > a {
-          color: $white;
+          color: #666;
+          // color: #fff;
           font-size: 16px;
-
+					padding: 15px;
           &:hover,
           &:focus {
             background: transparent;
@@ -582,66 +569,66 @@ $accent-green: #3ADB76;
 }
 
 .slide {
-  background: $accent-green;
-  width: calc(100% / 4);
+  background: var(--dv-blue);
+  width: calc(100% / 2);
   height: 4px;
   position: relative;
   left: 0;
-  top: 52px;
+  top: 42px;
   transition: left 0.3s ease-out;
 }
 
-@include breakpoint(small only) {
-  .slide {
-    width: 0;
-    height: 0;
-  }
+// @include breakpoint(small only) {{{{
+//   .slide {
+//     width: 0;
+//     height: 0;
+//   }
 
-  .md-tabs {
-    > .accordion {
-      margin-left: 0;
-      list-style-type: none;
+//   .md-tabs {
+//     > .accordion {
+//       margin-left: 0;
+//       list-style-type: none;
 
-      > .accordion-item > .accordion-title {
-        position: relative;
-        display: block;
-        padding: 1.25rem 1rem;
-        border: 0;
-        font-size: 0.75rem;
-        line-height: 1;
-        background: $primary-blue;
-        color: $white;
+//       > .accordion-item > .accordion-title {
+//         position: relative;
+//         display: block;
+//         padding: 1.25rem 1rem;
+//         border: 0;
+//         font-size: 0.75rem;
+//         line-height: 1;
+//         background: $primary-blue;
+//         color: $white;
 
-        &:hover {
-          background-color: $primary-blue;
-          color: $accent-green;
-          outline: none;
-        }
-      }
-    }
+//         &:hover {
+//           background-color: $primary-blue;
+//           color: $accent-green;
+//           outline: none;
+//         }
+//       }
+//     }
 
-    > .accordion > {
-      .is-active.accordion-item > a.accordion-title {
-        border-bottom: 4px solid $accent-green;
-        color: $accent-green;
-      }
+//     > .accordion > {
+//       .is-active.accordion-item > a.accordion-title {
+//         border-bottom: 4px solid $accent-green;
+//         color: $accent-green;
+//       }
 
-      .accordion-item > .accordion-content {
-        display: none;
-        padding: 1rem;
-        border: 1px solid #e6e6e6;
-        border-top: 0px;
-        background-color: #fefefe;
-        color: #0a0a0a;
-      }
-    }
-  }
+//       .accordion-item > .accordion-content {
+//         display: none;
+//         padding: 1rem;
+//         border: 1px solid #e6e6e6;
+//         border-top: 0px;
+//         background-color: #fefefe;
+//         color: #0a0a0a;
+//       }
+//     }
+//   }
 
-  > .accordion > .accordion-item > .accordion-title:focus {
-    background-color: $primary-blue;
-    color: $accent-green;
-    outline: none;
-  }
-}
+//   > .accordion > .accordion-item > .accordion-title:focus {
+//     background-color: $primary-blue;
+//     color: $accent-green;
+//     outline: none;
+//   }
+// }}}}
 
 //******************** end material tabs
