@@ -530,10 +530,11 @@ $accent-green: #3ADB76;
       list-style-type: none;
       display: table;
       width: 100%;
+			// box-shadow: inset 0px -1px 5px rgba(0,0,0,.2);
 
       > .tabs-title {
         display: table-cell;
-        width: 50%;
+        width: 33%;
         text-align: center;
         display: inline-block;
 
@@ -545,11 +546,15 @@ $accent-green: #3ADB76;
           }
 
           &:nth-of-type(1) ~ .slide {
-            left: calc((100% / 2) * 0);
+            left: calc((100% / 3) * 0);
           }
 
           &:nth-of-type(2) ~ .slide {
-            left: calc((100% / 2) * 1);
+            left: calc((100% / 3) * 1);
+          }
+
+          &:nth-of-type(3) ~ .slide {
+            left: calc((100% / 3) * 2);
           }
         }
 
@@ -570,11 +575,13 @@ $accent-green: #3ADB76;
 
 .slide {
   background: var(--dv-blue);
-  width: calc(100% / 2);
+  width: calc(100% / 3);
   height: 4px;
   position: relative;
   left: 0;
-  top: 42px;
+	// bottom: 0px;
+	top: 0px;
+  // top: 42px;
   transition: left 0.3s ease-out;
 }
 
