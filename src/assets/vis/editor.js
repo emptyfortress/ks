@@ -155,3 +155,10 @@ $(".mat-input").focusout(function(){
 })
 
 
+// ========================================
+// fieldset
+// ========================================
+$('legend').click(function() {
+  $('.fieldset').toggleClass('collapsed');
+});
+

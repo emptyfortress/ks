@@ -479,3 +479,31 @@
 	}
 }
 
+////////////////
+//  fieldset  //
+////////////////
+.fieldset {
+	border-color: #ccc;
+	border-radius: .3rem;
+	padding: .5rem 1rem;
+	height: 0;
+	overflow: hidden;
+	transition: max-height .5s ease;
+	height: auto;
+	max-height: 300px;
+	&.collapsed {
+		max-height: 0;
+		border-radius: 0;
+	}
+	legend {
+		font-size: 15px;
+		font-weight: bold;
+		padding: 0 .3rem;
+		cursor: pointer;
+	}
+	input[type="checkbox"] {
+		margin-bottom: 0;
+	}
+}
+
+
