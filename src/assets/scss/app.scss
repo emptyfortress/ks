@@ -376,7 +376,7 @@
 //  floating labels  //
 ///////////////////////
 .wrap {
-	margin: 2rem;
+	margin: .6rem 2rem;
 }
 .mat-label {
   display: block;
@@ -446,3 +446,36 @@
   transform: translateY(0);
 }
 //******************** end floatin label
+
+//////////////
+//  select  //
+//////////////
+.select  {
+	position: relative;
+	.arrow {
+		position: absolute;
+		top: 37%;
+		right: .5rem;
+		transform: scaleX(1.6);
+		font-size: .8rem;
+		color: var(--dv-blue)
+	}
+	label {
+		font-size: 11px;
+		line-height: 12px;
+		color: #aaa;
+		transform: translateY(5px);
+		select {
+			height: 30px;
+			line-height: 30px;
+			padding: 0;
+			border: none;
+			border-bottom: 1px dotted var(--dv-blue);
+			outline: none;
+			&:focus {
+				box-shadow: none;
+			}
+		}
+	}
+}
+
