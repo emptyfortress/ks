@@ -404,7 +404,7 @@ $accent-green: #3ADB76;
 //  floating labels  //
 ///////////////////////
 .wrap {
-	margin: .6rem 2rem;
+	// margin: .6rem;
 }
 .mat-label {
   display: block;
@@ -514,6 +514,8 @@ $accent-green: #3ADB76;
 	border-color: #ccc;
 	border-radius: .3rem;
 	padding: .5rem 1rem;
+	margin: 0;
+	margin-bottom: .8rem;
 	overflow: hidden;
 	transition: max-height .5s ease;
 	height: auto;
@@ -662,3 +664,14 @@ $accent-green: #3ADB76;
 // }}}}
 
 //******************** end material tabs
+
+.fle {
+	display: flex;
+	justify-content: space-between;
+}
+.third-2 {
+	width: 62%;
+}
+.third-1 {
+	width: 30%;
+}
