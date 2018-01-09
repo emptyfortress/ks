@@ -52,7 +52,7 @@
 					<div id="dragbar"></div>
 					<div class="white left">
 						<br>
-						<p class="text-center">Здесь живут драконы</p>
+						<p class="text-center"><img src="{{root}}assets/img/dragons.png" /></p>
 					</div>
 				</div>
 				<div id="viewer">
@@ -60,36 +60,155 @@
 						<div class="md-tabs">
 							<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
 								<li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Этап</a></li>
-								<li class="tabs-title"><a href="#panel2c">Согласующие</a></li>
+								<li class="tabs-title"><a href="#panel2c">Согласующие (?)</a></li>
 								<li class="tabs-title"><a href="#panel3c">Условие старта</a></li>
 								<div class="slide"></div>
 							</ul>
 							<div class="tabs-content" data-tabs-content="collapsing-tabs">
 								<div class="tabs-panel is-active" id="panel1c">
-									<fieldset class="fieldset">
-										<legend>Служебная</legend>
-										<div class="fle">
-											<div class="mat-div third-2">
-												<label for="et-1" class="mat-label">Кто создал</label>
-												<input type="text" class="mat-input" id="et-1">
+										<fieldset class="fieldset">
+											<legend>Служебная</legend>
+											<div class="fle">
+												<div class="mat-div third-2">
+													<label for="et-1" class="mat-label">Кто создал</label>
+													<input type="text" class="mat-input" id="et-1">
+												</div>
+												<div class="mat-div third-1">
+													<label for="et-2" class="mat-label">Дата создания</label>
+													<input type="text" class="mat-input" id="et-2">
+												</div>
 											</div>
-											<div class="mat-div third-1">
-												<label for="et-2" class="mat-label">Дата создания</label>
-												<input type="text" class="mat-input" id="et-2">
+											<div class="m-check">
+												<input id="et-3" checked type="checkbox"><label for="et-3">Актуальный (не показывать при выборе)</label><br>
 											</div>
-										</div>
-										<div class="m-check">
-											<input id="et-3" type="checkbox"><label for="et-3">Актуальный (не показывать при выборе)</label><br>
-										</div>
-										<!-- <input id="checkbox22" type="checkbox"><label for="checkbox22">Checkbox 2</label><br> -->
-										<!-- <input id="checkbox32" type="checkbox"><label for="checkbox32">Checkbox 3</label> -->
-									</fieldset>
-									<fieldset class="fieldset">
-										<legend>Основная</legend>
-										<input id="checkbox12" type="checkbox"><label for="checkbox12">Checkbox 1</label><br>
-										<input id="checkbox22" type="checkbox"><label for="checkbox22">Checkbox 2</label><br>
-										<input id="checkbox32" type="checkbox"><label for="checkbox32">Checkbox 3</label>
-									</fieldset>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Основная</legend>
+											<div class="mat-div">
+												<label for="et-4" class="mat-label">Название</label>
+												<input type="text" class="mat-input" id="et-4">
+											</div>
+											<div class="mat-div mt-1">
+												<label for="et-5" class="mat-label">Отображаемое название</label>
+												<input type="text" class="mat-input" id="et-5">
+											</div>
+											<div class="fle">
+												<div>
+													<div class="m-check">
+														<input id="et-6" type="checkbox"><label for="et-6">Разрешить исключать этап из маршрута</label>
+													</div>
+													<div class="m-check">
+														<input id="et-7" type="checkbox"><label for="et-7">Требуется консолидация после завершения</label>
+													</div>
+												</div>
+												<div class="m-check">
+													<input id="et-8" type="checkbox"><label for="et-8">Разрешить редактирование инициатору</label>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Согласующие</legend>
+											<div class="fle">
+												<div class="third-2">
+													<div class="wrap select">
+														<label>Тип маршрутизации
+															<select>
+																<option value="husker">Параллельно</option>
+																<option value="starbuck">Последовательно</option>
+																<option value="hotdog">Смешанный</option>
+															</select>
+														</label>
+														<div class="arrow">&or;</div>
+													</div>
+												</div>
+												<div class="third-1">
+													<div class="mat-div">
+														<label for="et-10" class="mat-label">Длительность</label>
+														<input type="text" class="mat-input" id="et-10">
+													</div>
+												</div>
+											</div>
+											<div class="m-check">
+												<input id="et-11" type="checkbox"><label for="et-11">Разрешить автоисполнение</label>
+											</div>
+											<div class="m-check">
+												<input id="et-12" type="checkbox"><label for="et-12">Запретить редактирование файлов</label>
+											</div>
+											 <div class="mat-div mt-1">
+												 <label for="et-10" class="mat-label">Сопроводительный текст</label>
+												 <textarea class="mat-input" id="et-10" width="300"></textarea>
+											 </div>
+
+											<table class="unstiped hover mt-2">
+												<thead>
+													<tr>
+														<th>Участник</th>
+														<th>Тип подписи</th>
+														<th>Маршрутизация</th>
+														<th width="30"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="bold">Инициатор</td>
+														<td>
+															<div class="wrap select">
+																<label>
+																	<select>
+																		<option value="husker">Визирование</option>
+																		<option value="starbuck">Подписание</option>
+																	</select>
+																</label>
+																<div class="arrow">&or;</div>
+															</div>
+														</td>
+														<td>
+															<div class="wrap select">
+																<label>
+																	<select>
+																		<option value="husker">Параллельно</option>
+																		<option value="starbuck">Последовательно</option>
+																	</select>
+																</label>
+																<div class="arrow">&or;</div>
+															</div>
+														</td>
+														<td class="text-right">
+															<img src="{{root}}assets/img/trash.png" />
+														</td>
+													</tr>
+													<tr>
+														<td class="bold">Директор департамента</td>
+														<td>
+															<div class="wrap select">
+																<label>
+																	<select>
+																		<option value="husker">Визирование</option>
+																		<option value="starbuck">Подписание</option>
+																	</select>
+																</label>
+																<div class="arrow">&or;</div>
+															</div>
+														</td>
+														<td>
+															<div class="wrap select">
+																<label>
+																	<select>
+																		<option value="husker">Параллельно</option>
+																		<option value="starbuck">Последовательно</option>
+																	</select>
+																</label>
+																<div class="arrow">&or;</div>
+															</div>
+														</td>
+														<td class="text-right">
+															<img src="{{root}}assets/img/trash.png" />
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<button class="button primary">Добавить</button>
+										</fieldset>
 								</div>
 								<div class="tabs-panel" id="panel2c">
 									<p>Nunc ipsum massa, venenatis sed fringilla ut, elementum eu sapien. In eget dolor volutpat, fringilla metus et, dignissim lectus. Proin interdum sit amet odio ut varius. Nam id quam lacus. Aenean et tellus a sapien pulvinar sollicitudin. Mauris posuere
@@ -100,9 +219,13 @@
 									tellus urna, non fermentum urna scelerisque in. Nulla scelerisque est leo, non tempus purus laoreet in. Aliquam erat volutpat. Nunc nulla eros, blandit quis nunc vel, luctus fermentum nisi. Phasellus ullamcorper gravida facilisis.</p>
 								</div>
 							</div>
-
 						</div>
 					</div>
+					<div class="fle but">
+						<button class="button secondary">Сохранить как</button>
+						<button class="button primary">Сохранить</button>
+					</div>
+
 				</div>
 			</div>
 		</div>

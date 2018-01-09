@@ -68,6 +68,11 @@
 $primary-blue: #1779BA;
 $accent-green: #3ADB76;
 
+.mt-1 { margin-top: .5rem; }
+.mt-2 { margin-top: 1rem; }
+.bold { font-weight: bold; }
+
+
 .main {
 	height: 100vh;
 	display: grid;
@@ -317,7 +322,7 @@ $accent-green: #3ADB76;
 }
 
 .white {
-	height: calc(100% - 135px);
+	height: calc(100% - 140px);
 	background: white;
 	// overflow: auto;
 	overflow: hidden;
@@ -480,6 +485,7 @@ $accent-green: #3ADB76;
 //////////////
 .select  {
 	position: relative;
+	background: transparent;
 	.arrow {
 		position: absolute;
 		top: 37%;
@@ -494,6 +500,7 @@ $accent-green: #3ADB76;
 		color: #aaa;
 		transform: translateY(5px);
 		select {
+			background: transparent;
 			height: 30px;
 			line-height: 30px;
 			padding: 0;
@@ -505,6 +512,10 @@ $accent-green: #3ADB76;
 			}
 		}
 	}
+}
+table select {
+	font-size: 14px ;
+	margin-bottom: 0;
 }
 
 ////////////////
@@ -519,7 +530,7 @@ $accent-green: #3ADB76;
 	overflow: hidden;
 	transition: max-height .5s ease;
 	height: auto;
-	max-height: 300px;
+	max-height: 600px;
 	&.collapsed {
 		max-height: 25px;
 		border-radius: 0;
@@ -585,7 +596,6 @@ $accent-green: #3ADB76;
 
         > a {
           color: #666;
-          // color: #fff;
           font-size: 16px;
 					padding: 15px;
           &:hover,
@@ -596,6 +606,9 @@ $accent-green: #3ADB76;
       }
     }
   }
+}
+.tabs-panel {
+	margin-bottom: 50px;
 }
 
 .slide {
@@ -668,10 +681,35 @@ $accent-green: #3ADB76;
 .fle {
 	display: flex;
 	justify-content: space-between;
+	&.but {
+		margin: .5rem .7rem 0 .5rem;
+	}
 }
 .third-2 {
 	width: 62%;
 }
 .third-1 {
 	width: 30%;
+}
+textarea {
+	resize: vertical;
+	font-size: 15px;
+	line-height: 120%;
+}
+
+/////////////
+//  table  //
+/////////////
+table {
+	border-collapse: separate;
+}
+table thead th {
+	font-size: 11px;
+	padding: .2rem .5rem;
+	font-weight: normal;
+}
+table tbody td {
+	font-size: .8rem;
+	padding: 0 .3rem;
+	vertical-align: middle;
 }
