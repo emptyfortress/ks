@@ -261,18 +261,42 @@ $accent-green: #3ADB76;
 .content1 {
 	position: relative;
 }
-.abs {
+.mprops {
 	background: #fff;
 	position: absolute;
+	overflow: hidden;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 5;
-	height: 75px;
+	height: 72px;
+	padding: 0.3rem 1rem;
 	transition: all .3s ease;
 	&.expanded {
-		height: 175px;
+		height: 170px;
 		box-shadow: 0 3px 4px rgba(0,0,0,.4);
+	}
+}
+.ro {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	> div {
+		width: 30%;
+	}
+	.arrow {
+		width: 40px;
+		cursor: pointer;
+	}
+}
+.m-check {
+	display: flex;
+	margin-top: .8rem;
+	label {
+		line-height: 120%;
+	}
+	input {
+		margin-bottom: 0;
 	}
 }
 .wrapper {
@@ -490,13 +514,12 @@ $accent-green: #3ADB76;
 	border-color: #ccc;
 	border-radius: .3rem;
 	padding: .5rem 1rem;
-	height: 0;
 	overflow: hidden;
 	transition: max-height .5s ease;
 	height: auto;
 	max-height: 300px;
 	&.collapsed {
-		max-height: 0;
+		max-height: 25px;
 		border-radius: 0;
 	}
 	legend {

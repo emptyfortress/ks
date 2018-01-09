@@ -5,22 +5,61 @@
 		<img src="{{root}}assets/img/etap1.png" width="15" class="pointer" data-toggle="offCanvasRight" alt=""/>
 	</div>
 	<div class="content1">
-		<div class="abs">
-			<button onclick="openM()">test</button>
+		<div class="mprops">
+			<div class="ro">
+				<div>
+					<div class="mat-div">
+						<label for="mar-1" class="mat-label">Маршрут</label>
+						<input type="text" class="mat-input" id="mar-1">
+					</div><br>
+					<div class="mat-div">
+						<label for="mar-4" class="mat-label">Кто создал</label>
+						<input type="text" class="mat-input" id="mar-4">
+					</div>
+				</div>
+				<div>
+					<div class="mat-div">
+						<label for="mar-2" class="mat-label">Отображаемое название</label>
+						<input type="text" class="mat-input" id="mar-2">
+					</div><br>
+					<div class="mat-div">
+						<label for="mar-5" class="mat-label">Дата создания</label>
+						<input type="text" class="mat-input" id="mar-5">
+					</div>
+				</div>
+				<div>
+					<div class="m-check">
+						<input id="mar-3" type="checkbox"><label for="mar-3">Автоматически направлять на регистрацию при положительном завершении</label>
+					</div>
+					<div class="m-check">
+						<input id="mar-6" type="checkbox"><label for="mar-6">Маршрут актуален</label>
+					</div>
+					<div class="m-check">
+						<input id="mar-7" type="checkbox"><label for="mar-7">Показывать при старте</label>
+					</div>
+					<div class="m-check">
+						<input id="mar-8" type="checkbox"><label for="mar-8">Разрешить использовать без файлов</label>
+					</div>
+				</div>
+				<div class="arrow">
+					<img src="{{root}}assets/img/down.png" onclick="openM()" />
+				</div>
+			</div>
 		</div>
 		<div class="wrapper">
 			<div id="paneContainer">
 				<div id="editor">
 					<div id="dragbar"></div>
 					<div class="white left">
-						{{> components}}
+						<br>
+						<p class="text-center">Здесь живут драконы</p>
 					</div>
 				</div>
 				<div id="viewer">
 					<div class="white right">
 						<div class="md-tabs">
 							<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
-								<li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Параметры этапа</a></li>
+								<li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Этап</a></li>
 								<li class="tabs-title"><a href="#panel2c">Согласующие</a></li>
 								<li class="tabs-title"><a href="#panel3c">Условие старта</a></li>
 								<div class="slide"></div>

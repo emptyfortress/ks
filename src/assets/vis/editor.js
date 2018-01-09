@@ -83,7 +83,7 @@ function editEtap() {
 	}
 }
 function openM() {
-	$('.abs').toggleClass('expanded')
+	$('.mprops').toggleClass('expanded')
 }
 
 // ========================================
