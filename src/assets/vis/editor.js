@@ -1,34 +1,6 @@
 let editMarsh = false;
 let editEt = false;
 
-// function editMarshrut() {
-// 	if (!editMarsh) {
-// 		for (var i = 0; i < 4 ; i++) {
-// 			$('#marsh').foundation('up', $('#marsh' + i));
-// 		}
-// 		$('#marsh > .accordion-item').attr('aria-expanded', false);
-// 		$('#marsh > li > a').attr('contentEditable', 'true');
-// 		$('#marsh img.edit').removeClass('hide');
-// 		$('#marsh').attr('disabled', '');
-// 		$('#marsh .accordion-title').addClass('disabl');
-// 		$('#marshBlock').addClass('edit');
-// 		$('#marshGear').addClass('edit');
-// 		$('#addMarsh').addClass('hide');
-// 		$('#addFold').removeClass('hide');
-// 		editMarsh = true;
-// 	} else {
-// 		$('#marsh').removeAttr('disabled')
-// 		$('#marsh > li > a').attr('contentEditable', 'false');
-// 		$('#marsh img.edit').addClass('hide')
-// 		$('#marshBlock').removeClass('edit')
-// 		$('#marshGear').removeClass('edit')
-// 		$('#addMarsh').removeClass('hide');
-// 		$('#addFold').addClass('hide');
-// 		editMarsh = false;
-// 	}
-// }
-
-
 function editMarshrut() {
 	if (!editMarsh) {
 		for (var i = 1; i < 4 ; i++) {
@@ -85,6 +57,10 @@ function editEtap() {
 function openM() {
 	$('.mprops').toggleClass('expanded')
 }
+
+$('.trash').click( function() {
+  $(this).parent().addClass("hide");
+} )
 
 // ========================================
 // resize panels{{{
