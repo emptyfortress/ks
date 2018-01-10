@@ -62,6 +62,9 @@ $('.trash').click( function() {
   $(this).parent().addClass("hide");
 } )
 
+$('.del').click( function() {
+  $(this).parent().addClass("hide");
+} )
 // ========================================
 // resize panels{{{
 // ========================================

@@ -51,8 +51,11 @@
 				<div id="editor">
 					<div id="dragbar"></div>
 					<div class="white left">
-						<br>
-						<p class="text-center"><img src="{{root}}assets/img/dragons.png" /></p>
+						<div class="drag">
+							<div>тут живут драконы</div>
+						</div>
+						<!-- <br> -->
+						<!-- <p class="text-center"><img src="{{root}}assets/img/dragons.png" /></p> -->
 					</div>
 					<button class="button secondary setup">Настройки</button>
 				</div>
@@ -208,16 +211,14 @@
 													</tr>
 												</tbody>
 											</table>
-											<button class="button primary">Добавить</button>
+											<button class="button primary" data-open="addModal">Добавить</button>
 										</fieldset>
 								</div>
 								<div class="tabs-panel" id="panel2c">
-									<p>Nunc ipsum massa, venenatis sed fringilla ut, elementum eu sapien. In eget dolor volutpat, fringilla metus et, dignissim lectus. Proin interdum sit amet odio ut varius. Nam id quam lacus. Aenean et tellus a sapien pulvinar sollicitudin. Mauris posuere
-									tellus urna, non fermentum urna scelerisque in. Nulla scelerisque est leo, non tempus purus laoreet in. Aliquam erat volutpat. Nunc nulla eros, blandit quis nunc vel, luctus fermentum nisi. Phasellus ullamcorper gravida facilisis.</p>
+									<p>Может все-таки вынести согласующих на отдельный таб? Сейчас чтобы увидеть таблицу надо скроллить и (возможно распахивать секцию). Место вполне позволяет.</p>
 								</div>
 								<div class="tabs-panel" id="panel3c">
-									<p>Nunc ipsum massa, venenatis sed fringilla ut, elementum eu sapien. In eget dolor volutpat, fringilla metus et, dignissim lectus. Proin interdum sit amet odio ut varius. Nam id quam lacus. Aenean et tellus a sapien pulvinar sollicitudin. Mauris posuere
-									tellus urna, non fermentum urna scelerisque in. Nulla scelerisque est leo, non tempus purus laoreet in. Aliquam erat volutpat. Nunc nulla eros, blandit quis nunc vel, luctus fermentum nisi. Phasellus ullamcorper gravida facilisis.</p>
+									<p>Здесь вообще непонятно пока. Может быть этот раздел не нужен? Или нужен для того, чтобы отсюда таскать условия на карту.</p>
 								</div>
 							</div>
 						</div>
@@ -240,4 +241,57 @@
 </div>
 
 
+<div class="reveal" id="addModal" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+  <h4>Добавить согласующего</h4>
+  <!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all fuck</p> -->
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+	<div class="mat-div mt-2">
+		<label for="et-10" class="mat-label">Согласующее лицо</label>
+		<input type="text" class="mat-input" id="et-10">
+	</div>
+
+
+											<div class="fle mt-2">
+												<div class="">
+													<div class="wrap select">
+														<label>Тип визирования
+															<select>
+																<option value="husker">Визирование</option>
+																<option value="starbuck">Подписание</option>
+															</select>
+														</label>
+														<div class="arrow">&or;</div>
+													</div>
+												</div>
+												<div class="">
+													<!-- <div class="mat-div"> -->
+													<!-- 	<label for="et-10" class="mat-label">Длительность</label> -->
+													<!-- 	<input type="text" class="mat-input" id="et-10"> -->
+													<!-- </div> -->
+												</div>
+											</div>
+											<div class="fle">
+												<div class="">
+													<div class="wrap select">
+														<label>Маршрутизация
+															<select>
+																<option value="husker">Смешанная</option>
+																<option value="starbuck">Параллельная</option>
+																<option value="starbuck">Последовательная</option>
+															</select>
+														</label>
+														<div class="arrow">&or;</div>
+													</div>
+												</div>
+												<div class="">
+													<div class="mat-div">
+														<label for="et-10" class="mat-label">Длительность согласования</label>
+														<input type="text" class="mat-input" id="et-10">
+													</div>
+												</div>
+											</div>
+
+</div>
 
