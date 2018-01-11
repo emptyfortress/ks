@@ -12,7 +12,7 @@
 						<label for="mar-1" class="mat-label">Маршрут</label>
 						<input type="text" class="mat-input" id="mar-1">
 					</div><br>
-					<div class="mat-div">
+					<div class="mat-div-sm">
 						<label for="mar-4" class="mat-label">Кто создал</label>
 						<input type="text" class="mat-input" id="mar-4">
 					</div>
@@ -22,24 +22,25 @@
 						<label for="mar-2" class="mat-label">Отображаемое название</label>
 						<input type="text" class="mat-input" id="mar-2">
 					</div><br>
-					<div class="mat-div">
+					<div class="mat-div-sm cal">
 						<label for="mar-5" class="mat-label">Дата создания</label>
 						<input type="text" class="mat-input" id="mar-5">
+						<img class="cal" src="{{root}}assets/img/calendar.png" alt="">
 					</div>
 				</div>
 				<div>
 					<div class="m-check">
 						<input id="mar-3" type="checkbox"><label for="mar-3">Автоматически направлять на регистрацию при положительном завершении</label>
-					</div>
+					</div><br>
 					<div class="m-check">
-						<input id="mar-6" type="checkbox"><label for="mar-6">Маршрут актуален</label>
+						<input id="mar-6" type="checkbox"><label for="mar-6">Не показывать при выборе</label>
 					</div>
-					<div class="m-check">
-						<input id="mar-7" type="checkbox"><label for="mar-7">Показывать при старте</label>
-					</div>
-					<div class="m-check">
-						<input id="mar-8" type="checkbox"><label for="mar-8">Разрешить использовать без файлов</label>
-					</div>
+					<!-- <div class="m-check"> -->
+					<!-- 	<input id="mar-7" type="checkbox"><label for="mar-7">Показывать при старте</label> -->
+					<!-- </div> -->
+					<!-- <div class="m-check"> -->
+					<!-- 	<input id="mar-8" type="checkbox"><label for="mar-8">Разрешить использовать без файлов</label> -->
+					<!-- </div> -->
 				</div>
 				<div class="arrow">
 					<img src="{{root}}assets/img/down.png" onclick="openM()" />
@@ -247,51 +248,58 @@
   <button class="close-button" data-close aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
-	<div class="mat-div mt-2">
-		<label for="et-10" class="mat-label">Согласующее лицо</label>
-		<input type="text" class="mat-input" id="et-10">
+
+	<div class="fle mt-2">
+		<div class="half">
+			<div class="mat-div" style="margin-top: 6px">
+				<label for="et-10" class="mat-label">Согласующее лицо</label>
+				<input type="text" class="mat-input" id="et-10">
+			</div>
+		</div>
+		<div class="half">
+			<div class="wrap select">
+				<label>Тип визирования
+					<select>
+						<option value="husker">Визирование</option>
+						<option value="starbuck">Подписание</option>
+					</select>
+				</label>
+				<div class="arrow">&or;</div>
+			</div>
+		</div>
 	</div>
-
-
-											<div class="fle mt-2">
-												<div class="">
-													<div class="wrap select">
-														<label>Тип визирования
-															<select>
-																<option value="husker">Визирование</option>
-																<option value="starbuck">Подписание</option>
-															</select>
-														</label>
-														<div class="arrow">&or;</div>
-													</div>
-												</div>
-												<div class="">
-													<!-- <div class="mat-div"> -->
-													<!-- 	<label for="et-10" class="mat-label">Длительность</label> -->
-													<!-- 	<input type="text" class="mat-input" id="et-10"> -->
-													<!-- </div> -->
-												</div>
-											</div>
-											<div class="fle">
-												<div class="">
-													<div class="wrap select">
-														<label>Маршрутизация
-															<select>
-																<option value="husker">Смешанная</option>
-																<option value="starbuck">Параллельная</option>
-																<option value="starbuck">Последовательная</option>
-															</select>
-														</label>
-														<div class="arrow">&or;</div>
-													</div>
-												</div>
-												<div class="">
-													<div class="mat-div">
-														<label for="et-10" class="mat-label">Длительность согласования</label>
-														<input type="text" class="mat-input" id="et-10">
-													</div>
-												</div>
-											</div>
+	<div class="fle">
+		<div class="half">
+			<div class="wrap select">
+				<label>Маршрутизация
+					<select>
+						<option value="husker">Смешанная</option>
+						<option value="starbuck">Параллельная</option>
+						<option value="starbuck">Последовательная</option>
+					</select>
+				</label>
+				<div class="arrow">&or;</div>
+			</div>
+		</div>
+		<div class="half">
+			<div class="mat-div" style="margin-top: 4px">
+				<label for="et-10" class="mat-label">Длительность согласования</label>
+				<input type="text" class="mat-input" id="et-10">
+			</div>
+		</div>
+	</div>
+	<div class="m-check">
+		<input id="mod-1" type="checkbox"><label for="mod-1">Подписывать файлы в согласовании</label>
+	</div>
+	<div class="m-check">
+		<input id="mod-2" type="checkbox"><label for="mod-2">Разрешить автоисполнение</label>
+	</div>
+	<br>
+	<br>
+	<div class="fle mt-2">
+		<div data-close class="button secondary">Отмена</div>
+		<div data-close class="button primary">Добавить</div>
+	</div>
 
 </div>
 
