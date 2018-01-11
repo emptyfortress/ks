@@ -177,6 +177,8 @@ $accent-green: #3ADB76;
 		top: 5px;
 		right: 10px;
 		display: none;
+		cursor: pointer;
+		border: none;
 	}
 	&:hover {
 		background-color: var(--sel);
