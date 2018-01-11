@@ -22,7 +22,7 @@
 						<label for="mar-2" class="mat-label">Отображаемое название</label>
 						<input type="text" class="mat-input" id="mar-2">
 					</div><br>
-					<div class="mat-div-sm cal">
+					<div class="mat-div-sm rel">
 						<label for="mar-5" class="mat-label">Дата создания</label>
 						<input type="text" class="mat-input" id="mar-5">
 						<img class="cal" src="{{root}}assets/img/calendar.png" alt="">
@@ -35,12 +35,6 @@
 					<div class="m-check">
 						<input id="mar-6" type="checkbox"><label for="mar-6">Не показывать при выборе</label>
 					</div>
-					<!-- <div class="m-check"> -->
-					<!-- 	<input id="mar-7" type="checkbox"><label for="mar-7">Показывать при старте</label> -->
-					<!-- </div> -->
-					<!-- <div class="m-check"> -->
-					<!-- 	<input id="mar-8" type="checkbox"><label for="mar-8">Разрешить использовать без файлов</label> -->
-					<!-- </div> -->
 				</div>
 				<div class="arrow">
 					<img src="{{root}}assets/img/down.png" onclick="openM()" />
@@ -104,14 +98,14 @@
 															<select>
 																<option value="husker">Параллельно</option>
 																<option value="starbuck">Последовательно</option>
-																<option value="hotdog">Смешанный</option>
+																<!-- <option value="hotdog">Смешанный</option> -->
 															</select>
 														</label>
 														<div class="arrow">&or;</div>
 													</div>
 												</div>
 												<div class="third-1">
-													<div class="mat-div">
+													<div class="mat-div" style="margin-top: 5px">
 														<label for="et-10" class="mat-label">Длительность</label>
 														<input type="text" class="mat-input" id="et-10">
 													</div>
@@ -133,8 +127,7 @@
 													<tr>
 														<th>Участник</th>
 														<th>Тип подписи</th>
-														<th>Маршрутизация</th>
-														<th width="30"></th>
+														<th width="50"></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -152,18 +145,8 @@
 															</div>
 														</td>
 														<td>
-															<div class="wrap select">
-																<label>
-																	<select>
-																		<option value="husker">Параллельно</option>
-																		<option value="starbuck">Последовательно</option>
-																	</select>
-																</label>
-																<div class="arrow">&or;</div>
-															</div>
-														</td>
-														<td class="trash" >
-															<img src="{{root}}assets/img/trash.png" />
+															<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+															<img src="{{root}}assets/img/trash.png" class="trash" />
 														</td>
 													</tr>
 													<tr>
@@ -180,18 +163,8 @@
 															</div>
 														</td>
 														<td>
-															<div class="wrap select">
-																<label>
-																	<select>
-																		<option value="husker">Параллельно</option>
-																		<option value="starbuck">Последовательно</option>
-																	</select>
-																</label>
-																<div class="arrow">&or;</div>
-															</div>
-														</td>
-														<td class="trash">
-															<img src="{{root}}assets/img/trash.png" />
+															<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+															<img src="{{root}}assets/img/trash.png" class="trash" />
 														</td>
 													</tr>
 												</tbody>
@@ -205,9 +178,10 @@
 													<label for="et-1" class="mat-label">Кто создал</label>
 													<input type="text" class="mat-input" id="et-1">
 												</div>
-												<div class="mat-div third-1">
+												<div class="mat-div third-1 rel">
 													<label for="et-2" class="mat-label">Дата создания</label>
 													<input type="text" class="mat-input" id="et-2">
+													<img class="cal" src="{{root}}assets/img/calendar.png" alt="">
 												</div>
 											</div>
 											<div class="m-check">
@@ -226,16 +200,16 @@
 										</fieldset>
 								</div>
 								<div class="tabs-panel" id="panel2c">
-									<p>Может все-таки вынести согласующих на отдельный таб? Сейчас чтобы увидеть таблицу надо скроллить и (возможно распахивать секцию). Место вполне позволяет.</p>
+									<p>Здесь список документов, в которых используется маршрут</p>
 								</div>
 								<div class="tabs-panel" id="panel3c">
-									<p>Здесь вообще непонятно пока. Может быть этот раздел не нужен? Или нужен для того, чтобы отсюда таскать условия на карту.</p>
+									<p>Таблица выбора условий старта</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="fle but">
-						<button class="button secondary">Сохранить как</button>
+						<button class="button secondary">Сохранить этап в библиотеку</button>
 						<button class="button primary">Сохранить</button>
 					</div>
 
@@ -258,6 +232,25 @@
   <button class="close-button" data-close aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>
   </button>
+
+	<div class="fle mt-2">
+		<div class="half">
+				<!-- <legend>Параметры:</legend> -->
+				<input type="radio" name="pokemon" value="rol" id="rol" onclick="showRol()" ><label for="rol">Роль</label><br>
+				<input type="radio" name="pokemon" value="group" id="group" onclick="showGroup()" ><label for="group">Группа</label><br>
+				<input type="radio" name="pokemon" value="fio" id="fio" onclick="showFio()" ><label for="fio">ФИО</label><br>
+				<input type="radio" name="pokemon" value="dep" id="dep" onclick="showDep()" ><label for="dep">Подразделение</label><br>
+				<input type="radio" name="pokemon" value="word" id="word" onclick="showWord()" ><label for="word">Поисковое слово</label>
+		</div>
+		<div class="half">
+			<div class="hide" id="rol1">hjkm</div>
+			<div class="hide" id="group1">grou</div>
+			<div class="hide" id="fio1">fio</div>
+			<div class="hide" id="dep1">dep</div>
+			<div class="hide" id="word1">wordq</div>
+		</div>
+	</div>
+	<hr>
 
 	<div class="fle mt-2">
 		<div class="half">

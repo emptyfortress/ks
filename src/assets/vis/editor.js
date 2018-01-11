@@ -59,7 +59,7 @@ function openM() {
 }
 
 $('.trash').click( function() {
-  $(this).parent().addClass("hide");
+  $(this).parent().parent().addClass("hide");
 } )
 
 $('.del').click( function() {
@@ -142,3 +142,38 @@ $('legend').click(function() {
   $(this).parent().toggleClass('collapsed');
 });
 
+function showRol() {
+	$('#rol1').removeClass('hide');
+	$('#group1').addClass('hide');
+	$('#fio1').addClass('hide');
+	$('#dep1').addClass('hide');
+	$('#word1').addClass('hide');
+}
+function showGroup() {
+	$('#group1').removeClass('hide');
+	$('#rol1').addClass('hide');
+	$('#fio1').addClass('hide');
+	$('#dep1').addClass('hide');
+	$('#word1').addClass('hide');
+}
+function showFio() {
+	$('#fio1').removeClass('hide');
+	$('#group1').addClass('hide');
+	$('#rol1').addClass('hide');
+	$('#dep1').addClass('hide');
+	$('#word1').addClass('hide');
+}
+function showDep() {
+	$('#dep1').removeClass('hide');
+	$('#group1').addClass('hide');
+	$('#fio1').addClass('hide');
+	$('#rol1').addClass('hide');
+	$('#word1').addClass('hide');
+}
+function showWord() {
+	$('#word1').removeClass('hide');
+	$('#group1').addClass('hide');
+	$('#fio1').addClass('hide');
+	$('#dep1').addClass('hide');
+	$('#rol1').addClass('hide');
+}
