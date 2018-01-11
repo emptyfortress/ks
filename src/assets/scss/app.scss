@@ -169,8 +169,18 @@ $accent-green: #3ADB76;
 .choos {
 	display: block;
 	padding: 3px 5px;
+	position: relative;
+	.info {
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		display: none;
+	}
 	&:hover {
 		background-color: var(--sel);
+		.info { display: inline-block; }
 	}
 }
 .block .accordion-item, .block .accordion-content {
@@ -792,4 +802,16 @@ table tbody td {
             transform: scale(1);
     opacity: 1;
   }
+}
+.infoList {
+	transition: all .2s ease;
+	height: 90px;
+	font-style: italic;
+	color: var(--dark);
+	&.hide-my {
+		height: 0;
+		overflow: hidden;
+		opacity: 0;
+	}
+
 }
