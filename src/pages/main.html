@@ -65,28 +65,12 @@
 						<div class="md-tabs">
 							<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
 								<li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Этап</a></li>
-								<li class="tabs-title"><a href="#panel2c">Согласующие (?)</a></li>
 								<li class="tabs-title"><a href="#panel3c">Условие старта</a></li>
+								<li class="tabs-title"><a href="#panel2c">Список связанных РК</a></li>
 								<div class="slide"></div>
 							</ul>
 							<div class="tabs-content" data-tabs-content="collapsing-tabs">
 								<div class="tabs-panel is-active" id="panel1c">
-										<fieldset class="fieldset">
-											<legend>Служебная</legend>
-											<div class="fle">
-												<div class="mat-div third-2">
-													<label for="et-1" class="mat-label">Кто создал</label>
-													<input type="text" class="mat-input" id="et-1">
-												</div>
-												<div class="mat-div third-1">
-													<label for="et-2" class="mat-label">Дата создания</label>
-													<input type="text" class="mat-input" id="et-2">
-												</div>
-											</div>
-											<div class="m-check">
-												<input id="et-3" checked type="checkbox"><label for="et-3">Актуальный (не показывать при выборе)</label><br>
-											</div>
-										</fieldset>
 										<fieldset class="fieldset">
 											<legend>Основная</legend>
 											<div class="mat-div">
@@ -213,6 +197,32 @@
 												</tbody>
 											</table>
 											<button class="button primary" data-open="addModal">Добавить</button>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Служебная</legend>
+											<div class="fle">
+												<div class="mat-div third-2">
+													<label for="et-1" class="mat-label">Кто создал</label>
+													<input type="text" class="mat-input" id="et-1">
+												</div>
+												<div class="mat-div third-1">
+													<label for="et-2" class="mat-label">Дата создания</label>
+													<input type="text" class="mat-input" id="et-2">
+												</div>
+											</div>
+											<div class="m-check">
+												<input id="et-3" checked type="checkbox"><label for="et-3">Актуальный (не показывать при выборе)</label><br>
+											</div>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Связанные маршруты</legend>
+											<ol class="svaz">
+												<li><a href="#">Приказ по подразделению</a></li>
+												<li><a>Приказ по министреству</a></li>
+												<li><a>Заявление на отпуск</a></li>
+												<li><a>Заявка на командировку</a></li>
+												<li><a>Крупные сделки</a></li>
+											</ol>
 										</fieldset>
 								</div>
 								<div class="tabs-panel" id="panel2c">

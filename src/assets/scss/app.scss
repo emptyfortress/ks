@@ -158,11 +158,23 @@ $accent-green: #3ADB76;
 	display: flex;
 	justify-content: space-between;
 	padding: 3px 5px;
+	position: relative;
+	.info {
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		display: none;
+		cursor: pointer;
+		border: none;
+	}
 	&:hover {
 		background-color: var(--sel);
 		background-image: url('../img/edit.png');
 		background-repeat: no-repeat;
-		background-position: 97% 50%;
+		background-position: 87% 50%;
+		.info { display: inline-block; }
 	}
 }
 
@@ -816,4 +828,7 @@ table tbody td {
 		opacity: 0;
 	}
 
+}
+.svaz {
+	font-size: .9rem;
 }
