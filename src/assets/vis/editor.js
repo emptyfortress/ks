@@ -189,6 +189,11 @@ function showButtons() {
 function nothing() {
 	$('#emptyPanel').removeClass('hide');
 	$('#filledPanel').addClass('hide');
+	$('.tabs').addClass('hide');
+	$('#panel1c').addClass('is-active');
+	$('#panel3c').removeClass('is-active');
+	$('#tt1').addClass('is-active');
+	$('#tt2').removeClass('is-active');
 	$('#bulPanel').addClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
@@ -201,9 +206,14 @@ function nothing() {
 function showEtap() {
 	$('#emptyPanel').addClass('hide');
 	$('#filledPanel').removeClass('hide');
+	$('.tabs').removeClass('hide');
+	$('#panel1c').addClass('is-active');
+	$('#panel3c').removeClass('is-active');
 	$('#bulPanel').addClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
+	$('#tt1').addClass('is-active');
+	$('#tt2').removeClass('is-active');
 	$('#noth').removeClass('active');
 	$('#eta').addClass('active');
 	$('#bul').removeClass('active');
@@ -211,11 +221,17 @@ function showEtap() {
 	$('#arr').removeClass('active');
 }
 function showBoulean() {
-	$('#emptyPanel').addClass('hide');
+	$('#emptyPanel').removeClass('hide');
 	$('#filledPanel').addClass('hide');
-	$('#bulPanel').removeClass('hide');
+	$('.tabs').addClass('hide');
+	$('#panel1c').addClass('is-active');
+	$('#panel3c').removeClass('is-active');
+	$('#tt1').addClass('is-active');
+	$('#tt2').removeClass('is-active');
+	$('#bulPanel').addClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
+
 	$('#noth').removeClass('active');
 	$('#bul').addClass('active');
 	$('#eta').removeClass('active');
@@ -224,10 +240,12 @@ function showBoulean() {
 }
 function showExternal() {
 	$('#emptyPanel').addClass('hide');
-	$('#filledPanel').addClass('hide');
-	$('#extPanel').removeClass('hide');
-	$('#bulPanel').addClass('hide');
-	$('#arrPanel').addClass('hide');
+	$('#filledPanel').removeClass('hide');
+	$('.tabs').removeClass('hide');
+	$('#panel1c').removeClass('is-active');
+	$('#panel3c').addClass('is-active');
+	$('#tt1').removeClass('is-active');
+	$('#tt2').addClass('is-active');
 	$('#noth').removeClass('active');
 	$('#ext').addClass('active');
 	$('#bul').removeClass('active');
@@ -235,11 +253,16 @@ function showExternal() {
 	$('#arr').removeClass('active');
 }
 function showArrow() {
-	$('#emptyPanel').addClass('hide');
+	$('#emptyPanel').removeClass('hide');
 	$('#filledPanel').addClass('hide');
-	$('#extPanel').addClass('hide');
+	$('.tabs').addClass('hide');
+	$('#panel1c').addClass('is-active');
+	$('#panel3c').removeClass('is-active');
+	$('#tt1').addClass('is-active');
+	$('#tt2').removeClass('is-active');
 	$('#bulPanel').addClass('hide');
-	$('#arrPanel').removeClass('hide');
+	$('#extPanel').addClass('hide');
+	$('#arrPanel').addClass('hide');
 	$('#noth').removeClass('active');
 	$('#ext').removeClass('active');
 	$('#bul').removeClass('active');
