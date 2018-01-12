@@ -760,6 +760,14 @@ table select {
 		margin: .5rem .7rem 0 .5rem;
 	}
 }
+.fle1 {
+	display: flex;
+	// justify-content: space-between;
+	&.but {
+		margin: .5rem .7rem 0 .5rem;
+	}
+	
+}
 .third-2 {
 	width: 62%;
 }

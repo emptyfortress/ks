@@ -235,69 +235,132 @@
 
 	<div class="fle mt-2">
 		<div class="half">
-				<!-- <legend>Параметры:</legend> -->
-				<input type="radio" name="pokemon" value="rol" id="rol" onclick="showRol()" ><label for="rol">Роль</label><br>
+				<!-- <legend>Согласующий:</legend> -->
+				<input type="radio" name="pokemon" value="rol" id="rol" onclick="showRol()" checked ><label for="rol">Роль</label><br>
 				<input type="radio" name="pokemon" value="group" id="group" onclick="showGroup()" ><label for="group">Группа</label><br>
 				<input type="radio" name="pokemon" value="fio" id="fio" onclick="showFio()" ><label for="fio">ФИО</label><br>
 				<input type="radio" name="pokemon" value="dep" id="dep" onclick="showDep()" ><label for="dep">Подразделение</label><br>
 				<input type="radio" name="pokemon" value="word" id="word" onclick="showWord()" ><label for="word">Поисковое слово</label>
 		</div>
 		<div class="half">
-			<div class="hide" id="rol1">hjkm</div>
-			<div class="hide" id="group1">grou</div>
-			<div class="hide" id="fio1">fio</div>
-			<div class="hide" id="dep1">dep</div>
-			<div class="hide" id="word1">wordq</div>
+			<div class="" id="rol1">
+				<div class="wrap select">
+					<label>Роль
+						<select>
+							<option value="husker">Регистратор</option>
+							<option value="starbuck">Администратор</option>
+							<option value="starbuck">Согласующий</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+				<div class="wrap select">
+					<label>Тип визирования
+						<select>
+							<option value="husker">Визирование</option>
+							<option value="starbuck">Подписание</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+			</div>
+			<div class="hide" id="group1">
+				<div class="wrap select">
+					<label>Группа
+						<select>
+							<option value="husker">Группа 1</option>
+							<option value="starbuck">Группа 2</option>
+							<option value="starbuck">Группа 3</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+				<div class="wrap select">
+					<label>Тип визирования
+						<select>
+							<option value="husker">Визирование</option>
+							<option value="starbuck">Подписание</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+			</div>
+			<div class="hide" id="fio1">
+				<div class="mat-div">
+					<label for="rev-10" class="mat-label">Согласующее лицо</label>
+					<input type="text" class="mat-input" id="rev-10">
+				</div>
+				<div class="wrap select">
+					<label>Тип визирования
+						<select>
+							<option value="husker">Визирование</option>
+							<option value="starbuck">Подписание</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+			</div>
+			<div class="hide" id="dep1">
+				<div class="wrap select">
+					<label>Подразделение
+						<select>
+							<option value="husker">Подразделение 1</option>
+							<option value="starbuck">Подразделение 2</option>
+							<option value="starbuck">Подразделение 3</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+				<div class="wrap select">
+					<label>Тип визирования
+						<select>
+							<option value="husker">Визирование</option>
+							<option value="starbuck">Подписание</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+			</div>
+			<div class="hide" id="word1">
+				<div class="wrap select">
+					<label>Поисковое слово
+						<select>
+							<option value="husker">Инициатор маршрута</option>
+							<option value="starbuck">Автор РК</option>
+							<option value="starbuck">Руководитель автора РК</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+				<div class="wrap select">
+					<label>Тип визирования
+						<select>
+							<option value="husker">Визирование</option>
+							<option value="starbuck">Подписание</option>
+						</select>
+					</label>
+					<div class="arrow">&or;</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<hr>
-
-	<div class="fle mt-2">
-		<div class="half">
-			<div class="mat-div" style="margin-top: 6px">
-				<label for="et-10" class="mat-label">Согласующее лицо</label>
-				<input type="text" class="mat-input" id="et-10">
-			</div>
-		</div>
-		<div class="half">
-			<div class="wrap select">
-				<label>Тип визирования
-					<select>
-						<option value="husker">Визирование</option>
-						<option value="starbuck">Подписание</option>
-					</select>
-				</label>
-				<div class="arrow">&or;</div>
-			</div>
-		</div>
-	</div>
 	<div class="fle">
 		<div class="half">
-			<div class="wrap select">
-				<label>Маршрутизация
-					<select>
-						<option value="husker">Смешанная</option>
-						<option value="starbuck">Параллельная</option>
-						<option value="starbuck">Последовательная</option>
-					</select>
-				</label>
-				<div class="arrow">&or;</div>
+			<div class="m-check">
+				<input id="mod-1" type="checkbox"><label for="mod-1">Подписывать файлы в согласовании</label>
+			</div>
+			<div class="m-check">
+				<input id="mod-2" type="checkbox"><label for="mod-2">Разрешить автоисполнение</label>
 			</div>
 		</div>
 		<div class="half">
-			<div class="mat-div" style="margin-top: 4px">
-				<label for="et-10" class="mat-label">Длительность согласования</label>
-				<input type="text" class="mat-input" id="et-10">
+			<div class="mat-div">
+				<label for="rev-100" class="mat-label">Длительность согласования</label>
+				<input type="text" class="mat-input" id="rev-100">
 			</div>
 		</div>
 	</div>
-	<div class="m-check">
-		<input id="mod-1" type="checkbox"><label for="mod-1">Подписывать файлы в согласовании</label>
-	</div>
-	<div class="m-check">
-		<input id="mod-2" type="checkbox"><label for="mod-2">Разрешить автоисполнение</label>
-	</div>
-	<br>
 	<br>
 	<div class="fle mt-2">
 		<div data-close class="button secondary">Отмена</div>
