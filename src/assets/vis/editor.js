@@ -177,3 +177,8 @@ function showWord() {
 	$('#dep1').addClass('hide');
 	$('#rol1').addClass('hide');
 }
+
+function switchPanel() {
+	$('#emptyPanel').toggleClass('hide');
+	$('#filledPanel').toggleClass('hide');
+}
