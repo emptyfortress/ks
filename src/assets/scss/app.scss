@@ -751,7 +751,10 @@ table select {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: #eee;
+	div {
+		max-width: 50%;
+	}
+	// color: #eee;
 }
 .fle {
 	display: flex;
@@ -760,6 +763,14 @@ table select {
 		margin: .5rem .7rem 0 .5rem;
 	}
 }
+.fl {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
 .fle1 {
 	display: flex;
 	// justify-content: space-between;
@@ -857,4 +868,10 @@ input[type='radio'] {
 .grey select {
 	color: #ccc;
 	font-size: 12px;
+}
+.adding {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	width: 80px;
 }
