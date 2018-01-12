@@ -178,11 +178,71 @@ function showWord() {
 	$('#rol1').addClass('hide');
 }
 
-function switchPanel() {
-	$('#emptyPanel').toggleClass('hide');
-	$('#filledPanel').toggleClass('hide');
-}
+// function switchPanel() {
+// 	$('#emptyPanel').toggleClass('hide');
+// 	$('#filledPanel').toggleClass('hide');
+// }
 function showButtons() {
 	$('#dopBt').toggleClass('hide');
 }
 
+function nothing() {
+	$('#emptyPanel').removeClass('hide');
+	$('#filledPanel').addClass('hide');
+	$('#bulPanel').addClass('hide');
+	$('#extPanel').addClass('hide');
+	$('#arrPanel').addClass('hide');
+	$('#noth').addClass('active');
+	$('#eta').removeClass('active');
+	$('#bul').removeClass('active');
+	$('#ext').removeClass('active');
+	$('#arr').removeClass('active');
+}
+function showEtap() {
+	$('#emptyPanel').addClass('hide');
+	$('#filledPanel').removeClass('hide');
+	$('#bulPanel').addClass('hide');
+	$('#extPanel').addClass('hide');
+	$('#arrPanel').addClass('hide');
+	$('#noth').removeClass('active');
+	$('#eta').addClass('active');
+	$('#bul').removeClass('active');
+	$('#ext').removeClass('active');
+	$('#arr').removeClass('active');
+}
+function showBoulean() {
+	$('#emptyPanel').addClass('hide');
+	$('#filledPanel').addClass('hide');
+	$('#bulPanel').removeClass('hide');
+	$('#extPanel').addClass('hide');
+	$('#arrPanel').addClass('hide');
+	$('#noth').removeClass('active');
+	$('#bul').addClass('active');
+	$('#eta').removeClass('active');
+	$('#ext').removeClass('active');
+	$('#arr').removeClass('active');
+}
+function showExternal() {
+	$('#emptyPanel').addClass('hide');
+	$('#filledPanel').addClass('hide');
+	$('#extPanel').removeClass('hide');
+	$('#bulPanel').addClass('hide');
+	$('#arrPanel').addClass('hide');
+	$('#noth').removeClass('active');
+	$('#ext').addClass('active');
+	$('#bul').removeClass('active');
+	$('#eta').removeClass('active');
+	$('#arr').removeClass('active');
+}
+function showArrow() {
+	$('#emptyPanel').addClass('hide');
+	$('#filledPanel').addClass('hide');
+	$('#extPanel').addClass('hide');
+	$('#bulPanel').addClass('hide');
+	$('#arrPanel').removeClass('hide');
+	$('#noth').removeClass('active');
+	$('#ext').removeClass('active');
+	$('#bul').removeClass('active');
+	$('#eta').removeClass('active');
+	$('#arr').addClass('active');
+}

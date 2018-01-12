@@ -7,37 +7,51 @@
 	<div class="content1">
 		<div class="mprops">
 			<div class="ro">
-				<div>
+				<div class="third-1">
 					<div class="mat-div">
 						<label for="mar-1" class="mat-label">Маршрут</label>
 						<input type="text" class="mat-input" id="mar-1">
-					</div><br>
+					</div>
+				</div>
+				<div class="third-1">
+					<div class="mat-div">
+						<label for="mar-2" class="mat-label">Отображаемое название</label>
+						<input type="text" class="mat-input" id="mar-2">
+					</div>
+				</div>
+				<div class="third-1">
+					<div class="m-check">
+						<input id="mar-3" type="checkbox"><label for="mar-3">Автоматически направлять на регистрацию при положительном завершении</label>
+					</div>
+				</div>
+				<div class="arrow">
+					<img src="{{root}}assets/img/down.png" onclick="openM()" />
+				</div>
+			</div>
+			<div class="ro mt-3">
+				<div class="third-1">
 					<div class="mat-div-sm">
 						<label for="mar-4" class="mat-label">Кто создал</label>
 						<input type="text" class="mat-input" id="mar-4">
 					</div>
 				</div>
-				<div>
-					<div class="mat-div">
-						<label for="mar-2" class="mat-label">Отображаемое название</label>
-						<input type="text" class="mat-input" id="mar-2">
-					</div><br>
+				<div class="third-1">
 					<div class="mat-div-sm rel">
 						<label for="mar-5" class="mat-label">Дата создания</label>
 						<input type="text" class="mat-input" id="mar-5">
 						<img class="cal" src="{{root}}assets/img/calendar.png" alt="">
 					</div>
 				</div>
-				<div>
-					<div class="m-check">
-						<input id="mar-3" type="checkbox"><label for="mar-3">Автоматически направлять на регистрацию при положительном завершении</label>
-					</div><br>
-					<div class="m-check">
+				<div class="third-1">
+					<div class="m-check" style="margin-top: 0px">
 						<input id="mar-6" type="checkbox"><label for="mar-6">Не показывать при выборе</label>
 					</div>
+					<a class="link" data-toggle="showList">
+					<img src="{{root}}assets/img/info.png" />
+					Показать список связанных документов
+					</a>
 				</div>
 				<div class="arrow">
-					<img src="{{root}}assets/img/down.png" onclick="openM()" />
 				</div>
 			</div>
 		</div>
@@ -47,9 +61,16 @@
 					<div id="dragbar"></div>
 					<div class="white left">
 						<div class="fl">
-							<img src="{{root}}assets/img/bpmn.png" class="pointer" alt="" onclick="switchPanel()">
-							<img src="{{root}}assets/img/add2.png" class="adding" alt="" onclick="showButtons()">
-							<img src="{{root}}assets/img/add3.png" id="dopBt" class="adding1 hide" alt="" onclick="showButtons()">
+							<img src="{{root}}assets/img/bpmn.png" class="pointer" alt="">
+							<img src="{{root}}assets/img/add2.png" class="pointer adding" alt="" onclick="showButtons()">
+							<img src="{{root}}assets/img/add3.png" id="dopBt" class="pointer adding1 hide" alt="" onclick="showButtons()">
+							<div class="vybor">
+								<a id="noth" onclick="nothing()" class="active">Ничего не выбрано</a>
+								<a id="eta" onclick="showEtap()">Этап</a>
+								<a id="bul" onclick="showBoulean()">Логический элемент</a>
+								<a id="ext" onclick="showExternal()">Внешнее условие</a>
+								<a id="arr" onclick="showArrow()">Стрелка</a>
+							</div>
 						</div>
 					</div>
 					<button class="button secondary setup">Настройки</button>
@@ -60,17 +81,28 @@
 							<ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
 								<li class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Свойства</a></li>
 								<li class="tabs-title"><a href="#panel3c">Условие старта</a></li>
-								<li class="tabs-title"><a href="#panel2c">Список связанных РК</a></li>
 								<div class="slide"></div>
 							</ul>
 							<div class="tabs-content" data-tabs-content="collapsing-tabs">
 								<div class="tabs-panel is-active" id="panel1c">
-										<div id="emptyPanel" class="hide">
+										<div id="emptyPanel" >
 											<img src="{{root}}assets/img/message.png" class="" alt="">
 											Выберите узел на карте, чтобы редактировать параметры.
 										</div>
-										<div id="filledPanel">
-											<div class="type">Тип: <span>этап</span></div>
+										<div id="bulPanel" class="hide">
+											<img src="{{root}}assets/img/message.png" class="" alt="">
+											здесь живут логические элементы
+										</div>
+										<div id="extPanel" class="hide">
+											<img src="{{root}}assets/img/message.png" class="" alt="">
+											здесь живут внешние условия
+										</div>
+										<div id="arrPanel" class="hide">
+											<img src="{{root}}assets/img/message.png" class="" alt="">
+											здесь живут стрелки
+										</div>
+										<div id="filledPanel" class="hide">
+											<div class="type">Тип: <span data-tooltip  title="При выборе юзером на карте внешнего условия и логических операторов здесь будем отрображать их свойства. Вначале readonly, а затем и с редактированием">этап</span></div>
 											<fieldset class="fieldset">
 												<legend>Основная</legend>
 												<div class="mat-div is-completed">
@@ -339,22 +371,9 @@
 											</fieldset>
 										</div>
 								</div>
-								<div class="tabs-panel" id="panel2c">
-									<p>Данный маршрут используется в документах:</p>
-									<ol>
-										<li> <a> Обязательство доказывает валютный товарный кредит.  </a> </li>
-										<li> <a> В соответствии со сложившейся </a> </li>
-										<li> <a> правоприменительной практикой движимое </a> </li>
-										<li> <a> правоприменительной практикой движимоеимущество </a> </li>
-										<li> <a> возмещает суд.  </a> </li>
-										<li> <a> Аналогия закона спорна.  </a> </li>
-										<li> <a> Конфиденциальность, при ближайшем рассмотрении, противозаконна.  </a> </li>
-									</ol>
-								</div>
 								<div class="tabs-panel" id="panel3c">
 									<p>Таблица выбора условий старта</p>
 									<img src="{{root}}assets/img/condition.png" alt="" /><br><br>
-									<!-- <img src="{{root}}assets/img/condition1.png" alt="" /> -->
 								</div>
 							</div>
 						</div>
@@ -517,6 +536,27 @@
 		<div data-close class="button secondary">Отмена</div>
 		<div data-close class="button primary">Добавить</div>
 	</div>
-
 </div>
 
+
+<div class="reveal" id="showList" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+  <h4>Связанные документы</h4>
+	<p>Данный маршрут используется в документах:</p>
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<ol>
+		<li> <a> Обязательство доказывает валютный товарный кредит.  </a> </li>
+		<li> <a> В соответствии со сложившейся </a> </li>
+		<li> <a> Правоприменительной практикой движимое </a> </li>
+		<li> <a> Правоприменительной практикой движимоеимущество </a> </li>
+		<li> <a> Возмещает суд.  </a> </li>
+		<li> <a> Аналогия закона спорна.  </a> </li>
+		<li> <a> Конфиденциальность, при ближайшем рассмотрении, противозаконна.  </a> </li>
+	</ol>
+	<br>
+	<div class="fle mt-2">
+		<div data-close class="button primary">Отмена</div>
+		<!-- <div data-close class="button primary">Добавить</div> -->
+	</div>
+</div>

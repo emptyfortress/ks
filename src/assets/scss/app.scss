@@ -70,6 +70,7 @@ $accent-green: #3ADB76;
 
 .mt-1 { margin-top: .5rem; }
 .mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 2rem; }
 .bold { font-weight: bold; }
 .rel { position: relative; }
 
@@ -323,11 +324,11 @@ $accent-green: #3ADB76;
 .ro {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 10px;
-	> div {
-		width: 30%;
-	}
+	// > div {
+	// 	width: 30%;
+	// }
 	.arrow {
+		margin-top: 10px;
 		width: 40px;
 		cursor: pointer;
 	}
@@ -638,7 +639,7 @@ table select {
 
 			> .tabs-title {
 				display: table-cell;
-				width: 33%;
+				width: 50%;
 				text-align: center;
 				display: inline-block;
 
@@ -650,15 +651,15 @@ table select {
 					}
 
 					&:nth-of-type(1) ~ .slide {
-						left: calc((100% / 3) * 0);
+						left: calc((100% / 2) * 0);
 					}
 
 					&:nth-of-type(2) ~ .slide {
-						left: calc((100% / 3) * 1);
+						left: calc((100% / 2) * 1);
 					}
 
 					&:nth-of-type(3) ~ .slide {
-						left: calc((100% / 3) * 2);
+						left: calc((100% / 2) * 2);
 					}
 				}
 
@@ -681,7 +682,7 @@ table select {
 
 .slide {
 	background: var(--dv-blue);
-	width: calc(100% / 3);
+	width: calc(100% / 2);
 	height: 4px;
 	position: relative;
 	left: 0;
@@ -784,6 +785,9 @@ table select {
 }
 .third-1 {
 	width: 30%;
+}
+.fourth {
+	width: 23%;
 }
 
 .half {
@@ -893,4 +897,23 @@ input[type='radio'] {
 }
 #emptyPanel {
 	color: #ccc;
+}
+.link {
+	margin-top: 1rem;
+	font-size: .9rem;
+	vertical-align: middle;
+}
+.vybor {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+	font-size: 11px;
+	a {
+		color: #ccc;
+		margin-left: 1rem;
+		&.active {
+			color: var(--dv-blue);
+		}
+	}
+
 }
