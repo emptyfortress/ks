@@ -875,3 +875,14 @@ input[type='radio'] {
 	left: 1rem;
 	width: 80px;
 }
+.type {
+	font-size: 14px;
+	text-align: center;
+	span {
+		background: #DBF4FF;
+		padding: 1px 8px;
+		display: inline-block;
+		border: 1px solid var(--dv-blue);
+		border-radius: 5px;
+	}
+}
