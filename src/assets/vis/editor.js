@@ -182,3 +182,7 @@ function switchPanel() {
 	$('#emptyPanel').toggleClass('hide');
 	$('#filledPanel').toggleClass('hide');
 }
+function showButtons() {
+	$('#dopBt').toggleClass('hide');
+}
+
