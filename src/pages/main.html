@@ -451,8 +451,140 @@
 										</div>
 								</div>
 								<div class="tabs-panel" id="panel3c">
-									<p>Таблица выбора условий старта</p>
-									<img src="{{root}}assets/img/condition.png" alt="" /><br><br>
+											<fieldset class="fieldset">
+												<legend>Основная</legend>
+												<div class="mat-div">
+													<label for="arr1" class="mat-label">Название</label>
+													<input type="text" class="mat-input" id="arr1" value="">
+												</div>
+												<div class="mat-div mt-1 is-completed">
+													<label for="arr2" class="mat-label">Отображаемое название</label>
+													<input type="text" class="mat-input" id="arr2" value="Сумма договора">
+												</div>
+											</fieldset>
+											<fieldset class="fieldset">
+												<legend>Таблица условий</legend>
+													<table class="unstiped hover mt-2">
+														<thead>
+															<tr>
+																<th>Логика</th>
+																<th>Условие</th>
+																<th>Значение</th>
+																<th width="50"></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<div class="wrap select" style="width: 60px">
+																		<label>
+																			<select>
+																				<option value="husker">И</option>
+																				<option value="husker">ИЛИ</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td></td>
+																<td></td>
+																<td>
+																	<img src="{{root}}assets/img/plus-blue.png" style="width: 16px"/>
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+															<tr>
+																<td></td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Этап 4</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Завершен</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+															<tr>
+																<td> </td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Сумма договора</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">< 1 млн.руб.</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+															<tr><td colspan="4" height=20></td></tr>
+															<tr>
+																<td>
+																	<div class="wrap select grey">
+																		<label>
+																			<select>
+																				<option value="husker">Выбрать</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select grey">
+																		<label>
+																			<select>
+																				<option value="husker">Выбрать</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select grey">
+																		<label>
+																			<select>
+																				<option value="husker">Выбрать</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/plus-blue.png" class="trash" />
+																	<!-- <img src="{{root}}assets/img/trash.png" class="trash" /> -->
+																</td>
+															</tr>
+														</tbody>
+													</table>
+											</fieldset>
 								</div>
 							</div>
 						</div>
