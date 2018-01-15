@@ -73,6 +73,7 @@ $accent-green: #3ADB76;
 .mt-3 { margin-top: 2rem; }
 .bold { font-weight: bold; }
 .rel { position: relative; }
+.div-center { width: auto; margin: 0 auto; } 
 
 
 .main {
@@ -503,6 +504,20 @@ $accent-green: #3ADB76;
 	padding: 0;
   position: relative;
 	background-color: #eee;
+}
+.small-in {
+	margin: 5px 0;
+	padding: 0;
+  position: relative;
+	font-size: 12px;
+	textarea {
+		border: 1px solid #eee;
+		height: 70px;
+		margin: 0;
+	}
+	// label {
+	// 	font-size: 12px;
+	// }
 }
 .cal {
 	position: absolute;

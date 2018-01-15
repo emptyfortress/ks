@@ -94,8 +94,89 @@
 											здесь живут логические элементы
 										</div>
 										<div id="extPanel" class="hide">
-											<img src="{{root}}assets/img/message.png" class="" alt="">
-											здесь живут внешние условия
+											<p class="text-center">Тип: <span data-tooltip title="Здесь может быть описание"  ><img src="{{root}}assets/img/condition-icon.png" alt=""> Внешнее условие</span></p>
+											<fieldset class="fieldset">
+												<legend>Основная</legend>
+												<div class="mat-div is-completed">
+													<label for="ext-1" class="mat-label">Название</label>
+													<input type="text" class="mat-input" id="ext-1" value="Ограничение на суммy договора">
+												</div>
+												<div class="mat-div mt-1 is-completed">
+													<label for="ext-2" class="mat-label">Отображаемое название</label>
+													<input type="text" class="mat-input" id="ext-2" value="Сумма договора">
+												</div>
+												<br>
+											</fieldset>
+											<fieldset class="fieldset">
+												<legend>Варианты исхода</legend>
+												<table class="unstiped hover mt-2">
+													<thead>
+														<tr>
+															<th>Название исхода</th>
+															<th>Вариант</th>
+															<th width="50"></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																<div class="mat-div mt-1 is-completed">
+																	<label for="ext-7" class="mat-label">Отображаемое название</label>
+																	<input type="text" class="mat-input" id="ext-7" value="> 1 млн. руб.">
+																</div>
+															</td>
+															<td>
+																<div class="small-in">
+																	<textarea class="" id="ext-6" width="300">xml description</textarea>
+																</div>
+															</td>
+															<td>
+																<!-- <img src="{{root}}assets/img/edit.png" data-open="addModal" /> -->
+																<img src="{{root}}assets/img/trash.png" class="trash" />
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="mat-div mt-1 is-completed">
+																	<label for="ext-8" class="mat-label">Отображаемое название</label>
+																	<input type="text" class="mat-input" id="ext-8" value="< 1 млн. руб.">
+																</div>
+															</td>
+															<td>
+																<div class="small-in">
+																	<textarea class="" id="ext-9" width="300">xml description</textarea>
+																</div>
+															</td>
+															<td>
+																<!-- <img src="{{root}}assets/img/edit.png" data-open="addModal" /> -->
+																<img src="{{root}}assets/img/trash.png" class="trash" />
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="mat-div mt-1">
+																	<label for="ext-8" class="mat-label">Отображаемое название</label>
+																	<input type="text" class="mat-input" id="ext-8" value="">
+																</div>
+															</td>
+															<td>
+																<div class="small-in">
+																	<textarea class="" id="ext-9" width="300">xml description</textarea>
+																</div>
+															</td>
+															<td>
+																<!-- <img src="{{root}}assets/img/edit.png" data-open="addModal" /> -->
+																<img src="{{root}}assets/img/plus-blue.png" class="" />
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</fieldset>
+
+
+
+
+
 										</div>
 										<div id="arrPanel" class="hide">
 											<img src="{{root}}assets/img/message.png" class="" alt="">
