@@ -86,11 +86,11 @@
 							<div class="tabs-content" data-tabs-content="collapsing-tabs">
 								<div class="tabs-panel is-active" id="panel1c">
 										<div id="emptyPanel" >
-											<img src="{{root}}assets/img/message.png" class="" alt="">
+											<img src="{{root}}assets/img/message.png" alt="">
 											Выберите узел на карте, чтобы редактировать параметры.
 										</div>
 										<div id="bulPanel" class="hide">
-											<img src="{{root}}assets/img/message.png" class="" alt="">
+											<img src="{{root}}assets/img/message.png" alt="">
 											здесь живут логические элементы
 										</div>
 										<div id="extPanel" class="hide">
@@ -104,6 +104,10 @@
 												<div class="mat-div mt-1 is-completed">
 													<label for="ext-2" class="mat-label">Отображаемое название</label>
 													<input type="text" class="mat-input" id="ext-2" value="Сумма договора">
+												</div>
+												<div class="mat-div mt-1">
+													<label for="ext-3" class="mat-label">Описание</label>
+													<input type="text" class="mat-input" id="ext-3" value="">
 												</div>
 												<br>
 											</fieldset>
@@ -127,11 +131,10 @@
 															</td>
 															<td>
 																<div class="small-in">
-																	<textarea class="" id="ext-6" width="300">xml description</textarea>
+																	<textarea id="ext-6" width="300">xml description</textarea>
 																</div>
 															</td>
 															<td>
-																<!-- <img src="{{root}}assets/img/edit.png" data-open="addModal" /> -->
 																<img src="{{root}}assets/img/trash.png" class="trash" />
 															</td>
 														</tr>
@@ -144,11 +147,10 @@
 															</td>
 															<td>
 																<div class="small-in">
-																	<textarea class="" id="ext-9" width="300">xml description</textarea>
+																	<textarea id="ext-9" width="300">xml description</textarea>
 																</div>
 															</td>
 															<td>
-																<!-- <img src="{{root}}assets/img/edit.png" data-open="addModal" /> -->
 																<img src="{{root}}assets/img/trash.png" class="trash" />
 															</td>
 														</tr>
@@ -161,12 +163,11 @@
 															</td>
 															<td>
 																<div class="small-in">
-																	<textarea class="" id="ext-9" width="300">xml description</textarea>
+																	<textarea id="ext-9" width="300">xml description</textarea>
 																</div>
 															</td>
 															<td>
-																<!-- <img src="{{root}}assets/img/edit.png" data-open="addModal" /> -->
-																<img src="{{root}}assets/img/plus-blue.png" class="" />
+																<img src="{{root}}assets/img/plus-blue.png" />
 															</td>
 														</tr>
 													</tbody>
@@ -179,7 +180,7 @@
 
 										</div>
 										<div id="arrPanel" class="hide">
-											<img src="{{root}}assets/img/message.png" class="" alt="">
+											<img src="{{root}}assets/img/message.png" alt="">
 											здесь живут стрелки
 										</div>
 										<div id="filledPanel" class="hide">
@@ -494,7 +495,7 @@
 				<input type="radio" name="pokemon" value="word" id="word" onclick="showWord()" ><label for="word">Поисковое слово</label>
 		</div>
 		<div class="half">
-			<div class="" id="rol1">
+			<div id="rol1">
 				<div class="wrap select">
 					<label>Роль
 						<select>
