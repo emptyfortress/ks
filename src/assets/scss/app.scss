@@ -926,5 +926,15 @@ input[type='radio'] {
 			color: var(--dv-blue);
 		}
 	}
+}
 
+.variant {
+	border: 2px dashed red;
+	margin: 5px 0;
+	padding: 0 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	table {
+		margin: 0;
+	}
 }

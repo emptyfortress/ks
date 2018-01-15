@@ -80,7 +80,7 @@
 						<div class="md-tabs">
 							<ul class="tabs hide" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
 								<li id="tt1" class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Свойства</a></li>
-								<li id="tt2" class="tabs-title"><a href="#panel3c">Условие старта</a></li>
+								<li id="tt2" class="tabs-title"><a href="#panel3c">Условия старта</a></li>
 								<div class="slide"></div>
 							</ul>
 							<div class="tabs-content" data-tabs-content="collapsing-tabs">
@@ -173,11 +173,6 @@
 													</tbody>
 												</table>
 											</fieldset>
-
-
-
-
-
 										</div>
 										<div id="arrPanel" class="hide">
 											<img src="{{root}}assets/img/message.png" alt="">
@@ -218,7 +213,6 @@
 																<select>
 																	<option value="husker">Параллельно</option>
 																	<option value="starbuck">Последовательно</option>
-																	<!-- <option value="hotdog">Смешанный</option> -->
 																</select>
 															</label>
 															<div class="arrow">&or;</div>
@@ -242,187 +236,190 @@
 													<textarea class="mat-input" id="et-10" width="300"></textarea>
 												</div>
 
-												<table class="unstiped hover mt-2">
-													<thead>
-														<tr>
-															<th>Участник</th>
-															<th>Тип подписи</th>
-															<th width="50"></th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td class="bold">Инициатор</td>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Визирование</option>
-																			<option value="starbuck">Подписание</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
-																<img src="{{root}}assets/img/trash.png" class="trash" />
-															</td>
-														</tr>
-														<tr>
-															<td class="bold">Директор департамента</td>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Визирование</option>
-																			<option value="starbuck">Подписание</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
-																<img src="{{root}}assets/img/trash.png" class="trash" />
-															</td>
-														</tr>
-													</tbody>
-												</table>
-												<button class="button primary" data-open="addModal">Добавить</button>
-												<hr>
-												<table class="unstiped hover mt-2">
-													<thead>
-														<tr>
-															<th>Тип согласующего</th>
-															<th>Участник</th>
-															<th>Тип подписи</th>
-															<th width="50"></th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Роль</option>
-																			<option value="starbuck">Группа</option>
-																			<option value="starbuck">ФИО</option>
-																			<option value="starbuck">Подразделение</option>
-																			<option value="starbuck">Поисковое слово</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Инициатор</option>
-																			<option value="starbuck">Директор</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Визирование</option>
-																			<option value="starbuck">Подписание</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
-																<img src="{{root}}assets/img/trash.png" class="trash" />
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Роль</option>
-																			<option value="starbuck">Группа</option>
-																			<option value="starbuck">ФИО</option>
-																			<option value="starbuck">Подразделение</option>
-																			<option value="starbuck">Поисковое слово</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Инициатор</option>
-																			<option value="starbuck">Директор</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<div class="wrap select">
-																	<label>
-																		<select>
-																			<option value="husker">Визирование</option>
-																			<option value="starbuck">Подписание</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
-																<img src="{{root}}assets/img/trash.png" class="trash" />
-															</td>
-														</tr>
-														<tr>
-															<td>
-																<div class="wrap select grey">
-																	<label>
-																		<select>
-																			<option value="husker">Выбрать</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<div class="wrap select grey">
-																	<label>
-																		<select>
-																			<option value="husker">Выбрать</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<div class="wrap select grey">
-																	<label>
-																		<select>
-																			<option value="husker">Выбрать</option>
-																		</select>
-																	</label>
-																	<div class="arrow">&or;</div>
-																</div>
-															</td>
-															<td>
-																<img src="{{root}}assets/img/plus-blue.png" style="margin-top: 15px; margin-left: 15px" />
-															</td>
+												<div class="variant">
+													<table class="unstiped hover mt-2">
+														<thead>
+															<tr>
+																<th>Участник</th>
+																<th>Тип подписи</th>
+																<th width="50"></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td class="bold">Инициатор</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Визирование</option>
+																				<option value="starbuck">Подписание</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+															<tr>
+																<td class="bold">Директор департамента</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Визирование</option>
+																				<option value="starbuck">Подписание</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+														</tbody>
+													</table>
+													<button class="button primary" data-open="addModal">Добавить</button>
+												</div>
+												<div class="variant">
+													<table class="unstiped hover mt-2">
+														<thead>
+															<tr>
+																<th>Тип согласующего</th>
+																<th>Участник</th>
+																<th>Тип подписи</th>
+																<th width="50"></th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Роль</option>
+																				<option value="starbuck">Группа</option>
+																				<option value="starbuck">ФИО</option>
+																				<option value="starbuck">Подразделение</option>
+																				<option value="starbuck">Поисковое слово</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Инициатор</option>
+																				<option value="starbuck">Директор</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Визирование</option>
+																				<option value="starbuck">Подписание</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Роль</option>
+																				<option value="starbuck">Группа</option>
+																				<option value="starbuck">ФИО</option>
+																				<option value="starbuck">Подразделение</option>
+																				<option value="starbuck">Поисковое слово</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Инициатор</option>
+																				<option value="starbuck">Директор</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select">
+																		<label>
+																			<select>
+																				<option value="husker">Визирование</option>
+																				<option value="starbuck">Подписание</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																	<img src="{{root}}assets/img/trash.png" class="trash" />
+																</td>
+															</tr>
+															<tr>
+																<td>
+																	<div class="wrap select grey">
+																		<label>
+																			<select>
+																				<option value="husker">Выбрать</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select grey">
+																		<label>
+																			<select>
+																				<option value="husker">Выбрать</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<div class="wrap select grey">
+																		<label>
+																			<select>
+																				<option value="husker">Выбрать</option>
+																			</select>
+																		</label>
+																		<div class="arrow">&or;</div>
+																	</div>
+																</td>
+																<td>
+																	<img src="{{root}}assets/img/plus-blue.png" style="margin-top: 15px; margin-left: 15px" />
+																</td>
 
-														</tr>
-													</tbody>
-												</table>
+															</tr>
+														</tbody>
+													</table>
+												</div>
 											</fieldset>
 											<fieldset class="fieldset">
 												<legend>Служебная</legend>
