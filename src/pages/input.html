@@ -1,0 +1,32 @@
+<br />
+<div class="zag">Docsvision Context search</div>
+
+<div class="wrapper">
+	<form action="?" method="get" class="search">
+
+		<div class="select-container search-focus">
+			<select id="searchOptions" class="form-control search-focus valid">
+				<option value="all">Мои списки</option>
+				<option value="shirts">Поисковое слово</option>
+				<option value="pants">Сотрудник</option>
+				<option value="dresses">Группа</option>
+				<option value="skirts">Подразделение</option>
+				<option value="footwear">Роли</option>
+				<option value="footwear">Открыть справочник</option>
+			</select>
+		</div>
+		<div class="form-group || search-input">
+			<input id="searchField" class="search-focus" type="text" placeholder="Исполнитель" onkeyup="keyup(event, this)" onkeydown="keydown(event,this)">
+		</div>
+	</form>
+</div>
+
+
+<div class="reveal" id="dictionary" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+  <h4>Справочник сотрудников</h4>
+  <!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all fuck</p> -->
+  <button class="close-button" data-close aria-label="Close reveal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+

@@ -268,3 +268,29 @@ function showArrow() {
 	$('#eta').removeClass('active');
 	$('#arr').addClass('active');
 }
+
+// ========================================
+// dv context search
+// ========================================
+ $('.search-focus').on('focus', function(event) {
+   $('.select-container').addClass('open');
+});
+$('.search-focus').on('focusout', function(event) {
+    $('.select-container').removeClass('open');
+});
+function keyup(evt, t) {
+	if (evt.keyCode == 220) {
+		$('#dictionary').foundation('open');
+	} 
+}
+function keydown(evt, t) {
+	if (evt.ctrlKey && evt.keyCode == 49) {
+		console.log(123);
+		selectDrop(2);
+	}
+}
+
+function selectDrop(e) {
+	document.getElementById("searchOptions").selectedIndex = e;
+}
+
