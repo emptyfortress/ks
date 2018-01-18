@@ -988,18 +988,34 @@ input[type='radio'] {
 	}
 }
 .drop {
-	background: #fff;
+	font-size: .9rem;
 	width: 100%;
 	height: 0;
 	position: absolute;
 	top: 35px;
 	left: 0;
 	transition: all 0.5s ease-in-out;
+	overflow: auto;
+	p {
+		margin-bottom: 0;
+		color: #ccc;
+		text-align: center;
+	}
 	&.open {
 		border: 1px solid #ccc;
-		box-shadow: 0 0 5px #ccc;
+		border-top-color:#53CBED;
 		height: 150px;
-		z-index: -1;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		// margin-top: .5rem;
+		padding: 0;
+		li {
+			padding: .2rem 1rem;
+			cursor: pointer;
+			&:hover { background: var(--sel); }
+		}
 	}
 }
 .options {
