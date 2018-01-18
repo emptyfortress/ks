@@ -276,23 +276,31 @@ function history(arg) {
 	switch (arg) {
 		case 1:
 			return `
+				<p>Последние:</p>
+				<ul id="histList">
 					<li>Орлов Г.С.</li>
 					<li>Воробьева А.П.</li>
 					<li>Инициатор</li>
 					<li>Заместители</li>
 					<li>Синичкина А.А.</li>
 					<li>Отдел кадров</li>
+				</ul>
 				`;
 			break;
 		case 2:
 			return `
+				<p>Последние:</p>
+				<ul id="histList">
 					<li>Все подчиненные</li>
 					<li>Заместители</li>
 					<li>Сотрудники департамента автора</li>
+				</ul>
 				`;
 			break;
 		case 3:
 			return `
+				<p>Последние:</p>
+				<ul id="histList">
 					<li>Орлов Г.С.</li>
 					<li>Воробьев А.А.</li>
 					<li>Синичкина А.Е.</li>
@@ -300,33 +308,43 @@ function history(arg) {
 					<li>Соловьева Д.У.</li>
 					<li>Уткин Ж.Ф.</li>
 					<li>Жаворонков К.Ф.</li>
+				</ul>
 				`;
 			break;
 		case 4:
 			return `
+				<p>Последние:</p>
+				<ul id="histList">
 					<li>Администраторы</li>
 					<li>Проект Алроса</li>
 					<li>Разработчики на питоне</li>
 					<li>Девочки ДВ</li>
+				</ul>
 				`;
 			break;
 		case 5:
 			return `
+				<p>Последние:</p>
+				<ul id="histList">
 					<li>Бухгалтерия</li>
 					<li>Финансовый отдел</li>
 					<li>Кадры</li>
 					<li>ИТ</li>
 					<li>Склад</li>
 					<li>Охрана</li>
+				</ul>
 				`;
 			break;
 		case 6:
 			return `
+				<p>Последние:</p>
+				<ul id="histList">
 					<li>Инициатор</li>
 					<li>Согласующий</li>
 					<li>Делегат</li>
 					<li>Консолидатор</li>
 					<li>Подписант</li>
+				</ul>
 				`;
 			break;
 		case 7:
@@ -351,73 +369,69 @@ function keyup(evt, t) {
 	} 
 }
 function keydown(evt, t) {
-	var list = document.querySelector('#histList');
-	var drop = document.querySelector('.drop > p');
+	var drop = document.querySelector('.drop');
 
 	if (evt.ctrlKey && evt.keyCode == 49) {
 		opt(1);
-		list.innerHTML = history(1);
+		drop.innerHTML = history(1);
 	} else if (evt.ctrlKey && evt.keyCode == 50) {
 		opt(2);
-		list.innerHTML = history(2);
+		drop.innerHTML = history(2);
 	} else if (evt.ctrlKey && evt.keyCode == 51) {
 		opt(3);
-		list.innerHTML = history(3);
+		drop.innerHTML = history(3);
 	} else if (evt.ctrlKey && evt.keyCode == 52) {
 		opt(4);
-		list.innerHTML = history(4);
+		drop.innerHTML = history(4);
 	} else if (evt.ctrlKey && evt.keyCode == 53) {
 		opt(5);
-		list.innerHTML = history(5);
+		drop.innerHTML = history(5);
 	} else if (evt.ctrlKey && evt.keyCode == 54) {
 		opt(6);
-		list.innerHTML = history(6);
+		drop.innerHTML = history(6);
 	} else {
-		list.innerHTML = history(7);
-		drop.innerHTML = '';
+		drop.innerHTML = history(7);
 	}
 }
-
 
 function showAll() {
    $('#options').addClass('open');
 }
 function opt(arg) {
 	let main = document.getElementById('selOpt');
-	let list = document.querySelector('#histList');
-	// let clea = document.querySelectorAll('#options > div');
+	let drop = document.querySelector('.drop');
 	$('#options').removeClass('open');
 	$('#searchField1').focus();
 	$('#options > div').removeClass('active');
 	switch (arg) {
 		case 1:
 			main.innerHTML = 'Мои списки';
-			list.innerHTML = history(1);
+			drop.innerHTML = history(1);
 			$('#opt1').addClass('active');
 			break;
 		case 2:
 			main.innerHTML = 'Поисковое слово';
-			list.innerHTML = history(2);
+			drop.innerHTML = history(2);
 			$('#opt2').addClass('active');
 			break;
 		case 3:
 			main.innerHTML = 'Сотрудник';
-			list.innerHTML = history(3);
+			drop.innerHTML = history(3);
 			$('#opt3').addClass('active');
 			break;
 		case 4:
 			main.innerHTML = 'Группа';
-			list.innerHTML = history(4);
+			drop.innerHTML = history(4);
 			$('#opt4').addClass('active');
 			break;
 		case 5:
 			main.innerHTML = 'Подразделение';
-			list.innerHTML = history(5);
+			drop.innerHTML = history(5);
 			$('#opt5').addClass('active');
 			break;
 		case 6:
 			main.innerHTML = 'Роль';
-			list.innerHTML = history(6);
+			drop.innerHTML = history(6);
 			$('#opt6').addClass('active');
 			break;
 		case 7:
@@ -427,7 +441,5 @@ function opt(arg) {
 			$('#dictionary').foundation('open');
 			break;
 		default:
-
 	}
-
 }
