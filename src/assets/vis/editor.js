@@ -289,22 +289,55 @@ function keyup(evt, t) {
 }
 function keydown(evt, t) {
 	if (evt.ctrlKey && evt.keyCode == 49) {
-		console.log(123);
-		selectDrop(2);
+		opt(1);
+	} else if (evt.ctrlKey && evt.keyCode == 50) {
+		opt(2);
+	} else if (evt.ctrlKey && evt.keyCode == 51) {
+		opt(3);
+	} else if (evt.ctrlKey && evt.keyCode == 52) {
+		opt(4);
+	} else if (evt.ctrlKey && evt.keyCode == 53) {
+		opt(5);
+	} else if (evt.ctrlKey && evt.keyCode == 54) {
+		opt(6);
 	}
 }
 
-// function selectDrop(e) {
-// 	document.getElementById("searchOptions").selectedIndex = e;
-// }
 
 function showAll() {
    $('#options').addClass('open');
 }
 function opt(arg) {
+	let main = document.getElementById('selOpt');
 	$('#options').removeClass('open');
 	$('#searchField1').focus();
+	switch (arg) {
+		case 1:
+			main.innerHTML = 'Мои списки';
+			break;
+		case 2:
+			main.innerHTML = 'Поисковое слово';
+			break;
+		case 3:
+			main.innerHTML = 'Сотрудник';
+			break;
+		case 4:
+			main.innerHTML = 'Группа';
+			break;
+		case 5:
+			main.innerHTML = 'Подразделение';
+			break;
+		case 6:
+			main.innerHTML = 'Роль';
+			break;
+		case 7:
+			$('#selOpt').removeClass('open');
+			$('.drop').removeClass('open');
+			$('#options').removeClass('open');
+			$('#dictionary').foundation('open');
+			break;
+		default:
 
-	// console.log(arg);
-	
+	}
+
 }
