@@ -948,66 +948,164 @@ input[type='radio'] {
 	font-size: 1.4em;
 }
 
-.wrapper {
+.wrap {
 	width: 400px;
 	margin: 2em auto;
+	height: 300px;
+	// background: #eee;
 }
 
-.search {
-	margin: 0 auto;
-	margin-top: 2em;
+.search-focus {
 	width: 100%;
-	// max-width: 385px;
-	transition: background 0.5s ease-in-out;
-	&:hover {
-		background: #F2C94C;
-		transition: background 0.5s ease-in-out;
-	}
-	.search-input {
-			margin-bottom: 0;
-		input {
-			width: 100%;
-			height: 36px;
-		}
-	}
-	.select-container {
-		height: 0px;
-		background: transparent;
-		transition: all 0.5s ease-in-out;
-		&.open {
-			height: 40px;
-		}
-		select {
-			background-position-x: 90%;
-			background-position-y: 50%;
-			background-position: center right 15px 0;
-			width: 100%;
-			height: 45px;
-			padding-top: 8px;
-			padding-bottom: 8px;
-			padding-left: 15px;
-			color: #000;
-			background-color: transparent;
-			// background-image: url(https://andrewashley.co.nz/img/icon-arrow-down.svg);
-			background-image: url();
-			background-repeat: no-repeat;
-			background-position: center right 15px;
-			border: 1px solid #ddd;
-			-moz-border-radius: 0;
-			-webkit-border-radius: 0;
-			border-radius: 0;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			height: inherit;
-			// font-family: "Roboto Condensed";
-			border: 0;
-			&:hover {
-				cursor: pointer;
-			}
-		}
+	height: 36px;
+	border: none;
+	outline: none;
+	border-bottom: 1px dotted #53CBED;
+	box-shadow: 0 0 5px #fff;
+	&:focus {
+		box-shadow: 0 0 5px #53CBED;
+		border: 1px solid #53CBED;
 	}
 }
+.selOpt {
+	position: absolute;
+	top:5px;
+	left: 0;
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+	font-size: 12px;
+	padding-left: 10px;
+	cursor: pointer;
+	opacity: 0;
+	z-index: -10;
+	transition: all 0.5s ease-in-out;
+	&.open {
+		opacity: 1;
+		z-index: 5;
+		top: -30px;
+		background: #eee;
+	}
+}
+.drop {
+	background: #fff;
+	width: 100%;
+	height: 0;
+	position: absolute;
+	top: 35px;
+	left: 0;
+	transition: all 0.3s ease-in-out;
+	&.open {
+		border: 1px solid #ccc;
+		box-shadow: 0 0 5px #ccc;
+		height: 150px;
+		z-index: -1;
+	}
+}
+.options {
+	background: #fff;
+	font-size: .9rem;
+	width: 100%;
+	height: 0;
+	position: absolute;
+	top: -30px;
+	left: 0;
+	overflow: hidden;
+	transition: all 0.3s ease-in-out;
+	&.open {
+		height: auto;
+		box-shadow: 1px 1px 5px #ccc;
+	}
+}
+.opt {
+	background: var(--sel);
+	padding: .4em 1em;
+	margin-bottom: 1px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	&:hover {
+		background: #63CBFF;
+		// color: #fff;
+	}
+	&.active {
+		background: #0E94D8;
+		// background: #63CBFF;
+		color: #fff;
+	}
+	div:last-child {
+		font-size: .7rem;
+		line-height: 20px;
+	}
 
+}
+// .search {
+// 	margin: 0 auto;
+// 	margin-top: 2em;
+// 	width: 100%;
+// 	transition: background 0.5s ease-in-out;
+// 	&:hover {
+// 		background: #eee;
+// 		transition: background 0.5s ease-in-out;
+// 	}
+// 	.search-input {
+// 		margin-bottom: 0;
+// 	}
+// 	.select-container {
+// 		position: relative;
+// 		top: 40px;
+// 		left: 0;
+// 		opacity: 0;
+// 		height: 40px;
+// 		background: transparent;
+// 		transition: all 0.5s ease-in-out;
+// 		z-index: -100;
+// 		&.open {
+// 			top: 0px;
+// 			opacity: 1;
+// 			z-index: 10;
+// 		}
+// 		select {
+// 			background-position-x: 90%;
+// 			background-position-y: 50%;
+// 			background-position: center right 15px 0;
+// 			width: 100%;
+// 			height: 45px;
+// 			padding-top: 8px;
+// 			padding-bottom: 8px;
+// 			padding-left: 15px;
+// 			color: #000;
+// 			background-color: transparent;
+// 			background-image: url();
+// 			background-repeat: no-repeat;
+// 			background-position: center right 15px;
+// 			border: 1px solid #ddd;
+// 			-moz-border-radius: 0;
+// 			-webkit-border-radius: 0;
+// 			border-radius: 0;
+// 			-webkit-appearance: none;
+// 			-moz-appearance: none;
+// 			appearance: none;
+// 			height: inherit;
+// 			// font-family: "Roboto Condensed";
+// 			border: 0;
+// 			&:hover {
+// 				cursor: pointer;
+// 			}
+// 		}
+// 	}
+// }
 
-
+// .select-container1 {
+// 	position: relative;
+// 	height: 40px;
+// 	height: auto;
+// 	// border: 1px solid #ccc;
+// 	// overflow: hidden;
+// }
+// #searchOptions1 {
+// 	position: absolute;
+// 	top: 40px;
+// 	top: -10px;
+// 	left: 0px;
+// }

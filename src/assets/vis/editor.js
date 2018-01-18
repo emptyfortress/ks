@@ -272,12 +272,16 @@ function showArrow() {
 // ========================================
 // dv context search
 // ========================================
- $('.search-focus').on('focus', function(event) {
-   $('.select-container').addClass('open');
+ $('#searchField1').on('focus', function(event) {
+   $('#selOpt').addClass('open');
+   $('.drop').addClass('open');
 });
-$('.search-focus').on('focusout', function(event) {
-    $('.select-container').removeClass('open');
+$('#searchField1').on('focusout', function(event) {
+    $('#selOpt').removeClass('open');
+    $('.drop').removeClass('open');
+    $('#options').removeClass('open');
 });
+
 function keyup(evt, t) {
 	if (evt.keyCode == 220) {
 		$('#dictionary').foundation('open');
@@ -294,3 +298,6 @@ function selectDrop(e) {
 	document.getElementById("searchOptions").selectedIndex = e;
 }
 
+function showAll() {
+   $('#options').addClass('open');
+}
