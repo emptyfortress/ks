@@ -294,10 +294,17 @@ function keydown(evt, t) {
 	}
 }
 
-function selectDrop(e) {
-	document.getElementById("searchOptions").selectedIndex = e;
-}
+// function selectDrop(e) {
+// 	document.getElementById("searchOptions").selectedIndex = e;
+// }
 
 function showAll() {
    $('#options').addClass('open');
+}
+function opt(arg) {
+	$('#options').removeClass('open');
+	$('#searchField1').focus();
+
+	// console.log(arg);
+	
 }
