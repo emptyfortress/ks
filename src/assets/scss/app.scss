@@ -950,7 +950,7 @@ input[type='radio'] {
 
 .wrap {
 	width: 400px;
-	margin: 2em auto;
+	margin: .5em auto;
 	height: 300px;
 }
 
@@ -1033,7 +1033,19 @@ input[type='radio'] {
 	right: 10px;
 	cursor: pointer;
 }
-#flat li img {
+#flat li img, .added img {
 	margin-right: .5rem;
 	vertical-align: baseline;
 }
+.added {
+	width: 400px;
+	margin: .5em auto;
+	height: 0;
+	opacity: 0;
+	transition: all .5s ease-in-out;
+	&.open {
+		height: 30px;
+		opacity: 1;
+	}
+}
+

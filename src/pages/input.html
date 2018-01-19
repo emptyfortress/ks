@@ -2,22 +2,26 @@
 <div class="zag">Docsvision контрол сотрудника</div>
 
 <br>
-<div class="wrap rel">
-			<div class="drop history">
-			</div>
-			<div class="inf">Space - открыть фавориты, \ - открыть справочник</div>
-			<input id="searchField1" class="search-focus" type="text" placeholder="Исполнитель" onkeyup="keyup(event, this)">
-			<div class="star">
-				<img src="{{root}}assets/img/star.png" alt="" onclick="showFlat()">
-				<img src="{{root}}assets/img/book.png" data-open="dictionary" alt="">
-			</div>
-</div>
+<form action="" autocomplete="off">
+	<div class="added"><img src="{{root}}assets/img/user.png" alt="">Орлов П.С.</div>
+	<div class="wrap rel">
+		<div class="drop history">
+		</div>
+		<div class="inf">Space - открыть фавориты, \ - открыть справочник</div>
+		<input id="searchField1" class="search-focus" type="text" placeholder="Исполнитель" onkeyup="keyup(event, this)">
+		<div class="star">
+			<img src="{{root}}assets/img/star.png" alt="" onclick="showFlat()">
+			<img src="{{root}}assets/img/book.png" data-open="dictionary" alt="">
+		</div>
+	</div>
+	<input type="submit" style="display: none" />
+</form>
 
 
 <div class="reveal" id="dictionary" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
-  <h4>Справочник сотрудников</h4>
-  <button class="close-button" data-close aria-label="Close reveal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
+	<h4>Справочник сотрудников</h4>
+	<button class="close-button" data-close aria-label="Close reveal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
 </div>
 

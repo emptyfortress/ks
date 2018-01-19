@@ -278,7 +278,7 @@ function history(arg) {
 	switch (arg) {
 		case 1:
 			return `
-				<ul id="flat">
+				<ul id="flat" onclick="sel()">
 					<li><img src="assets/img/mask.png" alt="" />Инициатор</li>
 					<li><img src="assets/img/mask.png" alt="" />Согласующий</li>
 					<li><img src="assets/img/mask.png" alt="" />Подписант</li>
@@ -298,7 +298,7 @@ function history(arg) {
 			break;
 		case 2:
 			return `
-				<ul id="flat">
+				<ul id="flat" onclick="sel()">
 					<li><img src="assets/img/user.png" alt="" />Орлов Г.С.</li>
 					<li><img src="assets/img/user.png" alt="" />Воробьева А.П.</li>
 					<li><img src="assets/img/mask.png" alt="" />Инициатор</li>
@@ -310,7 +310,7 @@ function history(arg) {
 			break;
 		case 7:
 			return `
-				<ul id="flat">
+				<ul id="flat" onclick="sel()">
 				<li><img src="assets/img/search.png" alt="" />Сотрудники департамента автора</li>
 				<li><img src="assets/img/mask.png" alt="" />Инициатор</li>
 				<li><img src="assets/img/user.png" alt="" />Акопян А.Б.</li>
@@ -344,6 +344,7 @@ $('#searchField1').on('focusout', function(event) {
 	$('.inf').removeClass('open');
 	$('.inf').removeClass('open-big');
 	$('.drop').addClass('history');
+	// $('.added').removeClass('open');
 });
 
 function keyup(evt, t) {
@@ -353,8 +354,11 @@ function keyup(evt, t) {
 		$('.drop').removeClass('history');
 		$('.drop').addClass('flat');
 		$('.inf').addClass('open-big');
-		drop.innerHTML = history(1);
 		$('#searchField1').val('');
+		drop.innerHTML = history(1);
+	} else if (evt.keyCode == 39) {
+		$('.added').addClass('open');
+		$( "#searchField1" ).blur();
 	} else {
 		$('.drop').removeClass('history');
 		$('.drop').removeClass('flat');
@@ -363,6 +367,12 @@ function keyup(evt, t) {
 		drop.innerHTML = history(7);
 	}
 }
+
+function sel() {
+	$('.added').addClass('open');
+	$( "#searchField1" ).blur();
+}
+
 function showFlat() {
 	$( "#searchField1" ).focus();
 	$('.drop').removeClass('history');
