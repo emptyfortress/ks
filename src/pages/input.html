@@ -1,62 +1,23 @@
 <br />
 <div class="zag">Docsvision контрол сотрудника</div>
 
-<!-- <div class="wrap"> -->
-<!-- 	<form action="?" method="get" class="search"> -->
-<!-- 		<div class="select-container search-focus"> -->
-<!-- 			<select id="searchOptions" class="form-control search-focus valid"> -->
-<!-- 				<option value="all">Мои списки</option> -->
-<!-- 				<option value="shirts">Поисковое слово</option> -->
-<!-- 				<option value="pants">Сотрудник</option> -->
-<!-- 				<option value="dresses">Группа</option> -->
-<!-- 				<option value="skirts">Подразделение</option> -->
-<!-- 				<option value="footwear">Роли</option> -->
-<!-- 				<option value="footwear">Открыть справочник</option> -->
-<!-- 			</select> -->
-<!-- 		</div> -->
-<!-- 		<div class="form-group || search-input"> -->
-<!-- 			<input id="searchField" class="search-focus" type="text" placeholder="Исполнитель" onkeyup="keyup(event, this)" onkeydown="keydown(event,this)"> -->
-<!-- 		</div> -->
-<!-- 	</form> -->
-<!-- </div> -->
 <br>
 <div class="wrap rel">
-			<div id="options" class="options">
-				<div id="opt1" class="opt active" onclick="opt(1)">
-					<div>Мои списки</div> <div>Ctrl-1</div>
-				</div>
-				<div id="opt2" class="opt" onclick="opt(2)">
-					<div>Поисковое слово</div> <div>Ctrl-2</div>
-				</div>
-				<div id="opt3" class="opt" onclick="opt(3)">
-					<div>Сотрудник</div> <div>Ctrl-3</div>
-				</div>
-				<div id="opt4" class="opt" onclick="opt(4)">
-					<div>Группа</div> <div>Ctrl-4</div>
-				</div>
-				<div id="opt5" class="opt" onclick="opt(5)">
-					<div>Подразделение</div> <div>Ctrl-5</div>
-				</div>
-				<div id="opt6" class="opt" onclick="opt(6)">
-					<div>Роли</div> <div>Ctrl-6</div>
-				</div>
-				<div id="opt7" class="opt" onclick="opt(7)">
-					<div>Открыть справочник</div> <div>\</div>
-				</div>
-			</div>
-			<div id="selOpt" class="selOpt" onclick="showAll()">Мои списки</div>
-			<div class="drop">
-				<p>Последние:</p>
+			<div class="drop history">
 				<ul id="histList">
-					<li><img src="{{root}}assets/img/user.png" alt=""> Орлов Г.С.</li>
-					<li><img src="{{root}}assets/img/user.png" alt="">Воробьева А.П.</li>
-					<li><img src="{{root}}assets/img/mask.png" alt="">Инициатор</li>
-					<li><img src="{{root}}assets/img/group.png" alt="">Заместители</li>
-					<li><img src="{{root}}assets/img/user.png" alt="">Синичкина А.А.</li>
-					<li><img src="{{root}}assets/img/briefcase.png" alt="">Отдел кадров</li>
+					<li>Орлов Г.С.</li>
+					<li>Воробьева А.П.</li>
+					<li>Инициатор</li>
+					<li>Заместители</li>
+					<li>Синичкина А.А.</li>
+					<li>Отдел кадров</li>
 				</ul>
 			</div>
 			<input id="searchField1" class="search-focus" type="text" placeholder="Исполнитель" onkeyup="keyup(event, this)" onkeydown="keydown(event,this)">
+			<div class="star">
+				<img src="{{root}}assets/img/star.png" alt="">
+				<img src="{{root}}assets/img/user.png" data-open="dictionary" alt="">
+			</div>
 </div>
 
 

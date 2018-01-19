@@ -276,14 +276,21 @@ function history(arg) {
 	switch (arg) {
 		case 1:
 			return `
-				<p>Последние:</p>
-				<ul id="histList">
-					<li>Орлов Г.С.</li>
-					<li>Воробьева А.П.</li>
-					<li>Инициатор</li>
-					<li>Заместители</li>
-					<li>Синичкина А.А.</li>
-					<li>Отдел кадров</li>
+				<ul id="flat">
+					<li><img src="/assets/img/mask.png" alt="" />Инициатор</li>
+					<li><img src="/assets/img/mask.png" alt="" />Согласующий</li>
+					<li><img src="/assets/img/mask.png" alt="" />Подписант</li>
+					<li><img src="/assets/img/search.png" alt="" />Заместитили</li>
+					<li><img src="/assets/img/search.png" alt="" />Все подчиненные</li>
+					<li><img src="/assets/img/search.png" alt="" />Сотрудники департамента автора</li>
+					<li><img src="/assets/img/user.png" alt="" />Акопян А.Б.</li>
+					<li><img src="/assets/img/user.png" alt="" />Боровиков С.С.</li>
+					<li><img src="/assets/img/user.png" alt="" />Воробьева А.П.</li>
+					<li><img src="/assets/img/user.png" alt="" />Синичкина Л.Т.</li>
+					<li><img src="/assets/img/group.png" alt="" />Разработчики</li>
+					<li><img src="/assets/img/group.png" alt="" />Админы</li>
+					<li><img src="/assets/img/briefcase.png" alt="" />Отдел маркетинга</li>
+					<li><img src="/assets/img/briefcase.png" alt="" />Отдел кадров</li>
 				</ul>
 				`;
 			break;
@@ -297,56 +304,6 @@ function history(arg) {
 				</ul>
 				`;
 			break;
-		case 3:
-			return `
-				<p>Последние:</p>
-				<ul id="histList">
-					<li>Орлов Г.С.</li>
-					<li>Воробьев А.А.</li>
-					<li>Синичкина А.Е.</li>
-					<li>Галкин П.П.</li>
-					<li>Соловьева Д.У.</li>
-					<li>Уткин Ж.Ф.</li>
-					<li>Жаворонков К.Ф.</li>
-				</ul>
-				`;
-			break;
-		case 4:
-			return `
-				<p>Последние:</p>
-				<ul id="histList">
-					<li>Администраторы</li>
-					<li>Проект Алроса</li>
-					<li>Разработчики на питоне</li>
-					<li>Девочки ДВ</li>
-				</ul>
-				`;
-			break;
-		case 5:
-			return `
-				<p>Последние:</p>
-				<ul id="histList">
-					<li>Бухгалтерия</li>
-					<li>Финансовый отдел</li>
-					<li>Кадры</li>
-					<li>ИТ</li>
-					<li>Склад</li>
-					<li>Охрана</li>
-				</ul>
-				`;
-			break;
-		case 6:
-			return `
-				<p>Последние:</p>
-				<ul id="histList">
-					<li>Инициатор</li>
-					<li>Согласующий</li>
-					<li>Делегат</li>
-					<li>Консолидатор</li>
-					<li>Подписант</li>
-				</ul>
-				`;
-			break;
 		case 7:
 			return ``;
 			break;
@@ -356,18 +313,28 @@ function history(arg) {
  $('#searchField1').on('focus', function(event) {
    $('#selOpt').addClass('open');
    $('.drop').addClass('open');
+   // $('.drop').addClass('history');
 });
+
 $('#searchField1').on('focusout', function(event) {
-    $('#selOpt').removeClass('open');
-    $('.drop').removeClass('open');
-    $('#options').removeClass('open');
+	$('#selOpt').removeClass('open');
+	$('.drop').removeClass('flat');
+	$('.drop').removeClass('open');
+	$('.drop').addClass('history');
 });
 
 function keyup(evt, t) {
+	var drop = document.querySelector('.drop');
 	if (evt.keyCode == 220) {
 		$('#dictionary').foundation('open');
-	} 
+	} else if (evt.keyCode == 32) {
+		$('.drop').removeClass('history');
+		$('.drop').addClass('flat');
+		drop.innerHTML = history(1);
+		$('#searchField1').val('');
+	}
 }
+
 function keydown(evt, t) {
 	var drop = document.querySelector('.drop');
 
