@@ -272,6 +272,8 @@ function showArrow() {
 // ========================================
 // dv context search
 // ========================================
+var drop = document.querySelector('.drop');
+
 function history(arg) {
 	switch (arg) {
 		case 1:
@@ -296,16 +298,20 @@ function history(arg) {
 			break;
 		case 2:
 			return `
-				<p>Последние:</p>
-				<ul id="histList">
-					<li>Все подчиненные</li>
+				<ul id="flat">
+					<li>Орлов Г.С.</li>
+					<li>Воробьева А.П.</li>
+					<li>Инициатор</li>
 					<li>Заместители</li>
-					<li>Сотрудники департамента автора</li>
+					<li>Синичкина А.А.</li>
+					<li>Отдел кадров</li>
 				</ul>
 				`;
 			break;
 		case 7:
-			return ``;
+			return `
+				<p>Поиск производим только в моих списках</p>
+			`;
 			break;
 	}
 }
@@ -313,7 +319,8 @@ function history(arg) {
  $('#searchField1').on('focus', function(event) {
    $('#selOpt').addClass('open');
    $('.drop').addClass('open');
-   // $('.drop').addClass('history');
+   $('.drop').addClass('history');
+		drop.innerHTML = history(2);
 });
 
 $('#searchField1').on('focusout', function(event) {
@@ -324,7 +331,6 @@ $('#searchField1').on('focusout', function(event) {
 });
 
 function keyup(evt, t) {
-	var drop = document.querySelector('.drop');
 	if (evt.keyCode == 220) {
 		$('#dictionary').foundation('open');
 	} else if (evt.keyCode == 32) {
@@ -332,81 +338,65 @@ function keyup(evt, t) {
 		$('.drop').addClass('flat');
 		drop.innerHTML = history(1);
 		$('#searchField1').val('');
-	}
-}
-
-function keydown(evt, t) {
-	var drop = document.querySelector('.drop');
-
-	if (evt.ctrlKey && evt.keyCode == 49) {
-		opt(1);
-		drop.innerHTML = history(1);
-	} else if (evt.ctrlKey && evt.keyCode == 50) {
-		opt(2);
-		drop.innerHTML = history(2);
-	} else if (evt.ctrlKey && evt.keyCode == 51) {
-		opt(3);
-		drop.innerHTML = history(3);
-	} else if (evt.ctrlKey && evt.keyCode == 52) {
-		opt(4);
-		drop.innerHTML = history(4);
-	} else if (evt.ctrlKey && evt.keyCode == 53) {
-		opt(5);
-		drop.innerHTML = history(5);
-	} else if (evt.ctrlKey && evt.keyCode == 54) {
-		opt(6);
-		drop.innerHTML = history(6);
 	} else {
+		$('.drop').removeClass('history');
+		$('.drop').addClass('flat');
 		drop.innerHTML = history(7);
 	}
 }
+function showFlat() {
+		$( "#searchField1" ).focus();
+		$('.drop').removeClass('history');
+		$('.drop').addClass('flat');
+		drop.innerHTML = history(1);
+}
 
-function showAll() {
-   $('#options').addClass('open');
-}
-function opt(arg) {
-	let main = document.getElementById('selOpt');
-	let drop = document.querySelector('.drop');
-	$('#options').removeClass('open');
-	$('#searchField1').focus();
-	$('#options > div').removeClass('active');
-	switch (arg) {
-		case 1:
-			main.innerHTML = 'Мои списки';
-			drop.innerHTML = history(1);
-			$('#opt1').addClass('active');
-			break;
-		case 2:
-			main.innerHTML = 'Поисковое слово';
-			drop.innerHTML = history(2);
-			$('#opt2').addClass('active');
-			break;
-		case 3:
-			main.innerHTML = 'Сотрудник';
-			drop.innerHTML = history(3);
-			$('#opt3').addClass('active');
-			break;
-		case 4:
-			main.innerHTML = 'Группа';
-			drop.innerHTML = history(4);
-			$('#opt4').addClass('active');
-			break;
-		case 5:
-			main.innerHTML = 'Подразделение';
-			drop.innerHTML = history(5);
-			$('#opt5').addClass('active');
-			break;
-		case 6:
-			main.innerHTML = 'Роль';
-			drop.innerHTML = history(6);
-			$('#opt6').addClass('active');
-			break;
-		case 7:
-			$('#selOpt').removeClass('open');
-			$('.drop').removeClass('open');
-			$('#options').removeClass('open');
-			$('#dictionary').foundation('open');
-			break;
-		default:
-	}
-}
+// function showAll() {
+//    $('#options').addClass('open');
+// }
+// function opt(arg) {{{{
+// 	let main = document.getElementById('selOpt');
+// 	let drop = document.querySelector('.drop');
+// 	$('#options').removeClass('open');
+// 	$('#searchField1').focus();
+// 	$('#options > div').removeClass('active');
+// 	switch (arg) {
+// 		case 1:
+// 			main.innerHTML = 'Мои списки';
+// 			drop.innerHTML = history(1);
+// 			$('#opt1').addClass('active');
+// 			break;
+// 		case 2:
+// 			main.innerHTML = 'Поисковое слово';
+// 			drop.innerHTML = history(2);
+// 			$('#opt2').addClass('active');
+// 			break;
+// 		case 3:
+// 			main.innerHTML = 'Сотрудник';
+// 			drop.innerHTML = history(3);
+// 			$('#opt3').addClass('active');
+// 			break;
+// 		case 4:
+// 			main.innerHTML = 'Группа';
+// 			drop.innerHTML = history(4);
+// 			$('#opt4').addClass('active');
+// 			break;
+// 		case 5:
+// 			main.innerHTML = 'Подразделение';
+// 			drop.innerHTML = history(5);
+// 			$('#opt5').addClass('active');
+// 			break;
+// 		case 6:
+// 			main.innerHTML = 'Роль';
+// 			drop.innerHTML = history(6);
+// 			$('#opt6').addClass('active');
+// 			break;
+// 		case 7:
+// 			$('#selOpt').removeClass('open');
+// 			$('.drop').removeClass('open');
+// 			$('#options').removeClass('open');
+// 			$('#dictionary').foundation('open');
+// 			break;
+// 		default:
+// 	}
+// }}}}

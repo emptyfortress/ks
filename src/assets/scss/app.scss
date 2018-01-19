@@ -952,7 +952,6 @@ input[type='radio'] {
 	width: 400px;
 	margin: 2em auto;
 	height: 300px;
-	// background: #eee;
 }
 
 .search-focus {
@@ -962,38 +961,16 @@ input[type='radio'] {
 	outline: none;
 	border-bottom: 1px dotted #53CBED;
 	box-shadow: 0 0 5px #fff;
-	// background-image: url(../img/star.png);
-	// background-position: 100% 50%;
-	// background-repeat: no-repeat;
 	&:focus {
 		box-shadow: 0 0 5px #53CBED;
 		border: 1px solid #53CBED;
-	}
-}
-.selOpt {
-	position: absolute;
-	top:5px;
-	left: 0;
-	height: 30px;
-	width: 100%;
-	line-height: 30px;
-	font-size: 12px;
-	padding-left: 10px;
-	cursor: pointer;
-	opacity: 0;
-	z-index: -10;
-	transition: all 0.5s ease-in-out;
-	&.open {
-		opacity: 1;
-		z-index: 5;
-		top: -30px;
-		background: #eee;
 	}
 }
 .drop {
 	font-size: .9rem;
 	width: 100%;
 	height: 0;
+	// display: flex;
 	position: absolute;
 	top: 35px;
 	left: 0;
@@ -1022,6 +999,11 @@ input[type='radio'] {
 			cursor: pointer;
 			&:hover { background: var(--sel); }
 		}
+	}
+	p {
+		align-self: center;
+		text-align: center;
+		color: #ccc;
 	}
 }
 .star {
