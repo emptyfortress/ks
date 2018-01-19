@@ -279,54 +279,70 @@ function history(arg) {
 		case 1:
 			return `
 				<ul id="flat">
-					<li><img src="/assets/img/mask.png" alt="" />Инициатор</li>
-					<li><img src="/assets/img/mask.png" alt="" />Согласующий</li>
-					<li><img src="/assets/img/mask.png" alt="" />Подписант</li>
-					<li><img src="/assets/img/search.png" alt="" />Заместитили</li>
-					<li><img src="/assets/img/search.png" alt="" />Все подчиненные</li>
-					<li><img src="/assets/img/search.png" alt="" />Сотрудники департамента автора</li>
-					<li><img src="/assets/img/user.png" alt="" />Акопян А.Б.</li>
-					<li><img src="/assets/img/user.png" alt="" />Боровиков С.С.</li>
-					<li><img src="/assets/img/user.png" alt="" />Воробьева А.П.</li>
-					<li><img src="/assets/img/user.png" alt="" />Синичкина Л.Т.</li>
-					<li><img src="/assets/img/group.png" alt="" />Разработчики</li>
-					<li><img src="/assets/img/group.png" alt="" />Админы</li>
-					<li><img src="/assets/img/briefcase.png" alt="" />Отдел маркетинга</li>
-					<li><img src="/assets/img/briefcase.png" alt="" />Отдел кадров</li>
+					<li><img src="assets/img/mask.png" alt="" />Инициатор</li>
+					<li><img src="assets/img/mask.png" alt="" />Согласующий</li>
+					<li><img src="assets/img/mask.png" alt="" />Подписант</li>
+					<li><img src="assets/img/search.png" alt="" />Заместитeли</li>
+					<li><img src="assets/img/search.png" alt="" />Все подчиненные</li>
+					<li><img src="assets/img/search.png" alt="" />Сотрудники департамента автора</li>
+					<li><img src="assets/img/user.png" alt="" />Акопян А.Б.</li>
+					<li><img src="assets/img/user.png" alt="" />Боровиков С.С.</li>
+					<li><img src="assets/img/user.png" alt="" />Воробьева А.П.</li>
+					<li><img src="assets/img/user.png" alt="" />Синичкина Л.Т.</li>
+					<li><img src="assets/img/group.png" alt="" />Разработчики</li>
+					<li><img src="assets/img/group.png" alt="" />Админы</li>
+					<li><img src="assets/img/briefcase.png" alt="" />Отдел маркетинга</li>
+					<li><img src="assets/img/briefcase.png" alt="" />Отдел кадров</li>
 				</ul>
 				`;
 			break;
 		case 2:
 			return `
 				<ul id="flat">
-					<li>Орлов Г.С.</li>
-					<li>Воробьева А.П.</li>
-					<li>Инициатор</li>
-					<li>Заместители</li>
-					<li>Синичкина А.А.</li>
-					<li>Отдел кадров</li>
+					<li><img src="assets/img/user.png" alt="" />Орлов Г.С.</li>
+					<li><img src="assets/img/user.png" alt="" />Воробьева А.П.</li>
+					<li><img src="assets/img/mask.png" alt="" />Инициатор</li>
+					<li><img src="assets/img/group.png" alt="" />Заместители</li>
+					<li><img src="assets/img/user.png" alt="" />Синичкина А.А.</li>
+					<li><img src="assets/img/briefcase.png" alt="" />Отдел кадров</li>
 				</ul>
 				`;
 			break;
 		case 7:
 			return `
-				<p>Поиск производим только в моих списках</p>
-			`;
+				<ul id="flat">
+				<li><img src="assets/img/search.png" alt="" />Сотрудники департамента автора</li>
+				<li><img src="assets/img/mask.png" alt="" />Инициатор</li>
+				<li><img src="assets/img/user.png" alt="" />Акопян А.Б.</li>
+				<li><img src="assets/img/mask.png" alt="" />Согласующий</li>
+				<li><img src="assets/img/mask.png" alt="" />Подписант</li>
+				<li><img src="assets/img/briefcase.png" alt="" />Отдел кадров</li>
+				<li><img src="assets/img/user.png" alt="" />Синичкина Л.Т.</li>
+				<li><img src="assets/img/group.png" alt="" />Админы</li>
+				<li><img src="assets/img/user.png" alt="" />Воробьева А.П.</li>
+				<li><img src="assets/img/briefcase.png" alt="" />Отдел маркетинга</li>
+				<li><img src="assets/img/group.png" alt="" />Разработчики</li>
+				</ul>
+				`;
 			break;
 	}
 }
 
- $('#searchField1').on('focus', function(event) {
-   $('#selOpt').addClass('open');
-   $('.drop').addClass('open');
-   $('.drop').addClass('history');
-		drop.innerHTML = history(2);
+$('#searchField1').on('focus', function(event) {
+	$('#selOpt').addClass('open');
+	$('.drop').addClass('open');
+	$('.inf').addClass('open');
+	$('.drop').addClass('history');
+	drop.innerHTML = history(2);
 });
 
 $('#searchField1').on('focusout', function(event) {
 	$('#selOpt').removeClass('open');
 	$('.drop').removeClass('flat');
+	$('.drop').removeClass('fio');
 	$('.drop').removeClass('open');
+	$('.inf').removeClass('open');
+	$('.inf').removeClass('open-big');
 	$('.drop').addClass('history');
 });
 
@@ -336,67 +352,21 @@ function keyup(evt, t) {
 	} else if (evt.keyCode == 32) {
 		$('.drop').removeClass('history');
 		$('.drop').addClass('flat');
+		$('.inf').addClass('open-big');
 		drop.innerHTML = history(1);
 		$('#searchField1').val('');
 	} else {
 		$('.drop').removeClass('history');
-		$('.drop').addClass('flat');
+		$('.drop').removeClass('flat');
+		$('.inf').addClass('open-big');
+		$('.drop').addClass('fio');
 		drop.innerHTML = history(7);
 	}
 }
 function showFlat() {
-		$( "#searchField1" ).focus();
-		$('.drop').removeClass('history');
-		$('.drop').addClass('flat');
-		drop.innerHTML = history(1);
+	$( "#searchField1" ).focus();
+	$('.drop').removeClass('history');
+	$('.drop').addClass('flat');
+	$('.inf').addClass('open-big');
+	drop.innerHTML = history(1);
 }
-
-// function showAll() {
-//    $('#options').addClass('open');
-// }
-// function opt(arg) {{{{
-// 	let main = document.getElementById('selOpt');
-// 	let drop = document.querySelector('.drop');
-// 	$('#options').removeClass('open');
-// 	$('#searchField1').focus();
-// 	$('#options > div').removeClass('active');
-// 	switch (arg) {
-// 		case 1:
-// 			main.innerHTML = 'Мои списки';
-// 			drop.innerHTML = history(1);
-// 			$('#opt1').addClass('active');
-// 			break;
-// 		case 2:
-// 			main.innerHTML = 'Поисковое слово';
-// 			drop.innerHTML = history(2);
-// 			$('#opt2').addClass('active');
-// 			break;
-// 		case 3:
-// 			main.innerHTML = 'Сотрудник';
-// 			drop.innerHTML = history(3);
-// 			$('#opt3').addClass('active');
-// 			break;
-// 		case 4:
-// 			main.innerHTML = 'Группа';
-// 			drop.innerHTML = history(4);
-// 			$('#opt4').addClass('active');
-// 			break;
-// 		case 5:
-// 			main.innerHTML = 'Подразделение';
-// 			drop.innerHTML = history(5);
-// 			$('#opt5').addClass('active');
-// 			break;
-// 		case 6:
-// 			main.innerHTML = 'Роль';
-// 			drop.innerHTML = history(6);
-// 			$('#opt6').addClass('active');
-// 			break;
-// 		case 7:
-// 			$('#selOpt').removeClass('open');
-// 			$('.drop').removeClass('open');
-// 			$('#options').removeClass('open');
-// 			$('#dictionary').foundation('open');
-// 			break;
-// 		default:
-// 	}
-// }}}}

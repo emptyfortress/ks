@@ -970,7 +970,6 @@ input[type='radio'] {
 	font-size: .9rem;
 	width: 100%;
 	height: 0;
-	// display: flex;
 	position: absolute;
 	top: 35px;
 	left: 0;
@@ -990,6 +989,10 @@ input[type='radio'] {
 		background-image: url("../img/star-big.png");
 		height: 250px;
 	}
+	&.fio {
+		background-image: url("../img/book-big.png");
+		height: 250px;
+	}
 	ul {
 		list-style: none;
 		margin: 0;
@@ -1004,6 +1007,24 @@ input[type='radio'] {
 		align-self: center;
 		text-align: center;
 		color: #ccc;
+	}
+}
+.inf {
+	position: absolute;
+	top: 0;
+	left: 0;
+	// width: 100%;
+	font-size: 11px;
+	color: #ccc;
+	z-index: -10;
+	transition: all 0.5s ease-in-out;
+	&.open {
+	position: absolute;
+	left: 0;
+		top: 185px;
+	}
+	&.open-big{
+		top: 285px;
 	}
 }
 .star {
