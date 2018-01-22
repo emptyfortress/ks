@@ -1077,11 +1077,28 @@ input[type='radio'] {
 			margin: 0 1rem;
 		}
 	}
-	.button.sec {
-		background: #fff;
-		border: 1px solid #ccc;
-		color: #222;
+	.razdel {
+		display: flex;
+		justify-content: space-between;
+		.button {
+			border-radius: 30px;
+			font-size: 12px;
+			padding: 5px 10px;
+			background: #fff;
+			border: 1px solid #ccc;
+			color: #222;
+			&.active {
+				background: #CFE3F8;
+				border: 1px solid #9AC3EF;
+			}
+			
+		}
 	}
+	// .button.sec {
+	// 	background: #fff;
+	// 	border: 1px solid #ccc;
+	// 	color: #222;
+	// }
 	.button.secondary { background: #ccc; color: #000 }
 	#spr { margin-top: -.7rem; }
 }
