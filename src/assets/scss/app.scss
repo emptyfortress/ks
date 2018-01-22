@@ -1061,7 +1061,12 @@ input[type='radio'] {
 			margin-right: .5rem;
 		}
 	}
-	.dic-bg { flex-grow: 1; }
+	.dic-bg { 
+		flex-grow: 1; 
+		height: 100%; 
+		overflow: auto;
+		margin-bottom: 1rem;
+	}
 	.breadcr {
 		margin: 1rem 0;
 		color: #ccc;
@@ -1075,8 +1080,11 @@ input[type='radio'] {
 		}
 		~ .results {
 			margin: 0 1rem;
+			height: 100%;
+			overflow: auto;
 		}
 	}
+	.result { display: block; }
 	.razdel {
 		display: flex;
 		justify-content: space-between;
