@@ -381,10 +381,9 @@ function showFlat() {
 	drop.innerHTML = history(1);
 }
 
-$('#dictionary').on('open.zf.reveal', function() {
-	 $(this).find('input:first').focus();
-	console.log(123);
-	// $("#spr").focus();
-	// $(".search-focus").focus();
-});
+// $('#dictionary').on('open.zf.reveal', function() {
+// 	 $(this).find('input:first').focus();
+// 	console.log(123);
+// 	$("#spr").focus();
+// });
 
