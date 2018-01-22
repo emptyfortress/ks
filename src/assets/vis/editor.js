@@ -356,7 +356,7 @@ function keyup(evt, t) {
 		$('.inf').addClass('open-big');
 		$('#searchField1').val('');
 		drop.innerHTML = history(1);
-	} else if (evt.keyCode == 39) {
+	} else if (evt.keyCode == 40) {
 		$('.added').addClass('open');
 		$( "#searchField1" ).blur();
 	} else {
