@@ -1059,13 +1059,24 @@ input[type='radio'] {
 			margin-right: .5rem;
 		}
 	}
-	.dic-bg {
-		// height: calc(100% - 35px);
-		// width: 100%;
-		// overflow: auto;
-		margin-top: 2rem;
-	}
+	// .dic-bg {
+	// 	height: calc(100% - 35px);
+	// 	width: 100%;
+	// 	overflow: auto;
+	// 	margin-top: 2rem;
+	// }
 } 
-.def {
-	border: 1px solid #ccc;
+// .def {
+// 	border: 1px solid #ccc;
+// }
+.breadcr {
+	margin: 1rem 0;
+	a:link, a:visited {
+		text-decoration: underline;
+		padding: .2rem .5rem;
+		&:hover {
+			background: #FFF6A6;
+			text-decoration: none;
+		}
+	}
 }
