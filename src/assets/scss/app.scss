@@ -1048,4 +1048,24 @@ input[type='radio'] {
 		opacity: 1;
 	}
 }
-
+#dictionary {
+	// width: 80%;
+	max-height: 80%;
+	hr { margin: .4rem -1rem; margin-bottom: 1rem; }
+	h4 {
+		font-size: 19px;
+		img {
+			vertical-align: middle;
+			margin-right: .5rem;
+		}
+	}
+	.dic-bg {
+		// height: calc(100% - 35px);
+		// width: 100%;
+		// overflow: auto;
+		margin-top: 2rem;
+	}
+} 
+.def {
+	border: 1px solid #ccc;
+}
