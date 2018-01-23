@@ -1056,7 +1056,6 @@ input[type='radio'] {
 	min-height: 400px;
 	display: flex;
 	flex-direction: column;
-	transition: all .2s ease-in-out;
 	hr { margin: .4rem -1rem; margin-bottom: 1rem; }
 	h4 {
 		font-size: 19px;
@@ -1065,9 +1064,10 @@ input[type='radio'] {
 			margin-right: .5rem;
 		}
 	}
-	.breadcr {
+	.bread {
 		margin: 1rem 0;
 		color: #ccc;
+		font-size: .9rem;
 		a:link, a:visited {
 			text-decoration: underline;
 			padding: .2rem .5rem;
@@ -1084,7 +1084,7 @@ input[type='radio'] {
 		height: 100%;
 		overflow: auto;
 		border-bottom: 1px solid #eee;
-		transition: all .2s ease-in-out;
+		transition: all .1s ease-in-out;
 		&.away {
 			transform: translate(-100px);
 			opacity: 0;

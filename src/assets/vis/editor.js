@@ -386,21 +386,21 @@ function showFlat() {
 
 let sections = [
 	{ title: 'Сотрудник',             arr: 'hide', img: 'user' },
-	{ title: 'Подразделение',         arr: '',     img: 'briefcase', action: 'dep' },
+	{ title: 'Подразделение',         arr: '',     img: 'briefcase', action: 'dep', },
 	{ title: 'Группа',                arr: '',     img: 'group' },
 	{ title: 'Роль',                  arr: '',     img: 'mask' },
 	{ title: 'Поисковое слово',       arr: '',     img: 'search' },
 ];
 
 let departments = [
-	{ title: 'Отдел кадров',          arr: 'hide', img: 'briefcase' },
-	{ title: 'Отдел маркетинга',      arr: '',     img: 'briefcase' },
-	{ title: 'Отдел продаж',          arr: '',     img: 'briefcase' },
-	{ title: 'Отдел тестирования',    arr: '',     img: 'briefcase' },
-	{ title: 'Производство',          arr: '',     img: 'briefcase' },
-	{ title: 'Бухгалтерия',           arr: '',     img: 'briefcase' },
-	{ title: 'Финансовый отдел',      arr: '',     img: 'briefcase' },
-	{ title: 'Стратегическая группа', arr: '',     img: 'briefcase' },
+	{ title: 'Отдел кадров',          arr: '', img: 'briefcase' },
+	{ title: 'Отдел маркетинга',      arr: '', img: 'briefcase' },
+	{ title: 'Отдел продаж',          arr: '', img: 'briefcase' },
+	{ title: 'Отдел тестирования',    arr: '', img: 'briefcase' },
+	{ title: 'Производство',          arr: '', img: 'briefcase' },
+	{ title: 'Бухгалтерия',           arr: '', img: 'briefcase' },
+	{ title: 'Финансовый отдел',      arr: '', img: 'briefcase' },
+	{ title: 'Стратегическая группа', arr: '', img: 'briefcase' },
 ];
 
 let departments1 = [
@@ -430,16 +430,29 @@ function level1(arg) {
 		`);
 	var deplist = dep.join("");
 	switch (arg) {
+		case 'root':
+			$('.results').addClass('in');
+			$('.bread').html(breadcrumbs(0));
+			// setTimeout(() => {
+			// 	results.innerHTML = deplist;
+			// 	$('.results').removeClass('away');
+			// 	$('.results').addClass('in');
+			// }, 150);
+			// setTimeout(() => {
+			// 	$('.results').removeClass('in');
+			// }, 250)
+			break;
 		case 'dep':
 			$('.results').addClass('away');
+			$('.bread').html(breadcrumbs(1));
 			setTimeout(() => {
 				results.innerHTML = deplist;
 				$('.results').removeClass('away');
 				$('.results').addClass('in');
-			}, 200);
+			}, 150);
 			setTimeout(() => {
 				$('.results').removeClass('in');
-			}, 350)
+			}, 250)
 			break;
 		
 		default:
@@ -447,11 +460,17 @@ function level1(arg) {
 	}
 }
 
+function breadcrumbs(arg) {
+	switch (arg) {
+		case 0:
+			$('.bread').html('<a href="#">Справочник</a>>');
+			break;
+		case 1:
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Подразделение</a>>`;
+			break;
+		
+		default:
+			
+	}
+}
 results.innerHTML = showList();
-
-
-// result.calssList.add("fly-away");
-// setTimeout(() => {
-//    results.innerHTML = showList();
-//    setTimeout(() => results.classList.add("fly-in"));
-// }, 300);
