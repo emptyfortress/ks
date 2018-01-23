@@ -387,7 +387,7 @@ function showFlat() {
 let sections = [
 	{ title: 'Сотрудник',             arr: 'hide', img: 'user' },
 	{ title: 'Подразделение',         arr: '',     img: 'briefcase', action: 'dep', },
-	{ title: 'Группа',                arr: '',     img: 'group' },
+	{ title: 'Группа',                arr: '',     img: 'group', action: 'group' },
 	{ title: 'Роль',                  arr: '',     img: 'mask' },
 	{ title: 'Поисковое слово',       arr: '',     img: 'search' },
 ];
@@ -403,18 +403,16 @@ let departments = [
 	{ title: 'Стратегическая группа', arr: '', img: 'briefcase' },
 ];
 
-let departments1 = [
-	{ title: 'Отдел кадров',          arr: 'hide', img: 'briefcase' },
-	{ title: 'Отдел маркетинга',      arr: '',     img: 'briefcase' },
-	{ title: 'Отдел продаж',          arr: '',     img: 'briefcase' },
-	{ title: 'Отдел тестирования',    arr: '',     img: 'briefcase' },
-	{ title: 'Производство',          arr: '',     img: 'briefcase' },
-	{ title: 'Бухгалтерия',           arr: '',     img: 'briefcase' },
-	{ title: 'Финансовый отдел',      arr: '',     img: 'briefcase' },
-	{ title: 'Стратегическая группа', arr: '',     img: 'briefcase' },
+let groups = [
+	{ title: 'Мои заместители',           img: 'group' },
+	{ title: 'Девочки ДВ',       img: 'group' },
+	{ title: 'Мальчики ДВ',           img: 'group' },
+	{ title: 'Администраторы',     img: 'group' },
+	{ title: 'Секретари',           img: 'group' },
+	{ title: 'Разработчики',            img: 'group' },
 ];
 
-function showList(arg) {
+function showList() {
 	var sec = sections.map((item,index) =>`
 		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
@@ -429,24 +427,40 @@ function level1(arg) {
 		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
 		`);
 	var deplist = dep.join("");
+	var group = groups.map((item,index) =>`
+		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		`);
+	var grouplist = group.join("");
 	switch (arg) {
 		case 'root':
 			$('.results').addClass('in');
 			$('.bread').html(breadcrumbs(0));
-			// setTimeout(() => {
-			// 	results.innerHTML = deplist;
-			// 	$('.results').removeClass('away');
-			// 	$('.results').addClass('in');
-			// }, 150);
-			// setTimeout(() => {
-			// 	$('.results').removeClass('in');
-			// }, 250)
+			setTimeout(() => {
+				results.innerHTML = showList() ;
+				$('.results').removeClass('in');
+				$('.results').addClass('away');
+			}, 150);
+			setTimeout(() => {
+				$('.results').removeClass('away');
+			}, 250)
 			break;
 		case 'dep':
 			$('.results').addClass('away');
-			$('.bread').html(breadcrumbs(1));
+			$('.bread').html(breadcrumbs('dep'));
 			setTimeout(() => {
 				results.innerHTML = deplist;
+				$('.results').removeClass('away');
+				$('.results').addClass('in');
+			}, 150);
+			setTimeout(() => {
+				$('.results').removeClass('in');
+			}, 250)
+			break;
+		case 'group':
+			$('.results').addClass('away');
+			$('.bread').html(breadcrumbs('group'));
+			setTimeout(() => {
+				results.innerHTML = grouplist;
 				$('.results').removeClass('away');
 				$('.results').addClass('in');
 			}, 150);
@@ -465,8 +479,11 @@ function breadcrumbs(arg) {
 		case 0:
 			$('.bread').html('<a href="#">Справочник</a>>');
 			break;
-		case 1:
+		case 'dep':
 			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Подразделение</a>>`;
+			break;
+		case 'group':
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Группа</a>>`;
 			break;
 		
 		default:
