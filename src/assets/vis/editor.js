@@ -381,29 +381,72 @@ function showFlat() {
 	drop.innerHTML = history(1);
 }
 
+
+
+var results = document.querySelector('.results');
+
 let sections = [
-	{ title: 'Сотрудник', img: 'user' },
-	{ title: 'Подразделение', img: 'briefcase' },
-	{ title: 'Группа', img: 'group' },
-	{ title: 'Роль', img: 'mask' },
-	{ title: 'Поисковое слово', img: 'search' },
-]
+	{ title: 'Сотрудник',             arr: 'hide', img: 'user' },
+	{ title: 'Подразделение',         arr: '',     img: 'briefcase', action: 'dep' },
+	{ title: 'Группа',                arr: '',     img: 'group' },
+	{ title: 'Роль',                  arr: '',     img: 'mask' },
+	{ title: 'Поисковое слово',       arr: '',     img: 'search' },
+];
+
+let departments = [
+	{ title: 'Отдел кадров',          arr: 'hide', img: 'briefcase' },
+	{ title: 'Отдел маркетинга',      arr: '',     img: 'briefcase' },
+	{ title: 'Отдел продаж',          arr: '',     img: 'briefcase' },
+	{ title: 'Отдел тестирования',    arr: '',     img: 'briefcase' },
+	{ title: 'Производство',          arr: '',     img: 'briefcase' },
+	{ title: 'Бухгалтерия',           arr: '',     img: 'briefcase' },
+	{ title: 'Финансовый отдел',      arr: '',     img: 'briefcase' },
+	{ title: 'Стратегическая группа', arr: '',     img: 'briefcase' },
+];
+
+let departments1 = [
+	{ title: 'Отдел кадров',          arr: 'hide', img: 'briefcase' },
+	{ title: 'Отдел маркетинга',      arr: '',     img: 'briefcase' },
+	{ title: 'Отдел продаж',          arr: '',     img: 'briefcase' },
+	{ title: 'Отдел тестирования',    arr: '',     img: 'briefcase' },
+	{ title: 'Производство',          arr: '',     img: 'briefcase' },
+	{ title: 'Бухгалтерия',           arr: '',     img: 'briefcase' },
+	{ title: 'Финансовый отдел',      arr: '',     img: 'briefcase' },
+	{ title: 'Стратегическая группа', arr: '',     img: 'briefcase' },
+];
 
 function showList(arg) {
-	var newlist = sections.map((item,index) =>`
-		<a class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}</a>
+	var sec = sections.map((item,index) =>`
+		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
-	var newlist1 = newlist.join("");
+	var newlist1 = sec.join("");
+	return newlist1;
+}
+
+function level1(arg) {
+	var dep = departments.map((item,index) =>`
+		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		`);
+	var deplist = dep.join("");
 	switch (arg) {
-		case 1:
-			return newlist1
+		case 'dep':
+			$('.results').foundation('toggle');
+			setTimeout(() => {
+				results.innerHTML = deplist;
+				$('.results').foundation('toggle');
+			}, 400);
 			break;
+		
 		default:
 			
 	}
 }
 
-var results = document.querySelector('.results');
-results.innerHTML = showList(1);
+results.innerHTML = showList();
 
 
+// result.calssList.add("fly-away");
+// setTimeout(() => {
+//    results.innerHTML = showList();
+//    setTimeout(() => results.classList.add("fly-in"));
+// }, 300);
