@@ -383,7 +383,6 @@ function showFlat() {
 
 
 
-var results = document.querySelector('.results');
 
 let sections = [
 	{ title: 'Сотрудник',             arr: 'hide', img: 'user' },
@@ -423,6 +422,8 @@ function showList(arg) {
 	return newlist1;
 }
 
+var results = document.querySelector('.results');
+
 function level1(arg) {
 	var dep = departments.map((item,index) =>`
 		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
@@ -430,11 +431,15 @@ function level1(arg) {
 	var deplist = dep.join("");
 	switch (arg) {
 		case 'dep':
-			$('.results').foundation('toggle');
+			$('.results').addClass('away');
 			setTimeout(() => {
 				results.innerHTML = deplist;
-				$('.results').foundation('toggle');
-			}, 400);
+				$('.results').removeClass('away');
+				$('.results').addClass('in');
+			}, 200);
+			setTimeout(() => {
+				$('.results').removeClass('in');
+			}, 350)
 			break;
 		
 		default:

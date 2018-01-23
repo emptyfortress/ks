@@ -1051,11 +1051,12 @@ input[type='radio'] {
 #dictionary {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
-	height: 80vh;
-	// max-height: 80vh;
-	// min-height: 400px;
+	// height: 80vh;
+	max-height: 80vh;
+	min-height: 400px;
 	display: flex;
 	flex-direction: column;
+	transition: all .2s ease-in-out;
 	hr { margin: .4rem -1rem; margin-bottom: 1rem; }
 	h4 {
 		font-size: 19px;
@@ -1083,15 +1084,15 @@ input[type='radio'] {
 		height: 100%;
 		overflow: auto;
 		border-bottom: 1px solid #eee;
-		transition: all .3s ease-in-out;
-		// &.fly-away {
-		// 	transform: translate(-1000px)
-		// 	opacity: 0;
-		// 	&.fly-in {
-		// 		transform: translate(1000px);
-		// 		opacity: 1;
-		// 	}
-		// }
+		transition: all .2s ease-in-out;
+		&.away {
+			transform: translate(-100px);
+			opacity: 0;
+		}
+		&.in {
+			transform: translate(100px);
+			opacity: 0;
+		}
 	}
 	.result { 
 		font-size: .95rem;
