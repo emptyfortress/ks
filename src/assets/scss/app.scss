@@ -1087,9 +1087,11 @@ input[type='radio'] {
 	.result { 
 		display: block; 
 		padding: .2rem 1rem;
+		cursor: pointer;
 		img {
 			vertical-align: baseline;
 			margin-right: .5rem;
+			// width: 20px;
 		}
 		&:hover {
 			background: var(--sel);

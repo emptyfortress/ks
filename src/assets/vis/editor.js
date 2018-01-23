@@ -381,9 +381,29 @@ function showFlat() {
 	drop.innerHTML = history(1);
 }
 
-// $('#dictionary').on('open.zf.reveal', function() {
-// 	 $(this).find('input:first').focus();
-// 	console.log(123);
-// 	$("#spr").focus();
-// });
+let sections = [
+	{ title: 'Сотрудник', img: 'user' },
+	{ title: 'Подразделение', img: 'briefcase' },
+	{ title: 'Группа', img: 'group' },
+	{ title: 'Роль', img: 'mask' },
+	{ title: 'Поисковое слово', img: 'search' },
+]
+
+function showList(arg) {
+	var newlist = sections.map((item,index) =>`
+		<a class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}</a>
+		`);
+	var newlist1 = newlist.join("");
+	switch (arg) {
+		case 1:
+			return newlist1
+			break;
+		default:
+			
+	}
+}
+
+var results = document.querySelector('.results');
+results.innerHTML = showList(1);
+
 
