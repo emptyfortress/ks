@@ -483,22 +483,22 @@ function level1(arg) {
 	let deplist = dep.join("");
 
 	let group = groups.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let grouplist = group.join("");
 
 	let role = roles.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let rolelist = role.join("");
 
 	let word = words.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let wordlist = word.join("");
 
 	let hr = depUsers.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	var hrlist = hr.join("");
 
