@@ -564,9 +564,10 @@ function addUser() {
 	}, 500)
 }
 
+
 var selectThis = function(that) {
 	$(that).toggleClass('active');
-	$('#selectButton').toggleClass('dis');
+	$('.result.active').length > 0 ? $('#selectButton').removeClass('dis') : $('#selectButton').addClass('dis');
 };
 
 results.innerHTML = showList();
