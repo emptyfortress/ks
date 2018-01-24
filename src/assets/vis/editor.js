@@ -478,7 +478,7 @@ function level1(arg) {
 	let root = sec.join("");
 
 	let dep = departments.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let deplist = dep.join("");
 
@@ -531,7 +531,6 @@ function level1(arg) {
 			$('.bread').html(breadcrumbs('hr'));
 			animateForward(hrlist);
 			break;
-		default:
 	}
 }
 
@@ -542,21 +541,15 @@ function breadcrumbs(arg) {
 			$('.bread').html('<a href="#">Справочник</a>>');
 			break;
 		case 'dep':
-			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Подразделение</a>>`;
-			break;
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Подразделение</a>>`; break;
 		case 'group':
-			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Группа</a>>`;
-			break;
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Группа</a>>`; break;
 		case 'role':
-			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Роль</a>>`;
-			break;
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Роль</a>>`; break;
 		case 'word':
-			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Поисковое слово</a>>`;
-			break;
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Поисковое слово</a>>`; break;
 		case 'hr':
-			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#" onclick="level1('depback')">Подразделение</a>><a href="#">Отдел кадров</a>>`;
-			break;
-		default:
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#" onclick="level1('depback')">Подразделение</a>><a href="#">Отдел кадров</a>>`; break;
 	}
 }
 
@@ -567,5 +560,13 @@ function addUser() {
 	}, 500)
 }
 
+var selectThis = function(that) {
+  $(that).toggleClass('active');
+	$('#selectButton').toggleClass('dis');
+};
 
 results.innerHTML = showList();
+
+	window.onload = function() {
+		$('#dictionary').foundation('open');
+	};

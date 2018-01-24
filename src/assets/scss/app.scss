@@ -63,6 +63,7 @@
 	--dv-green:#91C94C;
 	--dv-yellow:#FEC038;
 	--sel: #CBECFFaa;
+	--sel-border: darken(#CBECFF, 10%);
 }
 
 $primary-blue: #1779BA;
@@ -1100,12 +1101,20 @@ input[type='radio'] {
 		display: block; 
 		padding: .2rem .5rem;
 		cursor: pointer;
+		&.active {
+			background: var(--sel) ;
+			border: 1px solid var(--sel-border);
+			&:hover {
+				background: var(--sel) ;
+				border: 1px solid var(--sel-border);
+			}
+		}
 		img {
 			vertical-align: baseline;
 			margin-right: .5rem;
 		}
 		&:hover {
-			background: var(--sel);
+			background: #eee;
 			color: #222;
 		}
 		span {
@@ -1137,6 +1146,7 @@ input[type='radio'] {
 	}
 	.fle .button { 
 		margin-bottom: 0; 
+		transition: all .2s ease;
 		&.dis {
 			opacity: .2;
 		}
