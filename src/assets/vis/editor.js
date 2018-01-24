@@ -457,6 +457,7 @@ function animateBack(arg) {//{{{
 	}, 150);
 	setTimeout(() => {
 		$('.results').removeClass('away');
+		refresh();
 	}, 250)
 }
 function animateForward(arg) {
@@ -468,6 +469,7 @@ function animateForward(arg) {
 	}, 150);
 	setTimeout(() => {
 		$('.results').removeClass('in');
+		refresh();
 	}, 250)
 }//}}}
 
@@ -561,12 +563,29 @@ function addUser() {
 }
 
 var selectThis = function(that) {
-  $(that).toggleClass('active');
+	$(that).toggleClass('active');
 	$('#selectButton').toggleClass('dis');
 };
 
 results.innerHTML = showList();
 
-	window.onload = function() {
-		$('#dictionary').foundation('open');
-	};
+window.onload = function() {
+	$('#dictionary').foundation('open');
+};
+
+// ========================================
+// фильтр в справочнике сотрудников
+// ========================================
+var refresh = function() {
+	var $rows = $(".result"),
+		$filter = $("#filter");
+
+	$("#filter").keyup(function () {
+		var filterText = $filter.val().toLowerCase();
+		$rows.each(function () {
+			var $row = $(this);
+			$row.toggle($row.text().toLowerCase().indexOf(filterText) > -1);
+		});
+	});
+}
+refresh();
