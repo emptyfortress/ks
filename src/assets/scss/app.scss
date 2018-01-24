@@ -1066,7 +1066,7 @@ input[type='radio'] {
 	}
 	.bread {
 		margin: 1rem 0;
-		color: #ccc;
+		color: #aaa;
 		font-size: .9rem;
 		a:link, a:visited {
 			text-decoration: underline;
@@ -1135,7 +1135,12 @@ input[type='radio'] {
 
 		}
 	}
-	.fle .button { margin-bottom: 0; }
+	.fle .button { 
+		margin-bottom: 0; 
+		&.dis {
+			opacity: .2;
+		}
+	}
 	.button.secondary { background: #ccc; color: #000 }
 	#spr { margin-top: -.7rem; }
 }

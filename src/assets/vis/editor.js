@@ -400,30 +400,30 @@ let departments = [
 ];
 
 let groups = [
-	{ title: 'Мои заместители', img: 'group', bold: 'bold' },
-	{ title: 'Девочки ДВ',      img: 'group', bold: 'bold' },
-	{ title: 'Мальчики ДВ',     img: 'group', bold: 'bold' },
-	{ title: 'Администраторы',  img: 'group', bold: 'bold' },
-	{ title: 'Секретари',       img: 'group', bold: 'bold' },
-	{ title: 'Разработчики',    img: 'group', bold: 'bold' },
+	{ title: 'Мои заместители', img: 'group', bold: 'bold', action: 'hr'  },
+	{ title: 'Девочки ДВ',      img: 'group', bold: 'bold', action: 'hr'  },
+	{ title: 'Мальчики ДВ',     img: 'group', bold: 'bold', action: 'hr'  },
+	{ title: 'Администраторы',  img: 'group', bold: 'bold', action: 'hr'  },
+	{ title: 'Секретари',       img: 'group', bold: 'bold', action: 'hr'  },
+	{ title: 'Разработчики',    img: 'group', bold: 'bold', action: 'hr'  },
 ];
 
 let roles = [
-	{ title: 'Инициатор',         img: 'mask', bold: 'bold' },
-	{ title: 'Согласующий',       img: 'mask', bold: 'bold' },
-	{ title: 'Консолидатор',      img: 'mask', bold: 'bold' },
-	{ title: 'Регистратор',       img: 'mask', bold: 'bold' },
+	{ title: 'Инициатор',         img: 'mask', bold: 'bold', action: 'hr'  },
+	{ title: 'Согласующий',       img: 'mask', bold: 'bold', action: 'hr'  },
+	{ title: 'Консолидатор',      img: 'mask', bold: 'bold', action: 'hr'  },
+	{ title: 'Регистратор',       img: 'mask', bold: 'bold', action: 'hr'  },
 ];
 
 let words = [
-	{ title: 'Заместители',                    img: 'search', bold: 'bold' },
-	{ title: 'Все подчиненные',                img: 'search', bold: 'bold' },
-	{ title: 'Сотрудники департамента автора', img: 'search', bold: 'bold' },
+	{ title: 'Заместители',                    img: 'search', bold: 'bold', action: 'hr'  },
+	{ title: 'Все подчиненные',                img: 'search', bold: 'bold', action: 'hr'  },
+	{ title: 'Сотрудники департамента автора', img: 'search', bold: 'bold', action: 'hr'  },
 ];
 
 let depUsers = [
-	{ title: 'Подотдел очистки',  img: 'briefcase', bold: 'bold' },
-	{ title: 'Подотдел шлифовки', img: 'briefcase', bold: 'bold' },
+	{ title: 'Это подраздел',  img: 'briefcase', bold: 'bold' },
+	{ title: 'Это подраздел', img: 'briefcase', bold: 'bold' },
 	{ title: 'Орлов Г.Ф.',        img: 'user',      arr: 'hide' },
 	{ title: 'Воробьева А.А.',    img: 'user',      arr: 'hide' },
 	{ title: 'Синичкина Б.Б.',    img: 'user',      arr: 'hide' },
@@ -483,22 +483,22 @@ function level1(arg) {
 	let deplist = dep.join("");
 
 	let group = groups.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let grouplist = group.join("");
 
 	let role = roles.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let rolelist = role.join("");
 
 	let word = words.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let wordlist = word.join("");
 
 	let hr = depUsers.map((item,index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	var hrlist = hr.join("");
 
@@ -559,4 +559,13 @@ function breadcrumbs(arg) {
 		default:
 	}
 }
+
+function addUser() {
+	$('.added').addClass('open');
+	setTimeout(() => {
+		$( "#searchField1" ).focus();
+	}, 500)
+}
+
+
 results.innerHTML = showList();
