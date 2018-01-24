@@ -381,15 +381,12 @@ function showFlat() {
 	drop.innerHTML = history(1);
 }
 
-
-
-
 let sections = [
-	{ title: 'Сотрудник',             arr: 'hide', img: 'user' },
-	{ title: 'Подразделение',         arr: '',     img: 'briefcase', action: 'dep', },
-	{ title: 'Группа',                arr: '',     img: 'group', action: 'group' },
-	{ title: 'Роль',                  arr: '',     img: 'mask' },
-	{ title: 'Поисковое слово',       arr: '',     img: 'search' },
+	// { title: 'Сотрудник',       arr: 'hide', img: 'user' },
+	{ title: 'Подразделение',   arr: '',     img: 'briefcase', action: 'dep', },
+	{ title: 'Группа',          arr: '',     img: 'group',     action: 'group' },
+	{ title: 'Роль',            arr: '',     img: 'mask',      action: 'role' },
+	{ title: 'Поисковое слово', arr: '',     img: 'search',    action: 'word' },
 ];
 
 let departments = [
@@ -404,16 +401,29 @@ let departments = [
 ];
 
 let groups = [
-	{ title: 'Мои заместители',           img: 'group' },
-	{ title: 'Девочки ДВ',       img: 'group' },
-	{ title: 'Мальчики ДВ',           img: 'group' },
-	{ title: 'Администраторы',     img: 'group' },
-	{ title: 'Секретари',           img: 'group' },
-	{ title: 'Разработчики',            img: 'group' },
+	{ title: 'Мои заместители', img: 'group' },
+	{ title: 'Девочки ДВ',      img: 'group' },
+	{ title: 'Мальчики ДВ',     img: 'group' },
+	{ title: 'Администраторы',  img: 'group' },
+	{ title: 'Секретари',       img: 'group' },
+	{ title: 'Разработчики',    img: 'group' },
+];
+
+let roles = [
+	{ title: 'Инициатор',         img: 'mask' },
+	{ title: 'Согласующий',       img: 'mask' },
+	{ title: 'Консолидатор',      img: 'mask' },
+	{ title: 'Регистратор',       img: 'mask' },
+];
+
+let words = [
+	{ title: 'Заместители',                    img: 'search' },
+	{ title: 'Все подчиненные',                img: 'search' },
+	{ title: 'Сотрудники департамента автора', img: 'search' },
 ];
 
 function showList() {
-	var sec = sections.map((item,index) =>`
+	var sec = sections.map((item, index) =>`
 		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	var newlist1 = sec.join("");
@@ -422,60 +432,78 @@ function showList() {
 
 var results = document.querySelector('.results');
 
+function animateBack() {
+	$('.results').addClass('in');
+	setTimeout(() => {
+		results.innerHTML = showList() ;
+		$('.results').removeClass('in');
+		$('.results').addClass('away');
+	}, 150);
+	setTimeout(() => {
+		$('.results').removeClass('away');
+	}, 250)
+}
+function animateForward(arg) {
+	$('.results').addClass('away');
+	setTimeout(() => {
+		results.innerHTML = arg;
+		$('.results').removeClass('away');
+		$('.results').addClass('in');
+	}, 150);
+	setTimeout(() => {
+		$('.results').removeClass('in');
+	}, 250)
+}
+
 function level1(arg) {
 	var dep = departments.map((item,index) =>`
 		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
 		`);
 	var deplist = dep.join("");
+
 	var group = groups.map((item,index) =>`
 		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
 		`);
 	var grouplist = group.join("");
+
+	var role = roles.map((item,index) =>`
+		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		`);
+	var rolelist = role.join("");
+
+	var word = words.map((item,index) =>`
+		<div class="result"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}"></span></div>
+		`);
+	var wordlist = word.join("");
+
 	switch (arg) {
 		case 'root':
-			$('.results').addClass('in');
 			$('.bread').html(breadcrumbs(0));
-			setTimeout(() => {
-				results.innerHTML = showList() ;
-				$('.results').removeClass('in');
-				$('.results').addClass('away');
-			}, 150);
-			setTimeout(() => {
-				$('.results').removeClass('away');
-			}, 250)
+			animateBack();
 			break;
 		case 'dep':
-			$('.results').addClass('away');
 			$('.bread').html(breadcrumbs('dep'));
-			setTimeout(() => {
-				results.innerHTML = deplist;
-				$('.results').removeClass('away');
-				$('.results').addClass('in');
-			}, 150);
-			setTimeout(() => {
-				$('.results').removeClass('in');
-			}, 250)
+			animateForward(deplist);
 			break;
 		case 'group':
-			$('.results').addClass('away');
 			$('.bread').html(breadcrumbs('group'));
-			setTimeout(() => {
-				results.innerHTML = grouplist;
-				$('.results').removeClass('away');
-				$('.results').addClass('in');
-			}, 150);
-			setTimeout(() => {
-				$('.results').removeClass('in');
-			}, 250)
+			animateForward(grouplist);
 			break;
-		
+		case 'role':
+			$('.bread').html(breadcrumbs('role'));
+			animateForward(rolelist);
+			break;
+		case 'word':
+			$('.bread').html(breadcrumbs('word'));
+			animateForward(wordlist);
+			break;
 		default:
-			
 	}
 }
 
 function breadcrumbs(arg) {
-	switch (arg) {
+	let current = arg;
+	switch (current) {
 		case 0:
 			$('.bread').html('<a href="#">Справочник</a>>');
 			break;
@@ -484,6 +512,12 @@ function breadcrumbs(arg) {
 			break;
 		case 'group':
 			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Группа</a>>`;
+			break;
+		case 'role':
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Роль</a>>`;
+			break;
+		case 'word':
+			return `<a href="#" onclick="level1('root')">Справочник</a>><a href="#">Поисковое слово</a>>`;
 			break;
 		
 		default:
