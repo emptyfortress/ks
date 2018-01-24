@@ -458,6 +458,7 @@ function animateBack(arg) {//{{{
 	setTimeout(() => {
 		$('.results').removeClass('away');
 		refresh();
+		$('#filter').val("");
 	}, 250)
 }
 function animateForward(arg) {
@@ -470,6 +471,7 @@ function animateForward(arg) {
 	setTimeout(() => {
 		$('.results').removeClass('in');
 		refresh();
+		$('#filter').val("");
 	}, 250)
 }//}}}
 
