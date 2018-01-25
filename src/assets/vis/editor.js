@@ -572,9 +572,9 @@ var selectThis = function(that) {
 
 results.innerHTML = showList();
 
-// window.onload = function() {
-// 	$('#dictionary').foundation('open');
-// };
+window.onload = function() {
+	$('#dictionary').foundation('open');
+};
 
 // ========================================
 // фильтр в справочнике сотрудников
