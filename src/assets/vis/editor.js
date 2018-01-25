@@ -440,7 +440,7 @@ let depUsers = [
 
 function showList() {//{{{
 	var sec = sections.map((item, index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	var newlist1 = sec.join("");
 	return newlist1;
@@ -477,32 +477,32 @@ function animateForward(arg) {
 
 function level1(arg) {
 	let sec = sections.map((item, index) =>`
-		<div class="result ${item.bold}"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let root = sec.join("");
 
 	let dep = departments.map((item,index) =>`
-		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let deplist = dep.join("");
 
 	let group = groups.map((item,index) =>`
-		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let grouplist = group.join("");
 
 	let role = roles.map((item,index) =>`
-		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let rolelist = role.join("");
 
 	let word = words.map((item,index) =>`
-		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	let wordlist = word.join("");
 
 	let hr = depUsers.map((item,index) =>`
-		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="/assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
+		<div class="result ${item.bold}" onclick="selectThis(this)"><img src="assets/img/${item.img}.png" alt="">${item.title}<span class="${item.arr}" onclick="level1('${item.action}')"></span></div>
 		`);
 	var hrlist = hr.join("");
 
@@ -560,7 +560,7 @@ function breadcrumbs(arg) {
 function addUser() {
 	$('.added').addClass('open');
 	setTimeout(() => {
-		$( "#searchField1" ).focus();
+		// $( "#searchField1" ).focus();
 	}, 500)
 }
 
@@ -572,9 +572,9 @@ var selectThis = function(that) {
 
 results.innerHTML = showList();
 
-window.onload = function() {
-	$('#dictionary').foundation('open');
-};
+// window.onload = function() {
+// 	$('#dictionary').foundation('open');
+// };
 
 // ========================================
 // фильтр в справочнике сотрудников
