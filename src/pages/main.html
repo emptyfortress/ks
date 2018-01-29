@@ -60,13 +60,13 @@
 			<div id="paneContainer">
 				<div id="editor">
 					<div id="dragbar"></div>
-					<div class="white left">
+					<div class="white left" onclick="nothing()">
 						<div class="fl">
-							<img src="{{root}}assets/img/bpmn-digdes.png" class="pointer" alt="">
+							<img src="{{root}}assets/img/bpmn-digdes.png" usemap="#map">
 							<img src="{{root}}assets/img/add.png" class="pointer adding0" alt="" onclick="showButtons()">
-							<img src="{{root}}assets/img/add1.png" class="pointer adding1" alt="" onclick="showButtons()">
-							<img src="{{root}}assets/img/preview.png" class="pointer preview" alt="" >
-							<img src="{{root}}assets/img/add4.png" id="dopBt" class="pointer adding2 hide" alt="" onclick="showButtons()">
+							<a href="http://visjs.org/examples/network/events/interactionEvents.html"><img src="{{root}}assets/img/add1.png" class="pointer adding1" alt=""></a>
+							<img src="{{root}}assets/img/preview.png" class="pointer preview" alt="" data-tooltip title="Просмотреть граф для конкретной РК">
+							<img src="{{root}}assets/img/add3.png" id="dopBt" class="pointer adding2 hide" alt="" onclick="showButtons()">
 							<div class="vybor">
 								<a id="noth" onclick="nothing()" class="active">Ничего не выбрано</a>
 								<a id="eta" onclick="showEtap()">Этап</a>
@@ -775,3 +775,25 @@
 		<!-- <div data-close class="button primary">Добавить</div> -->
 	</div>
 </div>
+
+
+<map name="map">
+    <area shape="poly" coords="444, 236, 446, 361, 421, 362, 425, 322, 413, 275, 414, 235" />
+    <area shape="poly" coords="273, 308, 239, 314, 209, 328, 205, 363, 179, 361, 185, 314, 209, 292, 255, 286, 273, 286" />
+    <area shape="poly" coords="329, 291, 358, 291, 400, 301, 423, 329, 418, 363, 397, 363, 398, 332, 367, 317, 326, 314" />
+    <area shape="poly" coords="259, 238, 285, 237, 306, 264, 309, 277, 282, 277, 261, 255" />
+    <area shape="poly" coords="60, 364, 41, 363, 53, 322, 69, 286, 112, 268, 160, 266, 208, 252, 222, 238, 247, 239, 240, 263, 186, 288, 121, 295, 85, 309" />
+    <area shape="poly" coords="101, 121, 85, 142, 59, 165, 55, 187, 29, 187, 49, 139, 67, 118" />
+    <area shape="poly" coords="174, 145, 200, 155, 235, 166, 237, 189, 212, 189, 204, 174, 151, 159, 150, 146" />
+    <area shape="poly" coords="218, 108, 270, 120, 358, 129, 420, 142, 441, 188, 418, 185, 393, 154, 334, 146, 214, 134" />
+    <area shape="rect" id="ext-cond" coords="279, 280, 322, 323" onclick="showExternal()" />
+    <area shape="rect" coords="140, 19, 180, 56" onclick="showEtap()"/>
+    <area shape="rect" coords="372, 366, 481, 409" onclick="showEtap()"/>
+    <area shape="rect" coords="142, 365, 246, 407" onclick="showEtap()"/>
+    <area shape="rect" coords="2, 370, 104, 409" onclick="showEtap()"/>
+    <area shape="rect" coords="382, 193, 485, 232" onclick="showEtap()"/>
+    <area shape="rect" coords="203, 194, 304, 235" onclick="showEtap()"/>
+    <area shape="rect" coords="0, 191, 105, 234" onclick="showEtap()"/>
+    <area shape="rect" coords="107, 103, 211, 143" onclick="showEtap()"/>
+</map>
+
