@@ -885,16 +885,28 @@ input[type='radio'] {
 	color: #ccc;
 	font-size: 12px;
 }
-.adding {
+.adding0 {
 	position: absolute;
 	top: 1rem;
 	left: 1rem;
-	width: 80px;
+	width: 40px;
 }
 .adding1 {
 	position: absolute;
+	top: 1rem;
+	left: 3.3rem;
+	width: 40px;
+}
+.adding2 {
+	position: absolute;
 	top: 2rem;
 	left: 3rem;
+}
+.preview {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	// width: 40px;
 }
 .type {
 	font-size: 14px;
