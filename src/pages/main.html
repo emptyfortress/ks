@@ -67,12 +67,6 @@
 							<a href="http://visjs.org/examples/network/events/interactionEvents.html"><img src="{{root}}assets/img/add1.png"  data-tooltip title="Переход к примеру как работают кнопочки добавления, удаления" class="pointer adding1" alt=""></a>
 							<img src="{{root}}assets/img/preview.png" class="pointer preview" alt="" data-tooltip title="Просмотреть граф для конкретной РК">
 							<img src="{{root}}assets/img/add3.png" id="dopBt" class="pointer adding2 hide" alt="" onclick="showButtons()">
-							<!-- <div class="vybor"> -->
-							<!-- 	<a id="noth" onclick="nothing()" class="active">Ничего не выбрано</a> -->
-							<!-- 	<a id="eta" onclick="showEtap()">Этап</a> -->
-							<!-- 	<a id="ext" onclick="showExternal()">Внешнее условие</a> -->
-							<!-- 	<a id="arr" onclick="showArrow()">Стрелка</a> -->
-							<!-- </div> -->
 						</div>
 					</div>
 					<button class="button secondary setup">Настройки</button>
@@ -82,7 +76,7 @@
 						<div class="md-tabs">
 							<ul class="tabs hide" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
 								<li id="tt1" class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Свойства</a></li>
-								<li id="tt2" class="tabs-title"><a href="#panel3c">Условия старта</a></li>
+								<li id="tt2" class="tabs-title"><a href="#panel3c">Переходы</a></li>
 								<div class="slide"></div>
 							</ul>
 							<div class="tabs-content" data-tabs-content="collapsing-tabs">
@@ -91,12 +85,81 @@
 											<img src="{{root}}assets/img/message.png" alt="">
 											Выберите узел на карте, чтобы редактировать параметры.
 										</div>
+
+
+
 										<div id="bulPanel" class="hide">
-											<img src="{{root}}assets/img/message.png" alt="">
-											здесь живут логические элементы
+											<div class="type">Тип:&nbsp;&nbsp;<img src="{{root}}assets/img/boulean.png" alt="">
+												&nbsp;&nbsp;Шлюз
+											</div>
+											<div class="fle1">
+													<legend>Логический элемент:</legend>
+													<div style="margin-left: 2rem">
+														<input type="radio" name="logic" value="srol" id="srol" checked ><label for="srol">И</label><br>
+														<input type="radio" name="logic" value="sroup" id="sroup" ><label for="sroup">ИЛИ</label><br>
+													</div>
+											</div>
+											<!-- <div class="wrap select" style="width: 140px;"> -->
+											<!-- 	<label>Логический элемент -->
+											<!-- 		<select> -->
+											<!-- 			<option value="husker" class="text-center">&nbsp;&nbsp;И</option> -->
+											<!-- 			<option value="starbuck">&nbsp;&nbsp;ИЛИ</option> -->
+											<!-- 		</select> -->
+											<!-- 	</label> -->
+											<!-- 	<div class="arrow">&or;</div> -->
+											<!-- </div> -->
+											<fieldset class="fieldset">
+												<legend>Входы:</legend>
+												<table class="unstiped hover mt-2">
+													<thead>
+														<tr>
+															<th>Наименование</th>
+															<th>Условие</th>
+															<th>Цвет</th>
+															<th>Объект</th>
+															<th width="50"></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="bold">Согласовано</td>
+															<td>SearchQueryName</td>
+															<td>зеленый</td>
+															<td>Этап 2</td>
+															<td><img src="assets/img/edit-group1.png" /></td>
+														</tr>
+														<tr>
+															<td class="bold">Не согласовано</td>
+															<td>SearchQueryName 2</td>
+															<td>красный</td>
+															<td>Шлюз</td>
+															<td><img src="assets/img/edit-group1.png" /></td>
+														</tr>
+													</tbody>
+												</table>
+											<button class="button secondary">Добавить</button>
+											</fieldset>
+											<fieldset class="fieldset">
+												<legend>Выходы:</legend>
+												<div class="wrap select" style="width: 140px;">
+													<label>Следующий этап
+														<select>
+															<option value="husker" class="text-center">Этап 5</option>
+															<option value="starbuck">Этап 6</option>
+														</select>
+													</label>
+													<div class="arrow">&or;</div>
+												</div>
+											</fieldset>
 										</div>
+
+
+
 										<div id="extPanel" class="hide">
-											<p class="text-center">Тип: <span data-tooltip title="Здесь может быть описание"  ><img src="{{root}}assets/img/condition-icon.png" alt=""> Внешнее условие</span></p>
+											<div class="type">Тип:&nbsp;&nbsp;<img src="{{root}}assets/img/condition-icon.png" alt="">&nbsp;&nbsp;Внешнее условие</div>
+											<!-- <div class="template"><strong>Действие</strong>: создать по шаблону и запустить согласование.</div> -->
+											<!-- <div class="template"><strong>Шаблон этапа</strong>: <a href="#" data-open="offCanvasRight">Бухгалтерия, простой</a></div> -->
+											<!-- <p class="text-center">Тип: <span data-tooltip title="Здесь может быть описание"  ><img src="{{root}}assets/img/condition-icon.png" alt=""> Внешнее условие</span></p> -->
 											<fieldset class="fieldset">
 												<legend>Основная</legend>
 												<div class="mat-div is-completed">
@@ -182,6 +245,9 @@
 										</div>
 										<div id="filledPanel" class="hide">
 											<div class="type">Тип: <span data-tooltip  title="При выборе юзером на карте внешнего условия и логических операторов здесь будем отрображать их свойства. Вначале readonly, а затем и с редактированием">этап</span></div>
+											<div class="template"><strong>Действие</strong>: создать по шаблону и запустить согласование.</div>
+											<div class="template"><strong>Шаблон этапа</strong>: <a href="#" data-open="offCanvasRight">Бухгалтерия, простой</a></div>
+											<br>
 											<fieldset class="fieldset">
 												<legend>Основная</legend>
 												<div class="mat-div is-completed">
@@ -453,140 +519,170 @@
 										</div>
 								</div>
 								<div class="tabs-panel" id="panel3c">
-											<fieldset class="fieldset">
-												<legend>Основная</legend>
-												<div class="mat-div">
-													<label for="arr1" class="mat-label">Название</label>
-													<input type="text" class="mat-input" id="arr1" value="">
-												</div>
-												<div class="mat-div mt-1 is-completed">
-													<label for="arr2" class="mat-label">Отображаемое название</label>
-													<input type="text" class="mat-input" id="arr2" value="Сумма договора">
-												</div>
-											</fieldset>
-											<fieldset class="fieldset">
-												<legend>Таблица условий</legend>
+									<div>Переходы после завершения этапа:</div>
 													<table class="unstiped hover mt-2">
 														<thead>
 															<tr>
-																<th>Логика</th>
+																<th>Наименование</th>
 																<th>Условие</th>
-																<th>Значение</th>
+																<th>Цвет</th>
+																<th>Объект</th>
 																<th width="50"></th>
 															</tr>
 														</thead>
 														<tbody>
 															<tr>
-																<td>
-																	<div class="wrap select" style="width: 60px">
-																		<label>
-																			<select>
-																				<option value="husker">И</option>
-																				<option value="husker">ИЛИ</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td></td>
-																<td></td>
-																<td>
-																	<img src="{{root}}assets/img/plus-blue.png" />
-																	<img src="{{root}}assets/img/trash.png" class="trash" />
-																</td>
+																<td class="bold">Согласовано</td>
+																<td>SearchQueryName</td>
+																<td>зеленый</td>
+																<td>Этап 2</td>
+																<td><img src="assets/img/edit-group1.png" /></td>
 															</tr>
 															<tr>
-																<td></td>
-																<td>
-																	<div class="wrap select">
-																		<label>
-																			<select>
-																				<option value="husker">Этап 4</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="wrap select">
-																		<label>
-																			<select>
-																				<option value="husker">Завершен</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<img src="{{root}}assets/img/trash.png" class="trash" />
-																</td>
-															</tr>
-															<tr>
-																<td> </td>
-																<td>
-																	<div class="wrap select">
-																		<label>
-																			<select>
-																				<option value="husker">Сумма договора</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="wrap select">
-																		<label>
-																			<select>
-																				<option value="husker">< 1 млн.руб.</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<img src="{{root}}assets/img/trash.png" class="trash" />
-																</td>
-															</tr>
-															<tr><td colspan="4" height=20></td></tr>
-															<tr>
-																<td>
-																	<div class="wrap select grey">
-																		<label>
-																			<select>
-																				<option value="husker">Выбрать</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="wrap select grey">
-																		<label>
-																			<select>
-																				<option value="husker">Выбрать</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<div class="wrap select grey">
-																		<label>
-																			<select>
-																				<option value="husker">Выбрать</option>
-																			</select>
-																		</label>
-																		<div class="arrow">&or;</div>
-																	</div>
-																</td>
-																<td>
-																	<img src="{{root}}assets/img/plus-blue.png" class="trash" />
-																	<!-- <img src="{{root}}assets/img/trash.png" class="trash" /> -->
-																</td>
+																<td class="bold">Не согласовано</td>
+																<td>SearchQueryName 2</td>
+																<td>красный</td>
+																<td>Шлюз</td>
+																<td><img src="assets/img/edit-group1.png" /></td>
 															</tr>
 														</tbody>
 													</table>
-											</fieldset>
+													<!-- <br> -->
+													<button class="button secondary">Добавить</button>
+											<!-- <fieldset class="fieldset"> -->
+											<!-- 	<legend>Основная</legend> -->
+											<!-- 	<div class="mat-div"> -->
+											<!-- 		<label for="arr1" class="mat-label">Название</label> -->
+											<!-- 		<input type="text" class="mat-input" id="arr1" value=""> -->
+											<!-- 	</div> -->
+											<!-- 	<div class="mat-div mt-1 is-completed"> -->
+											<!-- 		<label for="arr2" class="mat-label">Отображаемое название</label> -->
+											<!-- 		<input type="text" class="mat-input" id="arr2" value="Сумма договора"> -->
+											<!-- 	</div> -->
+											<!-- </fieldset> -->
+											<!-- <fieldset class="fieldset"> -->
+											<!-- 	<legend>Таблица условий</legend> -->
+											<!-- 		<table class="unstiped hover mt-2"> -->
+											<!-- 			<thead> -->
+											<!-- 				<tr> -->
+											<!-- 					<th>Логика</th> -->
+											<!-- 					<th>Условие</th> -->
+											<!-- 					<th>Значение</th> -->
+											<!-- 					<th width="50"></th> -->
+											<!-- 				</tr> -->
+											<!-- 			</thead> -->
+											<!-- 			<tbody> -->
+											<!-- 				<tr> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select" style="width: 60px"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">И</option> -->
+											<!-- 									<option value="husker">ИЛИ</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td></td> -->
+											<!-- 					<td></td> -->
+											<!-- 					<td> -->
+											<!-- 						<img src="{{root}}assets/img/plus-blue.png" /> -->
+											<!-- 						<img src="{{root}}assets/img/trash.png" class="trash" /> -->
+											<!-- 					</td> -->
+											<!-- 				</tr> -->
+											<!-- 				<tr> -->
+											<!-- 					<td></td> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">Этап 4</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">Завершен</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<img src="{{root}}assets/img/trash.png" class="trash" /> -->
+											<!-- 					</td> -->
+											<!-- 				</tr> -->
+											<!-- 				<tr> -->
+											<!-- 					<td> </td> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">Сумма договора</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">< 1 млн.руб.</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<img src="{{root}}assets/img/trash.png" class="trash" /> -->
+											<!-- 					</td> -->
+											<!-- 				</tr> -->
+											<!-- 				<tr><td colspan="4" height=20></td></tr> -->
+											<!-- 				<tr> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select grey"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">Выбрать</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select grey"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">Выбрать</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<div class="wrap select grey"> -->
+											<!-- 							<label> -->
+											<!-- 								<select> -->
+											<!-- 									<option value="husker">Выбрать</option> -->
+											<!-- 								</select> -->
+											<!-- 							</label> -->
+											<!-- 							<div class="arrow">&or;</div> -->
+											<!-- 						</div> -->
+											<!-- 					</td> -->
+											<!-- 					<td> -->
+											<!-- 						<img src="{{root}}assets/img/plus-blue.png" class="trash" /> -->
+											<!-- 						<1!-- <img src="{{root}}assets/img/trash.png" class="trash" /> --1> -->
+											<!-- 					</td> -->
+											<!-- 				</tr> -->
+											<!-- 			</tbody> -->
+											<!-- 		</table> -->
+											<!-- </fieldset> -->
 								</div>
 							</div>
 						</div>
@@ -777,22 +873,15 @@
 
 
 <map name="map">
-    <area shape="poly" coords="444, 236, 446, 361, 421, 362, 425, 322, 413, 275, 414, 235" />
-    <area shape="poly" coords="273, 308, 239, 314, 209, 328, 205, 363, 179, 361, 185, 314, 209, 292, 255, 286, 273, 286" />
-    <area shape="poly" coords="329, 291, 358, 291, 400, 301, 423, 329, 418, 363, 397, 363, 398, 332, 367, 317, 326, 314" />
-    <area shape="poly" coords="259, 238, 285, 237, 306, 264, 309, 277, 282, 277, 261, 255" />
-    <area shape="poly" coords="60, 364, 41, 363, 53, 322, 69, 286, 112, 268, 160, 266, 208, 252, 222, 238, 247, 239, 240, 263, 186, 288, 121, 295, 85, 309" />
-    <area shape="poly" coords="101, 121, 85, 142, 59, 165, 55, 187, 29, 187, 49, 139, 67, 118" />
-    <area shape="poly" coords="174, 145, 200, 155, 235, 166, 237, 189, 212, 189, 204, 174, 151, 159, 150, 146" />
-    <area shape="poly" coords="218, 108, 270, 120, 358, 129, 420, 142, 441, 188, 418, 185, 393, 154, 334, 146, 214, 134" />
-    <area shape="rect" id="ext-cond" coords="279, 280, 322, 323" onclick="showExternal()" />
-    <area shape="rect" coords="140, 19, 180, 56" onclick="showEtap()"/>
-    <area shape="rect" coords="372, 366, 481, 409" onclick="showEtap()"/>
-    <area shape="rect" coords="142, 365, 246, 407" onclick="showEtap()"/>
-    <area shape="rect" coords="2, 370, 104, 409" onclick="showEtap()"/>
-    <area shape="rect" coords="382, 193, 485, 232" onclick="showEtap()"/>
-    <area shape="rect" coords="203, 194, 304, 235" onclick="showEtap()"/>
-    <area shape="rect" coords="0, 191, 105, 234" onclick="showEtap()"/>
-    <area shape="rect" coords="107, 103, 211, 143" onclick="showEtap()"/>
+		<area shape="poly" coords="152, 449, 184, 480, 148, 515, 119, 476" onclick="showBoulean()"/>
+    <area shape="poly" coords="303, 278, 338, 310, 305, 342, 271, 306" onclick="showExternal()" />
+    <area shape="rect" coords="221, 497, 333, 540" onclick="showEtap()"/>
+    <area shape="rect" coords="376, 372, 488, 416" onclick="showEtap()"/>
+    <area shape="rect" coords="144, 371, 252, 412" onclick="showEtap()"/>
+    <area shape="rect" coords="-1, 375, 105, 414" onclick="showEtap()"/>
+    <area shape="rect" coords="386, 194, 490, 237" onclick="showEtap()"/>
+    <area shape="rect" coords="203, 194, 314, 239" onclick="showEtap()"/>
+    <area shape="rect" coords="2, 199, 106, 237" onclick="showEtap()"/>
+    <area shape="rect" coords="108, 100, 215, 147" onclick="showEtap()"/>
 </map>
 

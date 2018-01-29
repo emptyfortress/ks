@@ -909,11 +909,11 @@ input[type='radio'] {
 	top: 1rem;
 	right: 1rem;
 	border: none;
-	// width: 40px;
 }
 .type {
 	font-size: 14px;
-	text-align: center;
+	margin-bottom: 1rem;
+	// text-align: center;
 	span {
 		background: #DBF4FF;
 		padding: 1px 8px;
@@ -921,6 +921,9 @@ input[type='radio'] {
 		border: 1px solid var(--dv-blue);
 		border-radius: 5px;
 	}
+}
+.template {
+	font-size: 14px;
 }
 #emptyPanel {
 	color: #ccc;

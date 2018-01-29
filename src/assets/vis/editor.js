@@ -221,14 +221,14 @@ function showEtap() {
 	$('#arr').removeClass('active');
 }
 function showBoulean() {
-	$('#emptyPanel').removeClass('hide');
+	$('#emptyPanel').addClass('hide');
 	$('#filledPanel').addClass('hide');
-	$('.tabs').addClass('hide');
+	$('.tabs').removeClass('hide');
 	$('#panel1c').addClass('is-active');
 	$('#panel3c').removeClass('is-active');
 	$('#tt1').addClass('is-active');
 	$('#tt2').removeClass('is-active');
-	$('#bulPanel').addClass('hide');
+	$('#bulPanel').removeClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
 	$('#noth').removeClass('active');
