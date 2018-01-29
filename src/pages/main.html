@@ -63,17 +63,16 @@
 					<div class="white left" onclick="nothing()">
 						<div class="fl">
 							<img src="{{root}}assets/img/bpmn-digdes.png" usemap="#map">
-							<img src="{{root}}assets/img/add.png" class="pointer adding0" alt="" onclick="showButtons()">
-							<a href="http://visjs.org/examples/network/events/interactionEvents.html"><img src="{{root}}assets/img/add1.png" class="pointer adding1" alt=""></a>
+							<img src="{{root}}assets/img/add.png" data-tooltip title="Добавление узла" class="pointer adding0" alt="" onclick="showButtons()">
+							<a href="http://visjs.org/examples/network/events/interactionEvents.html"><img src="{{root}}assets/img/add1.png"  data-tooltip title="Переход к примеру как работают кнопочки добавления, удаления" class="pointer adding1" alt=""></a>
 							<img src="{{root}}assets/img/preview.png" class="pointer preview" alt="" data-tooltip title="Просмотреть граф для конкретной РК">
 							<img src="{{root}}assets/img/add3.png" id="dopBt" class="pointer adding2 hide" alt="" onclick="showButtons()">
-							<div class="vybor">
-								<a id="noth" onclick="nothing()" class="active">Ничего не выбрано</a>
-								<a id="eta" onclick="showEtap()">Этап</a>
-								<!-- <a id="bul" onclick="showBoulean()">Логический элемент</a> -->
-								<a id="ext" onclick="showExternal()">Внешнее условие</a>
-								<a id="arr" onclick="showArrow()">Стрелка</a>
-							</div>
+							<!-- <div class="vybor"> -->
+							<!-- 	<a id="noth" onclick="nothing()" class="active">Ничего не выбрано</a> -->
+							<!-- 	<a id="eta" onclick="showEtap()">Этап</a> -->
+							<!-- 	<a id="ext" onclick="showExternal()">Внешнее условие</a> -->
+							<!-- 	<a id="arr" onclick="showArrow()">Стрелка</a> -->
+							<!-- </div> -->
 						</div>
 					</div>
 					<button class="button secondary setup">Настройки</button>
