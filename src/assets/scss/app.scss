@@ -75,6 +75,7 @@ $accent-green: #3ADB76;
 .bold { font-weight: bold; }
 .rel { position: relative; }
 .div-center { width: auto; margin: 0 auto; } 
+.dis-block { display: block; }
 
 
 .main {
@@ -318,11 +319,19 @@ $accent-green: #3ADB76;
 	height: 72px;
 	padding: 0.3rem 1rem;
 	transition: all .3s ease;
+	background-position: bottom right;
 	&.expanded {
-		height: 170px;
+		height: 300px;
 		box-shadow: 0 3px 4px rgba(0,0,0,.4);
+		background-image: url(../img/custom.png);
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		}
+	hr {
+		max-width: none;
 	}
 }
+
 .ro {
 	display: flex;
 	justify-content: space-between;
