@@ -1,0 +1,692 @@
+<div class="content1">
+	<div class="mprops">
+		<div class="ro">
+			<div class="third-1">
+				<div class="mat-div">
+					<label for="mar-1" class="mat-label">Маршрут</label>
+					<input type="text" class="mat-input" id="mar-1">
+				</div>
+			</div>
+			<div class="third-1">
+				<div class="mat-div">
+					
+					<input type="text" class="mat-input" id="mar-2">
+				</div>
+			</div>
+			<div class="third-1">
+				<a class="link dis-block" data-toggle="showList">
+					<img src="{{root}}assets/img/info.png" />
+					Показать список связанных документов
+				</a>
+			</div>
+			<div class="arrow">
+				<img src="{{root}}assets/img/down.png" onclick="openM()" />
+			</div>
+		</div>
+		<div class="ro mt-3">
+			<div class="third-1">
+				<div class="mat-div-sm">
+					<label for="mar-4" class="mat-label">Кто создал</label>
+					<input type="text" class="mat-input" id="mar-4">
+				</div>
+			</div>
+			<div class="third-1">
+				<div class="mat-div-sm rel">
+					<label for="mar-5" class="mat-label">Дата создания</label>
+					<input type="text" class="mat-input" id="mar-5">
+					<img class="cal" src="{{root}}assets/img/calendar.png" alt="">
+				</div>
+			</div>
+			<div class="third-1">
+				<div class="m-check" >
+					<input id="mar-6" type="checkbox"><label for="mar-6">Не показывать при выборе</label>
+				</div>
+			</div>
+			<div class="arrow">
+			</div>
+		</div>
+		<hr class="full">
+		<div class="m-check">
+			<input id="mar-3" type="checkbox"><label for="mar-3">Автоматически направлять на регистрацию при положительном завершении</label>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div id="paneContainer">
+			<div id="editor">
+			lasjdaljdlasdkjalslasdkjalsddl	<div id="dragbar"></div>
+				<div class="white left" onclick="nothing()">
+					<div class="fl">
+						<img src="{{root}}assets/img/bpmn-digdes.png" usemap="#map">
+						<img src="{{root}}assets/img/add.png" data-tooltip title="Добавление узла" class="pointer adding0" alt="" onclick="showButtons()">
+						<a href="http://visjs.org/examples/network/events/interactionEvents.html"><img src="{{root}}assets/img/add1.png"  data-tooltip title="Переход к примеру как работают кнопочки добавления, удаления" class="pointer adding1" alt=""></a>
+						<img src="{{root}}assets/img/preview.png" class="pointer preview" alt="" data-tooltip title="Просмотреть граф для конкретной РК">
+						<img src="{{root}}assets/img/add3.png" id="dopBt" class="pointer adding2 hide" alt="" onclick="showButtons()">
+					</div>
+				</div>
+				<button class="button secondary setup">Настройки</button>
+			</div>
+			<div id="viewer">
+				<div class="white right">
+					<div class="md-tabs">
+						<ul class="tabs hide" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
+							<li id="tt1" class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Свойства</a></li>
+							<li id="tt2" class="tabs-title"><a href="#panel3c">Переходы</a></li>
+							<div class="slide"></div>
+						</ul>
+						<div class="tabs-content" data-tabs-content="collapsing-tabs">
+							<div class="tabs-panel is-active" id="panel1c">
+								<div id="emptyPanel" >
+									<img src="{{root}}assets/img/message.png" alt="">
+									Выберите узел на карте, чтобы редактировать параметры.
+								</div>
+
+
+
+									<div id="bulPanel" class="hide">
+										<div class="type">Тип:&nbsp;&nbsp;<img src="{{root}}assets/img/boulean.png" alt="">
+											&nbsp;&nbsp;Шлюз
+										</div>
+										<div class="fle1">
+											<legend>Логический элемент:</legend>
+											<div style="margin-left: 2rem">
+												<input type="radio" name="logic" value="srol" id="srol" checked ><label for="srol">И</label><br>
+												<input type="radio" name="logic" value="sroup" id="sroup" ><label for="sroup">ИЛИ</label><br>
+											</div>
+										</div>
+										<!-- <div class="wrap select" style="width: 140px;"> -->
+										<!-- 	<label>Логический элемент -->
+										<!-- 		<select> -->
+										<!-- 			<option value="husker" class="text-center">&nbsp;&nbsp;И</option> -->
+										<!-- 			<option value="starbuck">&nbsp;&nbsp;ИЛИ</option> -->
+										<!-- 		</select> -->
+										<!-- 	</label> -->
+										<!-- 	<div class="arrow">&or;</div> -->
+										<!-- </div> -->
+										<fieldset class="fieldset">
+											<legend>Входы:</legend>
+											<table class="unstiped hover mt-2">
+												<thead>
+													<tr>
+														<th>Наименование</th>
+														<th>Условие</th>
+														<th>Цвет</th>
+														<th>Объект</th>
+														<th width="50"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td class="bold">Согласовано</td>
+														<td>SearchQueryName</td>
+														<td>зеленый</td>
+														<td>Этап 2</td>
+														<td><img src="assets/img/edit-group1.png" /></td>
+													</tr>
+													<tr>
+														<td class="bold">Не согласовано</td>
+														<td>SearchQueryName 2</td>
+														<td>красный</td>
+														<td>Шлюз</td>
+														<td><img src="assets/img/edit-group1.png" /></td>
+													</tr>
+												</tbody>
+											</table>
+											<button class="button secondary">Добавить</button>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Выходы:</legend>
+											<div class="wrap select" style="width: 140px;">
+												<label>Следующий этап
+													<select>
+														<option value="husker" class="text-center">Этап 5</option>
+														<option value="starbuck">Этап 6</option>
+													</select>
+												</label>
+												<div class="arrow">&or;</div>
+											</div>
+										</fieldset>
+									</div>
+
+
+
+									<div id="extPanel" class="hide">
+										<div class="type">Тип:&nbsp;&nbsp;<img src="{{root}}assets/img/condition-icon.png" alt="">&nbsp;&nbsp;Внешнее условие</div>
+										<!-- <div class="template"><strong>Действие</strong>: создать по шаблону и запустить согласование.</div> -->
+										<!-- <div class="template"><strong>Шаблон этапа</strong>: <a href="#" data-open="offCanvasRight">Бухгалтерия, простой</a></div> -->
+										<!-- <p class="text-center">Тип: <span data-tooltip title="Здесь может быть описание"  ><img src="{{root}}assets/img/condition-icon.png" alt=""> Внешнее условие</span></p> -->
+										<fieldset class="fieldset">
+											<legend>Основная</legend>
+											<div class="mat-div is-completed">
+												<label for="ext-1" class="mat-label">Название</label>
+												<input type="text" class="mat-input" id="ext-1" value="Ограничение на суммy договора">
+											</div>
+											<div class="mat-div mt-1 is-completed">
+												<label for="ext-2" class="mat-label">Отображаемое название</label>
+												<input type="text" class="mat-input" id="ext-2" value="Сумма договора">
+											</div>
+											<div class="mat-div mt-1">
+												<label for="ext-3" class="mat-label">Описание</label>
+												<input type="text" class="mat-input" id="ext-3" value="">
+											</div>
+											<br>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Варианты исхода</legend>
+											<table class="unstiped hover mt-2">
+												<thead>
+													<tr>
+														<th>Название исхода</th>
+														<th>Вариант</th>
+														<th width="50"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>
+															<div class="mat-div mt-1 is-completed">
+																<label for="ext-7" class="mat-label">Отображаемое название</label>
+																<input type="text" class="mat-input" id="ext-7" value="> 1 млн. руб.">
+															</div>
+														</td>
+														<td>
+															<div class="small-in">
+																<textarea id="ext-6" width="300">xml description</textarea>
+															</div>
+														</td>
+														<td>
+															<img src="{{root}}assets/img/trash.png" class="trash" />
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="mat-div mt-1 is-completed">
+																<label for="ext-8" class="mat-label">Отображаемое название</label>
+																<input type="text" class="mat-input" id="ext-8" value="< 1 млн. руб.">
+															</div>
+														</td>
+														<td>
+															<div class="small-in">
+																<textarea id="ext-9" width="300">xml description</textarea>
+															</div>
+														</td>
+														<td>
+															<img src="{{root}}assets/img/trash.png" class="trash" />
+														</td>
+													</tr>
+													<tr>
+														<td>
+															<div class="mat-div mt-1">
+																<label for="ext-8" class="mat-label">Отображаемое название</label>
+																<input type="text" class="mat-input" id="ext-8" value="">
+															</div>
+														</td>
+														<td>
+															<div class="small-in">
+																<textarea id="ext-9" width="300">xml description</textarea>
+															</div>
+														</td>
+														<td>
+															<img src="{{root}}assets/img/plus-blue.png" class="trash"/>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</fieldset>
+									</div>
+									<div id="arrPanel" class="hide">
+										<img src="{{root}}assets/img/message.png" alt="">
+										здесь живут стрелки
+									</div>
+									<div id="filledPanel" class="hide">
+										<div class="type">Тип: <span data-tooltip  title="При выборе юзером на карте внешнего условия и логических операторов здесь будем отрображать их свойства. Вначале readonly, а затем и с редактированием">этап</span></div>
+										<div class="template"><strong>Действие</strong>: создать по шаблону и запустить согласование.</div>
+										<div class="template"><strong>Шаблон этапа</strong>: <a href="#" data-open="offCanvasRight">Бухгалтерия, простой</a></div>
+										<br>
+										<fieldset class="fieldset">
+											<legend>Основная</legend>
+											<div class="mat-div is-completed">
+												<label for="et-4" class="mat-label">Название</label>
+												<input type="text" class="mat-input" id="et-4" value="Длинное предлинное название этапа">
+											</div>
+											<div class="mat-div mt-1 is-completed">
+												<label for="et-5" class="mat-label">Отображаемое название</label>
+												<input type="text" class="mat-input" id="et-5" value="Этап 7">
+											</div>
+											<div class="fle">
+												<div>
+													<div class="m-check">
+														<input id="et-6" type="checkbox"><label for="et-6">Разрешить исключать этап из маршрута</label>
+													</div>
+													<div class="m-check">
+														<input id="et-7" type="checkbox"><label for="et-7">Требуется консолидация после завершения</label>
+													</div>
+												</div>
+												<div class="m-check">
+													<input id="et-8" type="checkbox"><label for="et-8">Разрешить редактирование инициатору</label>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Согласующие</legend>
+											<div class="fle">
+												<div class="third-2">
+													<div class="wrap select">
+														<label>Тип маршрутизации
+															<select>
+																<option value="husker">Параллельно</option>
+																<option value="starbuck">Последовательно</option>
+															</select>
+														</label>
+														<div class="arrow">&or;</div>
+													</div>
+												</div>
+												<div class="third-1">
+													<div class="mat-div" style="margin-top: 5px">
+														<label for="et-10" class="mat-label">Длительность</label>
+														<input type="text" class="mat-input" id="et-10">
+													</div>
+												</div>
+											</div>
+											<div class="m-check">
+												<input id="et-11" type="checkbox"><label for="et-11">Разрешить автоисполнение</label>
+											</div>
+											<div class="m-check">
+												<input id="et-12" type="checkbox"><label for="et-12">Запретить редактирование файлов</label>
+											</div>
+											<div class="mat-div mt-1">
+												<label for="et-10" class="mat-label">Сопроводительный текст</label>
+												<textarea class="mat-input" id="et-10" width="300"></textarea>
+											</div>
+
+											<div class="variant">
+												<table class="unstiped hover mt-2">
+													<thead>
+														<tr>
+															<th>Участник</th>
+															<th>Тип подписи</th>
+															<th width="50"></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="bold">Инициатор</td>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Визирование</option>
+																			<option value="starbuck">Подписание</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																<img src="{{root}}assets/img/trash.png" class="trash" />
+															</td>
+														</tr>
+														<tr>
+															<td class="bold">Директор департамента</td>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Визирование</option>
+																			<option value="starbuck">Подписание</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																<img src="{{root}}assets/img/trash.png" class="trash" />
+															</td>
+														</tr>
+													</tbody>
+												</table>
+												<button class="button primary" data-open="addModal">Добавить</button>
+											</div>
+											<div class="variant">
+												<table class="unstiped hover mt-2">
+													<thead>
+														<tr>
+															<th>Тип согласующего</th>
+															<th>Участник</th>
+															<th>Тип подписи</th>
+															<th width="50"></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Роль</option>
+																			<option value="starbuck">Группа</option>
+																			<option value="starbuck">ФИО</option>
+																			<option value="starbuck">Подразделение</option>
+																			<option value="starbuck">Поисковое слово</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Инициатор</option>
+																			<option value="starbuck">Директор</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Визирование</option>
+																			<option value="starbuck">Подписание</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																<img src="{{root}}assets/img/trash.png" class="trash" />
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Роль</option>
+																			<option value="starbuck">Группа</option>
+																			<option value="starbuck">ФИО</option>
+																			<option value="starbuck">Подразделение</option>
+																			<option value="starbuck">Поисковое слово</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Инициатор</option>
+																			<option value="starbuck">Директор</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<div class="wrap select">
+																	<label>
+																		<select>
+																			<option value="husker">Визирование</option>
+																			<option value="starbuck">Подписание</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<img src="{{root}}assets/img/edit.png" data-open="addModal" />
+																<img src="{{root}}assets/img/trash.png" class="trash" />
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div class="wrap select grey">
+																	<label>
+																		<select>
+																			<option value="husker">Выбрать</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<div class="wrap select grey">
+																	<label>
+																		<select>
+																			<option value="husker">Выбрать</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<div class="wrap select grey">
+																	<label>
+																		<select>
+																			<option value="husker">Выбрать</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</td>
+															<td>
+																<img src="{{root}}assets/img/plus-blue.png" style="margin-top: 15px; margin-left: 15px" />
+															</td>
+
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Служебная</legend>
+											<div class="fle">
+												<div class="mat-div third-2">
+													<label for="et-1" class="mat-label">Кто создал</label>
+													<input type="text" class="mat-input" id="et-1">
+												</div>
+												<div class="mat-div third-1 rel">
+													<label for="et-2" class="mat-label">Дата создания</label>
+													<input type="text" class="mat-input" id="et-2">
+													<img class="cal" src="{{root}}assets/img/calendar.png" alt="">
+												</div>
+											</div>
+											<div class="m-check">
+												<input id="et-3" checked type="checkbox"><label for="et-3">Актуальный (не показывать при выборе)</label><br>
+											</div>
+										</fieldset>
+										<fieldset class="fieldset">
+											<legend>Связанные маршруты</legend>
+											<ol class="svaz">
+												<li><a href="#">Приказ по подразделению</a></li>
+												<li><a>Приказ по министреству</a></li>
+												<li><a>Заявление на отпуск</a></li>
+												<li><a>Заявка на командировку</a></li>
+												<li><a>Крупные сделки</a></li>
+											</ol>
+										</fieldset>
+									</div>
+							</div>
+							<div class="tabs-panel" id="panel3c">
+								<div>Переходы после завершения этапа:</div>
+								<table class="unstiped hover mt-2">
+									<thead>
+										<tr>
+											<th>Наименование</th>
+											<th>Условие</th>
+											<th>Цвет</th>
+											<th>Объект</th>
+											<th width="50"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="bold">Согласовано</td>
+											<td>SearchQueryName</td>
+											<td>зеленый</td>
+											<td>Этап 2</td>
+											<td><img src="assets/img/edit-group1.png" /></td>
+										</tr>
+										<tr>
+											<td class="bold">Не согласовано</td>
+											<td>SearchQueryName 2</td>
+											<td>красный</td>
+											<td>Шлюз</td>
+											<td><img src="assets/img/edit-group1.png" /></td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- <br> -->
+								<button class="button secondary">Добавить</button>
+								<!-- <fieldset class="fieldset"> -->
+								<!-- 	<legend>Основная</legend> -->
+								<!-- 	<div class="mat-div"> -->
+								<!-- 		<label for="arr1" class="mat-label">Название</label> -->
+								<!-- 		<input type="text" class="mat-input" id="arr1" value=""> -->
+								<!-- 	</div> -->
+								<!-- 	<div class="mat-div mt-1 is-completed"> -->
+								<!-- 		<label for="arr2" class="mat-label">Отображаемое название</label> -->
+								<!-- 		<input type="text" class="mat-input" id="arr2" value="Сумма договора"> -->
+								<!-- 	</div> -->
+								<!-- </fieldset> -->
+								<!-- <fieldset class="fieldset"> -->
+								<!-- 	<legend>Таблица условий</legend> -->
+								<!-- 		<table class="unstiped hover mt-2"> -->
+								<!-- 			<thead> -->
+								<!-- 				<tr> -->
+								<!-- 					<th>Логика</th> -->
+								<!-- 					<th>Условие</th> -->
+								<!-- 					<th>Значение</th> -->
+								<!-- 					<th width="50"></th> -->
+								<!-- 				</tr> -->
+								<!-- 			</thead> -->
+								<!-- 			<tbody> -->
+								<!-- 				<tr> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select" style="width: 60px"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">И</option> -->
+								<!-- 									<option value="husker">ИЛИ</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td></td> -->
+								<!-- 					<td></td> -->
+								<!-- 					<td> -->
+								<!-- 						<img src="{{root}}assets/img/plus-blue.png" /> -->
+								<!-- 						<img src="{{root}}assets/img/trash.png" class="trash" /> -->
+								<!-- 					</td> -->
+								<!-- 				</tr> -->
+								<!-- 				<tr> -->
+								<!-- 					<td></td> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">Этап 4</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">Завершен</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<img src="{{root}}assets/img/trash.png" class="trash" /> -->
+								<!-- 					</td> -->
+								<!-- 				</tr> -->
+								<!-- 				<tr> -->
+								<!-- 					<td> </td> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">Сумма договора</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">< 1 млн.руб.</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<img src="{{root}}assets/img/trash.png" class="trash" /> -->
+								<!-- 					</td> -->
+								<!-- 				</tr> -->
+								<!-- 				<tr><td colspan="4" height=20></td></tr> -->
+								<!-- 				<tr> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select grey"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">Выбрать</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select grey"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">Выбрать</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<div class="wrap select grey"> -->
+								<!-- 							<label> -->
+								<!-- 								<select> -->
+								<!-- 									<option value="husker">Выбрать</option> -->
+								<!-- 								</select> -->
+								<!-- 							</label> -->
+								<!-- 							<div class="arrow">&or;</div> -->
+								<!-- 						</div> -->
+								<!-- 					</td> -->
+								<!-- 					<td> -->
+								<!-- 						<img src="{{root}}assets/img/plus-blue.png" class="trash" /> -->
+								<!-- 						<1!-- <img src="{{root}}assets/img/trash.png" class="trash" /> --1> -->
+								<!-- 					</td> -->
+								<!-- 				</tr> -->
+								<!-- 			</tbody> -->
+								<!-- 		</table> -->
+								<!-- </fieldset> -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="fle but">
+					<button class="button secondary">Сохранить этап в библиотеку</button>
+					<button class="button primary">Сохранить</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
