@@ -2,6 +2,7 @@ import $ from 'jquery';
 import whatInput from 'what-input';
 // import editor from './editor';
 
+
 window.$ = $;
 
 import Foundation from 'foundation-sites';
@@ -10,5 +11,7 @@ import Foundation from 'foundation-sites';
 //import './lib/foundation-explicit-pieces';
 
 $(document).foundation();
+
+
 
 
