@@ -1,7 +1,7 @@
 let editMarsh = false;
 let editEt = false;
 
-function editMarshrut() {
+function editMarshrut() {//{{{
 	if (!editMarsh) {
 		for (var i = 1; i < 4 ; i++) {
 			$('#marsh').foundation('up', $('#marsh' + i));
@@ -26,9 +26,9 @@ function editMarshrut() {
 		$('#addFold').addClass('hide');
 		editMarsh = false;
 	}
-}
+}//}}}
 
-function editEtap() {
+function editEtap() {//{{{
 	if (!editEt) {
 		for (var i = 1; i < 7 ; i++) {
 			$('#etap').foundation('up', $('#etap' + i));
@@ -56,15 +56,15 @@ function editEtap() {
 }
 function openM() {
 	$('.mprops').toggleClass('expanded')
-}
+}//}}}
 
-$('.trash').click( function() {
+$('.trash').click( function() {//{{{
   $(this).parent().parent().addClass("hide");
 } )
 
 $('.del').click( function() {
   $(this).parent().addClass("hide");
-} )
+} )//}}}
 // ========================================
 // resize panels{{{
 // ========================================
@@ -120,7 +120,7 @@ if ($dragbar) {
 
 
 // ========================================
-// floating labels
+// floating labels{{{
 // ========================================
 
 $(".mat-input").focus(function(){
@@ -131,11 +131,11 @@ $(".mat-input").focusout(function(){
   if($(this).val() === "")
     $(this).parent().removeClass("is-completed");
   $(this).parent().removeClass("is-acti");
-})
+})//}}}
 
 
 // ========================================
-// fieldset
+// fieldset{{{
 // ========================================
 $('legend').click(function() {
   // $((this)'.fieldset').toggleClass('collapsed');
@@ -178,10 +178,6 @@ function showWord() {
 	$('#rol1').addClass('hide');
 }
 
-// function switchPanel() {
-// 	$('#emptyPanel').toggleClass('hide');
-// 	$('#filledPanel').toggleClass('hide');
-// }
 function showButtons() {
 	$('#dopBt').toggleClass('hide');
 }
@@ -267,5 +263,34 @@ function showArrow() {
 	$('#bul').removeClass('active');
 	$('#eta').removeClass('active');
 	$('#arr').addClass('active');
-}
+}//}}}
 
+// ========================================
+// vis
+// ========================================
+var nodes = new vis.DataSet([
+	{id: 1, label: 'Node 1', title: 'I have a popup!'},
+	{id: 2, label: 'Node 2', title: 'I have a popup!'},
+	{id: 3, label: 'Node 3', title: 'I have a popup!'},
+	{id: 4, label: 'Node 4', title: 'I have a popup!'},
+	{id: 5, label: 'Node 5', title: 'I have a popup!'}
+]);
+
+var edges = new vis.DataSet([
+	{from: 1, to: 3},
+	{from: 1, to: 2},
+	{from: 2, to: 4},
+	{from: 2, to: 5}
+]);
+
+var container = document.getElementById('mynetwork');
+var data = {
+	nodes: nodes,
+	edges: edges
+};
+
+var options = {
+	autoresize: true
+};
+
+var network = new vis.Network(container, data, options);

@@ -387,7 +387,6 @@ $accent-green: #3ADB76;
 .white {
 	height: calc(100% - 140px);
 	background: white;
-	// overflow: auto;
 	overflow: hidden;
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
 	&.left {
@@ -395,6 +394,12 @@ $accent-green: #3ADB76;
 	}
 	&.right {
 		margin: 85px 1rem 0 .5rem;
+	}
+}
+#mynetwork {
+	height: 100%;
+	.vis-network {
+		height: 100%;
 	}
 }
 #editor {
