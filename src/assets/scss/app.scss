@@ -1237,6 +1237,14 @@ input[type='radio'] {
 		opacity: 1;
 	}
 }
-.vis-manipulation {
-	display: block;
+
+#offCanvasTemplate .close-button {
+	position: absolute;
+	top: .5rem;
+	left: 1.2rem;
+}
+.esc {
+	margin-top: 1rem;
+	margin-left: 3rem;
+	color: #ccc;
 }

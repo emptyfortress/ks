@@ -8,11 +8,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Конструктор согласований Доксвижн</title>
 		
+		<!-- <link rel="stylesheet" href="{{root}}assets/vis/vis.css"> -->
 		<link rel="stylesheet" href="{{root}}assets/css/app.css">
-		<link rel="stylesheet" href="{{root}}assets/vis/vis.css">
 	</head>
 	<body>
 		<div class="off-canvas-wrapper">
+			<div class="off-canvas position-left" id="offCanvasTemplate" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;&nbsp;</span>
+				</button>
+				<div class="esc">ESC - закрыть панель</div>
+				<!-- {{> marsh-list}} -->
+			</div>
 			<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
 				<button class="close-button" data-close aria-label="Close panel" type="button">
 					<span aria-hidden="true">&times;</span>
@@ -33,8 +40,8 @@
 			</div>
 		</div>
 
-		<!-- <script src="{{root}}assets/vis/vis.min.js"></script> -->
-		<script src="{{root}}assets/vis/vis.js"></script>
+		<script src="{{root}}assets/vis/vis.min.js"></script>
+		<!-- <script src="{{root}}assets/vis/vis.js"></script> -->
 		<script src="{{root}}assets/js/app.js"></script>
     <script src="{{root}}assets/vis/editor.js"></script>
 
