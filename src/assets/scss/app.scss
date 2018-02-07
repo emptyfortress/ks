@@ -272,6 +272,9 @@ $accent-green: #3ADB76;
 	grid-template-rows: 50px auto 30px;
 	background: var(--light-gray);
 	overflow: auto;
+	&.full {
+		grid-template-rows: auto 0;
+	}
 }
 .header1 {
 	grid-column: 1/-1;
@@ -285,6 +288,11 @@ $accent-green: #3ADB76;
 	.title {
 		flex-grow: 1;
 	}
+	transition: all .3s ease;
+	&.full {
+		transform: translatey(-70px);
+		display: none;
+	}
 }
 .footer1 {
 	display: flex;
@@ -295,6 +303,10 @@ $accent-green: #3ADB76;
 	padding: 0 1rem;
 	color: #fff;
 	line-height: 30px;
+	transition: all .3s ease;
+	&.full {
+		transform: translatey(40px);
+	}
 	a:link, a:hover, a:visited {
 		color: white;
 		text-decoration: underline;

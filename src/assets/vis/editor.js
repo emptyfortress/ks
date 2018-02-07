@@ -273,6 +273,9 @@ function resize() {
 	$('#viewer').toggleClass('full');
 	$('#net').toggleClass('full');
 	$('#netpanel').toggleClass('full');
+	$('.main1').toggleClass('full');
+	$('.header1').toggleClass('full');
+	$('.footer1').toggleClass('full');
 }
 
 
