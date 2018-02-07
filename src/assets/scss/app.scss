@@ -320,6 +320,10 @@ $accent-green: #3ADB76;
 	padding: 0.3rem 1rem;
 	transition: all .3s ease;
 	background-position: bottom right;
+	&.full {
+		transform: translatey(-200px);
+		opacity: 0;
+	}
 	&.expanded {
 		height: 300px;
 		box-shadow: 0 3px 4px rgba(0,0,0,.4);
@@ -369,6 +373,7 @@ $accent-green: #3ADB76;
 }
 .wrapper {
 	height: 100%;
+	position: relative;
 }
 
 #paneContainer {
@@ -389,6 +394,7 @@ $accent-green: #3ADB76;
 	background: white;
 	overflow: hidden;
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
+	position: relative;
 	&.left {
 		margin: 85px .5rem 0 1rem;
 	}
@@ -397,7 +403,23 @@ $accent-green: #3ADB76;
 	}
 }
 #net {
+	position: relative;
 	height: calc(100vh - 220px);
+	// transition: all .3s ease;
+	&.full { height: 100%; }
+}
+#netpanel {
+	transition: all .3s ease;
+	&.full {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+	}
+
 }
 #editor {
 	float: left;
@@ -405,14 +427,13 @@ $accent-green: #3ADB76;
 
 #viewer {
 	overflow-x: hidden;
-	// overflow-y: auto;
-	// white-space: pre-wrap;
-	// word-wrap: break-word;
 	float: right;
 	position: absolute;
 	top: 0;
 	box-sizing: border-box;
-	// background: green;
+	&.full { 
+		display: none; 
+	}
 }
 
 #dragbar {
@@ -433,6 +454,7 @@ $accent-green: #3ADB76;
 		min-width: 100%;
 		max-width: 100%;
 		width: 100%;
+		position: relative;
 	}
 }
 //////////////////
@@ -1183,17 +1205,24 @@ input[type='radio'] {
 }
 
 .toolbox {
-	// padding-top: 10px;
-	// padding-bottom: 10px;
 	width: 45px;
 	text-align: center;
-	background: #fff;
-	// border: 1px solid #eee;
+	background: #fffc;
 	position: absolute;
-	top: .4rem;
-	left: .4rem;
+	top: 5px;
+	left: 5px;
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
 	img {
 		margin: 5px 0;
+	}
+}
+.resize {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	opacity: .2;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
 	}
 }

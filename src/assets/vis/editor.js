@@ -266,6 +266,19 @@ function showArrow() {
 }//}}}
 
 // ========================================
+// editor
+// ========================================
+function resize() {
+	$('.mprops').toggleClass('full');
+	$('#viewer').toggleClass('full');
+	$('#net').toggleClass('full');
+	$('#netpanel').toggleClass('full');
+}
+
+
+
+
+// ========================================
 // vis
 // ========================================
 var nodes = new vis.DataSet([

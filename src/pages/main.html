@@ -61,20 +61,21 @@
 			<div id="paneContainer">
 				<div id="editor">
 					<div id="dragbar"></div>
-					<div class="white left" onclick="nothing()">
-					<!-- <div class="toolbox"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-start.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-finish.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-etap.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-and.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-or.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-ext.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-arr1.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-arr2.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-arr3.png"> -->
-					<!-- 	<img src="{{root}}assets/img/bt-arr4.png"> -->
-					<!-- </div> -->
+					<div id="netpanel" class="white left">
 						<div id="net"></div>
+						<div class="toolbox">
+							<img src="{{root}}assets/img/bt-start.png">
+							<img src="{{root}}assets/img/bt-finish.png">
+							<img src="{{root}}assets/img/bt-etap.png">
+							<img src="{{root}}assets/img/bt-and.png">
+							<img src="{{root}}assets/img/bt-or.png">
+							<img src="{{root}}assets/img/bt-ext.png">
+							<img src="{{root}}assets/img/bt-arr1.png">
+							<img src="{{root}}assets/img/bt-arr2.png">
+							<img src="{{root}}assets/img/bt-arr3.png">
+							<img src="{{root}}assets/img/bt-arr4.png">
+						</div>
+						<img src="{{root}}assets/img/resize.png" class="resize" alt="" onclick="resize()">
 					</div>
 					<button class="button secondary setup">Настройки</button>
 				</div>
@@ -92,8 +93,6 @@
 											<img src="{{root}}assets/img/message.png" alt="">
 											Выберите узел на карте, чтобы редактировать параметры.
 										</div>
-
-
 
 										<div id="bulPanel" class="hide">
 											<div class="type">Тип:&nbsp;&nbsp;<img src="{{root}}assets/img/boulean.png" alt="">
@@ -686,7 +685,6 @@
 						<button class="button secondary">Сохранить этап в библиотеку</button>
 						<button class="button primary">Сохранить</button>
 					</div>
-
 				</div>
 			</div>
 		</div>
