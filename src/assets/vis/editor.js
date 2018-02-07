@@ -285,18 +285,16 @@ function resize() {
 // vis
 // ========================================
 var nodes = new vis.DataSet([
-	{id: 1, label: 'Node 1', title: 'I have a popup!'},
-	{id: 2, label: 'Node 2', title: 'I have a popup!'},
-	{id: 3, label: 'Node 3', title: 'I have a popup!'},
-	{id: 4, label: 'Node 4', title: 'I have a popup!'},
-	{id: 5, label: 'Node 5', title: 'I have a popup!'}
+	{id: 1, label: 'Старт', title: "plasdj" },
+	{id: 2, label: 'Этап', title: "plasdj" },
+	{id: 3, label: 'Завершение', title: "plasdj" },
+	// {id: 4, label: 'Node 4', },
+	// {id: 5, label: 'Node 5', }
 ]);
 
 var edges = new vis.DataSet([
-	{from: 1, to: 3},
 	{from: 1, to: 2},
-	{from: 2, to: 4},
-	{from: 2, to: 5}
+	{from: 2, to: 3},
 ]);
 
 var container = document.getElementById('net');
@@ -306,7 +304,25 @@ var data = {
 };
 
 var options = {
-	autoresize: false
+	interaction:{hover:true},
+	manipulation: {
+		enabled: true
+	},
+	layout: {
+		// randomSeed: undefined,
+		improvedLayout:true,
+		hierarchical: {
+			enabled:true,
+			levelSeparation: 150,
+			nodeSpacing: 100,
+			treeSpacing: 200,
+			blockShifting: true,
+			edgeMinimization: true,
+			parentCentralization: true,
+			direction: 'UD',       // UD, DU, LR, RL
+			sortMethod: 'directed'   // hubsize, directed
+		}
+	}
 };
 
 var network = new vis.Network(container, data, options);

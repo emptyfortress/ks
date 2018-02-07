@@ -1186,7 +1186,6 @@ input[type='radio'] {
 			margin-left: 1rem;
 			background: url(../img/rarrow.png) no-repeat top right;
 			vertical-align: middle;
-			// font-size: 1rem;
 		}
 	}
 	.razdel {
@@ -1237,4 +1236,7 @@ input[type='radio'] {
 	&:hover {
 		opacity: 1;
 	}
+}
+.vis-manipulation {
+	display: block;
 }
