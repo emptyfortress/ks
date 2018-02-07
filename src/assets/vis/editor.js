@@ -283,14 +283,14 @@ var edges = new vis.DataSet([
 	{from: 2, to: 5}
 ]);
 
-var container = document.getElementById('mynetwork');
+var container = document.getElementById('net');
 var data = {
 	nodes: nodes,
 	edges: edges
 };
 
 var options = {
-	autoresize: true
+	autoresize: false
 };
 
 var network = new vis.Network(container, data, options);

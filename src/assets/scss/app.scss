@@ -385,7 +385,7 @@ $accent-green: #3ADB76;
 }
 
 .white {
-	height: calc(100% - 140px);
+	height: calc(100vh - 220px);
 	background: white;
 	overflow: hidden;
 	box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
@@ -396,11 +396,8 @@ $accent-green: #3ADB76;
 		margin: 85px 1rem 0 .5rem;
 	}
 }
-#mynetwork {
-	height: 100%;
-	.vis-network {
-		height: 100%;
-	}
+#net {
+	height: calc(100vh - 220px);
 }
 #editor {
 	float: left;
