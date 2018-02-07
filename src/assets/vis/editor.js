@@ -292,10 +292,10 @@ var nodes = new vis.DataSet([
 ]);
 
 var edges = new vis.DataSet([
-	{from: 1, to: 2},
-	{from: 1, to: 3},
-	{from: 2, to: 4},
-	{from: 3, to: 4},
+	// {from: 1, to: 2},
+	// {from: 1, to: 3},
+	// {from: 2, to: 4},
+	// {from: 3, to: 4},
 ]);
 
 var container = document.getElementById('net');
@@ -313,7 +313,7 @@ var options = {
 		// randomSeed: undefined,
 		improvedLayout:true,
 		hierarchical: {
-			enabled:true,
+			enabled:false,
 			// levelSeparation: 70,
 			nodeSpacing: 50,
 			// treeSpacing: 200,
@@ -330,3 +330,35 @@ var options = {
 };
 
 var network = new vis.Network(container, data, options);
+
+
+// ========================================
+// editing functions
+// ========================================
+function addEdge() {
+	try {
+		edges.add({
+			id: 100,
+			from: 1,
+			to: 2
+			// id: document.getElementById('edge-id').value,
+			// from: document.getElementById('edge-from').value,
+			// to: document.getElementById('edge-to').value
+		});
+	}
+	catch (err) {
+		alert(err);
+	}
+}
+
+function addNode() {
+	try {
+		nodes.add({
+			id: nodes.length + 1,
+			label: 'etap'
+		});
+	}
+	catch (err) {
+		alert(err);
+	}
+}
