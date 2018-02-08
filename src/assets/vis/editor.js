@@ -285,21 +285,33 @@ function resize() {
 function addEtap(arg) {
 	switch (arg) {
 		case 1:
+			$('.toolbox img').removeClass('selected');
+			$('.toolbox img:nth-child(2)').toggleClass('selected');
 			manipulationNodeType = 1;
 			break;
 		case 2:
+			$('.toolbox img').removeClass('selected');
+			$('.toolbox img:nth-child(3)').toggleClass('selected');
 			manipulationNodeType = 2;
 			break;
 		case 3:
+			$('.toolbox img').removeClass('selected');
+			$('.toolbox img:nth-child(4)').toggleClass('selected');
 			manipulationNodeType = 3;
 			break;
 		case 4:
+			$('.toolbox img').removeClass('selected');
+			$('.toolbox img:nth-child(5)').toggleClass('selected');
 			manipulationNodeType = 4;
 			break;
 		case 5:
+			$('.toolbox img').removeClass('selected');
+			$('.toolbox img:nth-child(6)').toggleClass('selected');
 			manipulationNodeType = 5;
 			break;
 		case 6:
+			$('.toolbox img').removeClass('selected');
+			$('.toolbox img:nth-child(7)').toggleClass('selected');
 			manipulationNodeType = 6;
 			break;
 		default:
@@ -331,7 +343,7 @@ var data = {
 var options = {
 	interaction:{hover:true},
 	manipulation: {
-		enabled: true,
+		enabled: false,
 		addNode: function(nodeData,callback) {
 			switch (manipulationNodeType) {
 				case 1:
@@ -433,4 +445,14 @@ var options = {
 };
 
 var network = new vis.Network(container, data, options);
+
+// ========================================
+// network click events
+// ========================================
+network.on("click", function(params) {
+	$('.toolbox img').removeClass('selected');
+	setTimeout( function() {
+		network.disableEditMode();
+	}, 500 )
+});
 
