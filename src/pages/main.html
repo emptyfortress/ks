@@ -65,12 +65,12 @@
 						<div id="net"></div>
 						<div class="toolbox">
 							<img src="{{root}}assets/img/bt-tree.png" data-toggle="offCanvasTemplate">
-							<img src="{{root}}assets/img/bt-start.png">
-							<img src="{{root}}assets/img/bt-finish.png">
-							<img src="{{root}}assets/img/bt-etap.png" onclick="addNode()">
-							<img src="{{root}}assets/img/bt-and.png">
-							<img src="{{root}}assets/img/bt-or.png">
-							<img src="{{root}}assets/img/bt-ext.png">
+							<img src="{{root}}assets/img/bt-start.png" onclick="addEtap(1)">
+							<img src="{{root}}assets/img/bt-finish.png" onclick="addEtap(2)">
+							<img src="{{root}}assets/img/bt-etap.png" onclick="addEtap(3)">
+							<img src="{{root}}assets/img/bt-and.png" onclick="addEtap(4)">
+							<img src="{{root}}assets/img/bt-or.png" onclick="addEtap(5)">
+							<img src="{{root}}assets/img/bt-ext.png" onclick="addEtap(6)">
 							<img src="{{root}}assets/img/bt-arr1.png" id="edge-add" onclick="addEdge()">
 							<img src="{{root}}assets/img/bt-arr2.png">
 							<img src="{{root}}assets/img/bt-arr3.png">
@@ -864,18 +864,4 @@
 		<!-- <div data-close class="button primary">Добавить</div> -->
 	</div>
 </div>
-
-
-<map name="map">
-		<area shape="poly" coords="152, 449, 184, 480, 148, 515, 119, 476" onclick="showBoulean()"/>
-    <area shape="poly" coords="303, 278, 338, 310, 305, 342, 271, 306" onclick="showExternal()" />
-    <area shape="rect" coords="221, 497, 333, 540" onclick="showEtap()"/>
-    <area shape="rect" coords="376, 372, 488, 416" onclick="showEtap()"/>
-    <area shape="rect" coords="144, 371, 252, 412" onclick="showEtap()"/>
-    <area shape="rect" coords="-1, 375, 105, 414" onclick="showEtap()"/>
-    <area shape="rect" coords="386, 194, 490, 237" onclick="showEtap()"/>
-    <area shape="rect" coords="203, 194, 314, 239" onclick="showEtap()"/>
-    <area shape="rect" coords="2, 199, 106, 237" onclick="showEtap()"/>
-    <area shape="rect" coords="108, 100, 215, 147" onclick="showEtap()"/>
-</map>
 

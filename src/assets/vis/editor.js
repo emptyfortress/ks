@@ -1,5 +1,6 @@
 let editMarsh = false;
 let editEt = false;
+let manipulationNodeType = 1;
 
 function editMarshrut() {//{{{
 	if (!editMarsh) {
@@ -278,6 +279,18 @@ function resize() {
 	$('.footer1').toggleClass('full');
 }
 
+function addEtap(arg) {
+	switch (arg) {
+		case 3:
+			manipulationNodeType = 3;
+			break;
+		
+		default:
+			
+	}
+	network.addNodeMode();
+}
+
 
 
 
@@ -307,7 +320,16 @@ var data = {
 var options = {
 	interaction:{hover:true},
 	manipulation: {
-		enabled: true
+		enabled: true,
+		addNode: function(nodeData,callback) {
+			if (manipulationNodeType == 3) {
+				nodeData.label = 'hello world may';
+			} else {
+				nodeData.label = 'fuck';
+				nodeData.group = 'box';
+			}
+			callback(nodeData);
+		}
 	},
 	layout: {
 		// randomSeed: undefined,
@@ -326,39 +348,16 @@ var options = {
 	},
 	edges: {
 		smooth: true
-  }
+	},
+	groups: {
+		'box': {
+			shape: 'box'
+		},
+		'ellipse' : {
+			shape: 'ellipse'
+		}
+	}
 };
 
 var network = new vis.Network(container, data, options);
 
-
-// ========================================
-// editing functions
-// ========================================
-function addEdge() {
-	try {
-		edges.add({
-			id: 100,
-			from: 1,
-			to: 2
-			// id: document.getElementById('edge-id').value,
-			// from: document.getElementById('edge-from').value,
-			// to: document.getElementById('edge-to').value
-		});
-	}
-	catch (err) {
-		alert(err);
-	}
-}
-
-function addNode() {
-	try {
-		nodes.add({
-			id: nodes.length + 1,
-			label: 'etap'
-		});
-	}
-	catch (err) {
-		alert(err);
-	}
-}
