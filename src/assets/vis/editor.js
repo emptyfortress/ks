@@ -1,3 +1,4 @@
+var DIR = 'assets/img/';
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
@@ -283,10 +284,24 @@ function resize() {
 
 function addEtap(arg) {
 	switch (arg) {
+		case 1:
+			manipulationNodeType = 1;
+			break;
+		case 2:
+			manipulationNodeType = 2;
+			break;
 		case 3:
 			manipulationNodeType = 3;
 			break;
-		
+		case 4:
+			manipulationNodeType = 4;
+			break;
+		case 5:
+			manipulationNodeType = 5;
+			break;
+		case 6:
+			manipulationNodeType = 6;
+			break;
 		default:
 			
 	}
@@ -300,17 +315,11 @@ function addEtap(arg) {
 // vis
 // ========================================
 var nodes = new vis.DataSet([
-	// {id: 1, label: 'Старт', title: "plasdj" },
-	// {id: 2, label: 'Этап', title: "plasdj" },
-	// {id: 3, label: 'Этап', title: "plasdj" },
-	// {id: 4, label: 'Завершение', title: "plasdj" },
+	{id: 1, label: 'Старт', group: 'start' },
+	{id: 2, label: 'Завершение', group: 'stop' },
 ]);
 
 var edges = new vis.DataSet([
-	// {from: 1, to: 2},
-	// {from: 1, to: 3},
-	// {from: 2, to: 4},
-	// {from: 3, to: 4},
 ]);
 
 var container = document.getElementById('net');
@@ -325,13 +334,31 @@ var options = {
 		enabled: true,
 		addNode: function(nodeData,callback) {
 			switch (manipulationNodeType) {
+				case 1:
+					nodeData.label = 'Старт';
+					nodeData.group = 'start';
+					break;
+				case 2:
+					nodeData.label = 'Завершение';
+					nodeData.group = 'stop';
+					break;
 				case 3:
 					nodeData.label = 'Этап';
 					nodeData.group = 'box';
 					break;
-				
+				case 4:
+					nodeData.label = 'Условие И';
+					nodeData.group = 'and';
+					break;
+				case 5:
+					nodeData.label = 'Условие ИЛИ';
+					nodeData.group = 'or';
+					break;
+				case 6:
+					nodeData.label = 'Внешнее условие';
+					nodeData.group = 'ext';
+					break;
 				default:
-					
 			}
 			callback(nodeData);
 		}
@@ -362,6 +389,12 @@ var options = {
 			x:2,
 			y:2
 		},
+		chosen:{ 
+			node: customFun = function(values) {
+				values.shadowSize = 11,
+				values.borderWidth = 2
+			}
+		}
 	},
 	groups: {
 		'box': {
@@ -369,17 +402,33 @@ var options = {
 			color: {
 				border: borderColor,
 				background: nodeColor,
-			},
-			chosen:{ 
-				node: customFun = function(values) {
-					values.shadowSize = 11,
-					values.borderWidth = 2
-				}
 			}
 		},
-		'ellipse' : {
-			shape: 'ellipse'
-		}
+		'start' : {
+			shape: 'image',
+			image: DIR + 'bt-start.png',
+			size: 15
+		},
+		'stop' : {
+			shape: 'image',
+			image: DIR + 'bt-stop.png',
+			size: 15
+		},
+		'and' : {
+			shape: 'image',
+			image: DIR + 'bt-and.png',
+			size: 15
+		},
+		'or' : {
+			shape: 'image',
+			image: DIR + 'bt-or.png',
+			size: 15
+		},
+		'ext' : {
+			shape: 'image',
+			image: DIR + 'bt-ext.png',
+			size: 15
+		},
 	}
 };
 
