@@ -1,6 +1,8 @@
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
+let nodeColor = '#DBF4FF';
+let borderColor = '#0096DC';
 
 function editMarshrut() {//{{{
 	if (!editMarsh) {
@@ -322,11 +324,14 @@ var options = {
 	manipulation: {
 		enabled: true,
 		addNode: function(nodeData,callback) {
-			if (manipulationNodeType == 3) {
-				nodeData.label = 'hello world may';
-			} else {
-				nodeData.label = 'fuck';
-				nodeData.group = 'box';
+			switch (manipulationNodeType) {
+				case 3:
+					nodeData.label = 'Этап';
+					nodeData.group = 'box';
+					break;
+				
+				default:
+					
 			}
 			callback(nodeData);
 		}
@@ -349,9 +354,28 @@ var options = {
 	edges: {
 		smooth: true
 	},
+	nodes: {
+		shadow:{
+			enabled: false,
+			color: 'rgba(0,0,0,0.7)',
+			size:10,
+			x:3,
+			y:3
+		},
+	},
 	groups: {
 		'box': {
-			shape: 'box'
+			shape: 'box',
+			color: {
+				border: borderColor,
+				background: nodeColor,
+			},
+			chosen:{ 
+				node: customFun = function(values) {
+					values.shadowSize = 12,
+					values.borderWidth = 2
+				}
+			}
 		},
 		'ellipse' : {
 			shape: 'ellipse'
