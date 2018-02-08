@@ -300,10 +300,10 @@ function addEtap(arg) {
 // vis
 // ========================================
 var nodes = new vis.DataSet([
-	{id: 1, label: 'Старт', title: "plasdj" },
-	{id: 2, label: 'Этап', title: "plasdj" },
-	{id: 3, label: 'Этап', title: "plasdj" },
-	{id: 4, label: 'Завершение', title: "plasdj" },
+	// {id: 1, label: 'Старт', title: "plasdj" },
+	// {id: 2, label: 'Этап', title: "plasdj" },
+	// {id: 3, label: 'Этап', title: "plasdj" },
+	// {id: 4, label: 'Завершение', title: "plasdj" },
 ]);
 
 var edges = new vis.DataSet([
@@ -359,8 +359,8 @@ var options = {
 			enabled: false,
 			color: 'rgba(0,0,0,0.7)',
 			size:10,
-			x:3,
-			y:3
+			x:2,
+			y:2
 		},
 	},
 	groups: {
@@ -372,7 +372,7 @@ var options = {
 			},
 			chosen:{ 
 				node: customFun = function(values) {
-					values.shadowSize = 12,
+					values.shadowSize = 11,
 					values.borderWidth = 2
 				}
 			}
