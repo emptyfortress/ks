@@ -362,8 +362,8 @@ var nodes = new vis.DataSet([
 	{id: 2, label: 'Завершение', group: 'stop' },
 ]);
 
-var edges = new vis.DataSet([
-]);
+// var edgeData = [ { from:1, to: 2 } ];
+var edges = new vis.DataSet([]);
 
 var container = document.getElementById('net');
 var data = {
@@ -407,17 +407,10 @@ var options = {
 		},
 		addEdge: function(edgeData,callback) {
 			if (edgeData.from === edgeData.to) {
+				// TODO: define func to display if try connect node to himself  <12-02-18, yourname> //
 				notAllowed(1);
 			}
 			else {
-				switch (edgeType) {
-				case 1:
-						
-					break;
-					
-				default:
-						
-				}
 				callback(edgeData);
 			}
 		}
@@ -450,7 +443,7 @@ var options = {
 			y: 2
 		},
 		chosen: {
-			edge: customFun1 = function(values) { // eslint-disable-line no-undef
+			edge: function(values) { 
 				values.shadowSize = 8;
 				values.width = 2;
 			}
@@ -465,7 +458,7 @@ var options = {
 			y:2
 		},
 		chosen:{ 
-			node: customFun = function(values) { // eslint-disable-line no-undef
+			node: function(values) { 
 				values.shadowSize = 11,
 				values.borderWidth = 2;
 			}
@@ -518,7 +511,4 @@ network.on('click', function() {
 		network.disableEditMode();
 	}, 500 );
 });
-
-
-
 
