@@ -1,11 +1,14 @@
-var DIR = 'assets/img/';
+/*global vis */
+const DIR = 'assets/img/';
+// let customFun;
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 
-function editMarshrut() {//{{{
+
+function editMarshrut() {  // eslint-disable-line no-unused-vars
 	if (!editMarsh) {
 		for (var i = 1; i < 4 ; i++) {
 			$('#marsh').foundation('up', $('#marsh' + i));
@@ -21,18 +24,18 @@ function editMarshrut() {//{{{
 		$('#addFold').removeClass('hide');
 		editMarsh = true;
 	} else {
-		$('#marsh').removeAttr('disabled')
+		$('#marsh').removeAttr('disabled');
 		$('#marsh > li > a').attr('contentEditable', 'false');
-		$('#marsh img.edit').addClass('hide')
-		$('#marshBlock').removeClass('edit')
-		$('#marshGear').removeClass('edit')
+		$('#marsh img.edit').addClass('hide');
+		$('#marshBlock').removeClass('edit');
+		$('#marshGear').removeClass('edit');
 		$('#addMarsh').removeClass('hide');
 		$('#addFold').addClass('hide');
 		editMarsh = false;
 	}
-}//}}}
+}
 
-function editEtap() {//{{{
+function editEtap() {  // eslint-disable-line no-unused-vars
 	if (!editEt) {
 		for (var i = 1; i < 7 ; i++) {
 			$('#etap').foundation('up', $('#etap' + i));
@@ -48,27 +51,27 @@ function editEtap() {//{{{
 		$('#addFol').removeClass('hide');
 		editEt = true;
 	} else {
-		$('#etap').removeAttr('disabled')
+		$('#etap').removeAttr('disabled');
 		$('#etap > li > a').attr('contentEditable', 'false');
-		$('#etap img.edit').addClass('hide')
-		$('#etapBlock').removeClass('edit')
-		$('#etapGear').removeClass('edit')
+		$('#etap img.edit').addClass('hide');
+		$('#etapBlock').removeClass('edit');
+		$('#etapGear').removeClass('edit');
 		$('#addEt').removeClass('hide');
 		$('#addFol').addClass('hide');
 		editEt = false;
 	}
 }
-function openM() {
-	$('.mprops').toggleClass('expanded')
-}//}}}
+function openM() { // eslint-disable-line no-unused-vars
+	$('.mprops').toggleClass('expanded');
+}
 
 $('.trash').click( function() {//{{{
-  $(this).parent().parent().addClass("hide");
-} )
+	$(this).parent().parent().addClass("hide");
+} );
 
 $('.del').click( function() {
-  $(this).parent().addClass("hide");
-} )//}}}
+	$(this).parent().addClass("hide");
+} );//}}}
 // ========================================
 // resize panels{{{
 // ========================================
@@ -84,42 +87,42 @@ let leftPanePercentage = 50;
 let rightPanePercentage = 50;
 
 function setInitialPaneSizes() {
-  if ($leftPane && $rightPane) {
-    const unit = $paneContainer.width() / (leftPanePercentage + rightPanePercentage);
-    $leftPane.width(unit * leftPanePercentage);
-    $rightPane.width(unit * rightPanePercentage);
-  }
+	if ($leftPane && $rightPane) {
+		const unit = $paneContainer.width() / (leftPanePercentage + rightPanePercentage);
+		$leftPane.width(unit * leftPanePercentage);
+		$rightPane.width(unit * rightPanePercentage);
+	}
 }
 
 $(document).on("ready", setInitialPaneSizes);
 $(window).on("resize", setInitialPaneSizes);
 
 if ($dragbar) {
-  $dragbar.on("mousedown", (mousedownEvent) => {
-    mousedownEvent.preventDefault();
-    dragging = true;
-    let prevPageX = mousedownEvent.pageX;
+	$dragbar.on("mousedown", (mousedownEvent) => {
+		mousedownEvent.preventDefault();
+		dragging = true;
+		let prevPageX = mousedownEvent.pageX;
 
-    $(document).on("mousemove", (mousemoveEvent) => {
-      if (dragging) {
-        if ($leftPane && $rightPane) {
-          const deltaPageX = mousemoveEvent.pageX - prevPageX;
-          prevPageX = mousemoveEvent.pageX;
-          $leftPane.width($leftPane.width() + deltaPageX);
-          $rightPane.width($rightPane.width() - deltaPageX);
-          leftPanePercentage = 100 / $paneContainer.width() * $leftPane.width();
-          rightPanePercentage = 100 / $paneContainer.width() * $rightPane.width();
-        }
-      }
-    });
+		$(document).on("mousemove", (mousemoveEvent) => {
+			if (dragging) {
+				if ($leftPane && $rightPane) {
+					const deltaPageX = mousemoveEvent.pageX - prevPageX;
+					prevPageX = mousemoveEvent.pageX;
+					$leftPane.width($leftPane.width() + deltaPageX);
+					$rightPane.width($rightPane.width() - deltaPageX);
+					leftPanePercentage = 100 / $paneContainer.width() * $leftPane.width();
+					rightPanePercentage = 100 / $paneContainer.width() * $rightPane.width();
+				}
+			}
+		});
 
-    $(document).on("mouseup", () => {
-      if (dragging) {
-        dragging = false;
-        $(document).unbind("mousemove");
-      }
-    });
-  });
+		$(document).on("mouseup", () => {
+			if (dragging) {
+				dragging = false;
+				$(document).unbind("mousemove");
+			}
+		});
+	});
 }//}}}
 
 
@@ -128,53 +131,53 @@ if ($dragbar) {
 // ========================================
 
 $(".mat-input").focus(function(){
-  $(this).parent().addClass("is-acti is-completed");
+	$(this).parent().addClass("is-acti is-completed");
 });
 
 $(".mat-input").focusout(function(){
-  if($(this).val() === "")
-    $(this).parent().removeClass("is-completed");
-  $(this).parent().removeClass("is-acti");
-})//}}}
+	if($(this).val() === "")
+		$(this).parent().removeClass("is-completed");
+	$(this).parent().removeClass("is-acti");
+});//}}}
 
 
 // ========================================
 // fieldset{{{
 // ========================================
 $('legend').click(function() {
-  // $((this)'.fieldset').toggleClass('collapsed');
-  $(this).parent().toggleClass('collapsed');
+	// $((this)'.fieldset').toggleClass('collapsed');
+	$(this).parent().toggleClass('collapsed');
 });
 
-function showRol() {
+function showRol() { // eslint-disable-line no-unused-vars
 	$('#rol1').removeClass('hide');
 	$('#group1').addClass('hide');
 	$('#fio1').addClass('hide');
 	$('#dep1').addClass('hide');
 	$('#word1').addClass('hide');
 }
-function showGroup() {
+function showGroup() { // eslint-disable-line no-unused-vars
 	$('#group1').removeClass('hide');
 	$('#rol1').addClass('hide');
 	$('#fio1').addClass('hide');
 	$('#dep1').addClass('hide');
 	$('#word1').addClass('hide');
 }
-function showFio() {
+function showFio() { // eslint-disable-line no-unused-vars
 	$('#fio1').removeClass('hide');
 	$('#group1').addClass('hide');
 	$('#rol1').addClass('hide');
 	$('#dep1').addClass('hide');
 	$('#word1').addClass('hide');
 }
-function showDep() {
+function showDep() { // eslint-disable-line no-unused-vars
 	$('#dep1').removeClass('hide');
 	$('#group1').addClass('hide');
 	$('#fio1').addClass('hide');
 	$('#rol1').addClass('hide');
 	$('#word1').addClass('hide');
 }
-function showWord() {
+function showWord() { // eslint-disable-line no-unused-vars
 	$('#word1').removeClass('hide');
 	$('#group1').addClass('hide');
 	$('#fio1').addClass('hide');
@@ -182,11 +185,11 @@ function showWord() {
 	$('#rol1').addClass('hide');
 }
 
-function showButtons() {
+function showButtons() { // eslint-disable-line no-unused-vars
 	$('#dopBt').toggleClass('hide');
 }
 
-function nothing() {
+function nothing() { // eslint-disable-line no-unused-vars
 	$('#emptyPanel').removeClass('hide');
 	$('#filledPanel').addClass('hide');
 	$('.tabs').addClass('hide');
@@ -203,7 +206,7 @@ function nothing() {
 	$('#ext').removeClass('active');
 	$('#arr').removeClass('active');
 }
-function showEtap() {
+function showEtap() { // eslint-disable-line no-unused-vars
 	$('#emptyPanel').addClass('hide');
 	$('#filledPanel').removeClass('hide');
 	$('.tabs').removeClass('hide');
@@ -220,7 +223,7 @@ function showEtap() {
 	$('#ext').removeClass('active');
 	$('#arr').removeClass('active');
 }
-function showBoulean() {
+function showBoulean() { // eslint-disable-line no-unused-vars
 	$('#emptyPanel').addClass('hide');
 	$('#filledPanel').addClass('hide');
 	$('.tabs').removeClass('hide');
@@ -237,7 +240,7 @@ function showBoulean() {
 	$('#ext').removeClass('active');
 	$('#arr').removeClass('active');
 }
-function showExternal() {
+function showExternal() { // eslint-disable-line no-unused-vars
 	$('#emptyPanel').addClass('hide');
 	$('#filledPanel').addClass('hide');
 	$('.tabs').removeClass('hide');
@@ -254,7 +257,7 @@ function showExternal() {
 	$('#eta').removeClass('active');
 	$('#arr').removeClass('active');
 }
-function showArrow() {
+function showArrow() { // eslint-disable-line no-unused-vars
 	$('#emptyPanel').addClass('hide');
 	$('#filledPanel').removeClass('hide');
 	$('.tabs').removeClass('hide');
@@ -272,7 +275,7 @@ function showArrow() {
 // ========================================
 // editor
 // ========================================
-function resize() {
+function resize() { // eslint-disable-line no-unused-vars
 	$('.mprops').toggleClass('full');
 	$('#viewer').toggleClass('full');
 	$('#net').toggleClass('full');
@@ -282,39 +285,39 @@ function resize() {
 	$('.footer1').toggleClass('full');
 }
 
-function addEtap(arg) {
+function addEtap(arg) { // eslint-disable-line no-unused-vars
 	switch (arg) {
-		case 1:
-			$('.toolbox img').removeClass('selected');
-			$('.toolbox img:nth-child(2)').toggleClass('selected');
-			manipulationNodeType = 1;
-			break;
-		case 2:
-			$('.toolbox img').removeClass('selected');
-			$('.toolbox img:nth-child(3)').toggleClass('selected');
-			manipulationNodeType = 2;
-			break;
-		case 3:
-			$('.toolbox img').removeClass('selected');
-			$('.toolbox img:nth-child(4)').toggleClass('selected');
-			manipulationNodeType = 3;
-			break;
-		case 4:
-			$('.toolbox img').removeClass('selected');
-			$('.toolbox img:nth-child(5)').toggleClass('selected');
-			manipulationNodeType = 4;
-			break;
-		case 5:
-			$('.toolbox img').removeClass('selected');
-			$('.toolbox img:nth-child(6)').toggleClass('selected');
-			manipulationNodeType = 5;
-			break;
-		case 6:
-			$('.toolbox img').removeClass('selected');
-			$('.toolbox img:nth-child(7)').toggleClass('selected');
-			manipulationNodeType = 6;
-			break;
-		default:
+	case 1:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(2)').toggleClass('selected');
+		manipulationNodeType = 1;
+		break;
+	case 2:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(3)').toggleClass('selected');
+		manipulationNodeType = 2;
+		break;
+	case 3:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(4)').toggleClass('selected');
+		manipulationNodeType = 3;
+		break;
+	case 4:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(5)').toggleClass('selected');
+		manipulationNodeType = 4;
+		break;
+	case 5:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(6)').toggleClass('selected');
+		manipulationNodeType = 5;
+		break;
+	case 6:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(7)').toggleClass('selected');
+		manipulationNodeType = 6;
+		break;
+	default:
 			
 	}
 	network.addNodeMode();
@@ -346,31 +349,31 @@ var options = {
 		enabled: false,
 		addNode: function(nodeData,callback) {
 			switch (manipulationNodeType) {
-				case 1:
-					nodeData.label = 'Старт';
-					nodeData.group = 'start';
-					break;
-				case 2:
-					nodeData.label = 'Завершение';
-					nodeData.group = 'stop';
-					break;
-				case 3:
-					nodeData.label = 'Этап';
-					nodeData.group = 'box';
-					break;
-				case 4:
-					nodeData.label = 'Условие И';
-					nodeData.group = 'and';
-					break;
-				case 5:
-					nodeData.label = 'Условие ИЛИ';
-					nodeData.group = 'or';
-					break;
-				case 6:
-					nodeData.label = 'Внешнее условие';
-					nodeData.group = 'ext';
-					break;
-				default:
+			case 1:
+				nodeData.label = 'Старт';
+				nodeData.group = 'start';
+				break;
+			case 2:
+				nodeData.label = 'Завершение';
+				nodeData.group = 'stop';
+				break;
+			case 3:
+				nodeData.label = 'Этап';
+				nodeData.group = 'box';
+				break;
+			case 4:
+				nodeData.label = 'Условие И';
+				nodeData.group = 'and';
+				break;
+			case 5:
+				nodeData.label = 'Условие ИЛИ';
+				nodeData.group = 'or';
+				break;
+			case 6:
+				nodeData.label = 'Внешнее условие';
+				nodeData.group = 'ext';
+				break;
+			default:
 			}
 			callback(nodeData);
 		}
@@ -402,9 +405,9 @@ var options = {
 			y:2
 		},
 		chosen:{ 
-			node: customFun = function(values) {
+			node: customFun = function(values) { // eslint-disable-line no-undef
 				values.shadowSize = 11,
-				values.borderWidth = 2
+				values.borderWidth = 2;
 			}
 		}
 	},
@@ -443,16 +446,16 @@ var options = {
 		},
 	}
 };
-
+/* exported vis */
 var network = new vis.Network(container, data, options);
 
 // ========================================
 // network click events
 // ========================================
-network.on("click", function(params) {
+network.on('click', function() {
 	$('.toolbox img').removeClass('selected');
 	setTimeout( function() {
 		network.disableEditMode();
-	}, 500 )
+	}, 500 );
 });
 
