@@ -1,9 +1,9 @@
 /*global vis */
 const DIR = 'assets/img/';
-// let customFun;
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
+let manipulationEdgeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 
@@ -318,9 +318,35 @@ function addEtap(arg) { // eslint-disable-line no-unused-vars
 		manipulationNodeType = 6;
 		break;
 	default:
-			
 	}
 	network.addNodeMode();
+}
+
+function myAddEdge(arg) { // eslint-disable-line no-unused-vars
+	switch (arg) {
+	case 1:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(8)').toggleClass('selected');
+		manipulationEdgeType = 1;
+		break;
+	case 2:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(9)').toggleClass('selected');
+		break;
+	case 3:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(10)').toggleClass('selected');
+		break;
+	case 4:
+		$('.toolbox img').removeClass('selected');
+		$('.toolbox img:nth-child(11)').toggleClass('selected');
+		break;
+
+	default:
+
+	}
+	network.addEdgeMode();
+
 }
 
 
@@ -458,4 +484,7 @@ network.on('click', function() {
 		network.disableEditMode();
 	}, 500 );
 });
+
+
+
 
