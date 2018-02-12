@@ -3,7 +3,7 @@ const DIR = 'assets/img/';
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
-let manipulationEdgeType = 1;
+let edgeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 
@@ -327,7 +327,7 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 	case 1:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(8)').toggleClass('selected');
-		manipulationEdgeType = 1;
+		edgeType = 1;
 		break;
 	case 2:
 		$('.toolbox img').removeClass('selected');
@@ -349,7 +349,9 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 
 }
 
-
+function notAllowed(arg) {
+	console.log("this is not allowed " + arg);
+}
 
 
 // ========================================
@@ -402,6 +404,22 @@ var options = {
 			default:
 			}
 			callback(nodeData);
+		},
+		addEdge: function(edgeData,callback) {
+			if (edgeData.from === edgeData.to) {
+				notAllowed(1);
+			}
+			else {
+				switch (edgeType) {
+				case 1:
+						
+					break;
+					
+				default:
+						
+				}
+				callback(edgeData);
+			}
 		}
 	},
 	layout: {
@@ -420,12 +438,28 @@ var options = {
 		}
 	},
 	edges: {
-		smooth: true
+		smooth: true,
+		arrows: {
+			to: { enabled: true, scaleFactor: 1, type: 'arrow' }
+		},
+		shadow: {
+			enabled: false,
+			color: 'rgba(0,0,0,1)',
+			size: 7,
+			x: 2,
+			y: 2
+		},
+		chosen: {
+			edge: customFun1 = function(values) { // eslint-disable-line no-undef
+				values.shadowSize = 8;
+				values.width = 2;
+			}
+		},
 	},
 	nodes: {
 		shadow:{
 			enabled: false,
-			color: 'rgba(0,0,0,0.7)',
+			color: 'rgba(0,0,0,0.9)',
 			size:10,
 			x:2,
 			y:2
