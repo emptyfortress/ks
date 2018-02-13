@@ -267,11 +267,13 @@ function showExternal() { // eslint-disable-line no-unused-vars
 function showEnd() { // eslint-disable-line no-unused-vars
 	nothing();
 	$('#emptyPanel').addClass('hide');
+	$('#filledPanel').addClass('hide');
 	$('#endPanel').removeClass('hide');
 }
 function showStart() { // eslint-disable-line no-unused-vars
 	nothing();
 	$('#emptyPanel').addClass('hide');
+	$('#filledPanel').addClass('hide');
 	$('#startPanel').removeClass('hide');
 }
 function showArrow() { // eslint-disable-line no-unused-vars
