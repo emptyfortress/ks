@@ -531,12 +531,9 @@ network.on('selectEdge', function() {
 	showArrow();
 });
 
-network.on('selectNode', function(param) {
-	var selId = param.nodes[0];
-	var curNodes = Object.values(nodes._data);
-	var selNode = curNodes.filter( (el) => el.id === selId);
-	var nodeGroup = selNode[0].group;
-	switch (nodeGroup) {
+function showNodeInfo(arg) { // show info in right panel depending on group of nodes
+	let group = arg;
+	switch (group) {
 	case 'box':
 		showEtap();
 		break;
@@ -553,11 +550,23 @@ network.on('selectNode', function(param) {
 	case 'stop':
 		showEnd();
 		break;
-
-		
-	default:
-			
 	}
+}
+
+network.on('selectNode', function(param) {
+	var selId = param.nodes[0];
+	var curNodes = Object.values(nodes._data);
+	var selNode = curNodes.filter( (el) => el.id === selId);
+	var nodeGroup = selNode[0].group;
+	showNodeInfo(nodeGroup);
+});
+
+network.on("dragStart", function (params) {
+	var selId = this.getNodeAt(params.pointer.DOM);
+	var curNodes = Object.values(nodes._data);
+	var selNode = curNodes.filter( (el) => el.id === selId);
+	var nodeGroup = selNode[0].group;
+	showNodeInfo(nodeGroup);
 });
 
 network.on('deselectEdge', function() {
