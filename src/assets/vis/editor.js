@@ -526,7 +526,9 @@ var network = new vis.Network(container, data, options);
 // network click events disable tool in toolbox
 // ========================================
 network.on('click', function() {
-	$('.toolbox img').removeClass('selected');
+	for (var i = 2; i < 8 ; i++) {
+		$('.toolbox img:nth-child(' + i + ')').removeClass('selected');
+	}
 });
 
 network.on('selectEdge', function() {
