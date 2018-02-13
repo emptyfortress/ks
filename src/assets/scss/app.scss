@@ -1259,3 +1259,17 @@ input[type='radio'] {
 	width: 32px;
 	opacity: .2;
 }
+.off-hd {
+	text-align: center;
+	font-size: 1rem;
+	font-weight: bold;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+.tempList {
+	list-style: none;
+	li {
+		margin-bottom: 2rem;
+		img { margin-right: 1rem; }
+	}
+}

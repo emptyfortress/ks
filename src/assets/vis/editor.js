@@ -5,6 +5,7 @@ let editEt = false;
 let manipulationNodeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
+let selId;
 
 
 function editMarshrut() {  // eslint-disable-line no-unused-vars
@@ -558,7 +559,7 @@ function showNodeInfo(arg) { // show info in right panel depending on group of n
 }
 
 network.on('selectNode', function(param) {
-	var selId = param.nodes[0];
+	selId = param.nodes[0];
 	var curNodes = Object.values(nodes._data);
 	var selNode = curNodes.filter( (el) => el.id === selId);
 	var nodeGroup = selNode[0].group;
@@ -566,7 +567,7 @@ network.on('selectNode', function(param) {
 });
 
 network.on("dragStart", function (params) {
-	var selId = this.getNodeAt(params.pointer.DOM);
+	selId = this.getNodeAt(params.pointer.DOM);
 	var curNodes = Object.values(nodes._data);
 	var selNode = curNodes.filter( (el) => el.id === selId);
 	var nodeGroup = selNode[0].group;
@@ -579,5 +580,25 @@ network.on('deselectEdge', function() {
 
 network.on('deselectNode', function() {
 	nothing();
+	selId = null;
 });
 
+window.addEventListener('keyup', function(e) {
+	if (selId && ( e.keyCode == 46 || e.keyCode == 8 )) {
+		try {
+			nodes.remove({id: selId});
+		}
+		catch (err) {
+			alert(err);
+		}
+		nothing();
+		selId = null;
+	}
+	else if (e.keyCode == 27) {
+		$('#offCanvasTemplate').foundation('close');
+		$('#offCanvasLeft').foundation('close');
+		$('#offCanvasRight').foundation('close');
+		
+	}
+
+});
