@@ -3,7 +3,6 @@ const DIR = 'assets/img/';
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
-let edgeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 
@@ -200,6 +199,8 @@ function nothing() { // eslint-disable-line no-unused-vars
 	$('#bulPanel').addClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
+	$('#startPanel').addClass('hide');
+	$('#endPanel').addClass('hide');
 	$('#noth').addClass('active');
 	$('#eta').removeClass('active');
 	$('#bul').removeClass('active');
@@ -215,6 +216,8 @@ function showEtap() { // eslint-disable-line no-unused-vars
 	$('#bulPanel').addClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
+	$('#startPanel').addClass('hide');
+	$('#endPanel').addClass('hide');
 	$('#tt1').addClass('is-active');
 	$('#tt2').removeClass('is-active');
 	$('#noth').removeClass('active');
@@ -234,6 +237,8 @@ function showBoulean() { // eslint-disable-line no-unused-vars
 	$('#bulPanel').removeClass('hide');
 	$('#extPanel').addClass('hide');
 	$('#arrPanel').addClass('hide');
+	$('#startPanel').addClass('hide');
+	$('#endPanel').addClass('hide');
 	$('#noth').removeClass('active');
 	$('#bul').addClass('active');
 	$('#eta').removeClass('active');
@@ -249,6 +254,8 @@ function showExternal() { // eslint-disable-line no-unused-vars
 	$('#bulPanel').addClass('hide');
 	$('#extPanel').removeClass('hide');
 	$('#arrPanel').addClass('hide');
+	$('#startPanel').addClass('hide');
+	$('#endPanel').addClass('hide');
 	$('#tt1').addClass('is-active');
 	$('#tt2').removeClass('is-active');
 	$('#noth').removeClass('active');
@@ -256,6 +263,16 @@ function showExternal() { // eslint-disable-line no-unused-vars
 	$('#bul').removeClass('active');
 	$('#eta').removeClass('active');
 	$('#arr').removeClass('active');
+}
+function showEnd() { // eslint-disable-line no-unused-vars
+	nothing();
+	$('#emptyPanel').addClass('hide');
+	$('#endPanel').removeClass('hide');
+}
+function showStart() { // eslint-disable-line no-unused-vars
+	nothing();
+	$('#emptyPanel').addClass('hide');
+	$('#startPanel').removeClass('hide');
 }
 function showArrow() { // eslint-disable-line no-unused-vars
 	$('#emptyPanel').addClass('hide');
@@ -357,6 +374,7 @@ function notAllowed(arg) {
 // ========================================
 // vis
 // ========================================
+
 var nodes = new vis.DataSet([
 	{id: 1, label: 'Старт', group: 'start' },
 	{id: 2, label: 'Завершение', group: 'stop' },
@@ -503,12 +521,50 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 // ========================================
-// network click events
+// network click events disable tool in toolbox
 // ========================================
 network.on('click', function() {
 	$('.toolbox img').removeClass('selected');
-	setTimeout( function() {
-		network.disableEditMode();
-	}, 500 );
+});
+
+network.on('selectEdge', function() {
+	showArrow();
+});
+
+network.on('selectNode', function(param) {
+	var selId = param.nodes[0];
+	var curNodes = Object.values(nodes._data);
+	var selNode = curNodes.filter( (el) => el.id === selId);
+	var nodeGroup = selNode[0].group;
+	switch (nodeGroup) {
+	case 'box':
+		showEtap();
+		break;
+	case 'and':
+	case 'or':
+		showBoulean();
+		break;
+	case 'ext':
+		showExternal();
+		break;
+	case 'start':
+		showStart();
+		break;
+	case 'stop':
+		showEnd();
+		break;
+
+		
+	default:
+			
+	}
+});
+
+network.on('deselectEdge', function() {
+	nothing();
+});
+
+network.on('deselectNode', function() {
+	nothing();
 });
 
