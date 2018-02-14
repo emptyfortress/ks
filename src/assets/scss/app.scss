@@ -431,7 +431,6 @@ $accent-green: #3ADB76;
 		height: 100%;
 		margin: 0;
 	}
-
 }
 #editor {
 	float: left;
@@ -1272,4 +1271,12 @@ input[type='radio'] {
 		margin-bottom: 2rem;
 		img { margin-right: 1rem; }
 	}
+}
+#tip {
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	font-size: .85rem;
+	font-style: italic;
+	color: #aaa;
 }

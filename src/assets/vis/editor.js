@@ -7,7 +7,6 @@ let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 let selId;
 
-
 function editMarshrut() {  // eslint-disable-line no-unused-vars
 	if (!editMarsh) {
 		for (var i = 1; i < 4 ; i++) {
@@ -347,7 +346,7 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 	case 1:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(8)').toggleClass('selected');
-		edgeType = 1;
+		// edgeType = 1;
 		break;
 	case 2:
 		$('.toolbox img').removeClass('selected');
