@@ -44,3 +44,32 @@ const edgesArray4 = [
 	{ from: 403, to: 402 },
 	{ from: 402, to: 404 },
 ];
+
+const marshrut = [
+	{ id: 900, label: 'Старт', group: 'start'},
+	{ id: 901, label: 'Согласование с производством', group: 'box'},
+	{ id: 902, label: 'Проверка у юристов', group: 'box'},
+	{ id: 903, label: 'Финансовый отдел', group: 'box'},
+	{ id: 904, label: 'Плановый отдел', group: 'box'},
+	{ id: 905, label: 'Консолидация', group: 'box'},
+	{ id: 906, label: 'Сумма больше 1 млн ?', group: 'ext'},
+	{ id: 907, label: 'Согласование с акционерами', group: 'box'},
+	{ id: 908, label: 'Подписание', group: 'box'},
+	{ id: 909, label: 'Регистрация в реестре', group: 'box'},
+	{ id: 910, label: 'Завершение', group: 'stop'},
+];
+const marshEdges = [
+	{ from: 900, to: 901 },
+	{ from: 901, to: 902 },
+	{ from: 901, to: 903 },
+	{ from: 901, to: 904 },
+	{ from: 902, to: 905 },
+	{ from: 903, to: 905 },
+	{ from: 904, to: 905 },
+	{ from: 905, to: 906 },
+	{ from: 906, to: 907 },
+	{ from: 907, to: 908 },
+	{ from: 906, to: 908 },
+	{ from: 908, to: 909 },
+	{ from: 909, to: 910 },
+];

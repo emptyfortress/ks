@@ -1,4 +1,5 @@
 /*global vis */
+/*global marshrut marshEdges */
 const DIR = 'assets/img/';
 let editMarsh = false;
 let editEt = false;
@@ -376,7 +377,6 @@ function notAllowed(arg) {
 
 function tip(arg) {
 	$('#tip').text(arg);
-	
 }
 
 function addMini(e) { // eslint-disable-line no-unused-vars
@@ -609,3 +609,27 @@ window.addEventListener('keyup', function(e) {
 		$('#offCanvasRight').foundation('close');
 	}
 });
+
+$('.m-list ul li ul li').click( function() {
+	nodes.clear();
+	edges.clear();
+	network.setOptions({
+		layout: {
+			improvedLayout: true,
+			hierarchical: {
+				enabled: true,
+				levelSeparation: 90,
+				nodeSpacing: 180,
+				treeSpacing: 100,
+				blockShifting: true,
+				edgeMinimization: true,
+				parentCentralization: true,
+				direction: 'UD',        // UD, DU, LR, RL
+				sortMethod: 'directed'   // hubsize, directed
+			}
+		}
+	});
+	nodes.add(marshrut);
+	edges.add(marshEdges);
+	tip("Выберите этап для редактирования");
+} );

@@ -79,7 +79,7 @@
 						<img src="{{root}}assets/img/resize.png" class="resize" alt="" onclick="resize()">
 						<div id="tip">Начните работу с добавления на карту этапов "Старт" и "Завершнение" или мини-шаблонов</div>
 					</div>
-					<button class="button secondary setup">Настройки</button>
+					<button class="button secondary setup" data-open="setup">Настройки</button>
 				</div>
 				<div id="viewer">
 					<div class="white right">
@@ -709,21 +709,49 @@
 </div>
 
 
+<div class="reveal" id="setup" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+	<h5>Настройки карты</h5>
+	<button class="close-button" data-close aria-label="Close reveal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<div class="m-check">
+		<input id="set1" type="checkbox" checked><label for="set1">Использовать физику</label><a hrev="#">Настроить</a>
+	</div>
+	<div class="mt-2">
+		<input type="radio" name="kemon" value="group" id="group" onclick="" checked ><label for="group">Свободная структура</label><br>
+		<input type="radio" name="kemon" value="rol" id="rol" onclick="" ><label for="rol">Иерархическая структура</label><br>
+	</div>
+	<br>
+	<!-- <div class=""> -->
+	<!-- 	<label>Между узлами</label><input type="text" /> -->
+	<!-- </div> -->
+	<br>
+	<br>
+	<p>Еще другие настройки карты и редактора</p>
+	<div class="fle mt-2">
+		<div></div>
+		<div>
+			<div data-close class="button secondary">Отмена</div>
+			<div data-close class="button primary">Сохранить</div>
+		</div>
+	</div>
+</div>
+
 <div class="reveal" id="addModal" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
-  <h4>Добавить согласующего</h4>
-  <!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all fuck</p> -->
-  <button class="close-button" data-close aria-label="Close reveal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
+	<h4>Добавить согласующего</h4>
+	<!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all fuck</p> -->
+	<button class="close-button" data-close aria-label="Close reveal" type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
 
 	<div class="fle mt-2">
 		<div class="half">
-				<!-- <legend>Согласующий:</legend> -->
-				<input type="radio" name="pokemon" value="rol" id="rol" onclick="showRol()" checked ><label for="rol">Роль</label><br>
-				<input type="radio" name="pokemon" value="group" id="group" onclick="showGroup()" ><label for="group">Группа</label><br>
-				<input type="radio" name="pokemon" value="fio" id="fio" onclick="showFio()" ><label for="fio">ФИО</label><br>
-				<input type="radio" name="pokemon" value="dep" id="dep" onclick="showDep()" ><label for="dep">Подразделение</label><br>
-				<input type="radio" name="pokemon" value="word" id="word" onclick="showWord()" ><label for="word">Поисковое слово</label>
+			<!-- <legend>Согласующий:</legend> -->
+			<input type="radio" name="pokemon" value="rol" id="rol" onclick="showRol()" checked ><label for="rol">Роль</label><br>
+			<input type="radio" name="pokemon" value="group" id="group" onclick="showGroup()" ><label for="group">Группа</label><br>
+			<input type="radio" name="pokemon" value="fio" id="fio" onclick="showFio()" ><label for="fio">ФИО</label><br>
+			<input type="radio" name="pokemon" value="dep" id="dep" onclick="showDep()" ><label for="dep">Подразделение</label><br>
+			<input type="radio" name="pokemon" value="word" id="word" onclick="showWord()" ><label for="word">Поисковое слово</label>
 		</div>
 		<div class="half">
 			<div id="rol1">
@@ -853,9 +881,9 @@
 
 
 <div class="reveal" id="showList" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
-  <h4>Связанные документы</h4>
+	<h4>Связанные документы</h4>
 	<p>Данный маршрут используется в документах:</p>
-  <button class="close-button" data-close aria-label="Close reveal" type="button">
+	<button class="close-button" data-close aria-label="Close reveal" type="button">
 		<span aria-hidden="true">&times;</span>
 	</button>
 	<ol>
