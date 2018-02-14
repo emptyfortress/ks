@@ -567,8 +567,8 @@ function showNodeInfo(arg) { // show info in right panel depending on group of n
 	}
 }
 
-network.on('selectNode', function(param) {
-	selId = param.nodes[0];
+network.on('selectNode', function(params) {
+	selId = params.nodes[0];
 	var curNodes = Object.values(nodes._data);
 	var selNode = curNodes.filter( (el) => el.id === selId);
 	var nodeGroup = selNode[0].group;
@@ -576,11 +576,13 @@ network.on('selectNode', function(param) {
 });
 
 network.on("dragStart", function (params) {
-	selId = this.getNodeAt(params.pointer.DOM);
-	var curNodes = Object.values(nodes._data);
-	var selNode = curNodes.filter( (el) => el.id === selId);
-	var nodeGroup = selNode[0].group;
-	showNodeInfo(nodeGroup);
+	if (params.nodes[0]) {
+		selId = params.nodes[0];
+		var curNodes = Object.values(nodes._data);
+		var selNode = curNodes.filter( (el) => el.id === selId);
+		var nodeGroup = selNode[0].group;
+		showNodeInfo(nodeGroup);
+	}
 });
 
 network.on('deselectEdge', function() {
