@@ -360,12 +360,9 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(11)').toggleClass('selected');
 		break;
-
 	default:
-
 	}
 	network.addEdgeMode();
-
 }
 
 function notAllowed(arg) {
@@ -377,10 +374,22 @@ function notAllowed(arg) {
 // vis
 // ========================================
 
-var nodes = new vis.DataSet([
-	{id: 1, label: 'Старт', group: 'start' },
-	{id: 2, label: 'Завершение', group: 'stop' },
-]);
+function tip(arg) {
+	$('#tip').text(arg);
+	
+}
+
+function addMini(e) { // eslint-disable-line no-unused-vars
+	let arr = eval('nodesArray' + e);
+	let edg = eval('edgesArray' + e);
+	nodes.clear();
+	edges.clear();
+	nodes.add(arr);
+	edges.add(edg);
+	tip("Выберите этап для редактирования");
+}
+
+var nodes = new vis.DataSet([ ]);
 
 // var edgeData = [ { from:1, to: 2 } ];
 var edges = new vis.DataSet([]);
@@ -529,6 +538,7 @@ network.on('click', function() {
 	for (var i = 2; i < 8 ; i++) {
 		$('.toolbox img:nth-child(' + i + ')').removeClass('selected');
 	}
+	tip("Выберите этап для редактирования");
 });
 
 network.on('selectEdge', function() {
@@ -597,7 +607,5 @@ window.addEventListener('keyup', function(e) {
 		$('#offCanvasTemplate').foundation('close');
 		$('#offCanvasLeft').foundation('close');
 		$('#offCanvasRight').foundation('close');
-		
 	}
-
 });
