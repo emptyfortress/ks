@@ -1286,3 +1286,39 @@ input[type='radio'] {
 	font-style: italic;
 	color: #aaa;
 }
+#magnet {
+	position: absolute;
+	bottom: 5px;
+	right: 35px;
+	width: 20px;
+	height: 22px;
+	opacity: .2;
+	cursor: pointer;
+	&:hover {
+		opacity: .999;
+	}
+}
+#magnet::after {
+	content: "";
+	background-image: url(../img/magnet.png);
+	background-position: top left;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;
+}
+#refresh {
+	position: absolute;
+	bottom: 8px;
+	right: 5px;
+	width: 20px;
+	height: 22px;
+	opacity: .2;
+	cursor: pointer;
+	&:hover {
+		opacity: 1;
+	}
+}
+

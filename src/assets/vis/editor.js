@@ -7,6 +7,7 @@ let manipulationNodeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 let selId;
+let physics = true;
 
 function editMarshrut() {  // eslint-disable-line no-unused-vars
 	if (!editMarsh) {
@@ -375,6 +376,56 @@ function notAllowed(arg) {
 // vis
 // ========================================
 
+function refresh() { // eslint-disable-line no-unused-vars
+	physics = false;
+	network.setOptions({
+		physics: { enabled: false },
+		layout: {
+			improvedLayout: true,
+			hierarchical: {
+				enabled: true,
+				levelSeparation: 90,
+				nodeSpacing: 170,
+				treeSpacing: 100,
+				blockShifting: true,
+				edgeMinimization: true,
+				parentCentralization: true,
+				direction: 'UD',        // UD, DU, LR, RL
+				sortMethod: 'directed'   // hubsize, directed
+			}
+		}
+	});
+	network.once('afterDrawing', function() {
+		network.setOptions({
+			layout: { hierarchical: { enabled: false } }
+		});
+	});
+	physOff();
+}
+
+function physOff() {
+	network.setOptions({
+		physics: false,
+		layout: { hierarchical: { enabled: false } }
+	});
+	physics = false;
+	$('#magnet').css('opacity', '.2');
+}
+
+function physOn() {
+	network.setOptions({
+		physics: true,
+	});
+	physics = true;
+	$('#magnet').css('opacity', '.99');
+}
+
+function togglePhysics() {
+	physics ? physOff() : physOn();
+	console.log('alsdkj');
+}
+
+
 function tip(arg) {
 	$('#tip').text(arg);
 }
@@ -386,7 +437,14 @@ function addMini(e) { // eslint-disable-line no-unused-vars
 	edges.clear();
 	nodes.add(arr);
 	edges.add(edg);
+	network.once('beforeDrawing', function() {
+		network.setOptions({ layout: { hierarchical: {enabled: true} }, physics: { enabled: true }   });
+	});
+	network.once('afterDrawing', function() {
+		network.setOptions({ layout: { hierarchical: {enabled: false} }, physics: { enabled: false }   });
+	});
 	tip("Выберите этап для редактирования");
+	physOn();
 }
 
 var nodes = new vis.DataSet([ ]);
@@ -402,6 +460,7 @@ var data = {
 
 var options = {
 	interaction:{hover:true},
+	physics: { enabled: true },
 	manipulation: {
 		enabled: false,
 		addNode: function(nodeData,callback) {
@@ -446,21 +505,20 @@ var options = {
 	},
 	layout: {
 		// randomSeed: undefined,
-		improvedLayout:true,
+		// improvedLayout:true,
 		hierarchical: {
-			enabled:false,
-			// levelSeparation: 70,
-			nodeSpacing: 50,
-			// treeSpacing: 200,
-			blockShifting: true,
-			edgeMinimization: true,
-			parentCentralization: true,
+			enabled: true,
+			// levelSeparation: 50,
+			// nodeSpacing: 30,
+			// blockShifting: true,
+			// edgeMinimization: true,
+			// parentCentralization: true,
 			direction: 'UD',       // UD, DU, LR, RL
 			sortMethod: 'directed'   // hubsize, directed
 		}
 	},
 	edges: {
-		smooth: true,
+		smooth: { type: 'continuous', forceDirection: 'none' },
 		arrows: {
 			to: { enabled: true, scaleFactor: 1, type: 'arrow' }
 		},
@@ -615,13 +673,15 @@ window.addEventListener('keyup', function(e) {
 $('.m-list ul li ul li').click( function() {
 	nodes.clear();
 	edges.clear();
+	physics = false;
 	network.setOptions({
+		physics: { enabled: false },
 		layout: {
 			improvedLayout: true,
 			hierarchical: {
 				enabled: true,
 				levelSeparation: 90,
-				nodeSpacing: 180,
+				nodeSpacing: 170,
 				treeSpacing: 100,
 				blockShifting: true,
 				edgeMinimization: true,
@@ -634,4 +694,23 @@ $('.m-list ul li ul li').click( function() {
 	nodes.add(marshrut);
 	edges.add(marshEdges);
 	tip("Выберите этап для редактирования");
+
+	network.once('beforeDrawing', function() {
+		network.focus(905, {
+			scale: 5,
+		});
+	});
+
+	network.once('afterDrawing', function() {
+		network.fit({
+			animation: {
+				duration: 800,
+			},
+		});
+		network.setOptions({
+			layout: { hierarchical: { enabled: false } }
+		});
+	});
+	physOff();
 } );
+
