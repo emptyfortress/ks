@@ -373,11 +373,9 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 	};
 }
 
-
 function notAllowed(arg) {
 	console.log("this is not allowed " + arg);
 }
-
 
 // ========================================
 // vis
