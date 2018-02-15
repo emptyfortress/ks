@@ -600,7 +600,8 @@ network.on('click', function() {
 });
 
 network.on('selectEdge', function() {
-	showArrow();
+	var selection = network.getSelectedNodes();
+	selection.length == 0 ?  showArrow() : console.log(123);
 });
 
 function showNodeInfo(arg) { // show info in right panel depending on group of nodes
