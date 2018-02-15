@@ -1,5 +1,5 @@
 /*global vis */
-/*global marshrut marshEdges */
+/*global marshrut marshEdges  */
 const DIR = 'assets/img/';
 let editMarsh = false;
 let editEt = false;
@@ -7,6 +7,7 @@ let manipulationNodeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
 let selId;
+// let arrows = 0;
 let physics = true;
 
 function editMarshrut() {  // eslint-disable-line no-unused-vars
@@ -365,7 +366,13 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 	default:
 	}
 	network.addEdgeMode();
+	var oldFunc = network.manipulation._performAddEdge;
+	network.manipulation._performAddEdge = function() { 
+		$('.toolbox img').removeClass('selected');
+		oldFunc.apply(this, arguments); 
+	};
 }
+
 
 function notAllowed(arg) {
 	console.log("this is not allowed " + arg);
@@ -420,7 +427,7 @@ function physOn() {
 	$('#magnet').css('opacity', '.99');
 }
 
-function togglePhysics() {
+function togglePhysics() { // eslint-disable-line no-unused-vars
 	physics ? physOff() : physOn();
 	console.log('alsdkj');
 }
@@ -465,31 +472,31 @@ var options = {
 		enabled: false,
 		addNode: function(nodeData,callback) {
 			switch (manipulationNodeType) {
-			case 1:
-				nodeData.label = 'Старт';
-				nodeData.group = 'start';
-				break;
-			case 2:
-				nodeData.label = 'Завершение';
-				nodeData.group = 'stop';
-				break;
-			case 3:
-				nodeData.label = 'Этап';
-				nodeData.group = 'box';
-				break;
-			case 4:
-				nodeData.label = 'Условие И';
-				nodeData.group = 'and';
-				break;
-			case 5:
-				nodeData.label = 'Условие ИЛИ';
-				nodeData.group = 'or';
-				break;
-			case 6:
-				nodeData.label = 'Внешнее условие';
-				nodeData.group = 'ext';
-				break;
-			default:
+				case 1:
+					nodeData.label = 'Старт';
+					nodeData.group = 'start';
+					break;
+				case 2:
+					nodeData.label = 'Завершение';
+					nodeData.group = 'stop';
+					break;
+				case 3:
+					nodeData.label = 'Этап';
+					nodeData.group = 'box';
+					break;
+				case 4:
+					nodeData.label = 'Условие И';
+					nodeData.group = 'and';
+					break;
+				case 5:
+					nodeData.label = 'Условие ИЛИ';
+					nodeData.group = 'or';
+					break;
+				case 6:
+					nodeData.label = 'Внешнее условие';
+					nodeData.group = 'ext';
+					break;
+				default:
 			}
 			callback(nodeData);
 		},
@@ -547,7 +554,7 @@ var options = {
 		chosen:{ 
 			node: function(values) { 
 				values.shadowSize = 11,
-				values.borderWidth = 2;
+					values.borderWidth = 2;
 			}
 		}
 	},
@@ -607,22 +614,22 @@ network.on('selectEdge', function() {
 function showNodeInfo(arg) { // show info in right panel depending on group of nodes
 	let group = arg;
 	switch (group) {
-	case 'box':
-		showEtap();
-		break;
-	case 'and':
-	case 'or':
-		showBoulean();
-		break;
-	case 'ext':
-		showExternal();
-		break;
-	case 'start':
-		showStart();
-		break;
-	case 'stop':
-		showEnd();
-		break;
+		case 'box':
+			showEtap();
+			break;
+		case 'and':
+		case 'or':
+			showBoulean();
+			break;
+		case 'ext':
+			showExternal();
+			break;
+		case 'start':
+			showStart();
+			break;
+		case 'stop':
+			showEnd();
+			break;
 	}
 }
 
