@@ -1327,3 +1327,11 @@ input[type='radio'] {
 	}
 }
 
+.popupMenu {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	width: 100px;
+	height: 100px;
+	background: red;
+}

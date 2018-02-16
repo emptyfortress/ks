@@ -365,7 +365,7 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 		break;
 	default:
 	}
-	network.addEdgeMode();
+	network.addEdgeMode();  // desactivate button in toolbox after drawing edge
 	var oldFunc = network.manipulation._performAddEdge;
 	network.manipulation._performAddEdge = function() { 
 		$('.toolbox img').removeClass('selected');
@@ -380,6 +380,28 @@ function notAllowed(arg) {
 // ========================================
 // vis
 // ========================================
+
+function showNodeInfo(arg) { // show info in right panel depending on group of nodes
+	let group = arg;
+	switch (group) {
+	case 'box':
+		showEtap();
+		break;
+	case 'and':
+	case 'or':
+		showBoulean();
+		break;
+	case 'ext':
+		showExternal();
+		break;
+	case 'start':
+		showStart();
+		break;
+	case 'stop':
+		showEnd();
+		break;
+	}
+}
 
 function refresh() { // eslint-disable-line no-unused-vars
 	physics = false;
@@ -470,31 +492,31 @@ var options = {
 		enabled: false,
 		addNode: function(nodeData,callback) {
 			switch (manipulationNodeType) {
-				case 1:
-					nodeData.label = 'Старт';
-					nodeData.group = 'start';
-					break;
-				case 2:
-					nodeData.label = 'Завершение';
-					nodeData.group = 'stop';
-					break;
-				case 3:
-					nodeData.label = 'Этап';
-					nodeData.group = 'box';
-					break;
-				case 4:
-					nodeData.label = 'Условие И';
-					nodeData.group = 'and';
-					break;
-				case 5:
-					nodeData.label = 'Условие ИЛИ';
-					nodeData.group = 'or';
-					break;
-				case 6:
-					nodeData.label = 'Внешнее условие';
-					nodeData.group = 'ext';
-					break;
-				default:
+			case 1:
+				nodeData.label = 'Старт';
+				nodeData.group = 'start';
+				break;
+			case 2:
+				nodeData.label = 'Завершение';
+				nodeData.group = 'stop';
+				break;
+			case 3:
+				nodeData.label = 'Этап';
+				nodeData.group = 'box';
+				break;
+			case 4:
+				nodeData.label = 'Условие И';
+				nodeData.group = 'and';
+				break;
+			case 5:
+				nodeData.label = 'Условие ИЛИ';
+				nodeData.group = 'or';
+				break;
+			case 6:
+				nodeData.label = 'Внешнее условие';
+				nodeData.group = 'ext';
+				break;
+			default:
 			}
 			callback(nodeData);
 		},
@@ -512,7 +534,7 @@ var options = {
 		// randomSeed: undefined,
 		// improvedLayout:true,
 		hierarchical: {
-			enabled: true,
+			enabled: false,
 			// levelSeparation: 50,
 			// nodeSpacing: 30,
 			// blockShifting: true,
@@ -552,7 +574,7 @@ var options = {
 		chosen:{ 
 			node: function(values) { 
 				values.shadowSize = 11,
-					values.borderWidth = 2;
+				values.borderWidth = 2;
 			}
 		}
 	},
@@ -595,41 +617,24 @@ var options = {
 var network = new vis.Network(container, data, options);
 
 // ========================================
-// network click events disable tool in toolbox
+// network events
 // ========================================
-network.on('click', function() {
+network.on('click', function() { // desactiate buttons in toolbox on adding node to map
 	for (var i = 2; i < 8 ; i++) {
 		$('.toolbox img:nth-child(' + i + ')').removeClass('selected');
+	}
+	if (popupMenu !== undefined) {
+		popupMenu.parentNode.removeChild(popupMenu);
+		popupMenu = undefined;
 	}
 	tip("Выберите этап для редактирования");
 });
 
 network.on('selectEdge', function() {
 	var selection = network.getSelectedNodes();
-	selection.length == 0 ?  showArrow() : console.log(123);
+	selection.length == 0 ?  showArrow() : console.log(selection);
 });
 
-function showNodeInfo(arg) { // show info in right panel depending on group of nodes
-	let group = arg;
-	switch (group) {
-		case 'box':
-			showEtap();
-			break;
-		case 'and':
-		case 'or':
-			showBoulean();
-			break;
-		case 'ext':
-			showExternal();
-			break;
-		case 'start':
-			showStart();
-			break;
-		case 'stop':
-			showEnd();
-			break;
-	}
-}
 
 network.on('selectNode', function(params) {
 	selId = params.nodes[0];
@@ -639,7 +644,7 @@ network.on('selectNode', function(params) {
 	showNodeInfo(nodeGroup);
 });
 
-network.on("dragStart", function (params) {
+network.on("dragStart", function (params) { //show node in right panel info on select-and-drag
 	if (params.nodes[0]) {
 		selId = params.nodes[0];
 		var curNodes = Object.values(nodes._data);
@@ -658,6 +663,35 @@ network.on('deselectNode', function() {
 	selId = null;
 });
 
+let popupMenu = undefined;
+
+network.on('oncontext', function(params) {
+	params.event.preventDefault();
+	let coordClick = params.pointer.DOM;
+	let nodeIdAt = network.getNodeAt(coordClick);
+	let nodePosition = network.getPositions(nodeIdAt);
+
+	if (popupMenu !== undefined) {
+		popupMenu.parentNode.removeChild(popupMenu);
+		popupMenu = undefined;
+	}
+	if (nodeIdAt) {
+		popupMenu = document.createElement('div');
+		popupMenu.className = 'popupMenu';
+		popupMenu.style.left = coordClick.x + 20 + 'px';
+		popupMenu.style.top = coordClick.y + 'px';
+		container.appendChild(popupMenu);
+	}
+
+	console.log('node', nodeIdAt);
+	console.log('pointer', coordClick.x);
+	console.log('position', nodePosition);
+
+} );
+// ========================================
+// delete node by keyboard delete and backspace
+// ========================================
+
 window.addEventListener('keyup', function(e) {
 	if (selId && ( e.keyCode == 46 || e.keyCode == 8 )) {
 		try {
@@ -675,6 +709,10 @@ window.addEventListener('keyup', function(e) {
 		$('#offCanvasRight').foundation('close');
 	}
 });
+
+// ========================================
+// load marshrut on map from left offCanvas
+// ========================================
 
 $('.m-list ul li ul li').click( function() {
 	nodes.clear();
@@ -700,13 +738,11 @@ $('.m-list ul li ul li').click( function() {
 	nodes.add(marshrut);
 	edges.add(marshEdges);
 	tip("Выберите этап для редактирования");
-
 	network.once('beforeDrawing', function() {
 		network.focus(905, {
 			scale: 5,
 		});
 	});
-
 	network.once('afterDrawing', function() {
 		network.fit({
 			animation: {
