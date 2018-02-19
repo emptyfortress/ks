@@ -1331,9 +1331,8 @@ input[type='radio'] {
 	position: absolute;
 	top: 1rem;
 	left: 1rem;
-	width: 100px;
-	height: 100px;
-	background: red;
+	width: 200px;
+	height: 200px;
 }
 #pie {
 	position: absolute;
@@ -1341,27 +1340,23 @@ input[type='radio'] {
 	left: 100px;
 	width: 200px;
 	height: 200px;
-	// background: #000;
 }
 
 .item .sector {
-    // transition: all .1s linear;
-    fill: #ddd;
+	fill: #eee;
 }
-.item:hover .sector, .item:focus .sector {
-    fill: #eee;
+.item:hover .sector, .item:focus .sector, .item:active .sector {
+	// fill: #96C8FF;
+	fill: #ccc;
+}
+.item:hover, .item:focus, .item:active {
+	outline: none
 }
 
 .menu-trigger {
-    fill: #EA2A55;
-    pointer-events: auto; 
-}
- 
-.menu-trigger:hover, .menu-trigger:focus { cursor: pointer; }
-.svg-icon {
-	position: absolute;
-	top: 0;
-	left: 0;
+	fill: #ccc;
+	pointer-events: auto; 
 }
 
-#symbolsContainer { cursor: pointer; }
+.menu-trigger:hover, .menu-trigger:focus { cursor: pointer; }
+

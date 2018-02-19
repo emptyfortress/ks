@@ -681,9 +681,12 @@ network.on('oncontext', function(params) {
 	if (nodeIdAt) {
 		popupMenu = document.createElement('div');
 		popupMenu.className = 'popupMenu';
-		popupMenu.style.left = coordClick.x + 20 + 'px';
-		popupMenu.style.top = coordClick.y + 'px';
+		popupMenu.style.left = coordClick.x - 100 + 'px';
+		popupMenu.style.top = coordClick.y - 100 + 'px';
 		container.appendChild(popupMenu);
+		let pie = document.createElement('img');
+		pie.setAttribute('src', 'assets/vis/pie.svg');
+		popupMenu.appendChild(pie);
 	}
 
 	console.log('node', nodeIdAt);
