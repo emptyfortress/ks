@@ -1335,3 +1335,33 @@ input[type='radio'] {
 	height: 100px;
 	background: red;
 }
+#pie {
+	position: absolute;
+	top: 100px;
+	left: 100px;
+	width: 200px;
+	height: 200px;
+	// background: #000;
+}
+
+.item .sector {
+    // transition: all .1s linear;
+    fill: #ddd;
+}
+.item:hover .sector, .item:focus .sector {
+    fill: #eee;
+}
+
+.menu-trigger {
+    fill: #EA2A55;
+    pointer-events: auto; 
+}
+ 
+.menu-trigger:hover, .menu-trigger:focus { cursor: pointer; }
+.svg-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#symbolsContainer { cursor: pointer; }

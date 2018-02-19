@@ -474,7 +474,10 @@ function addMini(e) { // eslint-disable-line no-unused-vars
 	physOn();
 }
 
-var nodes = new vis.DataSet([ ]);
+var nodes = new vis.DataSet([ 
+	// { id: 1, label: 'Старт', group: 'start'},
+	// { id: 2, label: 'Завершение', group: 'stop'},
+]);
 
 // var edgeData = [ { from:1, to: 2 } ];
 var edges = new vis.DataSet([]);
