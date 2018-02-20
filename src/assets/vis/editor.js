@@ -374,10 +374,13 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 		break;
 	default:
 	}
-	network.addEdgeMode();  // desactivate button in toolbox after drawing edge
-	var oldFunc = network.manipulation._performAddEdge;
+	closePie();
+	$('#net').css('cursor', 'url(assets/img/cursorArr1.png), auto');
+	network.addEdgeMode();  
+	var oldFunc = network.manipulation._performAddEdge;  // desactivate button in toolbox after drawing edge
 	network.manipulation._performAddEdge = function() { 
 		$('.toolbox img').removeClass('selected');
+		$('#net').css('cursor', 'default');
 		oldFunc.apply(this, arguments); 
 	};
 }
