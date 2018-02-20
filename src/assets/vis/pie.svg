@@ -1,30 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg style="-webkit-backface-visibility:visible;-webkit-user-select:none;transform-origin:50% 50% 0px;transform:matrix3d(0.950579272381248, 0.31048195908802373, 0, 0, -0.31048195908802373, 0.950579272381248, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);z-index:0" viewBox="-2 -2 504 504" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg style="-webkit-backface-visibility:visible;-webkit-user-select:none;transform-origin:50% 50% 0px;transform:matrix3d(0.950579272381248, 0.31048195908802373, 0, 0, -0.31048195908802373, 0.950579272381248, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);z-index:0" viewBox="-20 -20 540 540" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 <style>
-	#menu { display: block; margin: 0 auto; }
 	a { cursor: pointer; outline: none; }
-	.item .sector { fill: #eee; stroke: #fff; }
+	.item .sector { fill: #fff; stroke: #eee; }
 	.item:hover .sector, .item:focus .sector { 
-		fill: #fff; 
-		stroke: #eee;
-		stroke-width: 2px;
+		fill: #E1F4FE; 
 	}
 	.menu-trigger { fill: #eee; pointer-events: auto; }
 	.menu-trigger:hover, .menu-trigger:focus { cursor: pointer; fill: #FFBBC4; }
 	symbol { overflow: visible; }
+svg {  
+	-webkit-filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.3));      
+	filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.3));
+}
 </style>
 
-<!-- <circle cx="250" cy="250" r="251" fill="#ccc" viewBox="-3 -3 506 506" /> -->
-
-<symbol id="j" class="icon icon-arrBlue" viewBox="0 0 89 89">
+<symbol id="copy" class="icon icon-copy" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 85 113" >
 		<g fill="none" fill-rule="evenodd">
 		<path d="m56.8 9v19.2h19.2v4.8h-24v-24h4.8zm6.0646-9l22.135 22.07v76.805h-14.167v14.125h-70.833v-98.875h14.167v-14.125h48.698zm3.1354 108v-9.3684h-51.615v-79.632h-9.3846v89h61zm14-14v-69.678l-19.062-19.322h-41.938v89h61z" fill="#0096DC"/>
 		</g>
 	</svg>
 </symbol>
-<symbol id="h" class="icon icon-" viewBox="0 0 89 89">
+<symbol id="arrBlue" class="icon icon-arrBlue" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 13 37">
 		<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
 		<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#2C7CE9" stroke-linecap="square" stroke-width="3"/>
@@ -32,7 +31,7 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="g" class="icon icon-arrGreen" viewBox="0 0 89 89">
+<symbol id="arrGreen" class="icon icon-arrGreen" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 13 37">
 		<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
 		<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#7ED321" stroke-linecap="square" stroke-width="3"/>
@@ -40,7 +39,7 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="f" class="icon icon-arrYellow" viewBox="0 0 89 89">
+<symbol id="arrYellow" class="icon icon-arrYellow" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 13 37">
 		<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
 		<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#F5A623" stroke-linecap="square" stroke-width="3"/>
@@ -48,7 +47,7 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="e" class="icon icon-arrRed" viewBox="0 0 89 89">
+<symbol id="arrRed" class="icon icon-arrRed" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 13 37">
 		<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
 		<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#D0021B" stroke-linecap="square" stroke-width="3"/>
@@ -56,14 +55,14 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="d" class="icon icon-trash" viewBox="0 0 89 89">
+<symbol id="trash" class="icon icon-trash" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 18 24">
 		<g fill="none" fill-rule="evenodd">
 		<path d="m18 3.0625v0.9375h-1.25l-1.5 18.188c0 0.5-0.17708 0.92708-0.53125 1.2812s-0.78125 0.53125-1.2812 0.53125h-8.8125c-0.5 0-0.92708-0.17708-1.2812-0.53125s-0.53125-0.78125-0.53125-1.2812l-1.5-18.188h-1.3125v-0.9375h5v-1.25c0-0.5 0.17708-0.92708 0.53125-1.2812s0.78125-0.53125 1.2812-0.53125h4.375c0.5 0 0.92708 0.17708 1.2812 0.53125s0.53125 0.78125 0.53125 1.2812v1.25h5zm-12.062-1.25v1.25h6.125v-1.25c0-0.58334-0.29166-0.875-0.875-0.875h-4.375c-0.58334 0-0.875 0.29166-0.875 0.875zm8.4375 20.312l1.4375-18.125h-13.562l1.4375 18.125v0.0625c0 0.58334 0.3125 0.875 0.9375 0.875h8.8125c0.625 0 0.9375-0.29166 0.9375-0.875v-0.0625zm-5.8125-1.0625v-15.062h0.875v15.062h-0.875zm4.4375-15.062l-0.6875 15.062h-0.875l0.625-15.062h0.9375zm-7.125 0l0.6875 15.062h-0.875l-0.6875-15.062h0.875z" fill="#0096DC"/>
 		</g>
 	</svg>
 </symbol>
-<symbol id="c" class="icon icon-ext" viewBox="0 0 89 89">
+<symbol id="ext" class="icon icon-ext" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 71 71">
 		<g fill="none" fill-rule="evenodd">
 			<rect transform="translate(35.5 35.5) rotate(45) translate(-35.5 -35.5)" x="11" y="11" width="49" height="49" fill="#0096DC"/>
@@ -71,7 +70,7 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="b" class="icon icon-and" viewBox="0 0 89 89">
+<symbol id="and" class="icon icon-and" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 72 72" >
 		<g fill="none" fill-rule="evenodd">
 			<rect transform="translate(36.059 36.059) rotate(45) translate(-36.059 -36.059)" x="11" y="11" width="50.118" height="50.118" fill="#0096DC"/>
@@ -81,7 +80,7 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="a" class="icon icon-or" viewBox="0 0 89 89">
+<symbol id="or" class="icon icon-or" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 71 71" >
 		<g fill="none" fill-rule="evenodd">
 		<rect transform="translate(35.439 35.5) rotate(45) translate(-35.439 -35.5)" x="10.38" y="10.441" width="50.118" height="50.118" fill="#0096DC"/>
@@ -90,7 +89,7 @@
 		</g>
 	</svg>
 </symbol>
-<symbol id="i" class="icon icon-etap" viewBox="0 0 89 89">
+<symbol id="etap" class="icon icon-etap" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 69 33">
 		<g fill="none" fill-rule="evenodd">
 		<rect x="1" y="1" width="67" height="31" rx="4" fill="#DBF4FF" stroke="#0096DC" stroke-width="2"/>
@@ -99,45 +98,45 @@
 </symbol>
 
 
-<a class="item"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111" />
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#j"/>
+<a class="item"  data-svg-origin="250 250"  onclick="parent.addEtap('copy')">
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z"  />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#copy"/>
 </a>
-<a class="item" transform="matrix(.80901 -.58778 .58778 .80901 -99.201 194.69)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#h"/>
+<a class="item" transform="matrix(.80901 -.58778 .58778 .80901 -99.201 194.69)"  data-svg-origin="250 250">
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrBlue"/>
 </a>
 <a class="item" transform="matrix(.30901 -.95105 .95105 .30901 -65.018 410.51)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#g"/>
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrGreen"/>
 </a>
 <a class="item" transform="matrix(-.30901 -.95105 .95105 -.30901 89.49 565.02)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#f"/>
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrYellow"/>
 </a>
 <a class="item" transform="matrix(-.80901 -.58778 .58778 -.80901 305.31 599.2)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#e"/>
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrRed"/>
 </a>
 <a class="item" transform="matrix(-1,0,0,-1,500,500)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#d"/>
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#trash"/>
 </a>
-<a class="item" transform="matrix(-.80901 .58778 -.58778 -.80901 599.2 305.31)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#c"/>
+<a class="item" transform="matrix(-.80901 .58778 -.58778 -.80901 599.2 305.31)"  data-svg-origin="250 250" onclick="parent.addEtap(6)">
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#ext"/>
 </a>
-<a class="item" transform="matrix(-.30901 .95105 -.95105 -.30901 565.02 89.49)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#b"/>
+<a class="item" transform="matrix(-.30901 .95105 -.95105 -.30901 565.02 89.49)"  data-svg-origin="250 250"  onclick="parent.addEtap(4)">
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#and"/>
 </a>
-<a class="item" transform="matrix(.30901 .95105 -.95105 .30901 410.51 -65.018)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#a"/>
+<a class="item" transform="matrix(.30901 .95105 -.95105 .30901 410.51 -65.018)"  data-svg-origin="250 250" onclick="parent.addEtap(5)">
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#or"/>
 </a>
-<a class="item" transform="matrix(.80901 .58778 -.58778 .80901 194.69 -99.201)"  data-svg-origin="250 250" >
-<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" fill="none" stroke="#111"/>
-<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#i"/>
+<a class="item" transform="matrix(.80901 .58778 -.58778 .80901 194.69 -99.201)"  data-svg-origin="250 250" onclick="parent.addEtap(3)">
+<path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
+<use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#etap"/>
 </a>
 <g class="trigger menu-trigger" role="button" onclick="parent.closePie()">
 <circle cx="250" cy="250" r="45" stroke="#fff" stroke-width="4"/>

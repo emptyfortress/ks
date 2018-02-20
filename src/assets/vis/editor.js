@@ -319,28 +319,37 @@ function addEtap(arg) { // eslint-disable-line no-unused-vars
 		$('.toolbox img:nth-child(3)').toggleClass('selected');
 		manipulationNodeType = 2;
 		break;
+	case 'copy':
+		manipulationNodeType = 3;
+		$('#net').css('cursor', 'copy');
+		break;
 	case 3:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(4)').toggleClass('selected');
 		manipulationNodeType = 3;
+		$('#net').css('cursor', 'url(assets/img/cursorEtap.png), auto');
 		break;
 	case 4:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(5)').toggleClass('selected');
 		manipulationNodeType = 4;
+		$('#net').css('cursor', 'url(assets/img/cursorAnd.png), auto');
 		break;
 	case 5:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(6)').toggleClass('selected');
 		manipulationNodeType = 5;
+		$('#net').css('cursor', 'url(assets/img/cursorOr.png), auto');
 		break;
 	case 6:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(7)').toggleClass('selected');
 		manipulationNodeType = 6;
+		$('#net').css('cursor', 'url(assets/img/cursorExt.png), auto');
 		break;
 	default:
 	}
+	closePie();
 	network.addNodeMode();
 }
 
@@ -371,6 +380,13 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 		$('.toolbox img').removeClass('selected');
 		oldFunc.apply(this, arguments); 
 	};
+}
+
+function closePie() { // eslint-disable-line no-unused-vars
+	if (popupMenu !== undefined) {
+		popupMenu.parentNode.removeChild(popupMenu);
+		popupMenu = undefined;
+	}
 }
 
 function notAllowed(arg) {
@@ -631,6 +647,7 @@ network.on('click', function() { // desactiate buttons in toolbox on adding node
 		popupMenu = undefined;
 	}
 	tip("Выберите этап для редактирования");
+	$('#net').css('cursor', 'auto');
 });
 
 network.on('selectEdge', function() {
@@ -672,7 +689,7 @@ network.on('oncontext', function(params) {
 	params.event.preventDefault();
 	let coordClick = params.pointer.DOM;
 	let nodeIdAt = network.getNodeAt(coordClick);
-	let nodePosition = network.getPositions(nodeIdAt);
+	// let nodePosition = network.getPositions(nodeIdAt);
 
 	if (popupMenu !== undefined) {
 		popupMenu.parentNode.removeChild(popupMenu);
@@ -688,18 +705,8 @@ network.on('oncontext', function(params) {
 		pie.setAttribute('src', 'assets/vis/pie.svg');
 		popupMenu.appendChild(pie);
 	}
-
-	console.log('node', nodeIdAt);
-	console.log('pointer', coordClick.x);
-	console.log('position', nodePosition);
 } );
 
-function closePie() { // eslint-disable-line no-unused-vars
-	if (popupMenu !== undefined) {
-		popupMenu.parentNode.removeChild(popupMenu);
-		popupMenu = undefined;
-	}
-}
 
 // ========================================
 // delete node by keyboard delete and backspace
