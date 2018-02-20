@@ -684,7 +684,7 @@ network.on('oncontext', function(params) {
 		popupMenu.style.left = coordClick.x - 100 + 'px';
 		popupMenu.style.top = coordClick.y - 100 + 'px';
 		container.appendChild(popupMenu);
-		let pie = document.createElement('img');
+		let pie = document.createElement('embed');
 		pie.setAttribute('src', 'assets/vis/pie.svg');
 		popupMenu.appendChild(pie);
 	}
@@ -692,8 +692,15 @@ network.on('oncontext', function(params) {
 	console.log('node', nodeIdAt);
 	console.log('pointer', coordClick.x);
 	console.log('position', nodePosition);
-
 } );
+
+function closePie() {
+	if (popupMenu !== undefined) {
+		popupMenu.parentNode.removeChild(popupMenu);
+		popupMenu = undefined;
+	}
+}
+
 // ========================================
 // delete node by keyboard delete and backspace
 // ========================================

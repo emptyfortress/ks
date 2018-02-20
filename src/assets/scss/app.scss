@@ -1334,29 +1334,4 @@ input[type='radio'] {
 	width: 200px;
 	height: 200px;
 }
-#pie {
-	position: absolute;
-	top: 100px;
-	left: 100px;
-	width: 200px;
-	height: 200px;
-}
-
-.item .sector {
-	fill: #eee;
-}
-.item:hover .sector, .item:focus .sector, .item:active .sector {
-	// fill: #96C8FF;
-	fill: #ccc;
-}
-.item:hover, .item:focus, .item:active {
-	outline: none
-}
-
-.menu-trigger {
-	fill: #ccc;
-	pointer-events: auto; 
-}
-
-.menu-trigger:hover, .menu-trigger:focus { cursor: pointer; }
 
