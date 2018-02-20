@@ -694,7 +694,7 @@ network.on('oncontext', function(params) {
 	console.log('position', nodePosition);
 } );
 
-function closePie() {
+function closePie() { // eslint-disable-line no-unused-vars
 	if (popupMenu !== undefined) {
 		popupMenu.parentNode.removeChild(popupMenu);
 		popupMenu = undefined;

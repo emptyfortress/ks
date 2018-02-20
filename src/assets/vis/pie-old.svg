@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2 -2 504 504" style="-webkit-backface-visibility:visible;z-index:0;transform-origin:50% 50% 0;transform:matrix3d(-.9557804041212007,-.2940813137516806,0,0,.2940813137516806,-.9557804041212007,0,0,0,0,1,0,0,0,0,1);-webkit-user-select:none;margin:0 auto" display="block">
+<style>
+.item .sector {
+	fill: #eee;
+	cursor: pointer;
+}
+.item:hover .sector, .item:focus .sector, .item:active .sector {
+	fill: #ccc;
+	fill: #CBECFF;
+}
+
+a.item {
+ cursor: pointer;
+ outline: none;
+}
+
+.menu-trigger {
+	fill: #ccc;
+	pointer-events: auto; 
+}
+
+.menu-trigger:hover, .menu-trigger:focus { cursor: pointer; fill: #FFBBC4; }
+</style>
+	<g id="symbolsContainer">
+		<symbol class="icon icon-trash" id="icon-1" viewBox="0 0 69 69">
+			<svg version="1.1" viewBox="0 0 18 24">
+				<g fill="none" fill-rule="evenodd">
+				<path d="m18 3.0625v0.9375h-1.25l-1.5 18.188c0 0.5-0.17708 0.92708-0.53125 1.2812s-0.78125 0.53125-1.2812 0.53125h-8.8125c-0.5 0-0.92708-0.17708-1.2812-0.53125s-0.53125-0.78125-0.53125-1.2812l-1.5-18.188h-1.3125v-0.9375h5v-1.25c0-0.5 0.17708-0.92708 0.53125-1.2812s0.78125-0.53125 1.2812-0.53125h4.375c0.5 0 0.92708 0.17708 1.2812 0.53125s0.53125 0.78125 0.53125 1.2812v1.25h5zm-12.062-1.25v1.25h6.125v-1.25c0-0.58334-0.29166-0.875-0.875-0.875h-4.375c-0.58334 0-0.875 0.29166-0.875 0.875zm8.4375 20.312l1.4375-18.125h-13.562l1.4375 18.125v0.0625c0 0.58334 0.3125 0.875 0.9375 0.875h8.8125c0.625 0 0.9375-0.29166 0.9375-0.875v-0.0625zm-5.8125-1.0625v-15.062h0.875v15.062h-0.875zm4.4375-15.062l-0.6875 15.062h-0.875l0.625-15.062h0.9375zm-7.125 0l0.6875 15.062h-0.875l-0.6875-15.062h0.875z" fill="#0096DC"/>
+				</g>
+			</svg>
+		</symbol>
+		<symbol class="icon icon-ext" id="icon-2" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 71 71">
+			<g fill="none" fill-rule="evenodd">
+			<rect transform="translate(35.5 35.5) rotate(45) translate(-35.5 -35.5)" x="11" y="11" width="49" height="49" fill="#0096DC"/>
+			<circle cx="35" cy="35" r="14" stroke="#fff" stroke-width="4"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-and" id="icon-3" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 72 72" >
+			<g fill="none" fill-rule="evenodd">
+			<rect transform="translate(36.059 36.059) rotate(45) translate(-36.059 -36.059)" x="11" y="11" width="50.118" height="50.118" fill="#0096DC"/>
+			<text transform="translate(36.529 36.5) rotate(180) translate(-36.529 -36.5)" fill="#FFFFFF" font-family="Arial-BoldMT, Arial" font-size="42" font-weight="bold">
+			<tspan x="24" y="51">&amp;</tspan>
+			</text>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-or" id="icon-4" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 71 71" >
+			<g fill="none" fill-rule="evenodd">
+			<rect transform="translate(35.439 35.5) rotate(45) translate(-35.439 -35.5)" x="10.38" y="10.441" width="50.118" height="50.118" fill="#0096DC"/>
+			<path d="m30.279 24.076v25.059" stroke="#fff" stroke-linecap="square" stroke-width="5"/>
+			<path d="m42.809 24.076v25.059" stroke="#fff" stroke-linecap="square" stroke-width="5"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-etap" id="icon-5" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 69 33">
+			<defs>
+			<rect id="a" width="69" height="33" rx="4"/>
+			</defs>
+			<g fill="none" fill-rule="evenodd">
+			<use fill="#DBF4FF" fill-rule="evenodd" xlink:href="#a"/>
+			<rect x="1" y="1" width="67" height="31" rx="4" stroke="#0096DC" stroke-width="2"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-copy" id="icon-6" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 85 113" >
+			<g fill="none" fill-rule="evenodd">
+			<path d="m56.8 9v19.2h19.2v4.8h-24v-24h4.8zm6.0646-9l22.135 22.07v76.805h-14.167v14.125h-70.833v-98.875h14.167v-14.125h48.698zm3.1354 108v-9.3684h-51.615v-79.632h-9.3846v89h61zm14-14v-69.678l-19.062-19.322h-41.938v89h61z" fill="#0096DC"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-arrBlue" id="icon-7" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 13 37">
+			<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+			<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#2C7CE9" stroke-linecap="square" stroke-width="3"/>
+			<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#2C7CE9"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-arrGreen" id="icon-8" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 13 37">
+			<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+			<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#7ED321" stroke-linecap="square" stroke-width="3"/>
+			<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#7ED321"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-arrYellow" id="icon-9" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 13 37">
+			<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+			<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#F5A623" stroke-linecap="square" stroke-width="3"/>
+			<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#F5A623"/>
+			</g>
+		</svg>
+		</symbol>
+		<symbol class="icon icon-arrRed" id="icon-10" viewBox="0 0 69 69">
+		<svg version="1.1" viewBox="0 0 13 37">
+			<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+			<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#D0021B" stroke-linecap="square" stroke-width="3"/>
+			<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#D0021B"/>
+			</g>
+		</svg>
+		</symbol>
+		</g>
+	<g id="itemsContainer">
+	<a class="item" id="item-1" tabindex="0" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-1" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-2" tabindex="0" transform="rotate(-36 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-2" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-3" tabindex="0" transform="rotate(-72 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-3" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-4" tabindex="0" transform="rotate(-108 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-4" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-5" tabindex="0" transform="rotate(-144 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-5" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-6" tabindex="0" transform="rotate(180 250 250)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-6" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-7" tabindex="0" transform="rotate(144 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-7" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-8" tabindex="0" transform="rotate(108 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-8" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-9" tabindex="0" transform="rotate(72 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-9" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	<a class="item" id="item-10" tabindex="0" transform="rotate(36 250 250) scale(.99999)" data-svg-origin="250 250">
+		<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+		<use xlink:href="#icon-10" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+	</a>
+	</g>
+
+	<g id="trigger" class="trigger menu-trigger" role="button" transform="rotate(-18, 250, 250)" onclick="parent.closePie()">
+	<circle cx="250" cy="250" r="70"></circle>
+	<svg version="1.1" x="220" y="220" viewBox="0 0 100 100">
+		<g fill="none" fill-rule="evenodd">
+		<polygon points="12.805 1.2891 7.6914 6.4023 12.805 11.516 11.516 12.805 6.4023 7.6914 1.2891 12.805 0 11.516 5.1133 6.4023 0 1.2891 1.2891 0 6.4023 5.1133 11.516 0" fill="#fff" />
+		</g>
+	</svg>
+	</g>
+</svg>
+
