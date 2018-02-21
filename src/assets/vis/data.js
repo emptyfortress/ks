@@ -14,10 +14,10 @@ const nodesArray2 = [
 	{ id: 203, label: 'Завершение', group: 'stop'},
 ];
 const edgesArray2 = [
-	{ from: 200, to: 201 },
-	{ from: 200, to: 202 },
-	{ from: 201, to: 203 },
-	{ from: 202, to: 203 },
+	{ from: 200, to: 201, color: { color: "#ccc" } },
+	{ from: 200, to: 202, color: { color: "#ccc" } },
+	{ from: 201, to: 203, color: { color: "#ccc" } },
+	{ from: 202, to: 203, color: { color: "#ccc" } },
 ];
 const nodesArray3 = [
 	{ id: 300, label: 'Старт', group: 'start'},

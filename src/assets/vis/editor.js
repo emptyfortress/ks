@@ -4,9 +4,17 @@ const DIR = 'assets/img/';
 let editMarsh = false;
 let editEt = false;
 let manipulationNodeType = 1;
+let edgeType = 1;
 let nodeColor = '#DBF4FF';
 let borderColor = '#0096DC';
+let blueAr = '#2C7CE9';
+let greenAr = '#7ED321';
+let yellowAr = '#F5A623';
+let redAr = '#D0021B';
 let selId;
+let nodeFrom;
+let nodeTo;
+let lastEdgeId;
 // let arrows = 0;
 let physics = true;
 
@@ -358,19 +366,26 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 	case 1:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(8)').toggleClass('selected');
-		// edgeType = 1;
+		edgeType = 1;
+		network.setOptions({ edges: { color: { color: blueAr } } });
 		break;
 	case 2:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(9)').toggleClass('selected');
+		network.setOptions({ edges: { color: { color: greenAr } } });
+		edgeType = 2;
 		break;
 	case 3:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(10)').toggleClass('selected');
+		network.setOptions({ edges: { color: { color: yellowAr } } });
+		edgeType = 3;
 		break;
 	case 4:
 		$('.toolbox img').removeClass('selected');
 		$('.toolbox img:nth-child(11)').toggleClass('selected');
+		network.setOptions({ edges: { color: { color: redAr } } });
+		edgeType = 4;
 		break;
 	default:
 	}
@@ -384,6 +399,12 @@ function myAddEdge(arg) { // eslint-disable-line no-unused-vars
 		oldFunc.apply(this, arguments); 
 	};
 }
+
+function updateEdgeColor(arg) {
+	edges.update({id:lastEdgeId, color: {color:arg }});
+}
+
+
 
 function closePie() { // eslint-disable-line no-unused-vars
 	if (popupMenu !== undefined) {
@@ -661,9 +682,10 @@ network.on('click', function() { // desactiate buttons in toolbox on adding node
 	$('#net').css('cursor', 'auto');
 });
 
-network.on('selectEdge', function() {
+network.on('selectEdge', function(params) {
 	var selection = network.getSelectedNodes();
 	selection.length == 0 ?  showArrow() : console.log(selection);
+	console.log(params);
 });
 
 
@@ -676,15 +698,44 @@ network.on('selectNode', function(params) {
 });
 
 network.on("dragStart", function (params) { //show node in right panel info on select-and-drag
+	nodeFrom = this.getNodeAt(params.pointer.DOM);
+	selId = params.nodes[0];
 	if (params.nodes[0]) {
-		selId = params.nodes[0];
 		var curNodes = Object.values(nodes._data);
 		var selNode = curNodes.filter( (el) => el.id === selId);
 		var nodeGroup = selNode[0].group;
 		showNodeInfo(nodeGroup);
 	}
+	console.log(nodeFrom);
 });
 
+network.on("dragEnd", function (params) {
+	nodeTo = this.getNodeAt(params.pointer.DOM);
+	if ((nodeFrom && nodeTo) && (nodeFrom !== nodeTo)) {
+		var edgesArr = Object.values(edges._data);
+		if (edgesArr.length > 0) {
+			var lastEdge = edgesArr.filter( (el) => el.from === nodeFrom && el.to === nodeTo);
+			lastEdgeId = lastEdge[0].id;
+			console.log(lastEdge);
+			console.log(lastEdgeId);
+			switch (edgeType) {
+			case 1:
+				updateEdgeColor(blueAr);
+				break;
+			case 2:
+				updateEdgeColor(greenAr);
+				break;
+			case 3:
+				updateEdgeColor(yellowAr);
+				break;
+			case 4:
+				updateEdgeColor(redAr);
+				break;
+			}
+		}
+	}
+});
+	
 network.on('deselectEdge', function() {
 	nothing();
 });

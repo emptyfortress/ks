@@ -116,19 +116,19 @@ svg {
 <path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z"  />
 <use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#copy"/>
 </a>
-<a class="item" transform="matrix(.80901 -.58778 .58778 .80901 -99.201 194.69)"  data-svg-origin="250 250" onclick="parent.myAddEdge()">
+<a class="item" transform="matrix(.80901 -.58778 .58778 .80901 -99.201 194.69)"  data-svg-origin="250 250" onclick="parent.myAddEdge(1)">
 <path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
 <use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrBlue"/>
 </a>
-<a class="item" transform="matrix(.30901 -.95105 .95105 .30901 -65.018 410.51)"  data-svg-origin="250 250"  onclick="parent.myAddEdge()">
+<a class="item" transform="matrix(.30901 -.95105 .95105 .30901 -65.018 410.51)"  data-svg-origin="250 250"  onclick="parent.myAddEdge(2)">
 <path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
 <use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrGreen"/>
 </a>
-<a class="item" transform="matrix(-.30901 -.95105 .95105 -.30901 89.49 565.02)"  data-svg-origin="250 250"  onclick="parent.myAddEdge()">
+<a class="item" transform="matrix(-.30901 -.95105 .95105 -.30901 89.49 565.02)"  data-svg-origin="250 250"  onclick="parent.myAddEdge(3)">
 <path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
 <use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrYellow"/>
 </a>
-<a class="item" transform="matrix(-.80901 -.58778 .58778 -.80901 305.31 599.2)"  data-svg-origin="250 250"  onclick="parent.myAddEdge()">
+<a class="item" transform="matrix(-.80901 -.58778 .58778 -.80901 305.31 599.2)"  data-svg-origin="250 250"  onclick="parent.myAddEdge(4)">
 <path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z" />
 <use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#arrRed"/>
 </a>
