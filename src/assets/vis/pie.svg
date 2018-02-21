@@ -97,7 +97,6 @@ svg {
 	</svg>
 </symbol>
 
-
 <a class="item"  data-svg-origin="250 250"  onclick="parent.addEtap('copy')">
 <path class="sector" d="m250 250h250a250 250 0 0 0 -47.746 -146.95z"  />
 <use transform="rotate(72 432.6 190.67)" x="388.10284423828125" y="146.16873168945312" width="89" height="89" xlink:href="#copy"/>
