@@ -475,6 +475,14 @@ function togglePhysics() { // eslint-disable-line no-unused-vars
 function tip(arg) {
 	$('#tip').text(arg);
 }
+// ========================================
+// load mini tree on map
+// ========================================
+
+function openMiniTemplate() { // eslint-disable-line no-unused-vars
+	closePie();
+	$('#offCanvasTemplate').foundation('open');
+}
 
 function addMini(e) { // eslint-disable-line no-unused-vars
 	let arr = eval('nodesArray' + e);
