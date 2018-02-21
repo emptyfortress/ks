@@ -706,7 +706,6 @@ network.on('oncontext', function(params) {
 	}
 } );
 
-
 // network.on('oncontext', function(params) {
 // 	params.event.preventDefault();
 // 	let coordClick = params.pointer.DOM;
@@ -727,7 +726,6 @@ network.on('oncontext', function(params) {
 // 		popupMenu.appendChild(pie);
 // 	}
 // } );
-
 
 // ========================================
 // delete node by keyboard delete and backspace
