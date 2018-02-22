@@ -1,11 +1,18 @@
+// let blueAr = '#2C7CE9';
+// let greenAr = '#7ED321';
+// let yellowAr = '#F5A623';
+// let redAr = '#D0021B';
+
+let tempBlue = "#2C7CE9";
+
 const nodesArray1 = [
 	{ id: 100, label: 'Старт', group: 'start'},
 	{ id: 101, label: 'Этап', group: 'box'},
 	{ id: 102, label: 'Завершение', group: 'stop'},
 ];
 const edgesArray1 = [
-	{ from: 100, to: 101 },
-	{ from: 101, to: 102 }
+	{ from: 100, to: 101, color: { color: tempBlue }  },
+	{ from: 101, to: 102, color: { color: tempBlue }  }
 ];
 const nodesArray2 = [
 	{ id: 200, label: 'Старт', group: 'start'},
@@ -14,10 +21,10 @@ const nodesArray2 = [
 	{ id: 203, label: 'Завершение', group: 'stop'},
 ];
 const edgesArray2 = [
-	{ from: 200, to: 201, color: { color: "#ccc" } },
-	{ from: 200, to: 202, color: { color: "#ccc" } },
-	{ from: 201, to: 203, color: { color: "#ccc" } },
-	{ from: 202, to: 203, color: { color: "#ccc" } },
+	{ from: 200, to: 201, color: { color: tempBlue } },
+	{ from: 200, to: 202, color: { color: tempBlue } },
+	{ from: 201, to: 203, color: { color: tempBlue } },
+	{ from: 202, to: 203, color: { color: tempBlue } },
 ];
 const nodesArray3 = [
 	{ id: 300, label: 'Старт', group: 'start'},
@@ -27,11 +34,11 @@ const nodesArray3 = [
 	{ id: 304, label: 'Завершение', group: 'stop'},
 ];
 const edgesArray3 = [
-	{ from: 300, to: 301 },
-	{ from: 300, to: 302 },
-	{ from: 301, to: 303 },
-	{ from: 302, to: 303 },
-	{ from: 303, to: 304 },
+	{ from: 300, to: 301, color: { color: tempBlue }  },
+	{ from: 300, to: 302, color: { color: tempBlue }  },
+	{ from: 301, to: 303, color: { color: tempBlue }  },
+	{ from: 302, to: 303, color: { color: tempBlue }  },
+	{ from: 303, to: 304, color: { color: tempBlue }  },
 ];
 const nodesArray4 = [
 	{ id: 401, label: 'Этап', group: 'box'},
@@ -40,9 +47,9 @@ const nodesArray4 = [
 	{ id: 404, label: 'Этап', group: 'box'},
 ];
 const edgesArray4 = [
-	{ from: 401, to: 402 },
-	{ from: 403, to: 402 },
-	{ from: 402, to: 404 },
+	{ from: 401, to: 402, color: { color: tempBlue }  },
+	{ from: 403, to: 402, color: { color: tempBlue }  },
+	{ from: 402, to: 404, color: { color: tempBlue }  },
 ];
 
 const marshrut = [
@@ -59,17 +66,17 @@ const marshrut = [
 	{ id: 910, label: 'Завершение', group: 'stop'},
 ];
 const marshEdges = [
-	{ from: 900, to: 901 },
-	{ from: 901, to: 902 },
-	{ from: 901, to: 903 },
-	{ from: 901, to: 904 },
-	{ from: 902, to: 905 },
-	{ from: 903, to: 905 },
-	{ from: 904, to: 905 },
-	{ from: 905, to: 906 },
-	{ from: 906, to: 907 },
-	{ from: 907, to: 908 },
-	{ from: 906, to: 908 },
-	{ from: 908, to: 909 },
-	{ from: 909, to: 910 },
+	{ from: 900, to: 901, color: { color: tempBlue }  },
+	{ from: 901, to: 902, color: { color: tempBlue }  },
+	{ from: 901, to: 903, color: { color: tempBlue }  },
+	{ from: 901, to: 904, color: { color: tempBlue }  },
+	{ from: 902, to: 905, color: { color: tempBlue }  },
+	{ from: 903, to: 905, color: { color: tempBlue }  },
+	{ from: 904, to: 905, color: { color: tempBlue }  },
+	{ from: 905, to: 906, color: { color: tempBlue }  },
+	{ from: 906, to: 907, color: { color: tempBlue }  },
+	{ from: 907, to: 908, color: { color: tempBlue }  },
+	{ from: 906, to: 908, color: { color: tempBlue }  },
+	{ from: 908, to: 909, color: { color: tempBlue }  },
+	{ from: 909, to: 910, color: { color: tempBlue }  },
 ];
