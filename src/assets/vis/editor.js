@@ -770,9 +770,11 @@ network.on('oncontext', function(params) {
 // ========================================
 
 window.addEventListener('keyup', function(e) {
-	if (selId && ( e.keyCode == 46 || e.keyCode == 8 )) {
+	var selEdg = network.getSelectedEdges();
+	if ((selId || selEdg) && ( e.keyCode == 46 || e.keyCode == 8 )) {
 		try {
 			nodes.remove({id: selId});
+			edges.remove({id: selEdg});
 		}
 		catch (err) {
 			alert(err);
