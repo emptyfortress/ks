@@ -329,7 +329,7 @@ function addEtap(arg) { // eslint-disable-line no-unused-vars
 		break;
 	case 'copy':
 		manipulationNodeType = 3;
-		$('#net').css('cursor', 'copy');
+		$('#net').css('cursor', 'url(assets/img/cursorEtap.png), auto');
 		break;
 	case 3:
 		$('.toolbox img').removeClass('selected');
@@ -764,27 +764,6 @@ network.on('oncontext', function(params) {
 		popupMenu.appendChild(pie);
 	}
 } );
-
-// network.on('oncontext', function(params) {
-// 	params.event.preventDefault();
-// 	let coordClick = params.pointer.DOM;
-// 	let nodeIdAt = network.getNodeAt(coordClick);
-// 	// let nodePosition = network.getPositions(nodeIdAt);
-// 	if (popupMenu !== undefined) {
-// 		popupMenu.parentNode.removeChild(popupMenu);
-// 		popupMenu = undefined;
-// 	}
-// 	if (nodeIdAt) {
-// 		popupMenu = document.createElement('div');
-// 		popupMenu.className = 'popupMenu';
-// 		popupMenu.style.left = coordClick.x - 100 + 'px';
-// 		popupMenu.style.top = coordClick.y - 100 + 'px';
-// 		container.appendChild(popupMenu);
-// 		let pie = document.createElement('embed');
-// 		pie.setAttribute('src', 'assets/vis/pie.svg');
-// 		popupMenu.appendChild(pie);
-// 	}
-// } );
 
 // ========================================
 // delete node by keyboard delete and backspace

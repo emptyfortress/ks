@@ -17,10 +17,16 @@ svg {
 </style>
 
 <symbol id="copy" class="icon icon-copy" viewBox="0 0 89 89">
-	<svg version="1.1" viewBox="0 0 100 80" >
-		<g fill="none" fill-rule="evenodd">
-			<path transform="translate(44 33) rotate(-90) translate(-44 -33)" d="m54.8-4v15.2h15.2v3.8h-19v-19h3.8zm5.0125-7l17.188 17.188v59.812h-11v11h-55v-77h11v-11h37.812zm2.1875 84v-7.2632h-39.769v-61.737h-7.2308v69h47zm11-11v-54.02l-14.688-14.98h-32.312v69h47z" fill="#0096DC"/>
-		</g>
+	<svg viewBox="0 0 33 69" version="1.1">
+			<defs>
+					<rect id="path-1" x="-18" y="18" width="69" height="33" rx="4"></rect>
+			</defs>
+			<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<g id="Rectangle-27-Copy-12" transform="translate(16.500000, 34.500000) rotate(90.000000) translate(-16.500000, -34.500000) ">
+							<use fill="#DBF4FF" fill-rule="evenodd" xlink:href="#path-1"></use>
+							<rect stroke="#0096DC" stroke-width="2" x="-17" y="19" width="67" height="31" rx="4"></rect>
+					</g>
+			</g>
 	</svg>
 </symbol>
 <symbol id="arrBlue" class="icon icon-arrBlue" viewBox="0 0 89 89">
@@ -55,7 +61,6 @@ svg {
 		</g>
 	</svg>
 </symbol>
-
 <symbol id="trash" class="icon icon-trash" viewBox="0 0 89 89">
 	<svg version="1.1" viewBox="0 0 49 49">
 		<defs>
@@ -105,10 +110,19 @@ svg {
 	</svg>
 </symbol>
 <symbol id="etap" class="icon icon-etap" viewBox="0 0 89 89">
-	<svg version="1.1" viewBox="0 0 69 33">
-		<g fill="none" fill-rule="evenodd">
-		<rect x="1" y="1" width="67" height="31" rx="4" fill="#DBF4FF" stroke="#0096DC" stroke-width="2"/>
+	<svg version="1.1" viewBox="0 0 40 79" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<rect id="b" x="-18" y="18" width="69" height="33" rx="4"/>
+		<rect id="a" x="-11" y="28" width="69" height="33" rx="4"/>
+	</defs>
+	<g transform="translate(20 39.5) rotate(180) translate(-20 -39.5)">
+		<g transform="translate(16.5 34.5) rotate(90) translate(-16.5 -34.5)">
+			<rect x="-17" y="19" width="67" height="31" rx="4" stroke="#0096DC" stroke-width="2" fill="#DBF4FF" />
 		</g>
+		<g transform="translate(23.5 44.5) rotate(90) translate(-23.5 -44.5)">
+			<rect x="-10" y="29" width="67" height="31" rx="4" stroke="#0096DC" stroke-width="2" fill="#DBF4FF" />
+		</g>
+	</g>
 	</svg>
 </symbol>
 
