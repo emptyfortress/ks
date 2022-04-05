@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="172px" height="178px" viewBox="0 0 172 178" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 23</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="143.578436" y="130.666145" width="30.26581" height="13.6916759" rx="4"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-23" transform="translate(-8.000000, -2.000000)">
+            <text id="ion-ios-trash-outline---Ionicons-Copy" font-family="Ionicons" font-size="32" font-weight="400" fill="#0096DC">
+                <tspan x="8" y="103"></tspan>
+            </text>
+            <text id="ion-ios-copy-outline---Ionicons-Copy" font-family="Ionicons" font-size="32" font-weight="400" fill="#0096DC">
+                <tspan x="162" y="103.372372"></tspan>
+            </text>
+            <g id="Rectangle-27-Copy-14" transform="translate(158.711341, 137.511983) rotate(-52.000000) translate(-158.711341, -137.511983) ">
+                <use fill="#DBF4FF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                <rect stroke="#0096DC" stroke-width="1" x="144.078436" y="131.166145" width="29.26581" height="12.6916759" rx="4"></rect>
+            </g>
+            <g id="Group-18-Copy" transform="translate(71.291012, 161.663384) rotate(23.000000) translate(-71.291012, -161.663384) translate(54.291012, 144.663384)">
+                <rect id="Rectangle-29-Copy-4" fill="#0096DC" transform="translate(16.970563, 17.000000) rotate(-315.000000) translate(-16.970563, -17.000000) " x="4.97056275" y="5" width="24" height="24"></rect>
+                <text id="&amp;-copy" font-family="Arial" font-size="16" font-weight="normal" fill="#FFFFFF">
+                    <tspan x="11.2226562" y="23">&amp;</tspan>
+                </text>
+            </g>
+            <g id="Group-19-Copy" transform="translate(35.085960, 134.335545) rotate(55.000000) translate(-35.085960, -134.335545) translate(18.085960, 116.835545)">
+                <rect id="Rectangle-29-Copy-5" fill="#0096DC" transform="translate(17.000000, 17.370117) rotate(-315.000000) translate(-17.000000, -17.370117) " x="5" y="5.37011719" width="24" height="24"></rect>
+                <path d="M14.5294373,11.8995544 L14.5294373,23.8995544" id="Line-16-Copy-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+                <path d="M20.5294373,11.8995544 L20.5294373,23.8995544" id="Line-16-Copy-3" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square"></path>
+            </g>
+            <g id="Group-20-Copy-9" transform="translate(117.027284, 163.399656) rotate(-16.000000) translate(-117.027284, -163.399656) translate(100.027284, 146.399656)">
+                <rect id="Rectangle-29-Copy-6" fill="#0096DC" transform="translate(16.970563, 17.000000) rotate(-315.000000) translate(-16.970563, -17.000000) " x="4.97056275" y="5" width="24" height="24"></rect>
+                <circle id="Oval-12-Copy" stroke="#FFFFFF" stroke-width="2" cx="17" cy="17.0294373" r="7"></circle>
+            </g>
+            <g id="Group-20-Copy-10" transform="translate(153.382910, 49.211117) rotate(-36.000000) translate(-153.382910, -49.211117) translate(135.382910, 42.711117)">
+                <path d="M0.770000458,6.5 L18.7700005,6.5" id="Line-30" stroke="#2C7CE9" stroke-width="3" stroke-linecap="square" transform="translate(9.770000, 6.500000) scale(-1, 1) translate(-9.770000, -6.500000) "></path>
+                <polygon id="Path-21" fill="#2C7CE9" points="18 0 19.8571429 6.5 18 13 35.6428571 6.5"></polygon>
+            </g>
+            <g id="Group-20-Copy-11" transform="translate(115.744173, 19.500000) rotate(-72.000000) translate(-115.744173, -19.500000) translate(97.744173, 13.000000)">
+                <path d="M0.5,6.5 L18.5,6.5" id="Line-30" stroke="#7ED321" stroke-width="3" stroke-linecap="square" transform="translate(9.500000, 6.500000) scale(-1, 1) translate(-9.500000, -6.500000) "></path>
+                <polygon id="Path-21" fill="#7ED321" points="18 0 19.8571429 6.5 18 13 35.6428571 6.5"></polygon>
+            </g>
+            <g id="Group-20-Copy-12" transform="translate(69.189647, 21.316994) rotate(-118.000000) translate(-69.189647, -21.316994) translate(51.189647, 14.816994)">
+                <path d="M0.5,6.5 L18.5,6.5" id="Line-30" stroke="#F5A623" stroke-width="3" stroke-linecap="square" transform="translate(9.500000, 6.500000) scale(-1, 1) translate(-9.500000, -6.500000) "></path>
+                <polygon id="Path-21" fill="#F5A623" points="18 0 19.8571429 6.5 18 13 35.6428571 6.5"></polygon>
+            </g>
+            <g id="Group-20-Copy-13" transform="translate(36.027705, 49.105214) rotate(-154.000000) translate(-36.027705, -49.105214) translate(18.027705, 42.605214)">
+                <path d="M0.5,6.5 L18.5,6.5" id="Line-30" stroke="#D0021B" stroke-width="3" stroke-linecap="square" transform="translate(9.500000, 6.500000) scale(-1, 1) translate(-9.500000, -6.500000) "></path>
+                <polygon id="Path-21" fill="#D0021B" points="18 0 19.8571429 6.5 18 13 35.6428571 6.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

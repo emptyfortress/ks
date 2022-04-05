@@ -1,0 +1,307 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Конструктор согласований Доксвижн</title>
+		
+		<!-- <link rel="stylesheet" href="assets/vis/vis.css"> -->
+		<link rel="stylesheet" href="assets/css/app.css">
+	</head>
+	<body>
+		<div class="off-canvas-wrapper">
+			<div class="off-canvas position-left" id="offCanvasTemplate" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;&nbsp;</span>
+				</button>
+				<div class="esc">ESC - закрыть панель</div>
+					<div class="offhd">Мини-шаблоны</div>
+					<ul class="tempList">
+						<li data-close onclick="addMini(1)"><a href="#"><img src="assets/img/temp1.png" alt="">Старт-этап-финиш</a></li>
+						<li data-close onclick="addMini(2)"><a href="#"><img src="assets/img/temp2.png" alt="">Параллельные этапы</a></li>
+						<li data-close onclick="addMini(3)"><a href="#"><img src="assets/img/temp3.png" alt="">Этапы с консолидацией</a></li>
+						<li data-close onclick="addMini(4)"><a href="#"><img src="assets/img/temp5.png" alt="">Вилка типа у</a></li>
+					</ul>
+			</div>
+			<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="m-list">
+					<h4>Маршруты</h4>
+					<button class="button">Создать новый</button>
+					<ul id="off-marsh" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+						<li id="off-fold1" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+							<a href="" class="accordion-title"><span>ОРД</span><image src="assets/img/trash.png" class="edit hide" data-toggle="off-fold1"/></a>
+							<ul id="off-marsh1" class="list accordion-content" data-tab-content>
+								<li><a href="#" class="choos"><span data-close>Приказ по подразделению</span><img src="assets/img/info.png" data-toggle="infoList" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+								<li><a href="#" class="choos"><span data-close>Приказ по министерству</span><img src="assets/img/info.png" data-toggle="infoList1" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList1" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+								<li><a href="#" class="choos"><span data-close>Распоряжение по подразделению</span><img src="assets/img/info.png" data-toggle="infoList2" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList2" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+								<li><a href="#" class="choos"><span data-close>Распоряжение по министерству</span><img src="assets/img/info.png" data-toggle="infoList3" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList3" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li id="off-fold2" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+							<a href="" class="accordion-title" ><span>Служебки</span><image src="assets/img/trash.png" class="edit hide" data-toggle="off-fold2"/></a>
+							<ul id="off-marsh2" class="list accordion-content" data-tab-content>
+								<li><a href="#" data-close class="choos">Служебная записка (за подписью ДД)</a></li>
+								<li><a href="#" data-close class="choos">Заявление на отпуск</a></li>
+								<li><a href="#" data-close class="choos">Заявка на командировку</a></li>
+								<li><a href="#" data-close class="choos">Распоряжение по Министерству</a></li>
+							</ul>
+						</li>
+						<li id="off-fold3" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+							<a href="" class="accordion-title" ><span>Договоры</span><image src="assets/img/trash.png" class="edit hide" data-toggle="off-fold3"/></a>
+							<ul id="off-marsh3" class="list accordion-content" data-tab-content>
+								<li><a href="#" data-close class="choos">Базовый маршрут</a></li>
+								<li><a href="#" data-close class="choos">Крупные сделки</a></li>
+								<li><a href="#" data-close class="choos">Договоры субподряда</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<a href="index.html" data-close class="back">На главную</a>
+			</div>
+			<div class="off-canvas position-right" data-transition="overlap" id="offCanvasRight" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="e-list">
+							<h4>Этапы</h4>
+							<button class="button">Создать новый</button>
+							<ul id="off-etap" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+								<li id="off-fol1" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title"><span>Юридический департамент</span></a>
+									<ul id="off-etap1" class="list accordion-content" data-tab-content>
+										<li><a href="#" class="choose1"><span data-close>Название этапа 1</span><img src="assets/img/info.png" data-toggle="infEt" class="info" data-tooltip title="Где используется" /></a>
+											<ul id="infEt" class="infoList hide-my" data-toggler=".hide-my">
+												<li>Приказ по подразделению</li>
+												<li>Приказ по министерству</li>
+												<li>Распоряжение по подразделению</li>
+												<li>Заявление на отпуск</li>
+											</ul>
+										</li>
+										<li><a href="#" class="choose1"><span data-close>Название этапа 2</span><img src="assets/img/info.png" data-toggle="infEt1" class="info" data-tooltip title="Где используется" /></a>
+											<ul id="infEt1" class="infoList hide-my" data-toggler=".hide-my">
+												<li>Приказ по подразделению</li>
+												<li>Приказ по министерству</li>
+												<li>Распоряжение по подразделению</li>
+												<li>Заявление на отпуск</li>
+											</ul>
+										</li>
+										<li><a href="#" class="choose1"><span data-close>Название этапа 3</span><img src="assets/img/info.png" data-toggle="infEt2" class="info" data-tooltip title="Где используется" /></a>
+											<ul id="infEt2" class="infoList hide-my" data-toggler=".hide-my">
+												<li>Приказ по подразделению</li>
+												<li>Приказ по министерству</li>
+												<li>Распоряжение по подразделению</li>
+												<li>Заявление на отпуск</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li id="off-fol2" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Финансовый департамент</span></a>
+									<ul id="off-etap2" class="list accordion-content" data-tab-content>
+										<li><a href="#" data-close class="choose1">Название этапа 1</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 2</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol3" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Оформление</span></a>
+									<ul id="off-etap3" class="list accordion-content" data-tab-content>
+										<li><a href="#" data-close class="choose1">Название этапа 1</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 2</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol4" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Смешанные этапы</span></a>
+									<ul id="off-etap4" class="list accordion-content" data-tab-content>
+										<li><a href="#" data-close class="choose1">Название этапа 1</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 2</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol5" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Этапы с подписанием</span></a>
+									<ul id="off-etap5" class="list accordion-content" data-tab-content>
+										<li><a href="#" class="choose1">Название этапа 1</a></li>
+										<li><a href="#" class="choose1">Название этапа 2</a></li>
+										<li><a href="#" class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol6" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Этапы с визированием</span></a>
+									<ul id="off-etap6" class="list accordion-content" data-tab-content>
+										<li><a href="#" class="choose1">Название этапа 1</a></li>
+										<li><a href="#" class="choose1">Название этапа 2</a></li>
+										<li><a href="#" class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+							</ul>
+				</div>
+			</div>
+			<div class="off-canvas-content" data-off-canvas-content>
+
+				<div class="main">
+					<div class="header"><div class="title"><image src="assets/img/logo.png" />Конструктор согласований</div></div>
+					<!-- <div class="men"></div> -->
+					<div class="content">
+						<div class="last">
+							<h4><image src="assets/img/history.png" class="" />История</h4>
+							<div class="history">
+								<a href="main.html" class="choos">Базовый маршрут</a>
+								<a href="main.html" class="choos">Простое согласование</a>
+								<a href="main.html" class="choos">Договоры до 100 тыс.</a>
+								<a href="main.html" class="choos">Маршрут с юристами</a>
+								<a href="main.html" class="choos">Простое согласование</a>
+								<a href="main.html" class="choos">Договоры до 100 тыс.</a>
+								<a href="main.html" class="choos">Маршрут с акционерами</a>
+							</div>
+						</div>
+						<div id="marshBlock" class="block">
+							<h4><image src="assets/img/path.png" class="main-icon" />
+								Маршруты
+								<image src="assets/img/gear.png" id="marshGear" class="ico" onclick="editMarshrut()"/>
+								<image id="addMarsh" src="assets/img/plus.png" class="ico mr-10"  />
+								<image id="addFold" src="assets/img/add-folder.png" class="float-right mr-10 hide"  />
+							</h4>
+							<ul id="marsh" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+								<li id="fold1" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title"><span>ОРД</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fold1"/></a>
+									<ul id="marsh1" class="list accordion-content" data-tab-content>
+									<li><a href="main.html"  class="choose">Приказ по подразделению</a></li>
+									<li><a href="main.html"  class="choose">Приказ по министерству</a></li>
+									<li><a href="main.html"  class="choose">Распоряжение по подразделению</a></li>
+									<li><a href="main.html"  class="choose">Распоряжение по министерству</a></li>
+									</ul>
+								</li>
+								<li id="fold2" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Служебки</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fold2"/></a>
+									<ul id="marsh2" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Служебная записка (за подписью ДД)</a></li>
+										<li><a href="main.html" class="choose">Заявление на отпуск</a></li>
+										<li><a href="main.html" class="choose">Заявка на командировку</a></li>
+										<li><a href="main.html" class="choose">Распоряжение по Министерству</a></li>
+									</ul>
+								</li>
+								<li id="fold3" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Договоры</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fold3"/></a>
+									<ul id="marsh3" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Базовый маршрут</a></li>
+										<li><a href="main.html" class="choose">Крупные сделки</a></li>
+										<li><a href="main.html" class="choose">Договоры субподряда</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<div id="etapBlock" class="block">
+							<h4><image src="assets/img/etap.png" class="main-icon" />
+								Этапы
+								<image src="assets/img/gear.png" id="etapGear" class="ico" onclick="editEtap()"/>
+								<image id="addEt" src="assets/img/plus.png" class="ico mr-10"  />
+								<image id="addFol" src="assets/img/add-folder.png" class="float-right mr-10 hide"  />
+							</h4>
+							<ul id="etap" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+								<li id="fol1" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title"><span>Юридический департамент</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol1"/></a>
+									<ul id="etap1" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Название этапа 1</a></li>
+										<li><a href="main.html" class="choose">Название этапа 2</a></li>
+										<li><a href="main.html" class="choose">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="fol2" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Финансовый департамент</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol2"/></a>
+									<ul id="etap2" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Название этапа 1</a></li>
+										<li><a href="main.html" class="choose">Название этапа 2</a></li>
+										<li><a href="main.html" class="choose">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="fol3" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Оформление</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol3"/></a>
+									<ul id="etap3" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Название этапа 1</a></li>
+										<li><a href="main.html" class="choose">Название этапа 2</a></li>
+										<li><a href="main.html" class="choose">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="fol4" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Смешанные этапы</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol4"/></a>
+									<ul id="etap4" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Название этапа 1</a></li>
+										<li><a href="main.html" class="choose">Название этапа 2</a></li>
+										<li><a href="main.html" class="choose">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="fol5" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Этапы с подписанием</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol5"/></a>
+									<ul id="etap5" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Название этапа 1</a></li>
+										<li><a href="main.html" class="choose">Название этапа 2</a></li>
+										<li><a href="main.html" class="choose">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="fol6" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Этапы с визированием</span><image src="assets/img/trash.png" class="edit hide" data-toggle="fol5"/></a>
+									<ul id="etap6" class="list accordion-content" data-tab-content>
+										<li><a href="main.html" class="choose">Название этапа 1</a></li>
+										<li><a href="main.html" class="choose">Название этапа 2</a></li>
+										<li><a href="main.html" class="choose">Название этапа 3</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="footer1">
+						<div>&copy; 2018 Docsvision. Все права защищены.</div>
+						<a href="#">Правила использования</a>
+						<a href="#">Помощь</a>
+					</div>
+				</div>
+				
+				
+				
+
+			</div>
+		</div>
+
+		<script src="assets/vis/vis.min.js"></script>
+		<!-- <script src="assets/vis/vis.js"></script> -->
+		<script src="assets/js/app.js"></script>
+    <script src="assets/vis/data.js"></script>
+    <script src="assets/vis/editor.js"></script>
+
+	</body>
+</html>

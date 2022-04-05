@@ -1,0 +1,1237 @@
+
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Конструктор согласований Доксвижн</title>
+		
+		<!-- <link rel="stylesheet" href="assets/vis/vis.css"> -->
+		<link rel="stylesheet" href="assets/css/app.css">
+	</head>
+	<body>
+		<div class="off-canvas-wrapper">
+			<div class="off-canvas position-left" id="offCanvasTemplate" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;&nbsp;</span>
+				</button>
+				<div class="esc">ESC - закрыть панель</div>
+					<div class="offhd">Мини-шаблоны</div>
+					<ul class="tempList">
+						<li data-close onclick="addMini(1)"><a href="#"><img src="assets/img/temp1.png" alt="">Старт-этап-финиш</a></li>
+						<li data-close onclick="addMini(2)"><a href="#"><img src="assets/img/temp2.png" alt="">Параллельные этапы</a></li>
+						<li data-close onclick="addMini(3)"><a href="#"><img src="assets/img/temp3.png" alt="">Этапы с консолидацией</a></li>
+						<li data-close onclick="addMini(4)"><a href="#"><img src="assets/img/temp5.png" alt="">Вилка типа у</a></li>
+					</ul>
+			</div>
+			<div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="m-list">
+					<h4>Маршруты</h4>
+					<button class="button">Создать новый</button>
+					<ul id="off-marsh" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+						<li id="off-fold1" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+							<a href="" class="accordion-title"><span>ОРД</span><image src="assets/img/trash.png" class="edit hide" data-toggle="off-fold1"/></a>
+							<ul id="off-marsh1" class="list accordion-content" data-tab-content>
+								<li><a href="#" class="choos"><span data-close>Приказ по подразделению</span><img src="assets/img/info.png" data-toggle="infoList" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+								<li><a href="#" class="choos"><span data-close>Приказ по министерству</span><img src="assets/img/info.png" data-toggle="infoList1" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList1" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+								<li><a href="#" class="choos"><span data-close>Распоряжение по подразделению</span><img src="assets/img/info.png" data-toggle="infoList2" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList2" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+								<li><a href="#" class="choos"><span data-close>Распоряжение по министерству</span><img src="assets/img/info.png" data-toggle="infoList3" class="info" data-tooltip title="Где используется" /></a>
+									<ul id="infoList3" class="infoList hide-my" data-toggler=".hide-my">
+										<li>Документ 1</li>
+										<li>Документ 2</li>
+										<li>Вид карточки 1</li>
+										<li>Вид карточки 2</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li id="off-fold2" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+							<a href="" class="accordion-title" ><span>Служебки</span><image src="assets/img/trash.png" class="edit hide" data-toggle="off-fold2"/></a>
+							<ul id="off-marsh2" class="list accordion-content" data-tab-content>
+								<li><a href="#" data-close class="choos">Служебная записка (за подписью ДД)</a></li>
+								<li><a href="#" data-close class="choos">Заявление на отпуск</a></li>
+								<li><a href="#" data-close class="choos">Заявка на командировку</a></li>
+								<li><a href="#" data-close class="choos">Распоряжение по Министерству</a></li>
+							</ul>
+						</li>
+						<li id="off-fold3" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+							<a href="" class="accordion-title" ><span>Договоры</span><image src="assets/img/trash.png" class="edit hide" data-toggle="off-fold3"/></a>
+							<ul id="off-marsh3" class="list accordion-content" data-tab-content>
+								<li><a href="#" data-close class="choos">Базовый маршрут</a></li>
+								<li><a href="#" data-close class="choos">Крупные сделки</a></li>
+								<li><a href="#" data-close class="choos">Договоры субподряда</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<a href="index.html" data-close class="back">На главную</a>
+			</div>
+			<div class="off-canvas position-right" data-transition="overlap" id="offCanvasRight" data-off-canvas>
+				<button class="close-button" data-close aria-label="Close panel" type="button">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<div class="e-list">
+							<h4>Этапы</h4>
+							<button class="button">Создать новый</button>
+							<ul id="off-etap" class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
+								<li id="off-fol1" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title"><span>Юридический департамент</span></a>
+									<ul id="off-etap1" class="list accordion-content" data-tab-content>
+										<li><a href="#" class="choose1"><span data-close>Название этапа 1</span><img src="assets/img/info.png" data-toggle="infEt" class="info" data-tooltip title="Где используется" /></a>
+											<ul id="infEt" class="infoList hide-my" data-toggler=".hide-my">
+												<li>Приказ по подразделению</li>
+												<li>Приказ по министерству</li>
+												<li>Распоряжение по подразделению</li>
+												<li>Заявление на отпуск</li>
+											</ul>
+										</li>
+										<li><a href="#" class="choose1"><span data-close>Название этапа 2</span><img src="assets/img/info.png" data-toggle="infEt1" class="info" data-tooltip title="Где используется" /></a>
+											<ul id="infEt1" class="infoList hide-my" data-toggler=".hide-my">
+												<li>Приказ по подразделению</li>
+												<li>Приказ по министерству</li>
+												<li>Распоряжение по подразделению</li>
+												<li>Заявление на отпуск</li>
+											</ul>
+										</li>
+										<li><a href="#" class="choose1"><span data-close>Название этапа 3</span><img src="assets/img/info.png" data-toggle="infEt2" class="info" data-tooltip title="Где используется" /></a>
+											<ul id="infEt2" class="infoList hide-my" data-toggler=".hide-my">
+												<li>Приказ по подразделению</li>
+												<li>Приказ по министерству</li>
+												<li>Распоряжение по подразделению</li>
+												<li>Заявление на отпуск</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li id="off-fol2" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Финансовый департамент</span></a>
+									<ul id="off-etap2" class="list accordion-content" data-tab-content>
+										<li><a href="#" data-close class="choose1">Название этапа 1</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 2</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol3" class="accordion-item is-active" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Оформление</span></a>
+									<ul id="off-etap3" class="list accordion-content" data-tab-content>
+										<li><a href="#" data-close class="choose1">Название этапа 1</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 2</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol4" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Смешанные этапы</span></a>
+									<ul id="off-etap4" class="list accordion-content" data-tab-content>
+										<li><a href="#" data-close class="choose1">Название этапа 1</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 2</a></li>
+										<li><a href="#" data-close class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol5" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Этапы с подписанием</span></a>
+									<ul id="off-etap5" class="list accordion-content" data-tab-content>
+										<li><a href="#" class="choose1">Название этапа 1</a></li>
+										<li><a href="#" class="choose1">Название этапа 2</a></li>
+										<li><a href="#" class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+								<li id="off-fol6" class="accordion-item" data-accordion-item data-toggler data-animate="slide-in-right slide-out-left">
+									<a href="" class="accordion-title" ><span>Этапы с визированием</span></a>
+									<ul id="off-etap6" class="list accordion-content" data-tab-content>
+										<li><a href="#" class="choose1">Название этапа 1</a></li>
+										<li><a href="#" class="choose1">Название этапа 2</a></li>
+										<li><a href="#" class="choose1">Название этапа 3</a></li>
+									</ul>
+								</li>
+							</ul>
+				</div>
+			</div>
+			<div class="off-canvas-content" data-off-canvas-content>
+
+				<div class="main1">
+					<div class="header1">
+						<img src="assets/img/path1.png" width="25" class="pointer" data-toggle="offCanvasLeft" alt=""/>
+						<a href="index.html" class="title">Конструктор согласований</a>
+						<img src="assets/img/etap1.png" width="15" class="pointer" data-toggle="offCanvasRight" alt=""/>
+					</div>
+				
+					<div class="content1">
+						<div class="mprops">
+							<div class="ro">
+								<div class="third-1">
+									<div class="mat-div">
+										<label for="mar-1" class="mat-label">Маршрут</label>
+										<input type="text" class="mat-input" id="mar-1">
+									</div>
+								</div>
+								<div class="third-1">
+									<div class="mat-div">
+										<label for="mar-2" class="mat-label">Отображаемое название</label>
+										<input type="text" class="mat-input" id="mar-2">
+									</div>
+								</div>
+								<div class="third-1">
+									<a class="link dis-block" data-toggle="showList">
+									<img src="assets/img/info.png" />
+									Показать список связанных документов
+									</a>
+								</div>
+								<div class="arrow">
+									<img src="assets/img/down.png" onclick="openM()" />
+								</div>
+							</div>
+							<div class="ro mt-3">
+								<div class="third-1">
+									<div class="mat-div-sm">
+										<label for="mar-4" class="mat-label">Кто создал</label>
+										<input type="text" class="mat-input" id="mar-4">
+									</div>
+								</div>
+								<div class="third-1">
+									<div class="mat-div-sm rel">
+										<label for="mar-5" class="mat-label">Дата создания</label>
+										<input type="text" class="mat-input" id="mar-5">
+										<img class="cal" src="assets/img/calendar.png" alt="">
+									</div>
+								</div>
+								<div class="third-1">
+									<div class="m-check" >
+										<input id="mar-6" type="checkbox"><label for="mar-6">Не показывать при выборе</label>
+									</div>
+								</div>
+								<div class="arrow">
+								</div>
+							</div>
+							<hr class="full">
+									<div class="m-check">
+										<input id="mar-3" type="checkbox"><label for="mar-3">Автоматически направлять на регистрацию при положительном завершении</label>
+									</div>
+						</div>
+						<div class="wrapper">
+							<div id="paneContainer">
+								<div id="editor">
+									<div id="dragbar"></div>
+									<div id="netpanel" class="white left">
+										<div id="net"></div>
+										<div class="toolbox">
+											<img src="assets/img/bt-tree.png" title="Мини-шаблоны" data-toggle="offCanvasTemplate">
+											<img src="assets/img/bt-start.png" title="Старт маршрута" onclick="addEtap(1)">
+											<img src="assets/img/bt-stop.png" title="Завершение маршрута" onclick="addEtap(2)">
+											<img src="assets/img/bt-etap.png" title="Этап" onclick="addEtap(3)">
+											<img src="assets/img/bt-and.png" title="Условие И" onclick="addEtap(4)">
+											<img src="assets/img/bt-or.png" title="Условие ИЛИ" onclick="addEtap(5)">
+											<img src="assets/img/bt-ext.png" title="Внешнее условие" onclick="addEtap(6)">
+											<img src="assets/img/bt-arr1.png" title="Переход по дефолту" onclick="myAddEdge(1)">
+											<img src="assets/img/bt-arr2.png" title="Положительный переход" onclick="myAddEdge(2)">
+											<img src="assets/img/bt-arr3.png" title="Условно-положительный переход" onclick="myAddEdge(3)">
+											<img src="assets/img/bt-arr4.png" title="Отрицательный переход" onclick="myAddEdge(4)">
+										</div>
+										<img src="assets/img/resize.png" class="resize" alt="" onclick="resize()">
+										<div id="tip">Начните работу с добавления на карту этапов или мини-шаблонов</div>
+										<div id="refresh" onclick="refresh()"><img src="assets/img/refresh.png" alt=""></div>
+										<div id="magnet" onclick="togglePhysics()"></div>
+										<!-- <div id="pie"> -->
+										<!-- 	<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-2 -2 504 504" style="-webkit-backface-visibility:visible;z-index:0;transform-origin:50% 50% 0;transform:matrix3d(-.9557804041212007,-.2940813137516806,0,0,.2940813137516806,-.9557804041212007,0,0,0,0,1,0,0,0,0,1);-webkit-user-select:none;margin:0 auto" display="block">
+					<g id="symbolsContainer">
+						<symbol class="icon icon-trash" id="icon-1" viewBox="0 0 69 69">
+							<svg version="1.1" viewBox="0 0 18 24">
+								<g fill="none" fill-rule="evenodd">
+								<path d="m18 3.0625v0.9375h-1.25l-1.5 18.188c0 0.5-0.17708 0.92708-0.53125 1.2812s-0.78125 0.53125-1.2812 0.53125h-8.8125c-0.5 0-0.92708-0.17708-1.2812-0.53125s-0.53125-0.78125-0.53125-1.2812l-1.5-18.188h-1.3125v-0.9375h5v-1.25c0-0.5 0.17708-0.92708 0.53125-1.2812s0.78125-0.53125 1.2812-0.53125h4.375c0.5 0 0.92708 0.17708 1.2812 0.53125s0.53125 0.78125 0.53125 1.2812v1.25h5zm-12.062-1.25v1.25h6.125v-1.25c0-0.58334-0.29166-0.875-0.875-0.875h-4.375c-0.58334 0-0.875 0.29166-0.875 0.875zm8.4375 20.312l1.4375-18.125h-13.562l1.4375 18.125v0.0625c0 0.58334 0.3125 0.875 0.9375 0.875h8.8125c0.625 0 0.9375-0.29166 0.9375-0.875v-0.0625zm-5.8125-1.0625v-15.062h0.875v15.062h-0.875zm4.4375-15.062l-0.6875 15.062h-0.875l0.625-15.062h0.9375zm-7.125 0l0.6875 15.062h-0.875l-0.6875-15.062h0.875z" fill="#0096DC"/>
+								</g>
+							</svg>
+						</symbol>
+						<symbol class="icon icon-ext" id="icon-2" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 71 71">
+							<g fill="none" fill-rule="evenodd">
+							<rect transform="translate(35.5 35.5) rotate(45) translate(-35.5 -35.5)" x="11" y="11" width="49" height="49" fill="#0096DC"/>
+							<circle cx="35" cy="35" r="14" stroke="#fff" stroke-width="4"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-and" id="icon-3" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 72 72" >
+							<g fill="none" fill-rule="evenodd">
+							<rect transform="translate(36.059 36.059) rotate(45) translate(-36.059 -36.059)" x="11" y="11" width="50.118" height="50.118" fill="#0096DC"/>
+							<text transform="translate(36.529 36.5) rotate(180) translate(-36.529 -36.5)" fill="#FFFFFF" font-family="Arial" font-size="42" font-weight="normal">
+							<tspan x="24" y="51">&amp;</tspan>
+							</text>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-or" id="icon-4" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 71 71" >
+							<g fill="none" fill-rule="evenodd">
+							<rect transform="translate(35.439 35.5) rotate(45) translate(-35.439 -35.5)" x="10.38" y="10.441" width="50.118" height="50.118" fill="#0096DC"/>
+							<path d="m30.279 24.076v25.059" stroke="#fff" stroke-linecap="square" stroke-width="5"/>
+							<path d="m42.809 24.076v25.059" stroke="#fff" stroke-linecap="square" stroke-width="5"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-etap" id="icon-5" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 69 33">
+							<defs>
+							<rect id="a" width="69" height="33" rx="4"/>
+							</defs>
+							<g fill="none" fill-rule="evenodd">
+							<use fill="#DBF4FF" fill-rule="evenodd" xlink:href="#a"/>
+							<rect x="1" y="1" width="67" height="31" rx="4" stroke="#0096DC" stroke-width="2"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-copy" id="icon-6" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 85 113" >
+							<g fill="none" fill-rule="evenodd">
+							<path d="m56.8 9v19.2h19.2v4.8h-24v-24h4.8zm6.0646-9l22.135 22.07v76.805h-14.167v14.125h-70.833v-98.875h14.167v-14.125h48.698zm3.1354 108v-9.3684h-51.615v-79.632h-9.3846v89h61zm14-14v-69.678l-19.062-19.322h-41.938v89h61z" fill="#0096DC"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-arrBlue" id="icon-7" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 13 37">
+							<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+							<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#2C7CE9" stroke-linecap="square" stroke-width="3"/>
+							<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#2C7CE9"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-arrGreen" id="icon-8" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 13 37">
+							<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+							<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#7ED321" stroke-linecap="square" stroke-width="3"/>
+							<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#7ED321"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-arrYellow" id="icon-9" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 13 37">
+							<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+							<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#F5A623" stroke-linecap="square" stroke-width="3"/>
+							<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#F5A623"/>
+							</g>
+						</svg>
+						</symbol>
+						<symbol class="icon icon-arrRed" id="icon-10" viewBox="0 0 69 69">
+						<svg version="1.1" viewBox="0 0 13 37">
+							<g transform="translate(6.5 18) rotate(-90) translate(-18 -6.5)">
+							<path transform="translate(9.77 6.5) scale(-1 1) translate(-9.77 -6.5)" d="m0.77 6.5h18" stroke="#D0021B" stroke-linecap="square" stroke-width="3"/>
+							<polygon points="18 0 19.857 6.5 18 13 35.643 6.5" fill="#D0021B"/>
+							</g>
+						</svg>
+						</symbol>
+						</g>
+					<g id="itemsContainer">
+					<a class="item" id="item-1" tabindex="0" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-1" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-2" tabindex="0" transform="rotate(-36 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-2" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-3" tabindex="0" transform="rotate(-72 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-3" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-4" tabindex="0" transform="rotate(-108 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-4" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-5" tabindex="0" transform="rotate(-144 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-5" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-6" tabindex="0" transform="rotate(180 250 250)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-6" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-7" tabindex="0" transform="rotate(144 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-7" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-8" tabindex="0" transform="rotate(108 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-8" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-9" tabindex="0" transform="rotate(72 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-9" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					<a class="item" id="item-10" tabindex="0" transform="rotate(36 250 250) scale(.99999)" data-svg-origin="250 250">
+						<path fill="none"  d="M330 250h170a250 250 0 0 0-44.8-142.8l-139.5 97.1A80 80 0 0 1 330 250" class="sector"/>
+						<use xlink:href="#icon-10" width="69" height="69" x="412.1" y="153.8" transform="rotate(72.6 446.6 188.3)"/>
+					</a>
+					</g>
+				
+					<g id="trigger" class="trigger menu-trigger" role="button" transform="rotate(-18, 250, 250)">
+					<circle cx="250" cy="250" r="70"></circle>
+					<svg version="1.1" x="220" y="220" viewBox="0 0 100 100">
+						<g fill="none" fill-rule="evenodd">
+						<polygon points="12.805 1.2891 7.6914 6.4023 12.805 11.516 11.516 12.805 6.4023 7.6914 1.2891 12.805 0 11.516 5.1133 6.4023 0 1.2891 1.2891 0 6.4023 5.1133 11.516 0" fill="#fff"/>
+						</g>
+					</svg>
+					</g>
+				
+				</svg>
+				
+				 -->
+										<!-- </div> -->
+									</div>
+									<button class="button secondary setup" data-open="setup">Настройки</button>
+								</div>
+								<div id="viewer">
+									<div class="white right">
+										<div class="md-tabs">
+											<ul class="tabs hide" data-responsive-accordion-tabs="tabs small-accordion medium-tabs large-tabs" id="collapsing-tabs" data-allow-all-closed="true" data-multi-expand="true">
+												<li id="tt1" class="tabs-title is-active"><a href="#panel1c" aria-selected="true">Свойства</a></li>
+												<li id="tt2" class="tabs-title"><a href="#panel3c">Переходы</a></li>
+												<div class="slide"></div>
+											</ul>
+											<div class="tabs-content" data-tabs-content="collapsing-tabs">
+												<div class="tabs-panel is-active" id="panel1c">
+														<div id="emptyPanel" >
+															<img src="assets/img/message.png" alt="">
+															Выберите узел на карте, чтобы удалить его или отредактировать параметры.
+														</div>
+														<div id="endPanel" class="hide">
+															<img src="assets/img/finish.png" class="start">
+															Согласование завершено.
+														</div>
+														<div id="startPanel" class="hide">
+															<img src="assets/img/raketa.png" class="start" >
+															Старт процесса согласования
+														</div>
+				
+														<div id="bulPanel" class="hide">
+															<div class="type">Тип:&nbsp;&nbsp;<img src="assets/img/boulean.png" alt="">
+																&nbsp;&nbsp;Шлюз
+															</div>
+															<div class="fle1">
+																	<legend>Логический элемент:</legend>
+																	<div style="margin-left: 2rem">
+																		<input type="radio" name="logic" value="srol" id="srol" checked ><label for="srol">И</label><br>
+																		<input type="radio" name="logic" value="sroup" id="sroup" ><label for="sroup">ИЛИ</label><br>
+																	</div>
+															</div>
+															<fieldset class="fieldset">
+																<legend>Входы:</legend>
+																<table class="unstiped hover mt-2">
+																	<thead>
+																		<tr>
+																			<th>Наименование</th>
+																			<th>Условие</th>
+																			<th>Цвет</th>
+																			<th>Объект</th>
+																			<th width="50"></th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td class="bold">Согласовано</td>
+																			<td>SearchQueryName</td>
+																			<td>зеленый</td>
+																			<td>Этап 2</td>
+																			<td><img src="assets/img/edit-group1.png" /></td>
+																		</tr>
+																		<tr>
+																			<td class="bold">Не согласовано</td>
+																			<td>SearchQueryName 2</td>
+																			<td>красный</td>
+																			<td>Шлюз</td>
+																			<td><img src="assets/img/edit-group1.png" /></td>
+																		</tr>
+																	</tbody>
+																</table>
+															<button class="button secondary">Добавить</button>
+															</fieldset>
+															<fieldset class="fieldset">
+																<legend>Выходы:</legend>
+																<div class="wrap select" style="width: 140px;">
+																	<label>Следующий этап
+																		<select>
+																			<option value="husker" class="text-center">Этап 5</option>
+																			<option value="starbuck">Этап 6</option>
+																		</select>
+																	</label>
+																	<div class="arrow">&or;</div>
+																</div>
+															</fieldset>
+														</div>
+				
+				
+				
+														<div id="extPanel" class="hide">
+															<div class="type">Тип:&nbsp;&nbsp;<img src="assets/img/condition-icon.png" alt="">&nbsp;&nbsp;Внешнее условие</div>
+															<fieldset class="fieldset">
+																<legend>Основная</legend>
+																<div class="mat-div is-completed">
+																	<label for="ext-1" class="mat-label">Название</label>
+																	<input type="text" class="mat-input" id="ext-1" value="Ограничение на суммy договора">
+																</div>
+																<div class="mat-div mt-1 is-completed">
+																	<label for="ext-2" class="mat-label">Отображаемое название</label>
+																	<input type="text" class="mat-input" id="ext-2" value="Сумма договора">
+																</div>
+																<div class="mat-div mt-1">
+																	<label for="ext-3" class="mat-label">Описание</label>
+																	<input type="text" class="mat-input" id="ext-3" value="">
+																</div>
+																<br>
+															</fieldset>
+															<fieldset class="fieldset">
+																<legend>Варианты исхода</legend>
+																<table class="unstiped hover mt-2">
+																	<thead>
+																		<tr>
+																			<th>Название исхода</th>
+																			<th>Вариант</th>
+																			<th width="50"></th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>
+																				<div class="mat-div mt-1 is-completed">
+																					<label for="ext-7" class="mat-label">Отображаемое название</label>
+																					<input type="text" class="mat-input" id="ext-7" value="> 1 млн. руб.">
+																				</div>
+																			</td>
+																			<td>
+																				<div class="small-in">
+																					<textarea id="ext-6" width="300">xml description</textarea>
+																				</div>
+																			</td>
+																			<td>
+																				<img src="assets/img/trash.png" class="trash" />
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>
+																				<div class="mat-div mt-1 is-completed">
+																					<label for="ext-8" class="mat-label">Отображаемое название</label>
+																					<input type="text" class="mat-input" id="ext-8" value="< 1 млн. руб.">
+																				</div>
+																			</td>
+																			<td>
+																				<div class="small-in">
+																					<textarea id="ext-9" width="300">xml description</textarea>
+																				</div>
+																			</td>
+																			<td>
+																				<img src="assets/img/trash.png" class="trash" />
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>
+																				<div class="mat-div mt-1">
+																					<label for="ext-8" class="mat-label">Отображаемое название</label>
+																					<input type="text" class="mat-input" id="ext-8" value="">
+																				</div>
+																			</td>
+																			<td>
+																				<div class="small-in">
+																					<textarea id="ext-9" width="300">xml description</textarea>
+																				</div>
+																			</td>
+																			<td>
+																				<img src="assets/img/plus-blue.png" class="trash"/>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</fieldset>
+														</div>
+														<div id="arrPanel" class="hide">
+															<img src="assets/img/message.png" alt="">
+															здесь живут стрелки
+														</div>
+														<div id="filledPanel" class="hide">
+															<div class="type">Тип: <span data-tooltip  title="При выборе юзером на карте внешнего условия и логических операторов здесь будем отрображать их свойства. Вначале readonly, а затем и с редактированием">этап</span></div>
+															<div class="template"><strong>Действие</strong>: создать по шаблону и запустить согласование.</div>
+															<div class="template"><strong>Шаблон этапа</strong>: <a href="#" data-open="offCanvasRight">Бухгалтерия, простой</a></div>
+															<br>
+															<fieldset class="fieldset">
+																<legend>Основная</legend>
+																<div class="mat-div is-completed">
+																	<label for="et-4" class="mat-label">Название</label>
+																	<input type="text" class="mat-input" id="et-4" value="Длинное предлинное название этапа">
+																</div>
+																<div class="mat-div mt-1 is-completed">
+																	<label for="et-5" class="mat-label">Отображаемое название</label>
+																	<input type="text" class="mat-input" id="et-5" value="Этап 7">
+																</div>
+																<div class="fle">
+																	<div>
+																		<div class="m-check">
+																			<input id="et-6" type="checkbox"><label for="et-6">Разрешить исключать этап из маршрута</label>
+																		</div>
+																		<div class="m-check">
+																			<input id="et-7" type="checkbox"><label for="et-7">Требуется консолидация после завершения</label>
+																		</div>
+																	</div>
+																	<div class="m-check">
+																		<input id="et-8" type="checkbox"><label for="et-8">Разрешить редактирование инициатору</label>
+																	</div>
+																</div>
+															</fieldset>
+															<fieldset class="fieldset">
+																<legend>Согласующие</legend>
+																<div class="fle">
+																	<div class="third-2">
+																		<div class="wrap select">
+																			<label>Тип маршрутизации
+																				<select>
+																					<option value="husker">Параллельно</option>
+																					<option value="starbuck">Последовательно</option>
+																				</select>
+																			</label>
+																			<div class="arrow">&or;</div>
+																		</div>
+																	</div>
+																	<div class="third-1">
+																		<div class="mat-div" style="margin-top: 5px">
+																			<label for="et-10" class="mat-label">Длительность</label>
+																			<input type="text" class="mat-input" id="et-10">
+																		</div>
+																	</div>
+																</div>
+																<div class="m-check">
+																	<input id="et-11" type="checkbox"><label for="et-11">Разрешить автоисполнение</label>
+																</div>
+																<div class="m-check">
+																	<input id="et-12" type="checkbox"><label for="et-12">Запретить редактирование файлов</label>
+																</div>
+																<div class="mat-div mt-1">
+																	<label for="et-10" class="mat-label">Сопроводительный текст</label>
+																	<textarea class="mat-input" id="et-10" width="300"></textarea>
+																</div>
+				
+																<div class="variant">
+																	<table class="unstiped hover mt-2">
+																		<thead>
+																			<tr>
+																				<th>Участник</th>
+																				<th>Тип подписи</th>
+																				<th width="50"></th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td class="bold">Инициатор</td>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Визирование</option>
+																								<option value="starbuck">Подписание</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<img src="assets/img/edit.png" data-open="addModal" />
+																					<img src="assets/img/trash.png" class="trash" />
+																				</td>
+																			</tr>
+																			<tr>
+																				<td class="bold">Директор департамента</td>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Визирование</option>
+																								<option value="starbuck">Подписание</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<img src="assets/img/edit.png" data-open="addModal" />
+																					<img src="assets/img/trash.png" class="trash" />
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																	<button class="button primary" data-open="addModal">Добавить</button>
+																</div>
+																<div class="variant">
+																	<table class="unstiped hover mt-2">
+																		<thead>
+																			<tr>
+																				<th>Тип согласующего</th>
+																				<th>Участник</th>
+																				<th>Тип подписи</th>
+																				<th width="50"></th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Роль</option>
+																								<option value="starbuck">Группа</option>
+																								<option value="starbuck">ФИО</option>
+																								<option value="starbuck">Подразделение</option>
+																								<option value="starbuck">Поисковое слово</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Инициатор</option>
+																								<option value="starbuck">Директор</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Визирование</option>
+																								<option value="starbuck">Подписание</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<img src="assets/img/edit.png" data-open="addModal" />
+																					<img src="assets/img/trash.png" class="trash" />
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Роль</option>
+																								<option value="starbuck">Группа</option>
+																								<option value="starbuck">ФИО</option>
+																								<option value="starbuck">Подразделение</option>
+																								<option value="starbuck">Поисковое слово</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Инициатор</option>
+																								<option value="starbuck">Директор</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<div class="wrap select">
+																						<label>
+																							<select>
+																								<option value="husker">Визирование</option>
+																								<option value="starbuck">Подписание</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<img src="assets/img/edit.png" data-open="addModal" />
+																					<img src="assets/img/trash.png" class="trash" />
+																				</td>
+																			</tr>
+																			<tr>
+																				<td>
+																					<div class="wrap select grey">
+																						<label>
+																							<select>
+																								<option value="husker">Выбрать</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<div class="wrap select grey">
+																						<label>
+																							<select>
+																								<option value="husker">Выбрать</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<div class="wrap select grey">
+																						<label>
+																							<select>
+																								<option value="husker">Выбрать</option>
+																							</select>
+																						</label>
+																						<div class="arrow">&or;</div>
+																					</div>
+																				</td>
+																				<td>
+																					<img src="assets/img/plus-blue.png" style="margin-top: 15px; margin-left: 15px" />
+																				</td>
+				
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</fieldset>
+															<fieldset class="fieldset">
+																<legend>Служебная</legend>
+																<div class="fle">
+																	<div class="mat-div third-2">
+																		<label for="et-1" class="mat-label">Кто создал</label>
+																		<input type="text" class="mat-input" id="et-1">
+																	</div>
+																	<div class="mat-div third-1 rel">
+																		<label for="et-2" class="mat-label">Дата создания</label>
+																		<input type="text" class="mat-input" id="et-2">
+																		<img class="cal" src="assets/img/calendar.png" alt="">
+																	</div>
+																</div>
+																<div class="m-check">
+																	<input id="et-3" checked type="checkbox"><label for="et-3">Актуальный (не показывать при выборе)</label><br>
+																</div>
+															</fieldset>
+															<fieldset class="fieldset">
+																<legend>Связанные маршруты</legend>
+																<ol class="svaz">
+																	<li><a href="#">Приказ по подразделению</a></li>
+																	<li><a>Приказ по министреству</a></li>
+																	<li><a>Заявление на отпуск</a></li>
+																	<li><a>Заявка на командировку</a></li>
+																	<li><a>Крупные сделки</a></li>
+																</ol>
+															</fieldset>
+														</div>
+												</div>
+												<div class="tabs-panel" id="panel3c">
+													<div>Переходы после завершения этапа:</div>
+																	<table class="unstiped hover mt-2">
+																		<thead>
+																			<tr>
+																				<th>Наименование</th>
+																				<th>Условие</th>
+																				<th>Цвет</th>
+																				<th>Объект</th>
+																				<th width="50"></th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			<tr>
+																				<td class="bold">Согласовано</td>
+																				<td>SearchQueryName</td>
+																				<td>зеленый</td>
+																				<td>Этап 2</td>
+																				<td><img src="assets/img/edit-group1.png" /></td>
+																			</tr>
+																			<tr>
+																				<td class="bold">Не согласовано</td>
+																				<td>SearchQueryName 2</td>
+																				<td>красный</td>
+																				<td>Шлюз</td>
+																				<td><img src="assets/img/edit-group1.png" /></td>
+																			</tr>
+																		</tbody>
+																	</table>
+																	<!-- <br> -->
+																	<button class="button secondary">Добавить</button>
+															<!-- <fieldset class="fieldset"> -->
+															<!-- 	<legend>Основная</legend> -->
+															<!-- 	<div class="mat-div"> -->
+															<!-- 		<label for="arr1" class="mat-label">Название</label> -->
+															<!-- 		<input type="text" class="mat-input" id="arr1" value=""> -->
+															<!-- 	</div> -->
+															<!-- 	<div class="mat-div mt-1 is-completed"> -->
+															<!-- 		<label for="arr2" class="mat-label">Отображаемое название</label> -->
+															<!-- 		<input type="text" class="mat-input" id="arr2" value="Сумма договора"> -->
+															<!-- 	</div> -->
+															<!-- </fieldset> -->
+															<!-- <fieldset class="fieldset"> -->
+															<!-- 	<legend>Таблица условий</legend> -->
+															<!-- 		<table class="unstiped hover mt-2"> -->
+															<!-- 			<thead> -->
+															<!-- 				<tr> -->
+															<!-- 					<th>Логика</th> -->
+															<!-- 					<th>Условие</th> -->
+															<!-- 					<th>Значение</th> -->
+															<!-- 					<th width="50"></th> -->
+															<!-- 				</tr> -->
+															<!-- 			</thead> -->
+															<!-- 			<tbody> -->
+															<!-- 				<tr> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select" style="width: 60px"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">И</option> -->
+															<!-- 									<option value="husker">ИЛИ</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td></td> -->
+															<!-- 					<td></td> -->
+															<!-- 					<td> -->
+															<!-- 						<img src="assets/img/plus-blue.png" /> -->
+															<!-- 						<img src="assets/img/trash.png" class="trash" /> -->
+															<!-- 					</td> -->
+															<!-- 				</tr> -->
+															<!-- 				<tr> -->
+															<!-- 					<td></td> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">Этап 4</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">Завершен</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<img src="assets/img/trash.png" class="trash" /> -->
+															<!-- 					</td> -->
+															<!-- 				</tr> -->
+															<!-- 				<tr> -->
+															<!-- 					<td> </td> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">Сумма договора</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">< 1 млн.руб.</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<img src="assets/img/trash.png" class="trash" /> -->
+															<!-- 					</td> -->
+															<!-- 				</tr> -->
+															<!-- 				<tr><td colspan="4" height=20></td></tr> -->
+															<!-- 				<tr> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select grey"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">Выбрать</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select grey"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">Выбрать</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<div class="wrap select grey"> -->
+															<!-- 							<label> -->
+															<!-- 								<select> -->
+															<!-- 									<option value="husker">Выбрать</option> -->
+															<!-- 								</select> -->
+															<!-- 							</label> -->
+															<!-- 							<div class="arrow">&or;</div> -->
+															<!-- 						</div> -->
+															<!-- 					</td> -->
+															<!-- 					<td> -->
+															<!-- 						<img src="assets/img/plus-blue.png" class="trash" /> -->
+															<!-- 						<1!-- <img src="assets/img/trash.png" class="trash" /> --1> -->
+															<!-- 					</td> -->
+															<!-- 				</tr> -->
+															<!-- 			</tbody> -->
+															<!-- 		</table> -->
+															<!-- </fieldset> -->
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="fle but">
+										<button class="button secondary">Сохранить этап в библиотеку</button>
+										<button class="button primary">Сохранить</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<div class="footer1">
+						<a href="index.html">На главную</a>
+						<div>Статус: Все изменения сохранены</div>
+						<div><span>&#x2615;</span>Ошибок нет.</div>
+					</div>
+				
+				</div>
+				
+				
+				<div class="reveal" id="setup" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+					<h5>Настройки карты</h5>
+					<button class="close-button" data-close aria-label="Close reveal" type="button">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<div class="m-check">
+						<input id="set1" type="checkbox" checked><label for="set1">Использовать физику</label><a hrev="#">Настроить</a>
+					</div>
+					<div class="mt-2">
+						<input type="radio" name="kemon" value="group" id="group" onclick="" checked ><label for="group">Свободная структура</label><br>
+						<input type="radio" name="kemon" value="rol" id="rol" onclick="" ><label for="rol">Иерархическая структура</label><br>
+					</div>
+					<br>
+					<!-- <div class=""> -->
+					<!-- 	<label>Между узлами</label><input type="text" /> -->
+					<!-- </div> -->
+					<br>
+					<br>
+					<p>Еще другие настройки карты и редактора</p>
+					<div class="fle mt-2">
+						<div></div>
+						<div>
+							<div data-close class="button secondary">Отмена</div>
+							<div data-close class="button primary">Сохранить</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="reveal" id="addModal" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+					<h4>Добавить согласующего</h4>
+					<!-- <p class='lead'>There are many options for animating modals, check out the Motion UI library to see them all fuck</p> -->
+					<button class="close-button" data-close aria-label="Close reveal" type="button">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				
+					<div class="fle mt-2">
+						<div class="half">
+							<!-- <legend>Согласующий:</legend> -->
+							<input type="radio" name="pokemon" value="rol" id="rol" onclick="showRol()" checked ><label for="rol">Роль</label><br>
+							<input type="radio" name="pokemon" value="group" id="group" onclick="showGroup()" ><label for="group">Группа</label><br>
+							<input type="radio" name="pokemon" value="fio" id="fio" onclick="showFio()" ><label for="fio">ФИО</label><br>
+							<input type="radio" name="pokemon" value="dep" id="dep" onclick="showDep()" ><label for="dep">Подразделение</label><br>
+							<input type="radio" name="pokemon" value="word" id="word" onclick="showWord()" ><label for="word">Поисковое слово</label>
+						</div>
+						<div class="half">
+							<div id="rol1">
+								<div class="wrap select">
+									<label>Роль
+										<select>
+											<option value="husker">Регистратор</option>
+											<option value="starbuck">Администратор</option>
+											<option value="starbuck">Согласующий</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+								<div class="wrap select">
+									<label>Тип визирования
+										<select>
+											<option value="husker">Визирование</option>
+											<option value="starbuck">Подписание</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+							</div>
+							<div class="hide" id="group1">
+								<div class="wrap select">
+									<label>Группа
+										<select>
+											<option value="husker">Группа 1</option>
+											<option value="starbuck">Группа 2</option>
+											<option value="starbuck">Группа 3</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+								<div class="wrap select">
+									<label>Тип визирования
+										<select>
+											<option value="husker">Визирование</option>
+											<option value="starbuck">Подписание</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+							</div>
+							<div class="hide" id="fio1">
+								<div class="mat-div">
+									<label for="rev-10" class="mat-label">Согласующее лицо</label>
+									<input type="text" class="mat-input" id="rev-10">
+								</div>
+								<div class="wrap select">
+									<label>Тип визирования
+										<select>
+											<option value="husker">Визирование</option>
+											<option value="starbuck">Подписание</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+							</div>
+							<div class="hide" id="dep1">
+								<div class="wrap select">
+									<label>Подразделение
+										<select>
+											<option value="husker">Подразделение 1</option>
+											<option value="starbuck">Подразделение 2</option>
+											<option value="starbuck">Подразделение 3</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+								<div class="wrap select">
+									<label>Тип визирования
+										<select>
+											<option value="husker">Визирование</option>
+											<option value="starbuck">Подписание</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+							</div>
+							<div class="hide" id="word1">
+								<div class="wrap select">
+									<label>Поисковое слово
+										<select>
+											<option value="husker">Инициатор маршрута</option>
+											<option value="starbuck">Автор РК</option>
+											<option value="starbuck">Руководитель автора РК</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+								<div class="wrap select">
+									<label>Тип визирования
+										<select>
+											<option value="husker">Визирование</option>
+											<option value="starbuck">Подписание</option>
+										</select>
+									</label>
+									<div class="arrow">&or;</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="fle">
+						<div class="half">
+							<div class="m-check">
+								<input id="mod-1" type="checkbox"><label for="mod-1">Подписывать файлы в согласовании</label>
+							</div>
+							<div class="m-check">
+								<input id="mod-2" type="checkbox"><label for="mod-2">Разрешить автоисполнение</label>
+							</div>
+						</div>
+						<div class="half">
+							<div class="mat-div">
+								<label for="rev-100" class="mat-label">Длительность согласования</label>
+								<input type="text" class="mat-input" id="rev-100">
+							</div>
+						</div>
+					</div>
+					<br>
+					<div class="fle mt-2">
+						<div data-close class="button secondary">Отмена</div>
+						<div data-close class="button primary">Добавить</div>
+					</div>
+				</div>
+				
+				
+				<div class="reveal" id="showList" data-reveal data-close-on-click="false" data-animation-in="scale-up-center" data-animation-out="fade-out fast">
+					<h4>Связанные документы</h4>
+					<p>Данный маршрут используется в документах:</p>
+					<button class="close-button" data-close aria-label="Close reveal" type="button">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<ol>
+						<li> <a> Обязательство доказывает валютный товарный кредит.  </a> </li>
+						<li> <a> В соответствии со сложившейся </a> </li>
+						<li> <a> Правоприменительной практикой движимое </a> </li>
+						<li> <a> Правоприменительной практикой движимоеимущество </a> </li>
+						<li> <a> Возмещает суд.  </a> </li>
+						<li> <a> Аналогия закона спорна.  </a> </li>
+						<li> <a> Конфиденциальность, при ближайшем рассмотрении, противозаконна.  </a> </li>
+					</ol>
+					<br>
+					<div class="fle mt-2">
+						<div data-close class="button primary">Отмена</div>
+						<!-- <div data-close class="button primary">Добавить</div> -->
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+
+		<script src="assets/vis/vis.min.js"></script>
+		<!-- <script src="assets/vis/vis.js"></script> -->
+		<script src="assets/js/app.js"></script>
+    <script src="assets/vis/data.js"></script>
+    <script src="assets/vis/editor.js"></script>
+
+	</body>
+</html>
